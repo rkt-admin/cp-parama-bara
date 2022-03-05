@@ -11,7 +11,8 @@
 </script>
 
 <script>
-  import ButtonLink from '$lib/components/ButtonLink.svelte'
+  import HeroComponent from "../components/Hero.svelte"
+  // import ButtonLink from '$lib/components/ButtonLink.svelte'
   import PostPreview from '$lib/components/PostPreview.svelte'
   import { name } from '$lib/info.js'
 
@@ -21,9 +22,9 @@
 <svelte:head>
   <title>{name}</title>
 </svelte:head>
-
+<HeroComponent />
 <div class="flex flex-col flex-grow">
-  <!-- replace with a bio about you, or something -->
+  <!-- replace with a bio about you, or something
   <div class="flex items-center justify-center text-xl h-40">
     <ButtonLink size="large" href="https://github.com/mattjennings/sveltekit-blog-template">
       <slot slot="icon-start">
@@ -40,14 +41,13 @@
       View on GitHub
       <slot slot="icon-end" />
     </ButtonLink>
-  </div>
+  </div> -->
 
-  <!-- recent posts -->
-  <h2 class="flex items-baseline gap-4 !mb-2">
+  <!-- <h2 class="flex items-baseline gap-4 !mb-4 text-center pb-2 border-half">
     Recent Posts
-    <ButtonLink href="/posts" size="small" raised={false} class="opacity-60">View All</ButtonLink>
-  </h2>
-  <div class="grid gap-4 grid-cols-1 sm:grid-cols-2">
+    <ButtonLink href="/posts" size="medium" raised={true} class="opacity-60">View All</ButtonLink>
+  </h2> -->
+  <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 mt-6">
     {#each recentPosts as post}
       <div class="flex p-4 border border-slate-300 dark:border-slate-700 rounded-lg">
         <PostPreview {post} small />
@@ -55,3 +55,17 @@
     {/each}
   </div>
 </div>
+
+<!-- <style>
+  .border-half:after {
+    margin: auto;
+    /* margin-top: -35px; */
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: 5px;
+    width: 50%; /* or 100px */
+    border-bottom: 1px dashed rgb(203 213 225);
+  }
+</style> -->

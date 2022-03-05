@@ -4,6 +4,7 @@
   export let href
   export let raised = true
   export let size = 'medium' // small, medium, or large
+  export let arrows = false
 
   let className = ''
 
@@ -11,10 +12,11 @@
 </script>
 
 <div class="not-prose">
+  <!-- svelte-ignore a11y-mouse-events-have-key-events -->
   <a
     {...$$restProps}
     {href}
-    class={'block text-slate-800 dark:text-slate-200 dark:text-opacity-90 rounded-md no-underline ' +
+    class={'inline-block text-slate-800 dark:text-slate-200 dark:text-opacity-90 rounded-md no-underline '+
       className}
     class:small={size === 'small'}
     class:medium={size === 'medium'}
@@ -26,9 +28,24 @@
       <span>
         <slot />
       </span>
+      {#if arrows}
       <slot name="icon-end">
-        <ArrowRightIcon class="h-5 w-5" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="inline-block h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 8l4 4m0 0l-4 4m4-4H3"
+          />
+        </svg>
       </slot>
+      {/if}
     </div>
   </a>
 </div>

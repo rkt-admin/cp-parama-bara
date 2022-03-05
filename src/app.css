@@ -6,9 +6,9 @@
   }
 }
 
-.prose img {
+/* .prose img {
   @apply rounded-md shadow-md dark:shadow-slate-900;
-}
+} 
 
 .prose video {
   @apply rounded-md shadow-md dark:shadow-slate-900;
@@ -35,6 +35,6 @@ a {
 svg {
   @apply outline-none focus:outline-none;
 }
-
+*/
 @tailwind components;
 @tailwind utilities;
