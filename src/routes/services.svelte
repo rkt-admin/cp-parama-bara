@@ -19,8 +19,8 @@
       // error = ''
       // if (browser) goto('/about') // cannot call on server
     } catch (e) {
-      console.error('login.svelte login: e =', e)
-      error = 'invalid email or password'
+      console.error('login.svelte login: e =', e);
+      // error = 'invalid email or password'
     }
   }
 </script>

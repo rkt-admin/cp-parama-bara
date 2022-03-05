@@ -17,9 +17,6 @@
                     <a href="/about" class=" hover:underline">About</a>
                 </li>
                 <li class="mb-3">
-                    <a href="/careers" class="hover:underline">Careers</a>
-                </li>
-                <li class="mb-3">
                     <a href="/media" class="hover:underline">media</a>
                 </li>
                 <li class="mb-3">
@@ -51,9 +48,6 @@
             <ul class="text-gray-500">
                 <li class="mb-3">
                     <a href="/privacy-policy" class="hover:underline">Privacy Policy</a>
-                </li>
-                <li class="mb-3">
-                    <a href="/licensing" class="hover:underline">Licensing</a>
                 </li>
                 <li class="mb-3">
                     <a href="/term-condition" class="hover:underline">Terms &amp; Conditions</a>
