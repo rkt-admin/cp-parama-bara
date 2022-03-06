@@ -1,5 +1,5 @@
 <script context="module">
-  export const prerender = true
+  export const prerender = false
 
   /**
    * @type {import("@sveltejs/kit").Load}
@@ -19,9 +19,9 @@
 
     const fetchPostsParams = new URLSearchParams()
 
-    fetchPostsParams.set('page', page)
-    fetchPostsParams.set('limit', limit)
-
+    fetchPostsParams.set('page', page.toString())
+    fetchPostsParams.set('limit', limit.toString())
+    
     const posts = await fetch(`/posts.json?${fetchPostsParams.toString()}`).then((res) =>
       res.json()
     )

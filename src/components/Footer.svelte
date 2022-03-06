@@ -10,51 +10,53 @@
       <Logo {website} {name} />
     </div>
     <div class="grid grid-cols-2 gap-8 px-6 md:grid-cols-3">
-        <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Sites</h2>
-            <ul class="text-gray-500">
-                <li class="mb-3">
-                    <a href="/about" class=" hover:underline">About</a>
-                </li>
-                <li class="mb-3">
-                    <a href="/media" class="hover:underline">media</a>
-                </li>
-                <li class="mb-3">
-                    <a href="/blog" class="hover:underline">Blog</a>
-                </li>
-            </ul>
-        </div>
-        <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Help center</h2>
-            <ul class="text-gray-500">
-                <li class="mb-3">
-                    <a href="#" class="hover:underline">Discord Server</a>
-                </li>
-                <li class="mb-3">
-                    <a href="#" class="hover:underline">Twitter</a>
-                </li>
-                <li class="mb-3">
-                    <a href="#" class="hover:underline">Facebook
-                    </a>
-                </li><a href="#" class="hover:underline">
-                </a>
-                <li class="mb-3"><a href="#" class="hover:underline">
-                    </a><a href="/contact" class="hover:underline">Contact Us</a>
-                </li>
-            </ul>
-        </div>
-        <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Legal</h2>
-            <ul class="text-gray-500">
-                <li class="mb-3">
-                    <a href="/privacy-policy" class="hover:underline">Privacy Policy</a>
-                </li>
-                <li class="mb-3">
-                    <a href="/term-condition" class="hover:underline">Terms &amp; Conditions</a>
-                </li>
-            </ul>
-        </div>
-        <!-- <div>
+      <div>
+        <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Sites</h2>
+        <ul class="text-gray-500">
+          <li class="mb-3">
+            <a href="/about" class=" hover:underline">About</a>
+          </li>
+          <li class="mb-3">
+            <a href="/media" class="hover:underline">media</a>
+          </li>
+          <li class="mb-3">
+            <a href="/blog" class="hover:underline">Blog</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Help center</h2>
+        <ul class="text-gray-500">
+          <li class="mb-3">
+            <!-- svelte-ignore a11y-invalid-attribute -->
+            <a href="#" class="hover:underline">Discord Server</a>
+          </li>
+          <li class="mb-3">
+            <!-- svelte-ignore a11y-invalid-attribute -->
+            <a href="#" class="hover:underline">Twitter</a>
+          </li>
+          <li class="mb-3">
+            <!-- svelte-ignore a11y-invalid-attribute -->
+            <a href="#" class="hover:underline">Facebook </a>
+          </li>
+          <li class="mb-3">
+            <!-- svelte-ignore a11y-invalid-attribute -->
+            <a href="/contact" class="hover:underline">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Legal</h2>
+        <ul class="text-gray-500">
+          <li class="mb-3">
+            <a href="/privacy-policy" class="hover:underline">Privacy Policy</a>
+          </li>
+          <li class="mb-3">
+            <a href="/term-condition" class="hover:underline">Terms &amp; Conditions</a>
+          </li>
+        </ul>
+      </div>
+      <!-- <div>
             <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Download</h2>
             <ul class="text-gray-500">
                 <li class="mb-3">
@@ -79,6 +81,7 @@
       >© 2022 <a href={website} class="hover:underline">{name}</a> ~ All Rights Reserved.
     </span>
     <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+      <!-- svelte-ignore a11y-invalid-attribute -->
       <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
           ><path
@@ -88,6 +91,7 @@
           /></svg
         >
       </a>
+      <!-- svelte-ignore a11y-invalid-attribute -->
       <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
           ><path
@@ -97,6 +101,7 @@
           /></svg
         >
       </a>
+      <!-- svelte-ignore a11y-invalid-attribute -->
       <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
           ><path
@@ -104,6 +109,7 @@
           /></svg
         >
       </a>
+      <!-- svelte-ignore a11y-invalid-attribute -->
       <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
           ><path
@@ -113,6 +119,7 @@
           /></svg
         >
       </a>
+      <!-- svelte-ignore a11y-invalid-attribute -->
       <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
           ><path
