@@ -13,6 +13,6 @@ export const name = 'Rakit.id' // replace with your name
  */
 let url = 'http://localhost:3000/'
 if(!dev){
-    url = 'https://rakit.id/'
+    url = 'https://rakit.id'
 }
 export const website = url
