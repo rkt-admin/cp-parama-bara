@@ -40,6 +40,7 @@
     const mediaListener = window.matchMedia('(max-width: 767px)')
     mediaListener.addListener(mediaQueryHandler)
   })
+
 </script>
 
 <div class="flex flex-col min-h-screen">
