@@ -14,7 +14,7 @@
       <ButtonLink
         href="/posts"
         size="medium"
-        raised={false}
+        raised={true}
         arrows={true}
         class="text-white font-semibold ml-10 mt-5 mb-8">View All Posts</ButtonLink
       >
