@@ -99,7 +99,6 @@
     </main>
   </div>
 </div>
-
 <Footer {website} {name} />
 
 <style lang="postcss">
@@ -209,13 +208,13 @@
   }
 
   :global(.dark) .navbar-list.mobile {
-    @apply bg-slate-500;
+    @apply bg-slate-700 bg-gradient-to-br from-slate-800 to-slate-800;
   }
 
   .navbar-list li {
     list-style-type: none;
     position: relative;
-    @apply border-b border-slate-400;
+    @apply border-b border-slate-700;
 
   }
 
