@@ -6,7 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="/favicon.png" />
   %svelte.head%
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V5K5EECM62"></script>
   <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-V5K5EECM62');
+
     const storageValue = JSON.parse(localStorage.getItem('prefersLight'))
     const prefersLight = storageValue
       ? Boolean(storageValue)
