@@ -21,7 +21,6 @@
     { label: 'About', href: '/about' },
     { label: 'Blog', href: '/blog' },
     { label: 'Services', href: '/services' },
-    { label: 'Pricing', href: '/pricing' },
     { label: 'Contact', href: '/contact' },
   ]
 
