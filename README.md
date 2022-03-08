@@ -1,4 +1,4 @@
-# sveltekit-blog-template
+# Rakit.id Website
 
 Blog built on mdsvex and tailwind.
 Based on boilerplate from [mattjennings/sveltekit-blog-template](https://github.com/mattjennings/sveltekit-blog-template)
