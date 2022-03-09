@@ -108,7 +108,7 @@
 </article>
 
 <div class="pt-12 flex justify-between">
-  <ButtonLink href={`/posts`}>
+  <ButtonLink href={`/blog`}>
     <slot slot="icon-start">
       <ArrowLeftIcon class="h-5 w-5" />
     </slot>
