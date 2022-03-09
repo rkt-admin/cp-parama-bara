@@ -1,9 +1,8 @@
-# sveltekit-blog-template
+# Rakit.id Website
 
-A SvelteKit blog template built on mdsvex and tailwind.
+Blog built using svelte, mdsvex and tailwind.
+Based on boilerplate from [mattjennings/sveltekit-blog-template](https://github.com/mattjennings/sveltekit-blog-template)
 
-[Demo](https://sveltekit-blog-template.vercel.app)
+Website can be accessed on [Rakit.id](https://rakit.id/)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-urlhttps://github.com/sikharis/rakit-id)
-
-a
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ec932438-d06b-4dce-a90d-5531a653ec36/deploy-status)](https://app.netlify.com/sites/rakit/deploys)
