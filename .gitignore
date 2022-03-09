@@ -5,4 +5,5 @@ node_modules
 .netlify
 /build
 /public
+public.zip
 backup

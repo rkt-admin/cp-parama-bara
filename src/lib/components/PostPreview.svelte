@@ -9,15 +9,15 @@
 <div class="flex flex-col">
   <div>
     {#if !small}
-      <h1 class="!mt-0 !mb-2">
-        <a href={`/posts/${post.slug}`}>{post.title}</a>
+      <h1 class="!mt-0 !mb-1">
+        <a href={`/blog/${post.slug}`}>{post.title}</a>
       </h1>
     {:else}
-      <h3 class="!mt-0 !mb-2">
-        <a href={`/posts/${post.slug}`}>{post.title}</a>
+      <h3 class="!mt-0 !mb-1">
+        <a href={`/blog/${post.slug}`}>{post.title}</a>
       </h3>
     {/if}
-    <div class="opacity-70">
+    <div class="opacity-70 mb-4">
       <time>{format(new Date(parseISO(post.date)), 'MMMM d, yyyy')}</time>
       •
       <span>{post.readingTime}</span>
@@ -25,8 +25,8 @@
   </div>
   <div class="flex-1">{@html post.preview.html}</div>
   <slot name="actions">
-    <div class="flex justify-end w-full">
-      <ButtonLink href={`/posts/${post.slug}`}>Read More</ButtonLink>
+    <div class="flex justify-end w-full mt-2">
+      <ButtonLink href={`/blog/${post.slug}`}>Read More</ButtonLink>
     </div>
   </slot>
 </div>

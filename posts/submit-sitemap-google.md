@@ -3,7 +3,6 @@ title: Cara mendaftarkan Sitemap Blog di Blogspot
 date: 2022-03-04
 preview: Sebenarnya sudah banyak yang menulis artikel tentang Sitemap ini, tapi tidak ada salahnya kalau Aku tuliskan lagi caranya, Sitemap seperti namanya berfungsi sebagai Peta atau strukturisasi dari sebuah Site, dengan mendaftarkan Sitemap ini, Search Engine akan lebih mudah untuk mengcrawl, mengindex, atau mengkategorikan Blog Kamu.
 ---
-
 Sebenarnya sudah banyak yang menulis artikel tentang Sitemap ini, tapi tidak ada salahnya kalau Aku tuliskan lagi caranya, Sitemap seperti namanya berfungsi sebagai Peta atau strukturisasi dari sebuah Site, dengan mendaftarkan Sitemap ini, Search Engine akan lebih mudah untuk mengcrawl, mengindex, atau mengkategorikan Blog Kamu.
 
 Berikut ini adalah cara mendaftarkan Sitemap Kamu pada Google :

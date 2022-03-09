@@ -11,7 +11,6 @@
 </script>
 
 <script>
-  import HeroComponent from "../components/Hero.svelte"
   import PostPreview from '$lib/components/PostPreview.svelte'
   import { name } from '$lib/info.js'
 
@@ -21,8 +20,8 @@
 <svelte:head>
   <title>{name}</title>
 </svelte:head>
-<HeroComponent />
-<div class="flex flex-col flex-grow">
+
+<div  class="flex flex-col flex-grow">
   <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 mt-6">
     {#each recentPosts as post}
       <div class="flex p-4 border border-slate-300 dark:border-slate-700 rounded-lg">

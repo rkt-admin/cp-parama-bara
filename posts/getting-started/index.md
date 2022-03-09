@@ -1,10 +1,8 @@
 ---
 title: Getting Started
 date: 2022-01-08
+preview: Thanks for checking out my blog template. It's based on the blog I built for my own [website](https://mattjennings.io) and I hope this is a good starting point for you to start yours.
 ---
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ec932438-d06b-4dce-a90d-5531a653ec36/deploy-status)](https://app.netlify.com/sites/rakit/deploys)
-
 Thanks for checking out my blog template. It's based on the blog I built for my own [website](https://mattjennings.io) and I hope this is a good starting point for you to start yours.
 
 Let's go over a few quick things:

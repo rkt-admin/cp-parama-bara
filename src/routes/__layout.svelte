@@ -11,7 +11,7 @@
   import { onMount } from 'svelte'
 
   let prefersLight = browser ? Boolean(JSON.parse(localStorage.getItem('prefersLight'))) : false
-
+  let yScreen
   // Show mobile icon and display menu
   let showMobileMenu = false
 
@@ -21,7 +21,7 @@
     { label: 'About', href: '/about' },
     { label: 'Blog', href: '/blog' },
     { label: 'Services', href: '/services' },
-    { label: 'Contact', href: '/contact' },
+    { label: 'Contact', href: '/contact' }
   ]
 
   // Mobile menu click event handler
@@ -41,11 +41,25 @@
     mediaListener.addListener(mediaQueryHandler)
   })
 
+  let navOverScroll = false
+  $: {
+    if (yScreen > 20) {
+      navOverScroll = true
+    } else {
+      navOverScroll = false
+    }
+  }
 </script>
 
+<svelte:window bind:scrollY={yScreen} />
 <div class="flex flex-col min-h-screen">
   <div class="mx-auto flex flex-col flex-grow w-full max-w-4xl">
-    <div class="bg-slate-100  dark:bg-gradient-to-br dark:from-slate-900 dark:to-slate-800 rounded-b-lg shadow-md flex h-16 px-4 py-2 justify-between items-center mb-0 sticky top-0 z-50">
+    <div
+      class="bg-slate-100 dark:bg-slate-900 flex h-16 px-4 py-2 justify-between items-center mb-0 z-50 sticky top-0 {navOverScroll ===
+      true
+        ? ' shadow max-w-full'
+        : ' max-w-5xl'}"
+    >
       <Logo {website} {name} />
       <nav>
         <div class="inner">
@@ -59,37 +73,34 @@
         </div>
       </nav>
 
-      {#if browser}        
-        <button
-          type="button"
-          role="switch"
-          aria-label="Toggle Dark Mode"
-          aria-checked={!prefersLight}
-          class="h-6 w-6 sm:h-8 sm:w-8 sm:p-1"
-          on:click={() => {
-            prefersLight = !prefersLight
-            localStorage.setItem('prefersLight', prefersLight.toString())
+      <!-- {#if browser} -->
+      <button
+        type="button"
+        role="switch"
+        aria-label="Toggle Dark Mode"
+        aria-checked={!prefersLight}
+        class="h-6 w-6 sm:h-8 sm:w-8 sm:p-1"
+        on:click={() => {
+          prefersLight = !prefersLight
+          localStorage.setItem('prefersLight', prefersLight.toString())
 
-            if (prefersLight) {
-              document.querySelector('html').classList.remove('dark')
-            } else {
-              document.querySelector('html').classList.add('dark')
-            }
-          }}
-        >
-          {#if prefersLight}
-            <MoonIcon class="text-slate-500" />
-          {:else}
-            <SunIcon class="text-slate-400" />
-          {/if}
-        </button>
-        <div
-          on:click={handleMobileIconClick}
-          class={`mobile-icon${showMobileMenu ? ' active' : ''}`}
-        >
-          <div class="middle-line" />
-        </div>
-      {/if}
+          if (prefersLight) {
+            document.querySelector('html').classList.remove('dark')
+          } else {
+            document.querySelector('html').classList.add('dark')
+          }
+        }}
+      >
+        {#if prefersLight}
+          <MoonIcon class="text-slate-500" />
+        {:else}
+          <SunIcon class="text-slate-400" />
+        {/if}
+      </button>
+      <div on:click={handleMobileIconClick} class={`mobile-icon${showMobileMenu ? ' active' : ''}`}>
+        <div class="middle-line" />
+      </div>
+      <!-- {/if} -->
     </div>
     <main
       class="prose prose-slate prose-sm sm:prose sm:prose-slate sm:prose-lg sm:max-w-none dark:prose-invert flex flex-col w-full flex-grow py-4 px-4"
@@ -101,6 +112,11 @@
 <Footer {website} {name} />
 
 <style lang="postcss">
+  .shadow {
+    box-shadow: 0px 8px 7px -10px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 8px 7px -10px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 8px 7px -10px rgba(0, 0, 0, 0.75);
+  }
   nav {
     /* background-color: rgba(0, 0, 0, 0.8); */
     /* font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; */
@@ -108,7 +124,7 @@
   }
 
   .inner {
-    max-width: 980px; 
+    max-width: 980px;
     padding-left: 20px;
     padding-right: 20px;
     margin: auto;
@@ -202,7 +218,7 @@
     border-bottom: 1px solid bg-slate-500;
   }
 
-  .navbar-list.mobile::after li  {
+  .navbar-list.mobile::after li {
     border-bottom: 1px solid bg-slate-500;
   }
 
@@ -214,7 +230,6 @@
     list-style-type: none;
     position: relative;
     @apply border-b border-slate-700;
-
   }
 
   /* .navbar-list li:before {
@@ -253,17 +268,15 @@
     .mobile-icon {
       display: none;
     }
-    
 
     .navbar-list {
       display: flex;
       padding: 0;
     }
-    
+
     .navbar-list li {
       border: unset;
     }
-
 
     .navbar-list a {
       display: inline-flex;

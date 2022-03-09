@@ -1,0 +1,35 @@
+<script>
+  import ArrowRightIcon from '$lib/components/ArrowRightIcon.svelte'
+  import ArrowLeftIcon from '$lib/components/ArrowLeftIcon.svelte'
+  import ButtonLink from '$lib/components/ButtonLink.svelte'
+
+  export let isFirstPage
+  export let hasNextPage
+  export let page
+</script>
+
+<!-- begin pagination -->
+<div class="flex visible items-center justify-between pt-8 opacity-70">
+  {#if !isFirstPage}
+    <ButtonLink raised={false} href={`/blog/page/${page - 1}`}>
+      <slot slot="icon-start">
+        <ArrowLeftIcon class="h-5 w-5" />
+      </slot>
+      Previous
+      <slot slot="icon-end" /></ButtonLink
+    >
+  {:else}
+    <div />
+  {/if}
+
+  {#if hasNextPage}
+  <ButtonLink raised={false} href={`/blog/page/${page + 1}`}>    
+    
+    <slot slot="icon-start">
+      Next <ArrowRightIcon class="h-5 w-5" />
+    </slot>    
+    <slot slot="icon-end" /></ButtonLink
+  >
+  {/if}
+  <!-- end pagination -->
+</div>

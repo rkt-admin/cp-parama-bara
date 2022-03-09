@@ -36,5 +36,9 @@ svg {
   @apply outline-none focus:outline-none;
 }
 */
+h2 {
+  @apply mt-0;
+}
+
 @tailwind components;
 @tailwind utilities;
