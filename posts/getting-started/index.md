@@ -1,6 +1,7 @@
 ---
 title: Getting Started
 date: 2022-01-08
+tag: [sitemap]
 preview: Thanks for checking out my blog template. It's based on the blog I built for my own [website](https://mattjennings.io) and I hope this is a good starting point for you to start yours.
 ---
 Thanks for checking out my blog template. It's based on the blog I built for my own [website](https://mattjennings.io) and I hope this is a good starting point for you to start yours.

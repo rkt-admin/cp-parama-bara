@@ -9,11 +9,13 @@
   import { name, website } from '$lib/info'
   import Footer from '../components/Footer.svelte'
   import { onMount } from 'svelte'
+  import Divider from '$lib/components/Divider.svelte'
 
   let prefersLight = browser ? Boolean(JSON.parse(localStorage.getItem('prefersLight'))) : false
   let yScreen
   // Show mobile icon and display menu
   let showMobileMenu = false
+  // let navActive = '/'
 
   // List of navigation items
   const navItems = [
@@ -53,12 +55,12 @@
 
 <svelte:window bind:scrollY={yScreen} />
 <div class="flex flex-col min-h-screen">
-  <div class="mx-auto flex flex-col flex-grow w-full max-w-4xl">
+  <div class="mx-auto flex flex-col w-full max-w-5xl">
     <div
-      class="bg-slate-100 dark:bg-slate-900 flex h-16 px-4 py-2 justify-between items-center mb-0 z-50 sticky top-0 {navOverScroll ===
+      class="bg-slate-100 dark:bg-slate-900 flex h-16 px-4 py-2 justify-between items-center mb-0 z-50 sticky top-0 backdrop-blur-md bg-slate-100/30 {navOverScroll ===
       true
         ? ' shadow max-w-full'
-        : ' max-w-5xl'}"
+        : ''}"
     >
       <Logo {website} {name} />
       <nav>
@@ -66,7 +68,7 @@
           <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
             {#each navItems as item}
               <li>
-                <a href={item.href}>{item.label}</a>
+                <a href={item.href} class="text-slate-500">{item.label}</a>
               </li>
             {/each}
           </ul>
@@ -102,6 +104,8 @@
       </div>
       <!-- {/if} -->
     </div>
+  </div>
+  <div class="mx-auto flex flex-col w-full max-w-5xl">
     <main
       class="prose prose-slate prose-sm sm:prose sm:prose-slate sm:prose-lg sm:max-w-none dark:prose-invert flex flex-col w-full flex-grow py-4 px-4"
     >
@@ -109,9 +113,13 @@
     </main>
   </div>
 </div>
+<Divider />
 <Footer {website} {name} />
 
 <style lang="postcss">
+  /* :global(.dark) .menu-active {
+    @apply bg-slate-700 bg-gradient-to-br from-slate-800 to-slate-800;
+  } */
   .shadow {
     box-shadow: 0px 8px 7px -10px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 0px 8px 7px -10px rgba(0, 0, 0, 0.75);
@@ -204,7 +212,7 @@
     width: 100%;
     justify-content: space-between;
     margin: 0;
-    padding: 40px;
+    padding: 0 40px;
   }
 
   .navbar-list.mobile {
@@ -230,34 +238,21 @@
     list-style-type: none;
     position: relative;
     @apply border-b border-slate-700;
-  }
-
-  /* .navbar-list li:before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: #424245;
-  } */
-
-  .navbar-list a {
-    color: rgb(75, 75, 75);
     text-decoration: none;
     display: flex;
     height: 45px;
     align-items: center;
-    padding: 0 10px;
-    font-size: 13px;
+    padding: 0;
+    @apply mb-2 uppercase text-base font-medium;
   }
 
-  /* .navbar-list a {
-    @apply flex p-4 border border-slate-300 rounded-lg;
-  } */
+  .active {
+    @apply bg-slate-200 text-base font-medium rounded-2xl;
+  }
 
-  .navbar-list a {
-    @apply mb-2 text-slate-500 uppercase text-base font-medium;
+  .navbar-list a:hover,
+  .navbar-list li a:active {
+    @apply text-sky-500;
   }
 
   :global(.dark) .navbar-list a {

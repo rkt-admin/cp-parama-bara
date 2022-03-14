@@ -1,13 +1,13 @@
 @tailwind base;
 
-@layer utilities {
+/* @layer utilities {
   .focus {
     @apply outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-blue-300;
   }
-}
-
-/* .prose img {
-  @apply rounded-md shadow-md dark:shadow-slate-900;
+} */
+/* 
+.prose img {
+  @apply rounded-3xl shadow-md dark:shadow-slate-900;
 } 
 
 .prose video {
@@ -30,15 +30,13 @@ button {
 a {
   @apply rounded-sm;
   @apply focus;
-}
+} */
 
 svg {
   @apply outline-none focus:outline-none;
 }
-*/
-h2 {
-  @apply mt-0;
+html, body {
+    scroll-padding-top: 100px;
 }
-
 @tailwind components;
 @tailwind utilities;

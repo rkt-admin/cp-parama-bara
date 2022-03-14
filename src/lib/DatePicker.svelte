@@ -20,7 +20,7 @@
       'December'
     ];
   
-    $: console.log('DatePicker.svelte: date =', date);
+    // $: console.log('DatePicker.svelte: date =', date);
   
     $: month = date.getMonth();
     $: year = date.getFullYear();

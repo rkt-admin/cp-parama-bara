@@ -4,81 +4,84 @@
   import Logo from '../components/Logo.svelte'
 </script>
 
-<footer class="mx-auto flex flex-col flex-grow w-full max-w-4xl mt-10 p-5 pt-10 border-half">
+<footer class="mx-auto flex flex-col flex-grow w-full max-w-5xl mt-10 p-5 pt-10">
   <div class="md:flex md:justify-between">
-    <div class="mb-9 ml-6 md:mb-0">
-      <Logo {website} {name} />
-    </div>
-    <div class="grid grid-cols-2 gap-8 px-6 md:grid-cols-3">
+    <div class="grid grid-cols-5 gap-12 md:grid-cols-5">
+      <div class="">
+        <Logo {website} {name} />
+      </div>
       <div>
-        <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Sites</h2>
-        <ul class="text-gray-500">
+        <h2>Sites</h2>
+        <ul>
           <li class="mb-3">
-            <a href="/about" class=" hover:underline">About</a>
+            <a href="/about">About</a>
           </li>
           <li class="mb-3">
-            <a href="/media" class="hover:underline">media</a>
+            <a href="/teams">Teams</a>
           </li>
           <li class="mb-3">
-            <a href="/blog" class="hover:underline">Blog</a>
+            <a href="/media">media</a>
+          </li>
+          <li class="mb-3">
+            <a href="/blog">Blog</a>
           </li>
         </ul>
       </div>
       <div>
-        <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Help center</h2>
-        <ul class="text-gray-500">
+        <h2>Help center</h2>
+        <ul>
           <li class="mb-3">
             <!-- svelte-ignore a11y-invalid-attribute -->
-            <a href="#" class="hover:underline">Discord Server</a>
+            <a href="#">Discord Server</a>
           </li>
           <li class="mb-3">
             <!-- svelte-ignore a11y-invalid-attribute -->
-            <a href="#" class="hover:underline">Twitter</a>
+            <a href="#">Twitter</a>
           </li>
           <li class="mb-3">
             <!-- svelte-ignore a11y-invalid-attribute -->
-            <a href="#" class="hover:underline">Facebook </a>
+            <a href="#">Facebook </a>
           </li>
           <li class="mb-3">
             <!-- svelte-ignore a11y-invalid-attribute -->
-            <a href="/contact" class="hover:underline">Contact Us</a>
+            <a href="/contact">Contact Us</a>
           </li>
         </ul>
       </div>
       <div>
-        <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Legal</h2>
-        <ul class="text-gray-500">
+        <h2>Legal</h2>
+        <ul>
           <li class="mb-3">
-            <a href="/privacy-policy" class="hover:underline">Privacy Policy</a>
+            <a href="/privacy-policy">Privacy Policy</a>
           </li>
           <li class="mb-3">
-            <a href="/term-condition" class="hover:underline">Terms &amp; Conditions</a>
+            <a href="/term-condition">Terms &amp; Conditions</a>
           </li>
         </ul>
       </div>
-      <!-- <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Download</h2>
-            <ul class="text-gray-500">
-                <li class="mb-3">
-                    <a href="#" class="hover:underline">iOS</a>
-                </li>
-                <li class="mb-3">
-                    <a href="#" class="hover:underline">Android</a>
-                </li>
-                <li class="mb-3">
-                    <a href="#" class="hover:underline">Windows</a>
-                </li>
-                <li class="mb-3">
-                    <a href="#" class="hover:underline">MacOS</a>
-                </li>
-            </ul>
-        </div> -->
+      <div>
+        <h2>Download</h2>
+        <ul>
+          <li class="mb-3">
+            <a href="#">iOS</a>
+          </li>
+          <li class="mb-3">
+            <a href="#">Android</a>
+          </li>
+          <li class="mb-3">
+            <a href="#">Windows</a>
+          </li>
+          <li class="mb-3">
+            <a href="#">MacOS</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
   <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-  <div class="sm:flex sm:items-center sm:justify-between mb-4">
+  <div class="sm:flex sm:items-center sm:justify-between mb-4 ">
     <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
-      >© 2022 <a href={website} class="hover:underline">{name}</a> ~ All Rights Reserved.
+      >© 2022 <a href={website}>{name}</a> ~ All Rights Reserved.
     </span>
     <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
       <!-- svelte-ignore a11y-invalid-attribute -->
@@ -133,16 +136,20 @@
   </div>
 </footer>
 
-<style>
-  /* .border-half:before {
-    margin: auto;
-    margin-top: -35px;
-    content: '';
-    position: absolute;
-    right: 0;
-    left: 0;
-    height: 5px;
-    width: 65%;
-    border-top: 1px dashed rgb(203 213 225);
-  } */
+<style lang="postcss">
+  h2 {
+    @apply text-slate-400 mb-6 text-sm font-semibold uppercase;
+  }
+  footer ul > li > a {
+    @apply text-slate-600;
+  }
+  footer ul > li > a:hover {
+    @apply text-sky-500;
+  }
+  :global(.dark) footer ul > li > a {
+    @apply text-slate-400;
+  }
+  :global(.dark) footer ul > li > a:hover {
+    @apply text-sky-500;
+  }
 </style>

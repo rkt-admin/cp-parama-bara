@@ -12,7 +12,7 @@ const config = {
     mdsvex(mdsvexConfig),
     [
       preprocess({
-        postcss: true
+        postcss: true,        
       })
     ]
   ],

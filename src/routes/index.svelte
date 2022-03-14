@@ -1,4 +1,4 @@
-<script context="module">
+<!-- <script context="module">
   export const prerender = true
 
   export const load = async ({ fetch }) => {
@@ -8,39 +8,25 @@
       }
     }
   }
-</script>
+</script> -->
 
 <script>
-  import PostPreview from '$lib/components/PostPreview.svelte'
+  // import PostPreview from '$lib/components/PostPreview.svelte'
+  import Hero from '$lib/components/Hero.svelte'
+  import FeatureGrid from '$lib/components/FeatureGrid.svelte'
+  import Divider from '$lib/components/Divider.svelte'
   import { name } from '$lib/info.js'
 
-  export let recentPosts
+  // export let recentPosts
 </script>
 
 <svelte:head>
   <title>{name}</title>
+  <meta name="description" content="Page description of rakit.id">
 </svelte:head>
 
-<div  class="flex flex-col flex-grow">
-  <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 mt-6">
-    {#each recentPosts as post}
-      <div class="flex p-4 border border-slate-300 dark:border-slate-700 rounded-lg">
-        <PostPreview {post} small />
-      </div>
-    {/each}
-  </div>
+<div class="flex flex-col flex-grow">
+  <Hero />
+  <Divider />
+  <FeatureGrid />
 </div>
-
-<!-- <style>
-  .border-half:after {
-    margin: auto;
-    /* margin-top: -35px; */
-    content: '';
-    position: absolute;
-    right: 0;
-    left: 0;
-    height: 5px;
-    width: 50%; /* or 100px */
-    border-bottom: 1px dashed rgb(203 213 225);
-  }
-</style> -->
