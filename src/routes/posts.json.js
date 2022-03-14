@@ -10,8 +10,9 @@ import { getPosts } from '$lib/get-posts'
 export async function get({ url: { searchParams } }) {
   const limit = searchParams.get('limit') ? parseInt(searchParams.get('limit')) : undefined
   const page = searchParams.get('page') ? parseInt(searchParams.get('page')) : undefined
+  const tag = searchParams.get('tag') ? searchParams.get('tag') : undefined
 
   return {
-    body: JSON.stringify(getPosts({ limit, page }))
+    body: JSON.stringify(getPosts({ limit, page, tag }))
   }
 }

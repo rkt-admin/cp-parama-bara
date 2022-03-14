@@ -16,9 +16,18 @@ if (browser) {
  *
  * For getting posts from the client, fetch from the /posts.json endpoint instead
  */
-export function getPosts({ page = 1, limit = 10 } = {}) {
+export function getPosts({ page = 1, limit = 10, tag = '' } = {}) {
   if (limit) {
-    return posts.slice((page - 1) * limit, page * limit)
+    return tag == ''
+      ? posts.slice((page - 1) * limit, page * limit)
+      : posts
+          .filter((post) => {
+            return post.tags.find((object) => {
+              // console.log(object)
+              return object === tag
+            })
+          })
+          .slice((page - 1) * limit, page * limit)
   }
 
   return posts
@@ -39,7 +48,7 @@ const posts = Object.entries(import.meta.globEager('/posts/**/*.md'))
       // whether or not this file is `my-post.md` or `my-post/index.md`
       // (needed to do correct dynamic import in posts/[slug].svelte)
       isIndexFile: filepath.endsWith('/index.md'),
-
+      tags: post.metadata.tags,
       // format date as yyyy-MM-dd
       date: post.metadata.date
         ? format(
@@ -59,28 +68,33 @@ const posts = Object.entries(import.meta.globEager('/posts/**/*.md'))
     const parsedHtml = parse(post.component.render().html)
 
     // Use the custom preview in the metadata, if availabe, or the first paragraph of the post for the preview
-    const preview = post.customPreview? post.customPreview : parsedHtml.querySelector('p')
+    const preview = post.customPreview ? post.customPreview : parsedHtml.querySelector('p')
 
     return {
       ...post,
-      preview: {
-        html: preview.toString(),
-        // text-only preview (i.e no html elements), used for SEO
-        text: preview.structuredText
-      },
+      // preview: {
+      //   html: preview.toString(),
+      //   // text-only preview (i.e no html elements), used for SEO
+      //   text: preview.structuredText
+      // },
 
       // get estimated reading time for the post
-      readingTime: readingTime(parsedHtml.structuredText).text
+      // readingTime: readingTime(parsedHtml.structuredText).text
     }
   })
   // sort by date
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   // add references to the next/previous post
-  .map((post, index, allPosts) => ({
-    ...post,
-    next: allPosts[index - 1],
-    previous: allPosts[index + 1]
+  .map((post) => ({
+    ...post
+    // next: allPosts[index - 1],
+    // previous: allPosts[index + 1]
   }))
+// .map((post, index, allPosts) => ({
+//   ...post,
+//   next: allPosts[index - 1],
+//   previous: allPosts[index + 1]
+// }))
 
 function addTimezoneOffset(date) {
   const offsetInMilliseconds = new Date().getTimezoneOffset() * 60 * 1000
