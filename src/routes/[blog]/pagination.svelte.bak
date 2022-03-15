@@ -6,12 +6,20 @@
   export let isFirstPage
   export let hasNextPage
   export let page
+  export let tag
+
+  let linkURL = '/blog/'
+  if (tag != '') {
+    linkURL += 'tag/' + tag + '/'
+  }
+
+  console.log('tag: ' + tag);
 </script>
 
 <!-- begin pagination -->
 <div class="flex visible items-center justify-between pt-8 opacity-70">
   {#if !isFirstPage}
-    <ButtonLink raised={false} href={`/blog/page/${page - 1}`}>
+    <ButtonLink raised={false} href={`${linkURL}page/${page - 1}`}>
       <slot slot="icon-start">
         <ArrowLeftIcon class="h-5 w-5" />
       </slot>
@@ -23,13 +31,12 @@
   {/if}
 
   {#if hasNextPage}
-  <ButtonLink raised={false} href={`/blog/page/${page + 1}`}>    
-    
-    <slot slot="icon-start">
-      Next <ArrowRightIcon class="h-5 w-5" />
-    </slot>    
-    <slot slot="icon-end" /></ButtonLink
-  >
+    <ButtonLink raised={false} href={`${linkURL}page/${page + 1}`}>
+      <slot slot="icon-start">
+        Next <ArrowRightIcon class="h-5 w-5" />
+      </slot>
+      <slot slot="icon-end" /></ButtonLink
+    >
   {/if}
   <!-- end pagination -->
 </div>

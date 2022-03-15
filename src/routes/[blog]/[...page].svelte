@@ -5,12 +5,10 @@
    * @type {import("@sveltejs/kit").Load}
    */
   export const load = async ({ fetch, params }) => {
-    //set default value
     let page = 1
     let limit = 2
     let tag = ''
 
-    console.log('#debug: ', params.page.split('/'))
     let pr = params.page.toLowerCase().trim().split('/')
 
     const fetchPostsParams = new URLSearchParams()
@@ -35,7 +33,7 @@
           }
           break
         case 4:
-          switch (pr[0].toString() +'-'+ pr[2].toString()) {
+          switch (pr[0].toString() + '-' + pr[2].toString()) {
             case 'tag-page':
               tag = pr[1].toString()
               page = parseInt(pr[3].toString())
@@ -57,7 +55,7 @@
 
       fetchPostsParams.set('limit', limit.toString())
 
-      console.log(`/posts.json?${fetchPostsParams.toString()}`)
+      // console.log(`/posts.json?${fetchPostsParams.toString()}`)
     } catch (e) {
       console.error(e)
     }
@@ -78,26 +76,78 @@
       props: {
         posts,
         page,
-        limit
+        limit,
+        tag
       }
     }
   }
 </script>
 
 <script>
-  import Pagination from './pagination.svelte'
+  import ArrowRightIcon from '$lib/components/ArrowRightIcon.svelte'
+  import ArrowLeftIcon from '$lib/components/ArrowLeftIcon.svelte'
+  import ButtonLink from '$lib/components/ButtonLink.svelte'
+  import { format, parseISO } from 'date-fns'
   import PostPreview from '$lib/components/PostPreview.svelte'
   import { name } from '$lib/info.js'
 
   export let posts
-  export let page
+  export let page = 1
+  export let tag
+  export let limit = 0
+  let pageUrl = '/blog/'
+  let hasNextPage = false  
 
+  $: {
+    if (tag !== '') {
+      if (page > 1) {
+        pageUrl = '/blog/tag/' + tag
+      } else {
+        if (posts[posts.length - 1]?.next) {
+          hasNextPage = true
+          pageUrl = '/blog/tag/' + tag + '/page/'
+        } else {
+          hasNextPage = false
+          pageUrl = '/blog/tag/' + tag + '/page/'
+        }
+      }
+    } else {
+      if (page > 1) {
+        pageUrl = '/blog/'
+      } else {
+        console.log(posts[0])
+        if (posts[posts.length - 1].next) {
+          hasNextPage = true
+          pageUrl = '/blog/page/'
+        } else {
+          hasNextPage = false
+          pageUrl = '/blog/page/'
+        }
+      }
+    }
+
+    // pageUrl = pageUrl
+    // hasNextPage = hasNextPage
+
+    console.log('page:' + page + ', tag:' + tag + ', limit: ' + limit + ', posts:' + posts.length + ', hasNextPage: ' + hasNextPage)
+  }
+
+  // $: pageUrl = pageUrl
   $: isFirstPage = page === 1
-  $: hasNextPage = posts[posts.length - 1]?.previous
+  // $: {
+  //   hasNextPage = posts[posts.length - 1]?.previous
+  // }
 
   function formatTags(tags) {
     return tags
-      .map((tag) => '<a class="no-underline" href="/blog/tag/' + tag + '">#' + tag + '</a>')
+      .map(
+        (tag) =>
+          '<a style="text-decoration: none" class="hover:text-sky-500" href="/blog/tag/' +
+          tag +
+          '">#' +
+          tag +
+          '</a>'
+      )
       .join(', ')
   }
 </script>
@@ -113,8 +163,11 @@
         {#each posts as post}
           <div class="py-8 flex flex-wrap md:flex-nowrap">
             <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-              <span class="font-semibold no-underline">{@html formatTags(post.tags)}</span>
-              <span class="text-sm text-gray-500">12 Jun 2019</span>
+              <span>{@html formatTags(post.tags)}</span>
+              <span class="text-base text-gray-500"
+                >{format(new Date(parseISO(post.date)), 'MMMM d, yyyy')}</span
+              >
+              <span class="text-base text-gray-500">{post.readingTime}</span>
             </div>
             <div class="md:flex-grow">
               <PostPreview {post} small />
@@ -124,5 +177,28 @@
       </div>
     </div>
   </section>
-  <Pagination {isFirstPage} {hasNextPage} {page} />
+  <!-- begin pagination -->
+  <div class="flex visible items-center justify-between pt-8 opacity-70">
+    {#if !isFirstPage}
+      <ButtonLink raised={false} href={`${pageUrl}${page - 1 == 1 ? '' : page - 1}`}>
+        <slot slot="icon-start">
+          <ArrowLeftIcon class="h-5 w-5" />
+        </slot>
+        Previous
+        <slot slot="icon-end" /></ButtonLink
+      >
+    {:else}
+      <div />
+    {/if}
+
+    {#if hasNextPage}
+      <ButtonLink raised={false} href={`${pageUrl}${page + 1}`}>
+        <slot slot="icon-start">
+          Next <ArrowRightIcon class="h-5 w-5" />
+        </slot>
+        <slot slot="icon-end" /></ButtonLink
+      >
+    {/if}
+    <!-- end pagination -->
+  </div>
 </div>
