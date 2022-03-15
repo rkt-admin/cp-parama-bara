@@ -103,40 +103,30 @@
       if (page > 1) {
         pageUrl = '/blog/tag/' + tag
       } else {
+        pageUrl = '/blog/tag/' + tag + '/page/'
         if (posts[posts.length - 1]?.next) {
           hasNextPage = true
-          pageUrl = '/blog/tag/' + tag + '/page/'
         } else {
           hasNextPage = false
-          pageUrl = '/blog/tag/' + tag + '/page/'
         }
       }
     } else {
       if (page > 1) {
         pageUrl = '/blog/'
       } else {
-        console.log(posts[0])
+        pageUrl = '/blog/page/'
         if (posts[posts.length - 1].next) {
-          hasNextPage = true
-          pageUrl = '/blog/page/'
+          hasNextPage = true          
         } else {
           hasNextPage = false
-          pageUrl = '/blog/page/'
         }
       }
     }
 
-    // pageUrl = pageUrl
-    // hasNextPage = hasNextPage
-
     console.log('page:' + page + ', tag:' + tag + ', limit: ' + limit + ', posts:' + posts.length + ', hasNextPage: ' + hasNextPage)
   }
 
-  // $: pageUrl = pageUrl
   $: isFirstPage = page === 1
-  // $: {
-  //   hasNextPage = posts[posts.length - 1]?.previous
-  // }
 
   function formatTags(tags) {
     return tags

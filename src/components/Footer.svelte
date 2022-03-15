@@ -4,7 +4,7 @@
   import Logo from '../components/Logo.svelte'
 </script>
 
-<footer class="mx-auto flex flex-col flex-grow w-full max-w-5xl mt-10 p-5 pt-10">
+<footer class="mx-auto flex flex-col flex-grow w-full max-w-4xl mt-10 pt-10">
   <div class="md:flex md:justify-between">
     <div class="grid grid-cols-5 gap-12 md:grid-cols-5">
       <div class="">
