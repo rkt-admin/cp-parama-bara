@@ -10,7 +10,6 @@
     let tag = ''
 
     let pr = params.page.toLowerCase().trim().split('/')
-
     const fetchPostsParams = new URLSearchParams()
 
     try {
@@ -60,9 +59,11 @@
       console.error(e)
     }
 
-    const posts = await fetch(`/posts.json?${fetchPostsParams.toString()}`).then((res) =>
+    const posts = await fetch(`/api/posts?${fetchPostsParams.toString()}`).then((res) =>
       res.json()
     )
+
+    // console.log(posts)
 
     // if page doesn't exist, direct to page 1
     if (posts.length == 0 && page > 1) {
@@ -89,41 +90,62 @@
   import ButtonLink from '$lib/components/ButtonLink.svelte'
   import { format, parseISO } from 'date-fns'
   import PostPreview from '$lib/components/PostPreview.svelte'
-  import { name } from '$lib/info.js'
+  import { name } from '$lib/.info.js'
 
   export let posts
   export let page = 1
   export let tag
   export let limit = 0
   let pageUrl = '/blog/'
-  let hasNextPage = false  
+  let hasNextPage = false
+
+  function setNextPage(flag, condition) {
+    // console.log('flag: ' + condition)
+    if (condition) {
+      hasNextPage = true
+    } else {
+      hasNextPage = false
+    }
+    // console.log('hasNextPage: ' + hasNextPage)
+  }
 
   $: {
-    if (tag !== '') {
-      if (page > 1) {
-        pageUrl = '/blog/tag/' + tag
-      } else {
-        pageUrl = '/blog/tag/' + tag + '/page/'
-        if (posts[posts.length - 1]?.next) {
-          hasNextPage = true
+    if (posts.length > 0)
+      if (tag !== '') {
+        if (page > 1) {
+          pageUrl = '/blog/tag/' + tag
+          setNextPage(1, limit * page < posts[0].TotalFilteredPost)
         } else {
-          hasNextPage = false
+          pageUrl = '/blog/tag/' + tag + '/page/'
+          // console.log(posts.length, limit)
+          if(posts[0].TotalFilteredPost <= limit){
+            hasNextPage = false
+          }else{
+            setNextPage(2, limit * page < posts[0].TotalFilteredPost)
+          }
+        }
+      } else {
+        if (page > 1) {
+          pageUrl = '/blog/'
+          setNextPage(3, limit * page < posts[0].TotalFilteredPost)
+        } else {
+          pageUrl = '/blog/page/'          
+          setNextPage(4, limit * page < posts[0].TotalFilteredPost)
         }
       }
-    } else {
-      if (page > 1) {
-        pageUrl = '/blog/'
-      } else {
-        pageUrl = '/blog/page/'
-        if (posts[posts.length - 1].next) {
-          hasNextPage = true          
-        } else {
-          hasNextPage = false
-        }
-      }
-    }
 
-    console.log('page:' + page + ', tag:' + tag + ', limit: ' + limit + ', posts:' + posts.length + ', hasNextPage: ' + hasNextPage)
+    // console.log(
+    //   'tag:' +
+    //     tag +
+    //     ', page:' +
+    //     page +
+    //     ', limit: ' +
+    //     limit +
+    //     ', posts:' +
+    //     posts.length +
+    //     ', TotalPost: ' +
+    //     posts[0].TotalPost
+    // )
   }
 
   $: isFirstPage = page === 1
@@ -147,17 +169,15 @@
 </svelte:head>
 
 <div class="mx-auto flex flex-col flex-grow w-full max-w-4xl">
-  <section class="text-gray-600">
+  <section>
     <div class="container px-5 py-24 mx-auto">
-      <div class="-my-8 divide-y-2 divide-gray-100">
+      <div class="-my-8">
         {#each posts as post}
           <div class="py-8 flex flex-wrap md:flex-nowrap">
-            <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-              <span>{@html formatTags(post.tags)}</span>
-              <span class="text-base text-gray-500"
-                >{format(new Date(parseISO(post.date)), 'MMMM d, yyyy')}</span
-              >
-              <span class="text-base text-gray-500">{post.readingTime}</span>
+            <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col pt-10">
+              <span class="text-base">{format(new Date(parseISO(post.date)), 'MMMM d, yyyy')}</span>
+              <span class="text-base">{post.readingTime}</span>
+              <span class="text-1xl" style="max-width: 12em">{@html formatTags(post.tags)}</span>
             </div>
             <div class="md:flex-grow">
               <PostPreview {post} small />
@@ -170,11 +190,15 @@
   <!-- begin pagination -->
   <div class="flex visible items-center justify-between pt-8 opacity-70">
     {#if !isFirstPage}
-      <ButtonLink raised={false} href={`${pageUrl}${page - 1 == 1 ? '' : page - 1}`}>
+      <ButtonLink
+        raised={false}
+        href={`${pageUrl}${page - 1 == 1 ? '' : page - 1}`}
+        class="hover:text-sky-600"
+      >
         <slot slot="icon-start">
           <ArrowLeftIcon class="h-5 w-5" />
         </slot>
-        Previous
+        PREVIOUS
         <slot slot="icon-end" /></ButtonLink
       >
     {:else}
@@ -182,9 +206,14 @@
     {/if}
 
     {#if hasNextPage}
-      <ButtonLink raised={false} href={`${pageUrl}${page + 1}`}>
+      <ButtonLink
+        raised={false}
+        href={`${pageUrl}${page + 1}`}
+        size="large"
+        class="hover:text-sky-600"
+      >
         <slot slot="icon-start">
-          Next <ArrowRightIcon class="h-5 w-5" />
+          NEXT <ArrowRightIcon class="h-5 w-5" />
         </slot>
         <slot slot="icon-end" /></ButtonLink
       >

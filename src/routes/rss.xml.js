@@ -3,7 +3,7 @@
 // credit: https://scottspence.com/posts/make-an-rss-feed-with-sveltekit#add-posts-for-the-rss-feed
 
 import { getPosts } from '$lib/get-posts'
-import { name, website } from '$lib/info'
+import { name, website } from '$lib/.info'
 
 // update this to something more appropriate for your website
 const websiteDescription = `${name}'s blog`

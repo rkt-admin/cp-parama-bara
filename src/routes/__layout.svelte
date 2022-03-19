@@ -6,7 +6,7 @@
   import SunIcon from 'heroicons-svelte/solid/SunIcon.svelte'
   import Logo from '../components/Logo.svelte'
   import { browser } from '$app/env'
-  import { name, website } from '$lib/info'
+  import { name, website } from '$lib/.info'
   import Footer from '../components/Footer.svelte'
   import { onMount } from 'svelte'
   import Divider from '$lib/components/Divider.svelte'

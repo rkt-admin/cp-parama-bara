@@ -81,7 +81,7 @@
   <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
   <div class="sm:flex sm:items-center sm:justify-between mb-4 ">
     <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
-      >© 2022 <a href={website}>{name}</a> ~ All Rights Reserved.
+      >© 2022 <a href={website}>Rakit.id</a> by Rakit Media Group, All Rights Reserved.
     </span>
     <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
       <!-- svelte-ignore a11y-invalid-attribute -->

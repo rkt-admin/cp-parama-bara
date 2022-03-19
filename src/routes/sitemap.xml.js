@@ -3,7 +3,7 @@
 // It is OK to delete this file if you'd rather not bother with it.
 
 import { getPosts } from '$lib/get-posts'
-import { website } from '$lib/info'
+import { website } from '$lib/.info'
 
 const postsUrl = `${website}/posts`
 
