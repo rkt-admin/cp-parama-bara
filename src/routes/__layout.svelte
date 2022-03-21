@@ -10,7 +10,7 @@
   import SunIcon from 'heroicons-svelte/solid/SunIcon.svelte'
   import Logo from '../components/Logo.svelte'
   import { browser } from '$app/env'
-  import { name, website } from '$lib/.info'
+  import { name, website } from './api/info'
   import Footer from '../components/Footer.svelte'
   import { onMount } from 'svelte'
   import Divider from '$lib/components/Divider.svelte'
@@ -113,7 +113,7 @@
   </div>
 </div>
 <Divider />
-<Footer {website} {name} />
+<Footer />
 <style lang="postcss">
   /* :global(.dark) .menu-active {
     @apply bg-slate-700 bg-gradient-to-br from-slate-800 to-slate-800;

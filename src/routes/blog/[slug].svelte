@@ -34,7 +34,7 @@
   import { format, parseISO } from 'date-fns'
   import { page } from '$app/stores'
   import ButtonLink from '$lib/components/ButtonLink.svelte'
-  import { website, name } from '$lib/.info'
+  import { website, name } from '../api/info'
   // import ToC from '$lib/components/ToC.svelte'
   import PostPreview from '$lib/components/PostPreview.svelte'
   import ArrowLeftIcon from '$lib/components/ArrowLeftIcon.svelte'

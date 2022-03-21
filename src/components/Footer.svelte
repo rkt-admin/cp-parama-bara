@@ -1,6 +1,5 @@
 <script>
-  export let website
-  export let name
+  import {name, website} from '../routes/api/info'
   import Logo from '../components/Logo.svelte'
 </script>
 
@@ -34,15 +33,15 @@
       <ul>
         <li class="mb-3">
           <!-- svelte-ignore a11y-invalid-attribute -->
-          <a href="#">Discord Server</a>
+          <a href="/">Discord Server</a>
         </li>
         <li class="mb-3">
           <!-- svelte-ignore a11y-invalid-attribute -->
-          <a href="#">Twitter</a>
+          <a href="/">Twitter</a>
         </li>
         <li class="mb-3">
           <!-- svelte-ignore a11y-invalid-attribute -->
-          <a href="#">Facebook </a>
+          <a href="/">Facebook </a>
         </li>
         <li class="mb-3">
           <!-- svelte-ignore a11y-invalid-attribute -->
@@ -54,21 +53,21 @@
       <h2>Download</h2>
       <ul>
         <li class="mb-3">
-          <a href="#">iOS</a>
+          <a href="/">iOS</a>
         </li>
         <li class="mb-3">
-          <a href="#">Android</a>
+          <a href="/">Android</a>
         </li>
         <li class="mb-3">
-          <a href="#">Windows</a>
+          <a href="/">Windows</a>
         </li>
         <li class="mb-3">
-          <a href="#">MacOS</a>
+          <a href="/">MacOS</a>
         </li>
       </ul>
     </div>
     <div class="">
-      <Logo />
+      <Logo {name} />
     </div>
   </div>
   <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
@@ -86,7 +85,7 @@
         <i class="fa-brands fa-instagram  text-lg"></i>
       </a>
       <!-- svelte-ignore a11y-invalid-attribute -->
-      <!-- <a href="#" class="text-gray-500">
+      <!-- <a href="/" class="text-gray-500">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
           ><path
             d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
@@ -94,7 +93,7 @@
         >
       </a> -->
       <!-- svelte-ignore a11y-invalid-attribute -->
-      <!-- <a href="#" class="text-gray-500">
+      <!-- <a href="/" class="text-gray-500">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
           ><path
             fill-rule="evenodd"
@@ -104,7 +103,7 @@
         >
       </a> -->
       <!-- svelte-ignore a11y-invalid-attribute -->
-      <!-- <a href="#" class="text-gray-500">
+      <!-- <a href="/" class="text-gray-500">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
           ><path
             fill-rule="evenodd"

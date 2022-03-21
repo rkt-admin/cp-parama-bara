@@ -6,7 +6,7 @@
   import Hero from '$lib/components/Hero.svelte'
   import FeatureGrid from '$lib/components/FeatureGrid.svelte'
   // import Divider from '$lib/components/Divider.svelte'
-  import { name } from '$lib/.info.js'
+  import { name } from '../routes/api/info'
 
   // export let recentPosts
 </script>

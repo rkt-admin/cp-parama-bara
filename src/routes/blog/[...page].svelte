@@ -90,7 +90,7 @@
   import ButtonLink from '$lib/components/ButtonLink.svelte'
   import { format, parseISO } from 'date-fns'
   import PostPreview from '$lib/components/PostPreview.svelte'
-  import { name } from '$lib/.info.js'
+  import { name } from '../api/info'
 
   export let posts
   export let page = 1
