@@ -1,7 +1,7 @@
 
 <section id="services">
   <div class="container mx-auto">
-    <div class="py-20">
+    <div>
       <h1 class="title-font text-center text-gray-900 mb-10 title-font font-medium">
         Our services
       </h1>

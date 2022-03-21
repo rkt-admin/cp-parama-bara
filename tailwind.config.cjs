@@ -1,6 +1,12 @@
 module.exports = {
   darkMode: 'class',
   content: ['./src/**/*.{html,js,svelte,ts,md,svx}'],
+  variants: {
+    backgroundColor: ['responsive', 'hover', 'focus'],
+    // extend: {
+    //   padding: ['hover'],
+    // }
+  },
   theme: {
     extend: {
       typography: ({ theme }) => {
@@ -48,8 +54,8 @@ module.exports = {
               'h1,h2,h3,h4,h5,h6': {
                 a: {
                   color: 'inherit',
-                  textDecoration: 'none'
-                }
+                  textDecoration: 'none',                                                   
+                },
               }
             }
           },

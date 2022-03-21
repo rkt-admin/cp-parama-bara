@@ -1,5 +1,5 @@
-<div class="px-4 py-10  md:px-24 lg:px-8">
-  <div class="lg:text-center">
+<div class="px-3 py-20 md:px-24 lg:px-8 bg-slate-50 dark:bg-slate-800">
+  <div class="lg:text-center mx-auto max-w-3xl">
     <h2
       class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto"
     >
@@ -34,8 +34,8 @@
     </p>
   </div>
 
-  <div class="mt-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-5xl">
-    <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+  <div class="mt-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-4xl">
+    <dl class="space-y-10 md:space-y-2 md:grid md:grid-cols-2 md:gap-x-10 md:gap-y-12">
       <div class="relative">
         <dt>
           <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-slate-300 dark:bg-slate-500">

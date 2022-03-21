@@ -27,16 +27,34 @@ button {
   @apply focus;
 }
 
-a {
-  @apply rounded-sm;
-  @apply focus;
-} */
+*/
 
 svg {
   @apply outline-none focus:outline-none;
 }
-html, body {
-    scroll-padding-top: 100px;
+html,
+body {
+  scroll-padding-top: 100px;
 }
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  a {
+    @apply hover:text-sky-500;
+  }  
+  .fa-solid {
+    padding-top: 4px;
+  }  
+}
+
+@layer components {
+  a {
+    @apply hover:text-sky-500;
+  }  
+
+  h3 > a {
+    @apply hover:text-sky-500;
+  }  
+}
+

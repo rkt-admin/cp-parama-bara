@@ -3,18 +3,14 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#00aba9">
-  <meta name="theme-color" content="#ffffff"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />  
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" href="/favicon.png">
-  %svelte.head%
+  %svelte.head%  
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V5K5EECM62"></script>
+  <meta name="google-signin-client_id" content="1084908729896-9heh1hn3bqp3e3ibeip70l2ds6vqahhj.apps.googleusercontent.com">
+  <!--load all Font Awesome styles -->
+  <link href="../static/fa/css/all.css" rel="stylesheet">
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
@@ -35,14 +31,15 @@
   </script>
 </head>
 
-<body class="relative transition-colors duration-100 bg-slate-100 dark:bg-slate-900">
+<body class="relative transition-colors duration-100 bg-white dark:bg-slate-900">
   <div class="fixed inset-0 -z-50"></div>
   <div id="svelte" class="z-0">%svelte.body%</div>
 
   <!-- this fixes a bug in chrome where animations trigger from unstyled to styled content on page load -->
   <!-- https://stackoverflow.com/a/42969257/6342734 -->
   <!-- prettier-ignore -->
-  <script> </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V5K5EECM62"></script>
+  
 </body>
 
 </html>

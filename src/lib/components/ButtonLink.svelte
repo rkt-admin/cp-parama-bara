@@ -29,7 +29,7 @@
         <slot />
       </span>
       {#if arrows}
-        <ArrowRightIcon class="h-5 w-5" />
+      <i class="fa-solid fa-chevron-right"></i>
       {/if}
     </div>
   </a>

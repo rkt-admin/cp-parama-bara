@@ -154,13 +154,13 @@
     return tags
       .map(
         (tag) =>
-          '<a style="text-decoration: none" class="hover:text-sky-500" href="/blog/tag/' +
+          '<a style="text-decoration: none"  href="/blog/tag/' +
           tag +
           '">#' +
           tag +
           '</a>'
       )
-      .join(', ')
+      .join(' ')
   }
 </script>
 

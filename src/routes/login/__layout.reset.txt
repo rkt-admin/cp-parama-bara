@@ -1,0 +1,41 @@
+<script context="module">
+  export const prerender = false
+</script>
+
+<script>
+  import '../../app.css'
+  import { onMount } from 'svelte'
+  // import Divider from '$lib/components/Divider.svelte'
+
+  let yScreen
+  // Show mobile icon and display menu
+  let showMobileMenu = false
+  // let navActive = '/'
+
+
+  // Media match query handler
+  const mediaQueryHandler = (e) => {
+    // Reset mobile state
+    if (!e.matches) {
+      showMobileMenu = false
+    }
+  }
+
+  // Attach media query listener on mount hook
+  onMount(() => {
+    const mediaListener = window.matchMedia('(max-width: 767px)')
+    mediaListener.addListener(mediaQueryHandler)
+  })
+
+</script>
+
+<svelte:window bind:scrollY={yScreen} />
+<div class="flex flex-col min-h-screen">  
+  <div class="mx-auto flex flex-col w-full">
+    <main
+      class="prose prose-slate prose-sm sm:prose sm:prose-slate sm:prose-lg sm:max-w-none dark:prose-invert flex flex-col w-full flex-grow"
+    >
+      <slot />
+    </main>
+  </div>
+</div>

@@ -1,6 +1,10 @@
+<script context="module">
+  export const prerender = false
+</script>
+
 <script>
   import '../app.css'
-  import '../prism.css'
+  // import '../prism.css'
   import 'focus-visible'
   import MoonIcon from 'heroicons-svelte/solid/MoonIcon.svelte'
   import SunIcon from 'heroicons-svelte/solid/SunIcon.svelte'
@@ -20,10 +24,9 @@
   // List of navigation items
   const navItems = [
     { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
-    { label: 'Blog', href: '/blog' },
     { label: 'Services', href: '/services' },
-    { label: 'Contact', href: '/contact' }
+    { label: 'Contact us', href: '/contact-us' },
+    { label: 'Login', href: '/login' }
   ]
 
   // Mobile menu click event handler
@@ -54,28 +57,24 @@
 </script>
 
 <svelte:window bind:scrollY={yScreen} />
-<div class="flex flex-col min-h-screen">
-  <div class="mx-auto flex flex-col w-full max-w-5xl">
+<div class="flex flex-col min-h-full">
+  <div class="mx-auto py-8 flex flex-col w-full max-w-3xl">    
     <div
-      class="bg-slate-100 dark:bg-slate-900 flex h-16 px-4 py-2 justify-between items-center mb-0 z-50 sticky top-0 backdrop-blur-md bg-slate-100/30 {navOverScroll ===
-      true
-        ? ' shadow max-w-full'
-        : ''}"
+      class="flex h-16 px-4 justify-between items-center mb-0 z-50"
     >
-      <Logo {website} {name} />
+    {#if browser}
+      <Logo />      
       <nav>
         <div class="inner">
           <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
             {#each navItems as item}
               <li>
-                <a href={item.href} class="text-slate-500">{item.label}</a>
+                <a href={item.href} class="text-slate-600">{item.label}</a>
               </li>
             {/each}
           </ul>
         </div>
-      </nav>
-
-      <!-- {#if browser} -->
+      </nav>      
       <button
         type="button"
         role="switch"
@@ -102,12 +101,12 @@
       <div on:click={handleMobileIconClick} class={`mobile-icon${showMobileMenu ? ' active' : ''}`}>
         <div class="middle-line" />
       </div>
-      <!-- {/if} -->
+      {/if}
     </div>
   </div>
-  <div class="mx-auto flex flex-col w-full max-w-5xl">
+  <div class="mx-auto flex flex-col w-full">
     <main
-      class="prose prose-slate prose-sm sm:prose sm:prose-slate sm:prose-lg sm:max-w-none dark:prose-invert flex flex-col w-full flex-grow py-4 px-4"
+      class="prose prose-slate prose-sm sm:prose sm:prose-slate sm:prose-lg sm:max-w-none dark:prose-invert flex flex-col w-full flex-grow"
     >
       <slot />
     </main>
@@ -115,22 +114,11 @@
 </div>
 <Divider />
 <Footer {website} {name} />
-
 <style lang="postcss">
   /* :global(.dark) .menu-active {
     @apply bg-slate-700 bg-gradient-to-br from-slate-800 to-slate-800;
   } */
-  .shadow {
-    box-shadow: 0px 8px 7px -10px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 0px 8px 7px -10px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 8px 7px -10px rgba(0, 0, 0, 0.75);
-  }
-  nav {
-    /* background-color: rgba(0, 0, 0, 0.8); */
-    /* font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; */
-    height: 45px;
-  }
-
+  
   .inner {
     max-width: 980px;
     padding-left: 20px;
@@ -243,11 +231,11 @@
     height: 45px;
     align-items: center;
     padding: 0;
-    @apply mb-2 uppercase text-base font-medium;
+    @apply mb-2 uppercase font-medium;
   }
 
   .active {
-    @apply bg-slate-200 text-base font-medium rounded-2xl;
+    @apply bg-slate-200 text-base rounded-2xl;
   }
 
   .navbar-list a:hover,

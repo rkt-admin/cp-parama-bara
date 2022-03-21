@@ -6,7 +6,7 @@
     const { slug } = params
 
     // fetch posts from endpoint so that it includes all metadata (see posts.json.js for explanation)
-    const posts = await fetch('/posts.json').then((res) => res.json())
+    const posts = await fetch('/api/posts').then((res) => res.json())
     const post = posts.find((post) => slug === post.slug)
 
     if (!post) {
@@ -34,7 +34,7 @@
   import { format, parseISO } from 'date-fns'
   import { page } from '$app/stores'
   import ButtonLink from '$lib/components/ButtonLink.svelte'
-  import {website, name } from '$lib/.info'
+  import { website, name } from '$lib/.info'
   // import ToC from '$lib/components/ToC.svelte'
   import PostPreview from '$lib/components/PostPreview.svelte'
   import ArrowLeftIcon from '$lib/components/ArrowLeftIcon.svelte'
@@ -69,7 +69,7 @@
           tag +
           '</a>'
       )
-      .join(', ')
+      .join(' ')
   }
 </script>
 
@@ -108,7 +108,7 @@
     <span>{readingTime}</span>
   </div>
   <div class="text-center">
-    <span>{@html formatTags(tags)}</span>    
+    <span>{@html formatTags(tags)}</span>
   </div>
   <Divider />
   <div class="min-w-full items-center">
@@ -125,7 +125,7 @@
   <div class="pt-12 flex justify-between">
     <ButtonLink href={`/blog`}>
       <slot slot="icon-start">
-        <ArrowLeftIcon class="h-5 w-5" />
+        <i class="fa-solid fa-chevron-left"></i>
       </slot>
       Back to Posts
       <slot slot="icon-end" />
@@ -135,7 +135,7 @@
 <Divider />
 <!-- next/previous posts -->
 {#if previous || next}
-  <div class="grid gap-8 grid-cols-1 sm:grid-cols-2">
+  <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 mx-auto relative max-w-3xl">
     {#if previous}
       <div class="flex flex-col">
         <h6 class="not-prose post-preview-label">Previous Post</h6>

@@ -28,7 +28,7 @@ const config = {
     // you don't want prerendering, remove this section
     prerender: {
       entries: ['*', '/sitemap.xml', '/rss.xml']
-    },
+    },    
 
     vite: {
       // allows vite access to ./posts

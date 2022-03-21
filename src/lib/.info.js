@@ -11,7 +11,7 @@ export const name = 'Rakit.id' // replace with your name
 /**
  * Used for SEO in /posts/[slug]
  */
-let url = 'http://localhost:3000/'
+let url = 'http://localhost'
 if(!dev){
     url = 'https://rakit.id'
 }

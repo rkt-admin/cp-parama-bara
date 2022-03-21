@@ -1,5 +1,5 @@
 <script>
-  import { format, parseISO } from 'date-fns'
+  // import { format, parseISO } from 'date-fns'
   import ButtonLink from './ButtonLink.svelte'
 
   export let post
@@ -9,11 +9,11 @@
 <div class="flex flex-col">
   <div>
     {#if !small}
-      <h1 class="!mt-0 !mb-1 hover:text-sky-500">
+      <h1 class="!mt-0 !mb-1 ">
         <a href={`/blog/${post.slug}`}>{post.title}</a>
       </h1>
     {:else}
-      <h3 class="!mt-0 !mb-1 hover:text-sky-500">
+      <h3 class="!mt-0 !mb-1 ">
         <a href={`/blog/${post.slug}`}>{post.title}</a>
       </h3>
     {/if}
