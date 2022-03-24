@@ -1,30 +1,38 @@
-  <div class="px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-    <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-      <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-        <span class="relative inline-block">
-          <svg viewBox="0 0 52 24" fill="currentColor" class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-gray-400 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block">
-            <defs>
-              <pattern id="dc223fcc-6d72-4ebc-b4ef-abe121034d6e" x="0" y="0" width=".135" height=".30">
-                <circle cx="1" cy="1" r=".7"></circle>
-              </pattern>
-            </defs>
-            <rect fill="url(#dc223fcc-6d72-4ebc-b4ef-abe121034d6e)" width="52" height="24"></rect>
-          </svg>
-          <span class="relative">The</span>
-        </span>
-        quick, brown fox jumps over a lazy dog
-      </h2>
-      <p class="text-base md:text-lg">
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.
-      </p>
-    </div>
-    <div class="flex items-center sm:justify-center">
-      <button
-        type="submit"
-        class="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-slate-800 hover:text-white hover:bg-sky-500 dark:bg-slate-100 dark:text-slate-700 dark:hover:text-slate-100 dark:hover:bg-slate-700 focus:shadow-outline focus:outline-none"
-      >
-        Get started
-      </button>
-      <a href="/" aria-label="" class="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700">Learn more</a>
-    </div>
+<script>
+  import { t } from '$lib/i18n'
+</script>
+
+<div
+  class="px-4 pb-[4em] mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
+>
+  <div class="md:mb-12">
+    <h2
+      class="max-w-xl mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto"
+    >
+      {@html $t('hero.title')}
+    </h2>
+    <p class="max-w-xl text-lg md:text-xl  mx-auto leading-none tracking-tight">
+      {$t('hero.sub-title')}
+    </p>
   </div>
+  <div class="flex sm:justify-end">
+    <button
+      type="submit"
+      class="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-slate-800 hover:text-white hover:bg-sky-700 dark:bg-slate-100 dark:text-slate-700 dark:hover:text-slate-100 dark:hover:bg-slate-700 focus:shadow-outline focus:outline-none"
+    >
+      {$t('hero.button-action')}
+    </button>
+    <button
+      type="submit"
+      class="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-slate-800 hover:text-white hover:bg-sky-700 dark:bg-slate-100 dark:text-slate-700 dark:hover:text-slate-100 dark:hover:bg-slate-700 focus:shadow-outline focus:outline-none"
+    >
+    <i class="fa-brands fa-whatsapp  text-base"></i>&nbsp;WhatsApp
+    </button>
+    <!-- <a
+      href="/"
+      aria-label=""
+      class="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700"
+      >Learn more</a
+    > -->
+  </div>
+</div>

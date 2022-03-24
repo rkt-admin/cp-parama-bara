@@ -1,5 +1,5 @@
 <script>
-  import { name, website } from '../routes/api/info'
+  import { name, website } from '$lib/info'
 </script>
 
 <h2

@@ -77,9 +77,9 @@ export function getPosts({ page = 1, limit = 10, tag = '' } = {}) {
   let data
   if (limit) {
     if (tag == '') {
-      data = posts
+      data = posts        
+        .map((val, index, arr) => ({ ...val, TotalFilteredPost: arr.length }))
         .slice((page - 1) * limit, page * limit)
-        .map((obj) => ({ ...obj, TotalPost: posts.length }))
     } else {
       data = posts
         .filter((post) => {

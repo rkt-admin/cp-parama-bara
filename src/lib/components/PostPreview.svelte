@@ -30,7 +30,7 @@
         href="/blog/{post.slug}"
         size="medium"
         raised={false}
-        arrows={true}
+        arrowsRight={true}
         class="text-slate-600 hover:text-sky-500 font-bold">Read More</ButtonLink
       >
     </div>

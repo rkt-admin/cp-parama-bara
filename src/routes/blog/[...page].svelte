@@ -59,9 +59,7 @@
       console.error(e)
     }
 
-    const posts = await fetch(`/api/posts?${fetchPostsParams.toString()}`).then((res) =>
-      res.json()
-    )
+    const posts = await fetch(`/api/posts?${fetchPostsParams.toString()}`).then((res) => res.json())
 
     // console.log(posts)
 
@@ -90,7 +88,7 @@
   import ButtonLink from '$lib/components/ButtonLink.svelte'
   import { format, parseISO } from 'date-fns'
   import PostPreview from '$lib/components/PostPreview.svelte'
-  import { name } from '../api/info'
+  import { name } from '$lib/info'
 
   export let posts
   export let page = 1
@@ -100,13 +98,11 @@
   let hasNextPage = false
 
   function setNextPage(flag, condition) {
-    // console.log('flag: ' + condition)
     if (condition) {
       hasNextPage = true
     } else {
       hasNextPage = false
     }
-    // console.log('hasNextPage: ' + hasNextPage)
   }
 
   $: {
@@ -118,9 +114,9 @@
         } else {
           pageUrl = '/blog/tag/' + tag + '/page/'
           // console.log(posts.length, limit)
-          if(posts[0].TotalFilteredPost <= limit){
+          if (posts[0].TotalFilteredPost <= limit) {
             hasNextPage = false
-          }else{
+          } else {
             setNextPage(2, limit * page < posts[0].TotalFilteredPost)
           }
         }
@@ -129,23 +125,24 @@
           pageUrl = '/blog/'
           setNextPage(3, limit * page < posts[0].TotalFilteredPost)
         } else {
-          pageUrl = '/blog/page/'          
+          console.log(posts[0])
+          pageUrl = '/blog/page/'
           setNextPage(4, limit * page < posts[0].TotalFilteredPost)
         }
       }
 
-    // console.log(
-    //   'tag:' +
-    //     tag +
-    //     ', page:' +
-    //     page +
-    //     ', limit: ' +
-    //     limit +
-    //     ', posts:' +
-    //     posts.length +
-    //     ', TotalPost: ' +
-    //     posts[0].TotalPost
-    // )
+    console.log(
+      'tag:' +
+        tag +
+        ', page:' +
+        page +
+        ', limit: ' +
+        limit +
+        ', posts:' +
+        posts.length +
+        ', TotalFilteredPost: ' +
+        posts[0].TotalFilteredPost
+    )
   }
 
   $: isFirstPage = page === 1
@@ -153,12 +150,7 @@
   function formatTags(tags) {
     return tags
       .map(
-        (tag) =>
-          '<a style="text-decoration: none"  href="/blog/tag/' +
-          tag +
-          '">#' +
-          tag +
-          '</a>'
+        (tag) => '<a style="text-decoration: none"  href="/blog/tag/' + tag + '">#' + tag + '</a>'
       )
       .join(' ')
   }
@@ -169,37 +161,32 @@
 </svelte:head>
 
 <div class="mx-auto flex flex-col flex-grow w-full max-w-4xl">
-  <section>
-    <div class="container px-5 py-24 mx-auto">
-      <div class="-my-8">
-        {#each posts as post}
-          <div class="py-8 flex flex-wrap md:flex-nowrap">
-            <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col pt-10">
-              <span class="text-base">{format(new Date(parseISO(post.date)), 'MMMM d, yyyy')}</span>
-              <span class="text-base">{post.readingTime}</span>
-              <span class="text-1xl" style="max-width: 12em">{@html formatTags(post.tags)}</span>
-            </div>
-            <div class="md:flex-grow">
-              <PostPreview {post} small />
-            </div>
+  <div class="container px-5 py-24 mx-auto">
+    <div class="-my-8">
+      {#each posts as post}
+        <div class="py-8 flex flex-wrap md:flex-nowrap">
+          <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col pt-10">
+            <span class="text-base">{format(new Date(parseISO(post.date)), 'MMMM d, yyyy')}</span>
+            <span class="text-base">{post.readingTime}</span>
+            <span class="text-1xl" style="max-width: 12em">{@html formatTags(post.tags)}</span>
           </div>
-        {/each}
-      </div>
+          <div class="md:flex-grow">
+            <PostPreview {post} small />
+          </div>
+        </div>
+      {/each}
     </div>
-  </section>
+  </div>
   <!-- begin pagination -->
   <div class="flex visible items-center justify-between pt-8 opacity-70">
     {#if !isFirstPage}
       <ButtonLink
         raised={false}
         href={`${pageUrl}${page - 1 == 1 ? '' : page - 1}`}
+        arrowsLeft={true}
         class="hover:text-sky-600"
       >
-        <slot slot="icon-start">
-          <ArrowLeftIcon class="h-5 w-5" />
-        </slot>
-        PREVIOUS
-        <slot slot="icon-end" /></ButtonLink
+        Previous</ButtonLink
       >
     {:else}
       <div />
@@ -210,13 +197,11 @@
         raised={false}
         href={`${pageUrl}${page + 1}`}
         size="large"
+        arrowsRight={true}
         class="hover:text-sky-600"
       >
-        <slot slot="icon-start">
-          NEXT <ArrowRightIcon class="h-5 w-5" />
-        </slot>
-        <slot slot="icon-end" /></ButtonLink
-      >
+        Next
+      </ButtonLink>
     {/if}
     <!-- end pagination -->
   </div>

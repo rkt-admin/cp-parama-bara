@@ -2,6 +2,10 @@
   export const prerender = true
 </script>
 
+<script>
+  import { t, locale, locales } from '$lib/i18n'
+</script>
+
 <!-- ====== Forms Section Start -->
 <section>
   <div class="container w-full max-w-xl mx-auto items-center text-center">
@@ -15,10 +19,10 @@
       <h2
         class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto"
       >
-      Rakit Account
+        Rakit Account
       </h2>
       <p class="text-sm md:text-base">
-        Enter your account to sign In or sign Up.
+        {$t('login.title.sub')}
       </p>
     </div>
     <div
@@ -48,7 +52,7 @@
             class="flex-shrink-0 bg-slate-500 hover:bg-slate-700 border-slate-500 hover:border-slate-700 text-sm border-4 text-white py-1 px-2 rounded"
             type="button"
           >
-            Sign In
+            {$t('login.form.button.login')}
           </button>
           <!-- <button
             class="flex-shrink-0 border-transparent border-4 text-slate-500 hover:text-slate-800 text-sm py-1 px-2 rounded"
@@ -68,12 +72,7 @@
             appId="488253266130353"
             on:auth-success={(e) => console.dir(e.detail.user)}
           /> -->
-      <a
-        href="javascript:void(0)"
-        
-      >
-        Forget Password?
-      </a>
+      <a href="javascript:void(0)"> {$t('login.link.forgot-password')} </a>
     </div>
   </div>
 </section>

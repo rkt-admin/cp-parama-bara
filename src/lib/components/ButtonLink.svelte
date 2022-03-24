@@ -1,10 +1,11 @@
 <script>
-  import ArrowRightIcon from './ArrowRightIcon.svelte'
+  // import ArrowRightIcon from './ArrowRightIcon.svelte'
 
   export let href
   export let raised = false
   export let size = 'medium' // small, medium, or large
-  export let arrows = false
+  export let arrowsRight = false
+  export let arrowsLeft = false
 
   let className = ''
 
@@ -23,13 +24,15 @@
     class:large={size === 'large'}
     class:raised
   >
-    <div class="flex items-center space-x-1">
-      <slot name="icon-start" />
+    <div class="flex items-center space-x-1"> 
+      {#if arrowsLeft}
+      <i class="fa-solid fa-arrow-left"></i>
+      {/if}      
       <span>
         <slot />
       </span>
-      {#if arrows}
-      <i class="fa-solid fa-chevron-right"></i>
+      {#if arrowsRight}
+      <i class="fa-solid fa-arrow-right"></i>
       {/if}
     </div>
   </a>

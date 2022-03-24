@@ -4,16 +4,19 @@
 
 <script>
   import '../app.css'
-  // import '../prism.css'
+  import '../prism.css'
   import 'focus-visible'
   import MoonIcon from 'heroicons-svelte/solid/MoonIcon.svelte'
   import SunIcon from 'heroicons-svelte/solid/SunIcon.svelte'
   import Logo from '../components/Logo.svelte'
   import { browser } from '$app/env'
-  import { name, website } from './api/info'
   import Footer from '../components/Footer.svelte'
   import { onMount } from 'svelte'
-  import Divider from '$lib/components/Divider.svelte'
+  import { name } from '$lib/info'
+  import { t, locale, locales } from '$lib/i18n'
+  import { ToggleCore } from 'svelte-toggle'
+
+  let lang = false
 
   let prefersLight = browser ? Boolean(JSON.parse(localStorage.getItem('prefersLight'))) : false
   let yScreen
@@ -22,11 +25,11 @@
   // let navActive = '/'
 
   // List of navigation items
-  const navItems = [
-    { label: 'Home', href: '/' },
-    { label: 'Services', href: '/services' },
-    { label: 'Contact us', href: '/contact-us' },
-    { label: 'Login', href: '/login' }
+  let navItems = [
+    { label: 'menu.home', href: '/' },
+    { label: 'menu.services', href: '/services' },
+    { label: 'menu.contact-us', href: '/contact-us' },
+    { label: 'menu.login', href: '/login' }
   ]
 
   // Mobile menu click event handler
@@ -48,6 +51,8 @@
 
   let navOverScroll = false
   $: {
+    $locale = lang ? 'en' : 'id'
+
     if (yScreen > 20) {
       navOverScroll = true
     } else {
@@ -56,69 +61,86 @@
   }
 </script>
 
+<svelte:head>
+  <title>{name}</title>
+  <meta name="description" content="Page description of rakit.id" />
+</svelte:head>
+
 <svelte:window bind:scrollY={yScreen} />
 <div class="flex flex-col min-h-full">
-  <div class="mx-auto py-8 flex flex-col w-full max-w-3xl">    
-    <div
-      class="flex h-16 px-4 justify-between items-center mb-0 z-50"
-    >
-    {#if browser}
-      <Logo />      
-      <nav>
-        <div class="inner">
-          <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
-            {#each navItems as item}
-              <li>
-                <a href={item.href} class="text-slate-600">{item.label}</a>
-              </li>
-            {/each}
-          </ul>
-        </div>
-      </nav>      
-      <button
-        type="button"
-        role="switch"
-        aria-label="Toggle Dark Mode"
-        aria-checked={!prefersLight}
-        class="h-6 w-6 sm:h-8 sm:w-8 sm:p-1"
-        on:click={() => {
-          prefersLight = !prefersLight
-          localStorage.setItem('prefersLight', prefersLight.toString())
+  <div class="mx-auto py-8 flex flex-col w-full max-w-4xl">
+    <div class="flex h-16 justify-center items-center mb-0 z-50">
+      {#if browser}
+        <Logo />
+        <nav class="mx-12">
+          <div class="inner">
+            <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
+              {#each navItems as item}
+                <li>
+                  <a href={item.href} class="text-slate-600">{$t(item.label)}</a>
+                </li>
+              {/each}
+            </ul>
+          </div>
+        </nav>
+        <button
+          type="button"
+          role="switch"
+          aria-label="Toggle Dark Mode"
+          aria-checked={!prefersLight}
+          class="h-6 w-6 sm:h-8 sm:w-8 sm:p-1 mr-4"
+          on:click={() => {
+            prefersLight = !prefersLight
+            localStorage.setItem('prefersLight', prefersLight.toString())
 
-          if (prefersLight) {
-            document.querySelector('html').classList.remove('dark')
-          } else {
-            document.querySelector('html').classList.add('dark')
-          }
-        }}
-      >
-        {#if prefersLight}
-          <MoonIcon class="text-slate-500" />
-        {:else}
-          <SunIcon class="text-slate-400" />
-        {/if}
-      </button>
-      <div on:click={handleMobileIconClick} class={`mobile-icon${showMobileMenu ? ' active' : ''}`}>
-        <div class="middle-line" />
-      </div>
+            if (prefersLight) {
+              document.querySelector('html').classList.remove('dark')
+            } else {
+              document.querySelector('html').classList.add('dark')
+            }
+          }}
+        >
+          {#if prefersLight}
+            <MoonIcon class="text-slate-800" />
+          {:else}
+            <SunIcon class="text-slate-400" />
+          {/if}
+        </button>
+        <ToggleCore toggled={lang} let:label let:button>
+          <!-- svelte-ignore a11y-label-has-associated-control -->
+          <!-- <label {...label}>Label</label> -->
+          <button
+            class="bg-slate-800 rounded-xl py-1 px-2 text-white text-xs"
+            {...button}
+            on:click={() => (lang = !lang)}
+          >
+            {lang ? 'Bahasa' : 'English'}
+          </button>
+        </ToggleCore>
+        <div
+          on:click={handleMobileIconClick}
+          class={`mobile-icon${showMobileMenu ? ' active' : ''}`}
+        >
+          <div class="middle-line" />
+        </div>
       {/if}
     </div>
   </div>
-  <div class="mx-auto flex flex-col w-full">
+  <div class="flex flex-col max-w-none">
     <main
-      class="prose prose-slate prose-sm sm:prose sm:prose-slate sm:prose-lg sm:max-w-none dark:prose-invert flex flex-col w-full flex-grow"
+      class="prose prose-slate prose-sm sm:prose sm:prose-slate sm:prose-lg sm:max-w-none dark:prose-invert flex flex-col flex-grow"
     >
       <slot />
     </main>
   </div>
 </div>
-<Divider />
 <Footer />
+
 <style lang="postcss">
   /* :global(.dark) .menu-active {
     @apply bg-slate-700 bg-gradient-to-br from-slate-800 to-slate-800;
   } */
-  
+
   .inner {
     max-width: 980px;
     padding-left: 20px;

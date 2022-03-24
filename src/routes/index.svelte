@@ -5,19 +5,16 @@
 <script>
   import Hero from '$lib/components/Hero.svelte'
   import FeatureGrid from '$lib/components/FeatureGrid.svelte'
-  // import Divider from '$lib/components/Divider.svelte'
-  import { name } from '../routes/api/info'
+  import Divider from '$lib/components/Divider.svelte'
+  import CTA from '$lib/components/CallToAction.svelte'
 
-  // export let recentPosts
 </script>
-
-<svelte:head>
-  <title>{name}</title>
-  <meta name="description" content="Page description of rakit.id">
-</svelte:head>
 
 <div class="flex flex-col flex-grow">
   <Hero />
-  <!-- <Divider /> -->
+  <Divider dividerHight={7} />
   <FeatureGrid />
+  <Divider dividerHight={7} />
+  <CTA />
+  <Divider dividerHight={12} />
 </div>
