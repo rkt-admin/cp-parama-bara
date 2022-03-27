@@ -1,19 +1,18 @@
-<section class="max-w-[120%] bg-slate-300 dark:bg-gray-700 rotate-3 -mx-32">
+<section class="max-w-[120%] bg-slate-300 dark:bg-gray-900 rotate-3 -mx-32">
   <div class="-rotate-3 mx-auto">
     <div class="px-3 py-32 md:px-24 lg:px-8 ">
       <div class="lg:text-center mx-auto max-w-3xl">
         <div
-          class="max-w-lg mb-6 text-base sm:text-2xl font-sans font-light leading-none tracking-tight text-gray-900 dark:text-slate-400 md:mx-auto"
+          class="max-w-lg mb-6 text-base sm:text-xl font-sans font-light leading-none tracking-tight text-gray-900 dark:text-slate-400 md:mx-auto"
         >
-          <span class="relative">KEUNGGULAN</span>
+          <span class="relative">KEUNGGULAN KAMI</span>
         </div>
         <div
-          class="max-w-xlfont-sans text-3xl font-bold leading-none tracking-tight text-gray-900 dark:text-slate-200 sm:text-4xl md:mx-auto"
+          class="max-w-xl font-sans text-4xl font-bold leading-none tracking-tighter text-gray-900 dark:text-slate-200 sm:text-4xl md:mx-auto"
         >
-          Kami Berbeda !
+          KAMI BERBEDA
         </div>
       </div>
-
       <div
         class="mt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-4xl text-black dark:text-slate-50"
       >

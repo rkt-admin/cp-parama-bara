@@ -1,5 +1,5 @@
 <script>
-  // import { format, parseISO } from 'date-fns'
+  import { format, parseISO } from 'date-fns'
   import ButtonLink from './ButtonLink.svelte'
 
   export let post
@@ -17,11 +17,11 @@
         <a href={`/blog/${post.slug}`}>{post.title}</a>
       </h3>
     {/if}
-    <!-- <div class="opacity-70 mb-4">
+    <div class="opacity-70 mb-4">
       <time>{format(new Date(parseISO(post.date)), 'MMMM d, yyyy')}</time>
       •
       <span>{post.readingTime}</span>
-    </div> -->
+    </div>
   </div>
   <div class="flex-1">{@html post.preview.html}</div>
   <slot name="actions">

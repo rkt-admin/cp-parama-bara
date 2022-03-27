@@ -11,6 +11,7 @@
   function updateHeadings() {
     const nodes = [
       // Exclude h1 as those should be reserved for the post title
+      // @ts-ignore
       ...document.querySelectorAll(`article :where(${allowedHeadings.join(', ')}):not(#__sections)`)
     ]
     const depths = nodes.map((node) => Number(node.nodeName[1]))
@@ -60,14 +61,14 @@
 
 <svelte:window on:scroll={setActiveHeading} />
 
-<h6 id="__sections" class="uppercase text-slate-400/75 dark:text-slate-600 font-bold text-sm">
-  Sections
+<h6 id="__sections" class="uppercase text-slate-600 dark:text-slate-600 font-light text-sm">
+  TABLE OF CONTENTS
 </h6>
 
 <ul class="mt-2 !pl-0">
   {#each headings as heading}
     <li
-      class="heading list-none my-2 !pl-0 text-base text-slate-400 hover:text-slate-900 dark:text-slate-500 hover:dark:text-slate-100 transition-colors"
+      class="heading list-none my-4 !pl-0 text-base text-slate-400 transition-colors"
       class:active={activeHeading?.node === heading.node}
       style={`--depth: ${heading.depth}`}
     >
@@ -77,12 +78,12 @@
 </ul>
 
 <style lang="postcss">
-  .heading {
-    margin-left: calc(var(--depth, 0) * 0.75rem);
+  .heading a {
+    @apply font-normal;
   }
 
-  .active {
-    @apply text-slate-900 font-medium;
+  .active a {
+    @apply text-sky-400 font-medium;
   }
 
   /* can't use dark: modifier in @apply */

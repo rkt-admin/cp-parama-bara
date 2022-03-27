@@ -3,9 +3,8 @@
 // It is OK to delete this file if you'd rather not bother with it.
 
 import { getPosts } from '$lib/get-posts'
-import { website } from '$lib/info'
-
-const postsUrl = `${website}/posts`
+import { URL_BASE } from '$lib/variables'
+const postsUrl = `${URL_BASE}/posts`
 
 /**
  * @type {import('@sveltejs/kit').RequestHandler}
@@ -32,7 +31,7 @@ export async function get() {
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
       >
         <url>
-          <loc>${website}</loc>
+          <loc>${URL_BASE}</loc>
           <priority>1.0</priority>
         </url>
 

@@ -12,14 +12,22 @@
   import { browser } from '$app/env'
   import Footer from '../components/Footer.svelte'
   import { onMount } from 'svelte'
-  import { name } from '$lib/info'
   import { t, locale, locales } from '$lib/i18n'
   import { ToggleCore } from 'svelte-toggle'
+  import { SITE_NAME, MODE } from '$lib/variables'
+  import { language } from '../stores.js'
+  // import { onDestroy } from 'svelte'
+  // import { fly } from 'svelte/transition'
+  import Alert from '../components/Alert.svelte'
 
-  let lang = false
+  /**
+   * HANDLE OF LIGHT & DARK THEME
+   *
+   */
 
-  let prefersLight = browser ? Boolean(JSON.parse(localStorage.getItem('prefersLight'))) : false
-  let yScreen
+  let prefersLight = false
+  prefersLight = browser ? Boolean(JSON.parse(localStorage.getItem('prefersLight'))) : false
+  // let yScreen
   // Show mobile icon and display menu
   let showMobileMenu = false
   // let navActive = '/'
@@ -29,6 +37,7 @@
     { label: 'menu.home', href: '/' },
     { label: 'menu.services', href: '/services' },
     { label: 'menu.contact-us', href: '/contact-us' },
+    { label: 'menu.blog', href: '/blog' },
     { label: 'menu.login', href: '/login' }
   ]
 
@@ -49,27 +58,29 @@
     mediaListener.addListener(mediaQueryHandler)
   })
 
-  let navOverScroll = false
+  // let navOverScroll = false
   $: {
-    $locale = lang ? 'en' : 'id'
-
-    if (yScreen > 20) {
-      navOverScroll = true
-    } else {
-      navOverScroll = false
-    }
+    console.log($language)
+    $locale = ($language ? 'en' : 'id')
+    
+    // if (yScreen > 20) {
+    //   navOverScroll = true
+    // } else {
+    //   navOverScroll = false
+    // }
   }
 </script>
 
 <svelte:head>
-  <title>{name}</title>
+  <title>{SITE_NAME + ' - ' + MODE}</title>
   <meta name="description" content="Page description of rakit.id" />
 </svelte:head>
 
-<svelte:window bind:scrollY={yScreen} />
+<!-- <svelte:window bind:scrollY={yScreen} /> -->
+<Alert />
 <div class="flex flex-col min-h-full">
   <div class="mx-auto py-8 flex flex-col w-full max-w-4xl">
-    <div class="flex h-16 justify-center items-center mb-0 z-50">
+    <div class="flex h-16 justify-center items-center mb-0 z-50" >
       {#if browser}
         <Logo />
         <nav class="mx-12">
@@ -106,15 +117,16 @@
             <SunIcon class="text-slate-400" />
           {/if}
         </button>
-        <ToggleCore toggled={lang} let:label let:button>
+        <ToggleCore toggled={$language} let:label let:button>
           <!-- svelte-ignore a11y-label-has-associated-control -->
           <!-- <label {...label}>Label</label> -->
           <button
             class="bg-slate-800 rounded-xl py-1 px-2 text-white text-xs"
             {...button}
-            on:click={() => (lang = !lang)}
+            on:click={() => language.toggle()
+            }
           >
-            {lang ? 'Bahasa' : 'English'}
+            {!$language ? 'Bahasa' : 'English'}
           </button>
         </ToggleCore>
         <div

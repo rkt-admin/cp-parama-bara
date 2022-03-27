@@ -34,12 +34,10 @@
   import { format, parseISO } from 'date-fns'
   import { page } from '$app/stores'
   import ButtonLink from '$lib/components/ButtonLink.svelte'
-  import { website, name } from '$lib/info'
-  // import ToC from '$lib/components/ToC.svelte'
+  import ToC from '$lib/components/ToC.svelte'
   import PostPreview from '$lib/components/PostPreview.svelte'
-  import ArrowLeftIcon from '$lib/components/ArrowLeftIcon.svelte'
   import Divider from '$lib/components/Divider.svelte'
-
+  import {URL_BASE, SITE_NAME} from '$lib/variables'
   export let component
 
   // metadata
@@ -57,7 +55,7 @@
     title
   )}**?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fhyper-color-logo.svg`
 
-  const url = `${website}/${slug}`
+  const url = `${URL_BASE}/${slug}`
 
   function formatTags(tags) {
     return tags
@@ -76,7 +74,7 @@
 <svelte:head>
   <title>{title}</title>
   <meta name="description" content={preview.text} />
-  <meta name="author" content={name} />
+  <meta name="author" content={SITE_NAME} />
 
   <!-- Facebook Meta Tags -->
   <meta property="og:url" content={url} />
@@ -87,53 +85,59 @@
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta property="twitter:domain" content={website} />
+  <meta property="twitter:domain" content={URL_BASE} />
   <meta property="twitter:url" content={url} />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={preview.text} />
   <meta name="twitter:image" content={ogImage} />
 </svelte:head>
+<div class="grid gap-4 grid-cols-12 mx-auto max-w-full">
+  <div class="col-start-3 col-end-10">
+    <article>
+      <h1 class="!mt-14 !mb-6 item-center text-center">
+        <a class="!font-medium" href={$page.url.pathname}>
+          {title}
+        </a>
+      </h1>
+      <div class="text-center">
+        <time datetime={new Date(parseISO(date)).toISOString()}
+          >{format(new Date(parseISO(date)), 'MMMM d, yyyy')}</time
+        >
+        •
+        <span>{readingTime}</span>
+      </div>
+      <div class="text-center">
+        <span>{@html formatTags(tags)}</span>
+      </div>
+      <Divider />
 
-<article class="mx-auto relative max-w-3xl">
-  <h1 class="!mt-14 !mb-6 item-center text-center">
-    <a class="!font-medium" href={$page.url.pathname}>
-      {title}
-    </a>
-  </h1>
-  <div class="text-center">
-    <time datetime={new Date(parseISO(date)).toISOString()}
-      >{format(new Date(parseISO(date)), 'MMMM d, yyyy')}</time
-    >
-    •
-    <span>{readingTime}</span>
-  </div>
-  <div class="text-center">
-    <span>{@html formatTags(tags)}</span>
-  </div>
-  <Divider />
-  <div class="min-w-full items-center">
-    <!-- render the post -->
-    <svelte:component this={component} />
+      <!-- render the post -->
 
+      <svelte:component this={component} />
+
+      <div class="pt-12 flex justify-between">
+        <ButtonLink
+          raised={false}
+          href={`/blog`}
+          size="large"
+          arrowsLeft={true}
+          class="hover:text-sky-600"
+        >
+          Back to Posts
+        </ButtonLink>
+      </div>
+    </article>
+  </div>
+  <div class="col-start-10 col-end-12 translate-x-8">
     <!-- table of contents -->
-    <!-- <div class="hidden xl:block absolute not-prose left-[100%]" aria-label="Table of Contents">
-      <div class="fixed z-10 px-4 py-2 ml-8 top-[4.5rem]">
+    <aside class="sticky top-10 mt-12">      
+      <div aria-label="Table of Contents">
         <ToC allowedHeadings={['h2', 'h3', 'h4', 'h5', 'h6']} />
       </div>
-    </div> -->
+    </aside>
   </div>
-  <div class="pt-12 flex justify-between">
-    <ButtonLink href={`/blog`}>
-      <slot slot="icon-start">
-        <i class="fa-solid fa-chevron-left"></i>
-      </slot>
-      Back to Posts
-      <slot slot="icon-end" />
-    </ButtonLink>
-  </div>
-</article>
+</div>
 <Divider />
-<!-- next/previous posts -->
 {#if previous || next}
   <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 mx-auto relative max-w-3xl">
     {#if previous}

@@ -1,6 +1,6 @@
-<script>
-  import {website} from '$lib/info'
+<script>  
   import Logo from '../components/Logo.svelte'
+  import { SITE_NAME, URL_BASE } from '$lib/variables'
 </script>
 
 <footer class="mx-auto flex flex-col flex-grow w-full max-w-3xl mt-10 pt-10">
@@ -94,7 +94,7 @@
   <hr class="my-3 lg:my-8 border-none" />
   <div class="sm:flex sm:items-center sm:justify-between mb-4 ">
     <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
-      ><i class="fa-regular fa-copyright"></i> 2022 <a href={website}>Rakit.id</a> by PT Rakit Teknologi Abadi, All Rights Reserved.
+      ><i class="fa-regular fa-copyright"></i> 2022 <a href={URL_BASE}>{SITE_NAME}</a> by PT Rakit Teknologi Abadi, All Rights Reserved.
       
     </span>
     <div class="flex mt-4 space-x-5 sm:justify-center sm:mt-0 items-center">

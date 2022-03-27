@@ -83,12 +83,10 @@
 </script>
 
 <script>
-  import ArrowRightIcon from '$lib/components/ArrowRightIcon.svelte'
-  import ArrowLeftIcon from '$lib/components/ArrowLeftIcon.svelte'
   import ButtonLink from '$lib/components/ButtonLink.svelte'
   import { format, parseISO } from 'date-fns'
   import PostPreview from '$lib/components/PostPreview.svelte'
-  import { name } from '$lib/info'
+  const SITE_NAME = import.meta.env.VITE_PUBLIC_SITE_NAME
 
   export let posts
   export let page = 1
@@ -113,7 +111,6 @@
           setNextPage(1, limit * page < posts[0].TotalFilteredPost)
         } else {
           pageUrl = '/blog/tag/' + tag + '/page/'
-          // console.log(posts.length, limit)
           if (posts[0].TotalFilteredPost <= limit) {
             hasNextPage = false
           } else {
@@ -125,24 +122,23 @@
           pageUrl = '/blog/'
           setNextPage(3, limit * page < posts[0].TotalFilteredPost)
         } else {
-          console.log(posts[0])
           pageUrl = '/blog/page/'
           setNextPage(4, limit * page < posts[0].TotalFilteredPost)
         }
       }
 
-    console.log(
-      'tag:' +
-        tag +
-        ', page:' +
-        page +
-        ', limit: ' +
-        limit +
-        ', posts:' +
-        posts.length +
-        ', TotalFilteredPost: ' +
-        posts[0].TotalFilteredPost
-    )
+    // console.log(
+    //   'tag:' +
+    //     tag +
+    //     ', page:' +
+    //     page +
+    //     ', limit: ' +
+    //     limit +
+    //     ', posts:' +
+    //     posts.length +
+    //     ', TotalFilteredPost: ' +
+    //     posts[0].TotalFilteredPost
+    // )
   }
 
   $: isFirstPage = page === 1
@@ -157,7 +153,7 @@
 </script>
 
 <svelte:head>
-  <title>{name} | Posts</title>
+  <title>{SITE_NAME} | Posts</title>
 </svelte:head>
 
 <div class="mx-auto flex flex-col flex-grow w-full max-w-4xl">

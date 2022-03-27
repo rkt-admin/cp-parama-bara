@@ -479,7 +479,7 @@
             </p>
             <div class="flex items-center justify-center">
               <a
-                href="javascript:void(0)"
+                href="/"
                 class="
                   text-[#cdced6]
                   hover:text-primary
@@ -503,7 +503,7 @@
                 </svg>
               </a>
               <a
-                href="javascript:void(0)"
+                href="/"
                 class="
                   text-[#cdced6]
                   hover:text-primary
@@ -527,7 +527,7 @@
                 </svg>
               </a>
               <a
-                href="javascript:void(0)"
+                href="/"
                 class="
                   text-[#cdced6]
                   hover:text-primary
@@ -1002,7 +1002,7 @@
             </p>
             <div class="flex items-center justify-center">
               <a
-                href="javascript:void(0)"
+                href="/"
                 class="
                   text-[#cdced6]
                   hover:text-primary
@@ -1026,7 +1026,7 @@
                 </svg>
               </a>
               <a
-                href="javascript:void(0)"
+                href="/"
                 class="
                   text-[#cdced6]
                   hover:text-primary
@@ -1050,7 +1050,7 @@
                 </svg>
               </a>
               <a
-                href="javascript:void(0)"
+                href="/"
                 class="
                   text-[#cdced6]
                   hover:text-primary
@@ -1527,7 +1527,7 @@
             </p>
             <div class="flex items-center justify-center">
               <a
-                href="javascript:void(0)"
+                href="/"
                 class="
                   text-[#cdced6]
                   hover:text-primary
@@ -1551,7 +1551,7 @@
                 </svg>
               </a>
               <a
-                href="javascript:void(0)"
+                href="/"
                 class="
                   text-[#cdced6]
                   hover:text-primary
@@ -1575,7 +1575,7 @@
                 </svg>
               </a>
               <a
-                href="javascript:void(0)"
+                href="/"
                 class="
                   text-[#cdced6]
                   hover:text-primary
@@ -2052,7 +2052,7 @@
             </p>
             <div class="flex items-center justify-center">
               <a
-                href="javascript:void(0)"
+                href="/"
                 class="
                   text-[#cdced6]
                   hover:text-primary
@@ -2076,7 +2076,7 @@
                 </svg>
               </a>
               <a
-                href="javascript:void(0)"
+                href="/"
                 class="
                   text-[#cdced6]
                   hover:text-primary
@@ -2100,7 +2100,7 @@
                 </svg>
               </a>
               <a
-                href="javascript:void(0)"
+                href="/"
                 class="
                   text-[#cdced6]
                   hover:text-primary
