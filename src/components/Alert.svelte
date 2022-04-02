@@ -48,9 +48,9 @@
     z-index: 100;
     opacity: 95%;
   }
-  div p {
+  /* div p {
     color: #fff;
-  }
+  } */
   div svg {
     height: 1.6rem;
     fill: currentColor;

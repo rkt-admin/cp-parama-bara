@@ -17,7 +17,7 @@ if (browser) {
  * For getting posts from the client, fetch from the /posts.json endpoint instead
  */
 export function getPosts({ page = 1, limit = 10, tag = '' } = {}) {
-  let posts = Object.entries(import.meta.globEager('/posts/**/*.md'))
+  let posts = Object.entries(import.meta.globEager('/blog/posts/**/*.md'))
     .map(([filepath, post]) => {
       return {
         ...post.metadata,

@@ -1,9 +1,9 @@
-<section class="max-w-[120%] bg-slate-300 dark:bg-gray-900 rotate-3 -mx-32">
+<section class="bg-slate-300 dark:bg-gray-900 rotate-3 -mx-32 z-20">  
   <div class="-rotate-3 mx-auto">
-    <div class="px-3 py-32 md:px-24 lg:px-8 ">
-      <div class="lg:text-center mx-auto max-w-3xl">
+    <div class="px-3 py-32 md:px-24 lg:px-8">
+      <div class="max-w-md text-center mx-auto">
         <div
-          class="max-w-lg mb-6 text-base sm:text-xl font-sans font-light leading-none tracking-tight text-gray-900 dark:text-slate-400 md:mx-auto"
+          class="mb-6 text-base sm:text-xl font-sans font-light leading-none tracking-tight text-gray-900 dark:text-slate-400 md:mx-auto"
         >
           <span class="relative">KEUNGGULAN KAMI</span>
         </div>
@@ -14,9 +14,9 @@
         </div>
       </div>
       <div
-        class="mt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-4xl text-black dark:text-slate-50"
+        class="mt-16 mx-auto   max-w-xl sm:max-w-xl md:max-w-full lg:max-w-4xl text-black dark:text-slate-50"
       >
-        <dl class="space-y-10 md:space-y-2 md:grid md:grid-cols-2 md:gap-x-10 md:gap-y-12">
+        <dl class="space-y-10 md:space-y-2 md:grid md:grid-cols-2 md:gap-x-10 md:gap-y-12 mx-16">
           <div class="relative">
             <dt>
               <div class="absolute flex items-center justify-center h-8 w-12 rounded-md ">
@@ -37,13 +37,13 @@
                   />
                 </svg>
               </div>
-              <p class="ml-16 text-lg leading-6 font-medium text-black dark:text-slate-50">
+              <p class="ml-16 text-xl tracking-tight leading-6 font-medium text-black dark:text-slate-50">
                 Tepat Solusi
               </p>
             </dt>
-            <dd class="mt-2 ml-16 text-base">
-              Kami selalu memberikan solusi yang tepat sesuai kebutuhan Anda / Bisnis Anda, tidak
-              kurang dan tidak lebih!
+            <dd class="mt-2 ml-16">
+              Kami selalu memberikan solusi yang tepat dan efisien sesuai kebutuhan / bisnis Anda, tidak
+              kurang dan tidak lebih.
             </dd>
           </div>
 
@@ -67,11 +67,11 @@
                   />
                 </svg>
               </div>
-              <p class="ml-16 text-lg leading-6 font-medium text-black dark:text-slate-50">
+              <p class="ml-16 text-lg tracking-tight leading-6 font-medium text-black dark:text-slate-50">
                 No hidden fees
               </p>
             </dt>
-            <dd class="mt-2 ml-16 text-base ">
+            <dd class="mt-2 ml-16 ">
               Kami selalu menganalisa masalah dari akarnya, dan selalu berusaha memberikan solusi
               yang sederhana dan efektif agar kebutuhan Anda bisa dilakukan dengan efisien.
             </dd>
@@ -97,11 +97,11 @@
                   />
                 </svg>
               </div>
-              <p class="ml-16 text-lg leading-6 font-medium text-black dark:text-slate-50">
+              <p class="ml-16 text-lg tracking-tight leading-6 font-medium text-black dark:text-slate-50">
                 Transfers are instant
               </p>
             </dt>
-            <dd class="mt-2 ml-16 text-base">
+            <dd class="mt-2 ml-16">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis
               suscipit eaque, iste dolor cupiditate blanditiis ratione.
             </dd>
@@ -131,7 +131,7 @@
                 Mobile notifications
               </p>
             </dt>
-            <dd class="mt-2 ml-16 text-base">
+            <dd class="mt-2 ml-16">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis
               suscipit eaque, iste dolor cupiditate blanditiis ratione.
             </dd>
@@ -140,4 +140,5 @@
       </div>
     </div>
   </div>
+  <div class="absolute top-0 min-h-full w-full bg-slate-200 dark:bg-gray-900 -rotate-6 -z-20">&nbsp;</div>
 </section>

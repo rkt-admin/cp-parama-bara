@@ -72,7 +72,7 @@
             appId="488253266130353"
             on:auth-success={(e) => console.dir(e.detail.user)}
           /> -->
-      <a href="javascript:void(0)"> {$t('login.link.forgot-password')} </a>
+      <a href="/"> {$t('login.link.forgot-password')} </a>
     </div>
   </div>
 </section>

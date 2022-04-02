@@ -86,12 +86,15 @@
   import ButtonLink from '$lib/components/ButtonLink.svelte'
   import { format, parseISO } from 'date-fns'
   import PostPreview from '$lib/components/PostPreview.svelte'
+  import Divider from '$lib/components/Divider.svelte'
   const SITE_NAME = import.meta.env.VITE_PUBLIC_SITE_NAME
 
   export let posts
   export let page = 1
   export let tag
   export let limit = 0
+  let title = 'Blog'
+
   let pageUrl = '/blog/'
   let hasNextPage = false
 
@@ -127,6 +130,8 @@
         }
       }
 
+    title = tag == '' ? 'Blog' : tag
+
     // console.log(
     //   'tag:' +
     //     tag +
@@ -153,15 +158,20 @@
 </script>
 
 <svelte:head>
-  <title>{SITE_NAME} | Posts</title>
+  <title>{SITE_NAME} - Blog category {title}</title>
 </svelte:head>
-
-<div class="mx-auto flex flex-col flex-grow w-full max-w-4xl">
-  <div class="container px-5 py-24 mx-auto">
+<div class="mx-auto w-full max-w-full bg-slate-200">
+  <div class="px-4 mx-auto max-w-4xl">
+    <h1 class="!mt-14 !mb-6 item-left text-left capitalize">{title}</h1>
+  </div>
+  <Divider />
+</div>
+<div class="px-4 mx-auto flex flex-col flex-grow w-full max-w-4xl">
+  <div class="container py-10 mx-auto">
     <div class="-my-8">
       {#each posts as post}
         <div class="py-8 flex flex-wrap md:flex-nowrap">
-          <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col pt-10">
+          <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
             <span class="text-base">{format(new Date(parseISO(post.date)), 'MMMM d, yyyy')}</span>
             <span class="text-base">{post.readingTime}</span>
             <span class="text-1xl" style="max-width: 12em">{@html formatTags(post.tags)}</span>

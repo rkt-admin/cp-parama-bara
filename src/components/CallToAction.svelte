@@ -3,13 +3,13 @@
   import { t } from '$lib/i18n'
 </script>
 
-<section class="container mx-auto max-w-3xl rounded-lg shadow-lg border-b-8 mt-24">
-  <div class="pb-10 px-10">
-    <h3 class="font-bold">
-      Hubungi kami melalui WhatsApp, Atur Schedule dan Konsultasi secara Gratis!
-    </h3>
+<section class="container mx-auto max-w-3xl rounded-lg shadow-lg border-b-8 mt-24 text-center">
+  <div class="pb-10 px-8">
+    <h2 class="font-bold">
+      Hubungi kami melalui WhatsApp
+    </h2>
     <p class="text-slate-600 text-md">
-      Anda tidak harus menggunakan layanan kami untuk bisa berdiskusi dengan kami, tidak peduli jika
+      Atur Schedule dan Konsultasi secara Gratis! Anda tidak harus menggunakan layanan kami untuk bisa berdiskusi dengan kami, tidak peduli jika
       masalah yang Anda hadapi besar atau kecil.
     </p>
     <div>

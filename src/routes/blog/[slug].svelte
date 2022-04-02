@@ -18,8 +18,8 @@
 
     const component = post.isIndexFile
       ? // vite requires relative paths and explicit file extensions for dynamic imports
-        await import(`../../../posts/${post.slug}/index.md`)
-      : await import(`../../../posts/${post.slug}.md`)
+        await import(`../../../blog/posts/${post.slug}/index.md`)
+      : await import(`../../../blog/posts/${post.slug}.md`)
 
     return {
       props: {
@@ -37,7 +37,7 @@
   import ToC from '$lib/components/ToC.svelte'
   import PostPreview from '$lib/components/PostPreview.svelte'
   import Divider from '$lib/components/Divider.svelte'
-  import {URL_BASE, SITE_NAME} from '$lib/variables'
+  import { URL_BASE, SITE_NAME } from '$lib/variables'
   export let component
 
   // metadata
@@ -91,28 +91,28 @@
   <meta name="twitter:description" content={preview.text} />
   <meta name="twitter:image" content={ogImage} />
 </svelte:head>
+<div class="mx-auto w-full max-w-full bg-slate-200">
+  <h1 class="!mt-14 !mb-6 item-center text-center">
+    <a class="!font-medium" href={$page.url.pathname}>
+      {title}
+    </a>
+  </h1>
+  <div class="text-center">
+    <time datetime={new Date(parseISO(date)).toISOString()}
+      >{format(new Date(parseISO(date)), 'MMMM d, yyyy')}</time
+    >
+    •
+    <span>{readingTime}</span>
+  </div>
+  <div class="text-center">
+    <span>{@html formatTags(tags)}</span>
+  </div>
+  <Divider />
+</div>
 <div class="grid gap-4 grid-cols-12 mx-auto max-w-full">
   <div class="col-start-3 col-end-10">
     <article>
-      <h1 class="!mt-14 !mb-6 item-center text-center">
-        <a class="!font-medium" href={$page.url.pathname}>
-          {title}
-        </a>
-      </h1>
-      <div class="text-center">
-        <time datetime={new Date(parseISO(date)).toISOString()}
-          >{format(new Date(parseISO(date)), 'MMMM d, yyyy')}</time
-        >
-        •
-        <span>{readingTime}</span>
-      </div>
-      <div class="text-center">
-        <span>{@html formatTags(tags)}</span>
-      </div>
-      <Divider />
-
       <!-- render the post -->
-
       <svelte:component this={component} />
 
       <div class="pt-12 flex justify-between">
@@ -130,7 +130,7 @@
   </div>
   <div class="col-start-10 col-end-12 translate-x-8">
     <!-- table of contents -->
-    <aside class="sticky top-10 mt-12">      
+    <aside class="sticky top-10 mt-4">
       <div aria-label="Table of Contents">
         <ToC allowedHeadings={['h2', 'h3', 'h4', 'h5', 'h6']} />
       </div>

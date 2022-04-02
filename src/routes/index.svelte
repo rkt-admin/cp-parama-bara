@@ -11,9 +11,7 @@
 
 <div class="flex flex-col flex-grow">  
   <Hero />
-  <Divider dividerHight={7} />
   <FeatureGrid />
-  <Divider dividerHight={7} />
   <CTA />
-  <Divider dividerHight={12} />
+  <Divider border={true} />
 </div>

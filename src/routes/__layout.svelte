@@ -5,9 +5,7 @@
 <script>
   import '../app.css'
   import '../prism.css'
-  import 'focus-visible'
-  import MoonIcon from 'heroicons-svelte/solid/MoonIcon.svelte'
-  import SunIcon from 'heroicons-svelte/solid/SunIcon.svelte'
+  // import 'focus-visible'
   import Logo from '../components/Logo.svelte'
   import { browser } from '$app/env'
   import Footer from '../components/Footer.svelte'
@@ -60,9 +58,8 @@
 
   // let navOverScroll = false
   $: {
-    console.log($language)
-    $locale = ($language ? 'en' : 'id')
-    
+    $locale = $language ? 'en' : 'id'
+
     // if (yScreen > 20) {
     //   navOverScroll = true
     // } else {
@@ -74,16 +71,20 @@
 <svelte:head>
   <title>{SITE_NAME + ' - ' + MODE}</title>
   <meta name="description" content="Page description of rakit.id" />
+  <script
+    type="text/javascript"
+    src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </svelte:head>
 
 <!-- <svelte:window bind:scrollY={yScreen} /> -->
 <Alert />
 <div class="flex flex-col min-h-full">
-  <div class="mx-auto py-8 flex flex-col w-full max-w-4xl">
-    <div class="flex h-16 justify-center items-center mb-0 z-50" >
+  <div class="mx-auto px-4 py-8 flex flex-col w-full max-w-4xl">
+    <div class="flex h-8 justify-between items-center mb-0 z-50">
+      <div data-netlify-identity-menu />
       {#if browser}
         <Logo />
-        <nav class="mx-12">
+        <nav>
           <div class="inner">
             <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
               {#each navItems as item}
@@ -99,7 +100,7 @@
           role="switch"
           aria-label="Toggle Dark Mode"
           aria-checked={!prefersLight}
-          class="h-6 w-6 sm:h-8 sm:w-8 sm:p-1 mr-4"
+          class="h-6 w-6 sm:h-8 sm:w-8 sm:p-1"
           on:click={() => {
             prefersLight = !prefersLight
             localStorage.setItem('prefersLight', prefersLight.toString())
@@ -112,9 +113,9 @@
           }}
         >
           {#if prefersLight}
-            <MoonIcon class="text-slate-800" />
+            <i class="light fa-solid fa-moon text-slate-800 text-2xl" />
           {:else}
-            <SunIcon class="text-slate-400" />
+            <i class="dark fa-solid fa-sun text-slate-400 text-2xl" />
           {/if}
         </button>
         <ToggleCore toggled={$language} let:label let:button>
@@ -123,8 +124,7 @@
           <button
             class="bg-slate-800 rounded-xl py-1 px-2 text-white text-xs"
             {...button}
-            on:click={() => language.toggle()
-            }
+            on:click={() => language.toggle()}
           >
             {!$language ? 'Bahasa' : 'English'}
           </button>
@@ -149,6 +149,14 @@
 <Footer />
 
 <style lang="postcss">
+  .light{
+    line-height: 0.7em;
+    @apply text-slate-800;
+  }
+  .dark{
+    line-height: 0.7em;
+    @apply text-slate-400;
+  }
   /* :global(.dark) .menu-active {
     @apply bg-slate-700 bg-gradient-to-br from-slate-800 to-slate-800;
   } */
