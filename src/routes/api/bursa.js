@@ -1,3 +1,4 @@
+// @ts-nocheck
 const URL_PREFIX = 'https://apn1-thorough-lemur-32588.upstash.io:32588'
 const headers = {
   Authorization:
@@ -6,7 +7,7 @@ const headers = {
 }
 
 
-/** @type {import('../../../.svelte-kit/types/src/routes/services/bursa/data').RequestHandler} */
+/** @type {import('./bursa').RequestHandler} */
 export async function get({ url: { searchParams } }) {
   const q = searchParams.get('q') ? searchParams.get('q') : undefined  
 

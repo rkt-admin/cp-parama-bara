@@ -46,7 +46,7 @@
               mb-6
             "
           >
-            <img src="assets/images/team/team-01.png" alt="Team1" class="w-full rounded-full" />
+            <img src="/favicon.png" alt="Team1" class="w-full rounded-full" />
             <span class="absolute top-0 left-0 z-[-1]">
               <svg
                 width="71"
@@ -1552,7 +1552,7 @@
               mb-6
             "
           >
-            <img src="assets/images/team/team-01.png" alt="Team4" class="w-full rounded-full" />
+            <img src="favicon.png" alt="Team4" class="w-full rounded-full" />
             <span class="absolute top-0 left-0 z-[-1]">
               <svg
                 width="71"

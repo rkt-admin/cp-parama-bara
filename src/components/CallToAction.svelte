@@ -3,12 +3,12 @@
   import { t } from '$lib/i18n'
 </script>
 
-<section class="container mx-auto max-w-3xl rounded-lg shadow-lg border-b-8 mt-24 text-center">
+<section class="container mx-4 md:mx-auto max-w-3xl rounded-lg shadow-lg border-b-8 mt-24 text-center backdrop-filter backdrop-blur-sm">
   <div class="pb-10 px-8">
     <h2 class="font-bold">
       Hubungi kami melalui WhatsApp
     </h2>
-    <p class="text-slate-600 text-md">
+    <p class="text-slate-600 dark:text-slate-100 text-md">
       Atur Schedule dan Konsultasi secara Gratis! Anda tidak harus menggunakan layanan kami untuk bisa berdiskusi dengan kami, tidak peduli jika
       masalah yang Anda hadapi besar atau kecil.
     </p>

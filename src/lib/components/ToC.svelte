@@ -47,13 +47,13 @@
     const visibleIndex =
       headings.findIndex(
         (heading) => heading.node.offsetTop + heading.node.clientHeight > scrollY
-      ) - 1
+      )
 
     activeHeading = headings[visibleIndex]
 
-    const pageHeight = document.body.scrollHeight
+    const pageHeight = document.body.scrollHeight+70
     const scrollProgress = (scrollY + window.innerHeight) / pageHeight
-    if (scrollProgress > 0.999) {
+    if (scrollProgress > 10) {
       activeHeading = headings[headings.length - 1]
     }
   }
@@ -68,7 +68,7 @@
 <ul class="mt-2 !pl-0">
   {#each headings as heading}
     <li
-      class="heading list-none my-4 !pl-0 text-base text-slate-400 transition-colors"
+      class="not-prose heading list-none my-4 !pl-0 text-base text-slate-400 transition-colors"
       class:active={activeHeading?.node === heading.node}
       style={`--depth: ${heading.depth}`}
     >
@@ -78,8 +78,8 @@
 </ul>
 
 <style lang="postcss">
-  .heading a {
-    @apply font-normal;
+  ul li .heading a {
+    @apply my-8 py-6;
   }
 
   .active a {

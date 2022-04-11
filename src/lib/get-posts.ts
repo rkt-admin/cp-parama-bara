@@ -1,7 +1,8 @@
 import { browser } from '$app/env'
 import { format } from 'date-fns'
 import { parse } from 'node-html-parser'
-import readingTime from 'reading-time/lib/reading-time.js'
+import readingTime from 'reading-time'
+// const readingTime = require('reading-time/lib/reading-time.js');
 
 // we require some server-side APIs to parse all metadata
 if (browser) {
@@ -78,16 +79,16 @@ export function getPosts({ page = 1, limit = 10, tag = '' } = {}) {
   if (limit) {
     if (tag == '') {
       data = posts        
-        .map((val, index, arr) => ({ ...val, TotalFilteredPost: arr.length }))
+        .map((val, _, arr) => ({ ...val, TotalFilteredPost: arr.length }))
         .slice((page - 1) * limit, page * limit)
     } else {
       data = posts
         .filter((post) => {
-          return post.tags.find((object) => {
+          return post.tags.find((object: string) => {
             return object === tag
           })
         })
-        .map((val, index, arr) => ({ ...val, TotalFilteredPost: arr.length }))
+        .map((val, _, arr) => ({ ...val, TotalFilteredPost: arr.length }))
         .slice((page - 1) * limit, page * limit)
         // .map((obj) => ({ ...obj, TotalPost: posts.length }))
     }
@@ -97,7 +98,7 @@ export function getPosts({ page = 1, limit = 10, tag = '' } = {}) {
 }
 
 // Get all posts and add metadata
-function addTimezoneOffset(date) {
+function addTimezoneOffset(date: Date) {
   const offsetInMilliseconds = new Date().getTimezoneOffset() * 60 * 1000
   return new Date(new Date(date).getTime() + offsetInMilliseconds)
 }

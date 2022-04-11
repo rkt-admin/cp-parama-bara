@@ -160,7 +160,7 @@
 <svelte:head>
   <title>{SITE_NAME} - Blog category {title}</title>
 </svelte:head>
-<div class="mx-auto w-full max-w-full bg-slate-200">
+<div class="mx-auto w-full max-w-full bg-slate-200 dark:bg-slate-700 shadow-lg">
   <div class="px-4 mx-auto max-w-4xl">
     <h1 class="!mt-14 !mb-6 item-left text-left capitalize">{title}</h1>
   </div>

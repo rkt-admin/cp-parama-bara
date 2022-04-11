@@ -14,7 +14,7 @@
     left-0
   "
   />
-  <div class="container mx-auto max-w-3xl">
+  <div class="container mx-auto max-w-4xl">
     <div class="flex flex-wrap items-center">
       <div class="w-full lg:w-6/12 xl:w-6/12">
         <div class="ud-contact-content-wrapper ">
@@ -31,7 +31,7 @@
               CONTACT US
             </span>
             <h2 class="text-[35px] font-semibold dark:text-slate-300 ">
-              Mau sekedar ngobrol <br/>atau ada keperluan bisnis, hubungi kami disini!
+              Mau sekedar ngobrol atau konsultasi ringan, sampai ada keperluan bisnis, hubungi kami disini!
             </h2>
           </div>
           <div class="flex flex-wrap justify-between mb-12 lg:mb-0 ">
@@ -95,7 +95,7 @@
               <input
                 type="text"
                 name="fullName"
-                placeholder="Adam Gelius"
+                placeholder="Nama Kamu"
                 class="w-full
                 border-0 border-b border-slate-300 text-base
                 focus:border-primary focus:outline-none py-2 dark:bg-slate-700"
@@ -106,7 +106,7 @@
               <input
                 type="email"
                 name="email"
-                placeholder="example@yourmail.com"
+                placeholder="email.kamu@mail.com"
                 class="w-full
                 border-0 border-b border-slate-300 text-base
                 focus:border-primary focus:outline-none py-2 dark:bg-slate-700"
@@ -117,7 +117,7 @@
               <input
                 type="text"
                 name="phone"
-                placeholder="+62 8121 2626 030"
+                placeholder="081 212 626 030"
                 class="w-full
                 border-0 border-b border-slate-300 text-base
                 focus:border-primary focus:outline-none py-2 dark:bg-slate-700"
@@ -128,7 +128,7 @@
               <textarea
                 name="message"
                 rows="1"
-                placeholder="type your message here"
+                placeholder="Ketik pesan Anda disini"
                 class="w-full
                 border-0 border-b border-slate-300 text-base
                 focus:border-primary focus:outline-none py-8 bg-white resize-none dark:bg-slate-700"

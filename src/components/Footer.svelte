@@ -3,8 +3,8 @@
   import { SITE_NAME, URL_BASE } from '$lib/variables'
   import Divider from '$lib/components/Divider.svelte'
 </script>
-
-<footer class="mx-auto flex flex-col flex-grow w-full max-w-3xl px-4">
+<Divider border={true} size="medium" />
+<footer class="mx-auto flex flex-col flex-grow w-full max-w-4xl px-4 md:px-0">
   <div class="md:flex md:justify-between ">
     <div>
       <h2>COMPANY</h2>
@@ -94,7 +94,8 @@
   </div>
   <Divider border={true} size="small" />
   <div class="sm:flex sm:items-center sm:justify-between mb-4 ">
-    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400" ><i class="fa-regular fa-copyright"></i> 2022 <a href={URL_BASE}>{SITE_NAME}</a> site of PT Rakit Digital Creator, All Rights Reserved.      
+    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400" >
+      <i class="fa-regular fa-copyright"></i> 2022 <a href={URL_BASE}>{SITE_NAME}</a> site of PT Rakit Digital Creator, All Rights Reserved.      
     </span>
     <div class="flex mt-4 space-x-5 sm:justify-center sm:mt-0 items-center">
       <!-- svelte-ignore a11y-invalid-attribute -->

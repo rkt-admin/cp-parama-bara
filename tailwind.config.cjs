@@ -9,6 +9,11 @@ module.exports = {
   },
   theme: {
     extend: {
+      backgroundImage: {
+        'pattern-memphis': "url('/bg-pattern-memphis.svg')",
+        'pattern-jigshaw': "url('/bg-pattern-jigshaw.svg')",        
+        'pattern-brick': "url('/bg-pattern-brick.svg')",
+      },
       typography: ({ theme }) => {
         return {
           DEFAULT: {

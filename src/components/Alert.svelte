@@ -1,6 +1,8 @@
 <script>
+// @ts-nocheck
+
     import { onDestroy } from 'svelte'
-    import { alert } from '../stores.js'
+    import { alert } from '../stores'
     import { fly } from 'svelte/transition'
 
     export let ms = 3000
