@@ -13,19 +13,13 @@
     import { ToggleCore } from 'svelte-toggle'
     import { SITE_NAME, MODE } from '$lib/variables'
     // import { language } from '../stores'
-    import Alert from '../components/Alert.svelte'
+    // import Alert from '../components/Alert.svelte'
 
-    let prefersLight = true
+    let yScreen;
     let language = 'id'
 
     if (browser) {
-        prefersLight = localStorage.getItem('prefersLight') == 'false' ? false : true
-        // localStorage.setItem('prefersLight', prefersLight.toString().toLowerCase())
-        // if (!prefersLight) {
-        //     document.querySelector('html')?.classList.add('dark')
-        // }
-
-        language = localStorage.getItem('language') == 'id' ? 'id' : 'en'        
+        language = localStorage.getItem('language') == 'id' ? 'id' : 'en'
     }
 
     $: $locale = language
@@ -55,88 +49,74 @@
             }
         })
     })
+    $: yScreen = yScreen;
 </script>
 
 <svelte:head>
     <title>{SITE_NAME + ' - ' + MODE}</title>
     <meta name="description" content="Page description of rakit.id" />
-    <script
-        type="text/javascript"
-        src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </svelte:head>
 
-<!-- <svelte:window bind:scrollY={yScreen} /> -->
+<svelte:window bind:scrollY={yScreen} />
 <!-- <Alert /> -->
-<div class="flex flex-col min-h-full">
-<div class="w-full backdrop-filter backdrop-blur-[3px]">
-    <div class="mx-auto px-4 py-8 flex flex-col w-full max-w-4xl">
-        <div class="flex h-8 justify-between items-center mb-0 z-50">
-            {#if browser}
-                <Logo />
-                <nav>
-                    <div class="inner">
-                        <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
-                            {#each navItems as item}
-                                <li>
-                                    <a href={item.href} class="text-slate-600">{$t(item.label)}</a>
-                                </li>
-                            {/each}
-                        </ul>
+{#if browser}
+    <div class="bg-slate-100 dark:bg-slate-800 scroll-smooth">
+        <div class="flex flex-col min-h-full">            
+            <div class="navbar w-full z-50 py-2 h-16 fixed transition duration-300 {yScreen > 50 ? ' h-14 drop-shadow-md backdrop-blur-xl bg-white/30': ''}">
+                <div class="mx-auto px-4 flex flex-col w-full max-w-5xl">
+                    <div class="flex justify-between items-center">
+                        <Logo />
+                        <nav>
+                            <div class="inner">
+                                <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
+                                    {#each navItems as item}
+                                        <li>
+                                            <a href={item.href} class="text-slate-600"
+                                                >{$t(item.label)}</a>
+                                        </li>
+                                    {/each}
+                                </ul>
+                            </div>
+                        </nav>
+                        <ToggleCore toggled={language == 'id' ? false : true} let:button>
+                            <!-- svelte-ignore a11y-label-has-associated-control -->
+                            <!-- <label {...label}>Label</label> -->
+                            <button
+                                class="border-[1px]  border-slate-400 bg-slate-600 dark:bg-slate-200 rounded-md py-1 px-2 text-white font-bold dark:text-slate-800 text-sm  hover:drop-shadow-md"
+                                {...button}
+                                on:click={() => {
+                                    language = language == 'en' ? 'id' : 'en'
+                                    localStorage.setItem('language', language)
+                                    $locale = language
+                                }}>
+                                {language == 'id' ? 'English' : 'Bahasa'}
+                            </button>
+                        </ToggleCore>
+                        <div
+                            on:click={handleMobileIconClick}
+                            class={`mobile-icon${showMobileMenu ? ' active' : ''}`}>
+                            <div class="middle-line" />
+                        </div>
                     </div>
-                </nav>
-                <button
-                    type="button"
-                    role="switch"
-                    aria-label="Toggle Dark Mode"
-                    aria-checked={prefersLight}
-                    class="h-6 w-6 sm:h-8 sm:w-8 sm:p-1"
-                    on:click={() => {
-                        prefersLight = !prefersLight
-                        localStorage.setItem('prefersLight', prefersLight.toString())
-
-                        if (prefersLight) {
-                            document.querySelector('html')?.classList.remove('dark')
-                        } else {
-                            document.querySelector('html')?.classList.add('dark')
-                        }
-                    }}>
-                    {#if prefersLight}
-                        <i class="light fa-solid fa-moon text-slate-800 text-2xl" />
-                    {:else}
-                        <i class="dark fa-solid fa-sun text-slate-800 text-2xl" />
-                    {/if}
-                </button>
-                <ToggleCore toggled={language == 'id' ? false : true} let:button>
-                    <!-- svelte-ignore a11y-label-has-associated-control -->
-                    <!-- <label {...label}>Label</label> -->
-                    <button
-                        class="bg-slate-800 dark:bg-slate-500 rounded-xl py-1 px-2 text-white text-xs"
-                        {...button}
-                        on:click={() => {
-                            language = language == 'en' ? 'id' : 'en'
-                            localStorage.setItem('language', language)
-                            $locale = language
-                        }}>
-                        {language == 'id' ? 'English' : 'Bahasa'}
-                    </button>
-                </ToggleCore>
-                <div
-                    on:click={handleMobileIconClick}
-                    class={`mobile-icon${showMobileMenu ? ' active' : ''}`}>
-                    <div class="middle-line" />
                 </div>
-            {/if}
+            </div>       
+            <div class="flex flex-col max-w-none mt-16">
+                <main
+                    class="prose prose-slate prose-sm sm:prose sm:prose-slate sm:prose-lg sm:max-w-none dark:prose-invert flex flex-col flex-grow">
+                    <slot />
+                </main>
+            </div>
         </div>
+        <Footer />
     </div>
-</div>
-    <div class="flex flex-col max-w-none">
-        <main
-            class="prose prose-slate prose-sm sm:prose sm:prose-slate sm:prose-lg sm:max-w-none dark:prose-invert flex flex-col flex-grow">
-            <slot />
-        </main>
+{:else}
+    <div class="sk-folding-cube">
+        <div class="sk-cube1 sk-cube" />
+        <div class="sk-cube2 sk-cube" />
+        <div class="sk-cube4 sk-cube" />
+        <div class="sk-cube3 sk-cube" />
     </div>
-</div>
-<Footer />
+{/if}
 
 <style lang="postcss">
     .light {
@@ -297,7 +277,111 @@
             display: inline-flex;
             margin-bottom: 0;
             text-transform: none;
-            padding: 0 25px;
+            padding: 0 40px;
+            font-size: medium;
+            /* text-transform: uppercase; */
+        }
+    }
+
+    /*
+    SPINNER
+    */
+
+    .sk-folding-cube {
+        margin: 10em auto;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        -webkit-transform: rotateZ(45deg);
+        transform: rotateZ(45deg);
+    }
+
+    .sk-folding-cube .sk-cube {
+        float: left;
+        width: 50%;
+        height: 50%;
+        position: relative;
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+    .sk-folding-cube .sk-cube:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ffcc00;
+        -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+        animation: sk-foldCubeAngle 2.4s infinite linear both;
+        -webkit-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+        transform-origin: 100% 100%;
+    }
+    .sk-folding-cube .sk-cube2 {
+        -webkit-transform: scale(1.1) rotateZ(90deg);
+        transform: scale(1.1) rotateZ(90deg);
+    }
+    .sk-folding-cube .sk-cube3 {
+        -webkit-transform: scale(1.1) rotateZ(180deg);
+        transform: scale(1.1) rotateZ(180deg);
+    }
+    .sk-folding-cube .sk-cube4 {
+        -webkit-transform: scale(1.1) rotateZ(270deg);
+        transform: scale(1.1) rotateZ(270deg);
+    }
+    .sk-folding-cube .sk-cube2:before {
+        -webkit-animation-delay: 0.3s;
+        animation-delay: 0.3s;
+    }
+    .sk-folding-cube .sk-cube3:before {
+        -webkit-animation-delay: 0.6s;
+        animation-delay: 0.6s;
+    }
+    .sk-folding-cube .sk-cube4:before {
+        -webkit-animation-delay: 0.9s;
+        animation-delay: 0.9s;
+    }
+    @-webkit-keyframes sk-foldCubeAngle {
+        0%,
+        10% {
+            -webkit-transform: perspective(140px) rotateX(-180deg);
+            transform: perspective(140px) rotateX(-180deg);
+            opacity: 0;
+        }
+        25%,
+        75% {
+            -webkit-transform: perspective(140px) rotateX(0deg);
+            transform: perspective(140px) rotateX(0deg);
+            opacity: 1;
+        }
+        90%,
+        100% {
+            -webkit-transform: perspective(140px) rotateY(180deg);
+            transform: perspective(140px) rotateY(180deg);
+            opacity: 0;
+        }
+    }
+
+    @keyframes sk-foldCubeAngle {
+        0%,
+        10% {
+            -webkit-transform: perspective(140px) rotateX(-180deg);
+            transform: perspective(140px) rotateX(-180deg);
+            opacity: 0;
+        }
+        25%,
+        75% {
+            -webkit-transform: perspective(140px) rotateX(0deg);
+            transform: perspective(140px) rotateX(0deg);
+            opacity: 1;
+        }
+        90%,
+        100% {
+            -webkit-transform: perspective(140px) rotateY(180deg);
+            transform: perspective(140px) rotateY(180deg);
+            opacity: 0;
         }
     }
 </style>

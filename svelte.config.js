@@ -40,8 +40,9 @@ const config = {
       },
       resolve: {
         alias: {
-          $i18n: path.resolve('./src/i18n'),
-          $lib: path.resolve('./src/lib')
+          // $i18n: path.resolve('./src/i18n'),
+          $lib: path.resolve('./src/lib'),
+          $components: path.resolve('./src/components')
         }
       }
     }

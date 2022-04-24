@@ -1,0 +1,35 @@
+<script>
+    import ButtonLink from '$lib/components/ButtonLink.svelte'
+    import { t } from '$lib/i18n'
+</script>
+
+<section class="container md:mx-auto max-w-3xl  bg-cta">
+    <div class="text-center">
+        <h2 class=" sm:pt-0 font-bold text-4xl">Gratis Konsultasi!</h2>
+        <p class="text-white dark:text-slate-100 text-xl">
+            Tidak peduli serumit apa masalah yang Anda hadapi
+        </p>
+        <div>
+            <div class="justify-end">
+                <ButtonLink
+                    href="https://api.whatsapp.com/send?phone=6281212626030&text=Halo%2C%20saya%20ingin%20berdiskusi%20dengan%20Team%20Rakit.id%2C%20terima%20kasih."
+                    type="submit"
+                    class="inline-flex items-center justify-center h-14 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-green-500 hover:text-white hover:bg-yellow-500 dark:bg-slate-100 dark:text-slate-700 dark:hover:text-slate-100 dark:hover:bg-slate-700 focus:shadow-outline focus:outline-none">
+                    <i class="fa-brands fa-whatsapp  text-base" /> Hubungi melalui WA
+                </ButtonLink>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style lang="postcss">
+    h2 {
+        @apply text-yellow-300;
+    }
+    .bg-cta {
+        height: 400px;
+        width: 768px;
+        background: url(images/bg-splash.svg) no-repeat;
+        @apply py-16 bg-center;
+    }
+</style>

@@ -15,10 +15,10 @@
     @apply my-2;
   }
   .medium {
-    @apply my-4;
+    @apply my-8;
   }
   .large {
-    @apply my-8;
+    @apply my-14;
   }
   .border-half:before {
     content: '';
@@ -28,7 +28,8 @@
     height: 0;
     margin-top: 13px;
     width: 100%;
-    @apply border-t-2 border-dashed border-slate-200;
+    border-top-width: 1px;
+    @apply border-solid border-slate-200;
   }
 
   :global(.dark) .border-half:before {

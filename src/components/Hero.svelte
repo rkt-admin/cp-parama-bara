@@ -1,68 +1,90 @@
 <script>
-  import ButtonLink from '$lib/components/ButtonLink.svelte'
+    import { t } from '$lib/i18n'
 </script>
 
-<div class="flex justify-center items-center">
-  <card class="grid grid-cols-6 max-w-5xl rounded-xl bg-blue-800 hero-card">
-    <div class="col-span-4 hero-span">
-      <h3 class="font-bold text-3xl ml-7 mt-5">Today Quotes</h3>
-      <blockquote class="text-white text-lg ml-5 mt-5">
-        The journey is never ending. There's always gonna be growth, improvement, adversity; you
-        just gotta take it all in and do what's right, continue to grow, continue to live in the
-        moment
-      </blockquote>
-      <!-- <ButtonLink
-        href="/blog"
-        size="small"
-        raised={true}
-        arrows={true}
-        class="text-white font-semibold ml-10 mt-2 mb-6">View All Posts</ButtonLink
-      > -->
+<div
+    class="px-4 mx-auto sm:max-w-2xl md:max-w-full md:px-24 lg:px-8 bg-transparent group mt-5">
+    <div class="inline-grid grid-cols-2 grid-rows-1 lg:grid-cols-3 lg:grid-rows-1 max-w-5xl md:mb-9">
+        <div class="col-span-2 z-20">
+            <h2
+                class="text-left md:text-left text-yellow-500 sm:text-yellow-500 mb-4 md:mb-6  lg:font-medium text-2xl sm:text-2xl leading-none tracking-normal md:mx-auto">
+                {@html $t('hero.title2')}
+            </h2>
+            <h2
+                class="animate-character items-left text-left md:text-left mb-6 md:mb-8 text-2xl sm:text-[2.5em] sm:text-slate-700 leading-none tracking-widest drop-shadow-lg">
+                <!-- {@html $t('hero.title')} -->
+                WEB, MOBILE & SOLUTION
+            </h2>
+            <div
+                class="max-w-2xl text-left md:text-left mb-0 md:mb-2 text-lg md:text-xl mx-auto leading-none tracking-wide">
+                {@html $t('hero.sub-title')}
+            </div>
+
+            <div class="block mt-12 text-left">
+                <button
+                    type="submit"
+                    class="inline-flex items-center h-14 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-red-600 hover:text-white hover:bg-red-700 dark:bg-slate-100 dark:text-slate-700 dark:hover:text-slate-100 dark:hover:bg-slate-700 focus:shadow-outline focus:outline-none">
+                    {$t('hero.button-action')}
+                </button>
+                <button
+                    type="submit"
+                    class="relative inline-flex items-center h-14 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-green-500 hover:text-white hover:bg-green-700 dark:bg-slate-100 dark:text-slate-700 dark:hover:text-slate-100 dark:hover:bg-slate-700 focus:shadow-outline focus:outline-none">
+                    <i class="fa-brands fa-whatsapp  text-base" />&nbsp;WhatsApp
+                    <div class="absolute -right-6 -top-2 ml-4 mr-4 w-6 h-6 rounded-full bg-green-300 z-20 animate-ping">
+                        <div class="absolute left-2 top-2 w-2 h-2 rounded-full bg-green-400 z-20">
+                            &nbsp;
+                        </div>
+                    </div>
+                </button>
+                <!-- <a
+                href="/"
+                aria-label=""
+                class="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700"
+                >Learn more</a
+              > -->
+            </div>
+        </div>
+        <div class="hidden lg:block">
+            <div
+                class="-z-10 transition duration-300 group-hover:animate-vote">
+                <img
+                    src="images/services-web-development.svg"
+                    class="w-full"
+                    alt="Rakit.id - Custom Web Development" />
+            </div>
+        </div>
     </div>
-    <div class="col-span-2 hero-span relative">
-      <img
-        src="https://www.digitalocean.com/_next/static/media/cloudJourneyImage.954519ea.svg"
-        class="hero-image"
-        alt="Today"
-      />
-    </div>
-  </card>
+
+    <!-- <div class="absolute right-60  -top-32 h-full w-full bg-sky-100 dark:bg-gray-900 -z-20 ">&nbsp;</div>
+    <div class="absolute top-0 left-0 w-full min-h-screen bg-slate-200 dark:bg-gray-900 -z-20">&nbsp;</div> -->
+
 </div>
 
-<style lang="postcss">
-  h3 {
-    color: var(--tw-prose-invert-headings);
-    @apply mt-4;
-  }
-  blockquote {
-    color: var(--tw-prose-invert-headings);
-    @apply mt-4 border-l-0 border-white;
-  }
-  .hero-image {
-    position: absolute;
-    bottom: -24px;
-    height: 5em;
-    right: -57px;
-  }
-  .hero-card {
-    margin: 0;
-    padding: 0;
-  }
-  .hero-span {
-    margin: 0;
-    padding: 0;
-    grid-column: span 5;
-  }
-  @media (min-width: 600px) {
-    .hero-image {
-      position: absolute;
-      bottom: -32px;
-      right: -144px;
-      height: 6em;
+<style>
+    .animate-character {
+        /* font-weight: 300; */
+        background-image: linear-gradient(
+            -225deg,
+            #ea0000 25%,
+            #007c1d 50%,
+            #b9a000 75%,
+            #ce5757 100%
+        );
+        background-size: auto auto;
+        background-clip: border-box;
+        background-size: 200% auto;
+        color: #fff;
+        background-clip: text;
+        text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textclip 3s reverse infinite;
+        display: inline-block;
     }
-    .hero-span {
-      margin: 0;
-      padding: 0;
+
+    @keyframes textclip {
+        to {
+            background-position: 200% center;
+        }
     }
-  }
 </style>

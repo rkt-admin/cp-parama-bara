@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="43"
+   height="43"
+   viewBox="0 0 43 43"
+   fill="none"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="tailwind-logo.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="5.488"
+     inkscape:cx="27.150146"
+     inkscape:cy="29.701166"
+     inkscape:window-width="1920"
+     inkscape:window-height="974"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6" />
+  <g
+     id="g834"
+     transform="matrix(1.1355727,0,0,1.1355727,-2.5556009,-1.1809723)">
+    <path
+       d="m 20.803008,9.4882875 c -6.147757,0.1953964 -7.974959,4.5870275 -8.393691,6.9661895 0.54561,-0.881888 2.264963,-2.81689 4.796396,-2.81689 2.95016,0 5.196094,3.292761 6.566491,4.320561 1.66492,1.248696 5.010444,2.897438 9.402452,1.560731 3.502131,-1.065867 5.126319,-4.783755 5.481594,-6.547499 -1.693963,2.303031 -4.263461,3.686333 -7.442024,2.055598 C 29.025395,13.904014 27.388533,9.2789571 20.803008,9.4882875 Z"
+       fill="#07b6d5"
+       id="path2"
+       style="stroke-width:0.0380666" />
+    <path
+       d="m 12.104783,19.937573 c -6.1477579,0.195397 -7.9749544,4.587028 -8.3936868,6.966189 0.545619,-0.881888 2.2649628,-2.816889 4.7963916,-2.816889 2.9501652,0 5.1960942,3.292762 6.5664952,4.320561 1.664916,1.248696 5.01044,2.897438 9.402453,1.560731 3.50213,-1.065867 5.126318,-4.783756 5.481593,-6.5475 -1.693963,2.303031 -4.26346,3.686335 -7.442023,2.055599 -2.188831,-1.122964 -3.825698,-5.74802 -10.411223,-5.538691 z"
+       fill="#07b6d5"
+       id="path4"
+       style="stroke-width:0.0380666" />
+  </g>
+</svg>

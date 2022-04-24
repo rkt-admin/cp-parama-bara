@@ -30,31 +30,33 @@ button {
 */
 
 svg {
-  @apply outline-none focus:outline-none;
+    @apply outline-none focus:outline-none;
 }
 html,
 body {
-  scroll-padding-top: 100px;
+    scroll-padding-top: 100px;
 }
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  a {
-    @apply hover:text-sky-500;
-  }  
-  .fa-solid {
-    padding-top: 4px;
-  }  
+    a {
+        @apply hover:text-sky-500;
+    }
+    .fa-solid {
+        padding-top: 4px;
+    }
+    html {
+        //font-family: Proxima Nova, system-ui, sans-serif;
+    }
 }
 
 @layer components {
-  a {
-    @apply hover:text-sky-500;
-  }  
+    a {
+        @apply hover:text-sky-500;
+    }
 
-  h3 > a {
-    @apply hover:text-sky-500;
-  }  
+    h3 > a {
+        @apply hover:text-sky-500;
+    }
 }
-

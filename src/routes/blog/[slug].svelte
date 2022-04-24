@@ -91,7 +91,7 @@
     <meta name="twitter:description" content={preview.text} />
     <meta name="twitter:image" content={ogImage} />
 </svelte:head>
-<div class="mx-auto w-full max-w-full bg-slate-200 bg-pattern-memphis dark:bg-slate-900 shadow-md py-14">
+<div class="mx-auto w-full max-w-full bg-slate-100 bg-pattern-memphis dark:bg-slate-900 shadow-md py-14">
     <h1 class="my-8 item-center text-center">
         <a class="!font-medium" href={$page.url.pathname}>
             {title}
