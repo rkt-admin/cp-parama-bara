@@ -1,13 +1,11 @@
 
-<section class="max-w-5xl mx-auto z-20">
+<section class="max-w-4xl mx-auto z-20 px-8">
     <div class="mx-auto">
-        <div>
-            <div class="container m-auto space-y-8 px-6 md:px-12 lg:px-20">
-                <div class="grid grid-cols-1 grid-rows-2 gap-x-5 mb-36 ">
-                    <div class="col-span-1 items-center align-middle text-left sm:text-left text-2xl sm:text-6xl text-red-600 sm:text-red-600 font-light leading-none tracking-widest">OUR SERVICES</div>
-                    <div class="col-span-1 items-center sm:font-light sm:text-4xl max-w-2xl">
-                        We help you <span class="text-yellow-500">streamline</span> your business
-                            <span class="text-yellow-500">workflow</span>, then optimize it with technology
+            <div class="container m-auto">
+                <div class="mb-36">
+                    <div class="col-span-1 text-left sm:text-left text-4xl sm:text-6xl text-red-600 sm:text-red-600 font-light leading-none tracking-widest mb-8" >OUR SERVICES</div>
+                    <div class="col-span-1 text-left sm:text-left text-xl sm:text-2xl ">
+                        Custom software development services to create mobile apps, websites and web applications from idea to post-launch support for all-sized businesses of various industries.
                     </div>
                 </div>
                 <div
@@ -106,7 +104,7 @@
                         <div class="relative text-left space-y-4 p-6 md:p-8 md:mt-5">
                             <h3
                                 class=" sm:pt-0 text-2xl font-medium dark:text-slate-700">
-                                Backend Development
+                                UI/UX Design
                             </h3>
                             <p class="text-gray-600 text-base text-left">
                                 Whether you need a small presentation website to attract new
@@ -118,6 +116,5 @@
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 </section>

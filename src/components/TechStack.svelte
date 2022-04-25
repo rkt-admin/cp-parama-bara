@@ -1,12 +1,12 @@
-<section name="Technology Stack" class="max-w-4xl mx-auto z-20">
+<section name="Technology Stack" class="max-w-5xl mx-auto z-20 px-8">
     <div class="grid grid-cols-1 grid-rows-2">
-        <div class="col-span-1 items-center align-middle text-right sm:text-right text-2xl sm:text-6xl text-red-600 sm:text-red-600 font-light leading-none tracking-widest">TECHNOLOGY STACK</div>
-        <div class="col-span-1 items-center align-middle text-right sm:text-right text-2xl sm:text-2xl ">
-            Using global proven technology make you advanced before start
+        <div class="col-span-1 items-center align-middle text-right sm:text-right text-4xl sm:text-6xl text-red-600 sm:text-red-600 font-light leading-none tracking-widest">TECHNOLOGY STACK</div>
+        <div class="col-span-1 items-center align-middle text-right sm:text-right text-xl sm:text-2xl ">
+            Using globally proven technology gets you ahead before you start
         </div>
     </div>
-    <div class="container m-auto">
-        <div class="inline-grid sm:grid-cols-4 lg:grid-cols-4 gap-x-20">
+    <div class="container mx-auto">
+        <div class="inline-grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-x-20 gap-y-8">
             <div>
                 <h3>Front End</h3>
                 <div class="grid sm:grid-cols-1 lg:grid-cols-1 relative group">

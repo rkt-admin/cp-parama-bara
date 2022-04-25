@@ -3,7 +3,7 @@
 </script>
 
 <div
-    class="px-4 mx-auto sm:max-w-2xl md:max-w-full md:px-24 lg:px-8 bg-transparent group mt-5">
+    class="px-4 mx-auto sm:max-w-2xl md:max-w-full md:px-24 lg:px-8 bg-transparent group mt-16">
     <div class="inline-grid grid-cols-2 grid-rows-1 lg:grid-cols-3 lg:grid-rows-1 max-w-5xl md:mb-9">
         <div class="col-span-2 z-20">
             <h2
@@ -23,12 +23,12 @@
             <div class="block mt-12 text-left">
                 <button
                     type="submit"
-                    class="inline-flex items-center h-14 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-red-600 hover:text-white hover:bg-red-700 dark:bg-slate-100 dark:text-slate-700 dark:hover:text-slate-100 dark:hover:bg-slate-700 focus:shadow-outline focus:outline-none">
+                    class="inline-flex items-center h-16 px-8 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-red-600 hover:text-white hover:bg-red-700 dark:bg-slate-100 dark:text-slate-700 dark:hover:text-slate-100 dark:hover:bg-slate-700 focus:shadow-outline focus:outline-none">
                     {$t('hero.button-action')}
                 </button>
                 <button
                     type="submit"
-                    class="relative inline-flex items-center h-14 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-green-500 hover:text-white hover:bg-green-700 dark:bg-slate-100 dark:text-slate-700 dark:hover:text-slate-100 dark:hover:bg-slate-700 focus:shadow-outline focus:outline-none">
+                    class="relative inline-flex items-center h-16 px-8 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-green-500 hover:text-white hover:bg-green-700 dark:bg-slate-100 dark:text-slate-700 dark:hover:text-slate-100 dark:hover:bg-slate-700 focus:shadow-outline focus:outline-none">
                     <i class="fa-brands fa-whatsapp  text-base" />&nbsp;WhatsApp
                     <div class="absolute -right-6 -top-2 ml-4 mr-4 w-6 h-6 rounded-full bg-green-300 z-20 animate-ping">
                         <div class="absolute left-2 top-2 w-2 h-2 rounded-full bg-green-400 z-20">

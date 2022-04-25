@@ -9,11 +9,13 @@ module.exports = {
   },
   theme: {
     extend: {
+      flexGrow: {
+        '2': 2
+      },
       scale: {
         'max': '5',
       },
       backgroundImage: {
-        'pattern-memphis': "url('/bg-pattern-memphis.svg')",
         'pattern-jigshaw': "url('/bg-pattern-jigshaw.svg')",        
         'pattern-brick': "url('/bg-pattern-brick.svg')",
         'pattern-call': "url('/bg-pattern-call.svg')",

@@ -1,5 +1,5 @@
 <!-- ====== Contact Start ====== -->
-<section id="contact" class="ud-contact py-20 md:py-[80px] relative max-w-full">
+<section id="contact" class="ud-contact md:py-[80px] px-8 relative max-w-full">
     <div
         class="
     absolute
@@ -7,7 +7,7 @@
     w-full
     h-1/2
     lg:h-[45%]
-    bg-slate-400
+    bg-yellow-50
     dark:bg-slate-800
     xl:h-1/2
     top-0
@@ -15,21 +15,22 @@
     bg-pattern-memphis
   " />
     <div class="container mx-auto max-w-4xl">
-        <div class="flex flex-wrap items-center">
+        <div class="flex flex-wrap items-center px-4">
             <div class="w-full lg:w-6/12 xl:w-6/12">
-                <div class="ud-contact-content-wrapper ">
-                    <div class="ud-contact-title mb-12 lg:mb-[150px] px-2 ">
-                        <div class="inline-grid grid-flow-row-dense grid-cols-2 grid-rows-1 gap-x-5 mb-16">
-                            <div class="col-span-1 items-center align-middle text-left sm:text-left text-2xl sm:text-6xl text-red-600 sm:text-red-600 font-light leading-none tracking-widest">CONTACT US</div>                           
+                <div>
+                    <div class="mb-12 lg:mb-[150px] px-2">
+                        <div
+                            class="mb-8 text-left sm:text-left text-4xl sm:text-6xl text-red-600 sm:text-red-600 font-light leading-none tracking-widest">
+                            CONTACT US
                         </div>
-                        <h2 class="text-[35px] font-semibold dark:text-slate-300 ">
+                        <div class="text-left sm:text-left text-2xl sm:text-2xl">
                             Mau ngobrol, konsultasi ringan, atau ada keperluan bisnis, hubungi kami
                             disini!
-                        </h2>
+                        </div>
                     </div>
-                    <div class="flex flex-wrap justify-between mb-12 lg:mb-0 ">
-                        <div class="flex max-w-full w-[330px] mb-8">
-                            <div class="text-[32px] text-primary mr-6">
+                    <div class="flex flex-wrap justify-between mb-12 lg:mb-0">
+                        <div class="flex max-w-full mb-8">
+                            <div class="mr-6">
                                 <svg
                                     width="29"
                                     height="35"
@@ -50,8 +51,8 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="flex max-w-full w-[330px] mb-8">
-                            <div class="text-[32px] text-primary mr-6">
+                        <div class="flex max-w-full w-[330px]">
+                            <div class="text-[32px] mr-6">
                                 <svg
                                     width="34"
                                     height="25"
@@ -81,20 +82,9 @@
                     </div>
                 </div>
             </div>
-            <div class="w-full lg:w-6/12 xl:w-6/12 rounded-3xl shadow-xl">
+            <div class="w-full lg:w-6/12 xl:w-6/12 rounded-3xl shadow-xl pb-10">
                 <div
-                    class="
-          shadow-testimonial
-          rounded-lg
-          bg-white
-          dark:bg-slate-700
-          py-6
-          px-8
-          md:p-[60px]
-          lg:p-10
-          2xl:p-[60px]
-          sm:py-2 sm:px-10
-          lg:py-2 lg:px-10
+                    class="rounded-3xl bg-white dark:bg-slate-700 py-6 px-8 md:p-[60px] lg:p-10 2xl:p-[60px] sm:py-2 sm:px-10 lg:py-2 lg:px-10
         "
                     data-wow-delay=".2s">
                     <h3 class="font-semibold mb-8 text-2xl md:text-[26px]">Send us a Message</h3>

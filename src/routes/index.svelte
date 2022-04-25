@@ -23,10 +23,10 @@
     <Divider />
     <ContactUs />
     <Divider border={true} size='large' />
-    <div class="absolute top-0 left-5 -rotate-1 h-full w-[1px] bg-slate-200 z-20 m-0 p-0">
+    <!-- <div class="absolute top-0 left-5 -rotate-1 h-full w-[1px] bg-slate-100 -z-20 m-0 p-0">
         &nbsp;
     </div>    
-    <div class="absolute top-0 right-5 rotate-1 h-full w-[1px] bg-slate-200 z-20 m-0 p-0">
+    <div class="absolute top-0 right-5 rotate-1 h-full w-[1px] bg-slate-100 -z-20 m-0 p-0">
         &nbsp;
-    </div>
+    </div> -->
 </div>

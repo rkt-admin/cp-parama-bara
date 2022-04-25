@@ -60,9 +60,9 @@
 <svelte:window bind:scrollY={yScreen} />
 <!-- <Alert /> -->
 {#if browser}
-    <div class="bg-slate-100 dark:bg-slate-800 scroll-smooth">
-        <div class="flex flex-col min-h-full">            
-            <div class="navbar w-full z-50 py-2 h-16 fixed transition duration-300 {yScreen > 50 ? ' h-14 drop-shadow-md backdrop-blur-xl bg-white/30': ''}">
+    <div class="bg-white dark:bg-slate-800">
+        <div class="flex flex-col">            
+            <div class="w-full z-50 pt-1 fixed {yScreen > 50 ? ' drop-shadow-md backdrop-blur-xl bg-white/70': ''}">
                 <div class="mx-auto px-4 flex flex-col w-full max-w-5xl">
                     <div class="flex justify-between items-center">
                         <Logo />

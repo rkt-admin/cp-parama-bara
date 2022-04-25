@@ -7,9 +7,9 @@
     import LightMode from '$lib/components/LightMode.svelte'
 </script>
 
-<footer class="max-w-full drop-shadow-sm">
-    <div class="mx-auto flex flex-col flex-grow w-full max-w-3xl px-2 md:px-0">
-        <div class="md:flex md:justify-between ">
+<footer class="max-w-full px-8">
+    <div class="mx-auto w-full max-w-4xl md:px-0">
+        <div class="inline-grid grid-cols-2 sm:grid-cols-3 gap-x-16 gap-y-16 md:flex md:justify-between ">
             <div>
                 <h2>COMPANY</h2>
                 <ul>
@@ -54,11 +54,6 @@
                     </li>
                 </ul>
             </div>
-            <div class="translate-y-10">
-                <Logo />
-                <br />
-                <div class="text-center"><LightMode /></div>
-            </div>
             <div>
                 <h2>Help center</h2>
                 <ul>
@@ -97,10 +92,15 @@
                     </li>
                 </ul>
             </div>
+            <div>
+                <Logo />
+                <br />
+                <LightMode />
+            </div>
         </div>
 
         <Divider border={false} size="small" />
-        
+
         <div class="sm:flex sm:items-center sm:justify-between mb-4 ">
             <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
                 <i class="fa-regular fa-copyright" /> 2022 <a href={URL_BASE}>{SITE_NAME}</a> by PT Rakit
