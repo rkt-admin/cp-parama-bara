@@ -82,7 +82,7 @@
                             <!-- svelte-ignore a11y-label-has-associated-control -->
                             <!-- <label {...label}>Label</label> -->
                             <button
-                                class="border-[1px]  border-slate-400 bg-slate-600 dark:bg-slate-200 rounded-md py-1 px-2 text-white font-bold dark:text-slate-800 text-sm  hover:drop-shadow-md"
+                                class="border-[1px]  border-slate-800 bg-slate-800 dark:bg-slate-200 rounded-md py-1 px-2 text-white font-bold dark:text-slate-800 text-sm  hover:drop-shadow-md"
                                 {...button}
                                 on:click={() => {
                                     language = language == 'en' ? 'id' : 'en'
