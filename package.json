@@ -2,9 +2,9 @@
 	"name": "rakit-id",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "svelte-kit dev --port 80",
-		"build": "svelte-kit build",
-		"preview": "svelte-kit preview --port 80",
+		"dev": "vite dev --port 80",
+		"build": "vite build",
+		"preview": "svelte-kit preview",
 		"lint": "prettier --check . && eslint --ignore-path .gitignore .",
 		"format": "prettier --write ."
 	},
@@ -44,6 +44,7 @@
 		"node-html-parser": "^5.2.0",
 		"pnpm": "^6.32.8",
 		"reading-time": "^1.5.0",
-		"reading-time-estimator": "^1.4.33"
+		"reading-time-estimator": "^1.4.33",
+		"vite": "^3.1.0"
 	}
 }

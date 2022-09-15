@@ -1,5 +1,5 @@
 <script>
-    import { browser } from '$app/env'
+    import { browser } from '$app/environment'
 
     let prefersLight = true
     if (browser) {
@@ -12,7 +12,7 @@
     role="switch"
     aria-label="Toggle Dark Mode"
     aria-checked={prefersLight}
-    class="h-6 w-6 sm:h-8 sm:w-8 sm:p-1"
+    class=""
     on:click={() => {
         prefersLight = !prefersLight
         localStorage.setItem('prefersLight', prefersLight.toString())

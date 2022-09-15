@@ -1,4 +1,4 @@
-import { browser } from '$app/env'
+import { browser } from '$app/environment'
 import { format } from 'date-fns'
 import { parse } from 'node-html-parser'
 import readingTime from 'reading-time'
@@ -84,7 +84,7 @@ export function getPosts({ page = 1, limit = 10, tag = '' } = {}) {
     } else {
       data = posts
         .filter((post) => {
-          return post.tags.find((object: string) => {
+          return post.tags.find((object) => {
             return object === tag
           })
         })
@@ -98,7 +98,7 @@ export function getPosts({ page = 1, limit = 10, tag = '' } = {}) {
 }
 
 // Get all posts and add metadata
-function addTimezoneOffset(date: Date) {
+function addTimezoneOffset(date) {
   const offsetInMilliseconds = new Date().getTimezoneOffset() * 60 * 1000
   return new Date(new Date(date).getTime() + offsetInMilliseconds)
 }

@@ -81,8 +81,8 @@ const translation: Translation = {
     "section.what-we-do": "APA YANG KAMI LAKUKAN",
     "hero.sub-title": "We are digital creators from the nusantara (Indonesia), who have a passion for technology and digital innovation. We are ready to assist your evolution journey through the latest and proven digital technology",
     // "hero.sub-title": "Please \"Get Started\" to find out in more detail why our solutions are different from the others.",
-    "hero.button-action": "Get Started",
-    "cta.button-action": "Whatsapp"
+    "hero.button-action": "HOW WE DO IT",
+    "cta.button-action": "WHATSAPP"
   }
 };
 

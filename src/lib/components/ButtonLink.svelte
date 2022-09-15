@@ -17,7 +17,7 @@
   <a
     {...$$restProps}
     {href}
-    class={'inline-block dark:text-opacity-90 rounded-md no-underline '+
+    class={'dark:text-opacity-90 rounded-full no-underline '+
       className}
     class:small={size === 'small'}
     class:medium={size === 'medium'}

@@ -26,15 +26,15 @@
      inkscape:pagecheckerboard="true"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="50.558135"
-     inkscape:cy="78.488853"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="-4.9497475"
+     inkscape:cy="106.06602"
      inkscape:window-width="1920"
      inkscape:window-height="974"
      inkscape:window-x="-11"
      inkscape:window-y="-11"
      inkscape:window-maximized="1"
-     inkscape:current-layer="SvgjsG1006"
+     inkscape:current-layer="SvgjsG1008"
      showguides="true"
      inkscape:guide-bbox="true"
      fit-margin-top="0"
@@ -61,7 +61,10 @@
        id="path971"
        cx="25.4"
        cy="25.4"
-       r="25.4" />
+       r="25.4"
+       inkscape:export-filename="D:\Project\rakit.id\blog\static\rakit-id-profile.png"
+       inkscape:export-xdpi="260"
+       inkscape:export-ydpi="260" />
   </g>
   <g
      inkscape:groupmode="layer"

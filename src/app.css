@@ -59,4 +59,8 @@ body {
     h3 > a {
         @apply hover:text-sky-500;
     }
+
+    .section-style {
+        @apply  w-screen px-10;
+    }
 }

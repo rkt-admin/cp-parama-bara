@@ -6,23 +6,15 @@
     import '../app.css'
     import '../prism.css'
     import Logo from '../components/Logo.svelte'
-    import { browser } from '$app/env'
+    import { browser } from '$app/environment'
     import Footer from '../components/Footer.svelte'
     import { onMount } from 'svelte'
-    import { t, locale } from '$lib/i18n'
-    import { ToggleCore } from 'svelte-toggle'
+    import { t } from '$lib/i18n'
     import { SITE_NAME, MODE } from '$lib/variables'
     // import { language } from '../stores'
     // import Alert from '../components/Alert.svelte'
 
-    let yScreen;
-    let language = 'id'
-
-    if (browser) {
-        language = localStorage.getItem('language') == 'id' ? 'id' : 'en'
-    }
-
-    $: $locale = language
+    let yScreen
 
     // Show mobile icon and display menu
     let showMobileMenu = false
@@ -31,7 +23,7 @@
     let navItems = [
         { label: 'menu.home', href: '/' },
         { label: 'menu.services', href: '/services' },
-        { label: 'menu.contact-us', href: '/contact-us' },
+        { label: 'menu.contact-us', href: '/contact' },
         { label: 'menu.blog', href: '/blog' },
         { label: 'menu.login', href: '/login' }
     ]
@@ -49,7 +41,7 @@
             }
         })
     })
-    $: yScreen = yScreen;
+    $: yScreen = yScreen
 </script>
 
 <svelte:head>
@@ -60,55 +52,47 @@
 <svelte:window bind:scrollY={yScreen} />
 <!-- <Alert /> -->
 {#if browser}
-    <div class="bg-white dark:bg-slate-800">
-        <div class="flex flex-col">            
-            <div class="w-full z-50 pt-1 fixed {yScreen > 50 ? ' drop-shadow-md backdrop-blur-xl bg-white/70': ''}">
-                <div class="mx-auto px-4 flex flex-col w-full max-w-5xl">
-                    <div class="flex justify-between items-center">
-                        <Logo />
-                        <nav>
-                            <div class="inner">
-                                <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
-                                    {#each navItems as item}
-                                        <li>
-                                            <a href={item.href} class="text-slate-600"
-                                                >{$t(item.label)}</a>
-                                        </li>
-                                    {/each}
-                                </ul>
-                            </div>
-                        </nav>
-                        <ToggleCore toggled={language == 'id' ? false : true} let:button>
-                            <!-- svelte-ignore a11y-label-has-associated-control -->
-                            <!-- <label {...label}>Label</label> -->
-                            <button
-                                class="border-[1px]  border-slate-800 bg-slate-800 dark:bg-slate-200 rounded-md py-1 px-2 text-white font-bold dark:text-slate-800 text-sm  hover:drop-shadow-md"
-                                {...button}
-                                on:click={() => {
-                                    language = language == 'en' ? 'id' : 'en'
-                                    localStorage.setItem('language', language)
-                                    $locale = language
-                                }}>
-                                {language == 'id' ? 'English' : 'Bahasa'}
-                            </button>
-                        </ToggleCore>
-                        <div
-                            on:click={handleMobileIconClick}
-                            class={`mobile-icon${showMobileMenu ? ' active' : ''}`}>
-                            <div class="middle-line" />
+    <div
+        class="w-full mx-auto z-50 fixed bg-slate-100 dark:bg-black px-10 {yScreen > 50
+            ? ' py-2 transition-all duration-500 drop-shadow-md'
+            : ' py-6'}">
+        <div class="max-w-5xl w-full mx-auto">
+            <div class="mx-auto flex flex-col">
+                <div class="flex justify-between items-center">
+                    <Logo />
+                    <nav>
+                        <div class="inner">
+                            <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
+                                {#each navItems as item}
+                                    <li>
+                                        <a
+                                            href={item.href}
+                                            >{$t(item.label)}</a>
+                                    </li>
+                                {/each}
+                            </ul>
                         </div>
+                    </nav>
+                    <div
+                        on:click={handleMobileIconClick}
+                        class={`mobile-icon${showMobileMenu ? ' active' : ''}`}>
+                        <div class="middle-line" />
                     </div>
                 </div>
-            </div>       
-            <div class="flex flex-col max-w-none mt-16">
+            </div>
+        </div>
+    </div>
+    <div class="max-w-full w-full">
+        <div class="flex flex-col">
+            <div class="flex flex-col mt-28">
                 <main
-                    class="prose prose-slate prose-sm sm:prose sm:prose-slate sm:prose-lg sm:max-w-none dark:prose-invert flex flex-col flex-grow">
+                    class="dark:text-slate-100 flex flex-col flex-grow">
                     <slot />
                 </main>
             </div>
-        </div>
-        <Footer />
+        </div>        
     </div>
+    <Footer />
 {:else}
     <div class="sk-folding-cube">
         <div class="sk-cube1 sk-cube" />
@@ -132,9 +116,9 @@
   } */
 
     .inner {
-        max-width: 980px;
-        padding-left: 20px;
-        padding-right: 20px;
+        /* max-width: 980px; */
+        /* padding-left: 20px;
+        padding-right: 20px; */
         margin: auto;
         box-sizing: border-box;
         display: flex;
@@ -243,20 +227,25 @@
         height: 45px;
         align-items: center;
         padding: 0;
-        @apply mb-2 uppercase font-medium;
+        @apply font-medium;
     }
 
     .active {
         @apply bg-slate-200 text-base rounded-2xl;
     }
 
-    .navbar-list a:hover,
-    .navbar-list li a:active {
-        @apply text-sky-500;
+    .navbar-list a {
+        @apply text-gray-600;
     }
 
     :global(.dark) .navbar-list a {
-        @apply text-slate-400;
+        @apply text-slate-50;
+    }
+    
+
+    .navbar-list a:hover,
+    .navbar-list li a:active {
+        @apply text-gray-500;
     }
 
     @media only screen and (min-width: 767px) {
@@ -276,10 +265,9 @@
         .navbar-list a {
             display: inline-flex;
             margin-bottom: 0;
-            text-transform: none;
-            padding: 0 40px;
+            padding: 0 30px;
             font-size: medium;
-            /* text-transform: uppercase; */
+            float: right;
         }
     }
 

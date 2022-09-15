@@ -7,8 +7,8 @@
     w-full
     h-1/2
     lg:h-[45%]
-    bg-yellow-50
-    dark:bg-slate-800
+    bg-slate-200
+    dark:bg-gray-900
     xl:h-1/2
     top-0
     left-0 
@@ -75,7 +75,7 @@
                                 <br />
                                 <div class="text-base text-body-color">
                                     <div><b>Call / WA:</b></div>
-                                    <span class="text-left">(+62) 8121 2626 030</span>
+                                    <span class="text-left">(+62) 81 212 626 030</span>
                                 </div>
                             </div>
                         </div>
@@ -84,7 +84,7 @@
             </div>
             <div class="w-full lg:w-6/12 xl:w-6/12 rounded-3xl shadow-xl pb-10">
                 <div
-                    class="rounded-3xl bg-white dark:bg-slate-700 py-6 px-8 md:p-[60px] lg:p-10 2xl:p-[60px] sm:py-2 sm:px-10 lg:py-2 lg:px-10
+                    class="rounded-3xl bg-white dark:bg-gray-800 py-6 px-8 md:p-[60px] lg:p-10 2xl:p-[60px] sm:py-2 sm:px-10 lg:py-2 lg:px-10
         "
                     data-wow-delay=".2s">
                     <h3 class="font-semibold mb-8 text-2xl md:text-[26px]">Send us a Message</h3>

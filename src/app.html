@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" href="/favicon.png">
-  %svelte.head%
+  %sveltekit.head%
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-V5K5EECM62"></script> -->
   <!-- <meta name="google-signin-client_id" content="1084908729896-9heh1hn3bqp3e3ibeip70l2ds6vqahhj.apps.googleusercontent.com"> -->
   <!--load all Font Awesome styles -->
@@ -31,9 +31,9 @@
   </script>
 </head>
 
-<body class="relative transition-colors duration-100 overflow-x-clip">
-  <div class="fixed inset-0 -z-50"></div>
-  <div id="svelte" class="z-0">%svelte.body%</div>
+<body class="relative transition-colors duration-100 overflow-x-clip bg-slate-100 dark:bg-black">
+  <!-- <div class="fixed inset-0 -z-50"></div> -->
+  <div id="svelte" class="z-0">%sveltekit.body%</div>
 
   <!-- this fixes a bug in chrome where animations trigger from unstyled to styled content on page load -->
   <!-- https://stackoverflow.com/a/42969257/6342734 -->
