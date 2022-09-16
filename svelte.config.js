@@ -10,18 +10,16 @@ const config = {
   // for more information about preprocessors
   preprocess: [
     mdsvex(mdsvexConfig),
-    [
-      preprocess({
-        postcss: true
-      })
-    ]
+    preprocess({
+      postcss: true
+    })
   ],
 
   kit: {
     // target: '#svelte',
     adapter: adapter({
       pages: 'public',
-      assets: 'public'
+      assets: 'static'
     }),
 
     // if you are not using the static adapter and

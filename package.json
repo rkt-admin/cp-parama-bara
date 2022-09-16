@@ -4,7 +4,7 @@
 	"scripts": {
 		"dev": "vite dev --port 80",
 		"build": "vite build",
-		"preview": "svelte-kit preview",
+		"preview": "vite preview",
 		"lint": "prettier --check . && eslint --ignore-path .gitignore .",
 		"format": "prettier --write ."
 	},
