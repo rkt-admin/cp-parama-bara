@@ -15,11 +15,11 @@
   .logo-img {
     height: 42px;
     width: 106px;
-    background-image: url(rakit-logo-noback-black.svg);
+    background-image: url(rakit-id-logo-black.svg);
   }
   :global(.dark) .logo-img {
     height: 42px;
     width: 106px;
-    background-image: url(rakit-logo-noback-white.svg);
+    background-image: url(rakit-id-logo-white.svg);
   }
 </style>
