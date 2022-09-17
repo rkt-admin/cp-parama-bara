@@ -5,7 +5,7 @@
 <section name="Technology Stack" class="bg-slate-200 dark:bg-black section-style">
     <Divider border={false} size="large" />
     <div id="whatwedo" class="group grid grid-cols-1 max-w-5xl mx-auto">
-        <div class="mx-8">
+        <div class="mx-4">
             <div class="grid grid-cols-1 grid-rows-2">
                 <div
                     class="col-span-1 text-right sm:text-right text-4xl sm:text-6xl text-red-600 sm:text-red-600 font-light leading-none tracking-widest mb-10">
@@ -18,7 +18,7 @@
             <div class="mx-auto">
                 <div
                     class="inline-grid 
-        grid-cols-2 gap-x-24 gap-y-8
+        grid-cols-2 gap-x-16 gap-y-8
         sm:grid-cols-3 sm:gap-x-16 sm:gap-y-8 
         md:grid-cols-4 md:gap-x-16 md:gap-y-8
         lg:grid-cols-4 lg:gap-x-28 lg:gap-y-8">

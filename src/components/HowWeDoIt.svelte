@@ -12,7 +12,7 @@
                         class="col-span-1 text-4xl sm:text-6xl text-red-600 font-thin leading-none tracking-widest mb-10">
                         HOW WE DO IT
                     </div>
-                    <div class="col-span-1 text-xl sm:text-3xl">
+                    <div class="col-span-1 text-xl sm:text-3xl text-justify">
                         We help you <span class="text-yellow-500">streamline</span> your business
                         <span class="text-yellow-500">workflow</span>, make it simple and efficient,
                         then optimize it with technology
@@ -20,8 +20,8 @@
                 </div>
             </div>
             <div class="col-span-1">
-                <div class="relative group-hover:animate-pulse">
-                    <div class="mx-auto max-w-3xl">
+                <div class="relative">
+                    <div class="mx-auto max-w-3xl mt-10">
                         <img
                             src="images/bg-streamline.svg"
                             class="relative w-full z-20"

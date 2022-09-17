@@ -61,6 +61,6 @@ body {
     }
 
     .section-style {
-        @apply  w-screen px-10;
+        @apply  w-screen px-4;
     }
 }

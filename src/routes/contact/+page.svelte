@@ -1,5 +1,5 @@
 <!-- ====== Contact Start ====== -->
-<section id="contact" class="ud-contact md:py-[80px] px-8 relative max-w-full">
+<section id="contact" class="ud-contact md:py-[80px] relative max-w-full">
     <div
         class="
     absolute
@@ -15,7 +15,7 @@
     bg-pattern-memphis
   " />
     <div class="container mx-auto max-w-4xl">
-        <div class="flex flex-wrap items-center px-4">
+        <div class="flex flex-wrap items-center mx-4">
             <div class="w-full lg:w-6/12 xl:w-6/12">
                 <div>
                     <div class="mb-12 lg:mb-[150px] px-2">
@@ -82,12 +82,25 @@
                     </div>
                 </div>
             </div>
-            <div class="w-full lg:w-6/12 xl:w-6/12 rounded-3xl shadow-xl pb-10">
+            <div class="w-full lg:w-6/12 xl:w-6/12 rounded-3xl shadow-xl">
                 <div
                     class="rounded-3xl bg-white dark:bg-gray-800 py-6 px-8 md:p-[60px] lg:p-10 2xl:p-[60px] sm:py-2 sm:px-10 lg:py-2 lg:px-10
         "
                     data-wow-delay=".2s">
-                    <h3 class="font-semibold mb-8 text-2xl md:text-[26px]">Send us a Message</h3>
+                    <div class="my-8 ">
+                        <div class="inline-block">
+                            <svg width="34" height="25" viewBox="0 0 34 25" class="fill-current">
+                                <path
+                                    d="M30.5156 0.960938H3.17188C1.42188 0.960938 0 2.38281 0 4.13281V20.9219C0 22.6719 1.42188 24.0938 3.17188 24.0938H30.5156C32.2656 24.0938 33.6875 22.6719 33.6875 20.9219V4.13281C33.6875 2.38281 32.2656 0.960938 30.5156 0.960938ZM30.5156 2.875C30.7891 2.875 31.0078 2.92969 31.2266 3.09375L17.6094 11.3516C17.1172 11.625 16.5703 11.625 16.0781 11.3516L2.46094 3.09375C2.67969 2.98438 2.89844 2.875 3.17188 2.875H30.5156ZM30.5156 22.125H3.17188C2.51562 22.125 1.91406 21.5781 1.91406 20.8672V5.00781L15.0391 12.9922C15.5859 13.3203 16.1875 13.4844 16.7891 13.4844C17.3906 13.4844 17.9922 13.3203 18.5391 12.9922L31.6641 5.00781V20.8672C31.7734 21.5781 31.1719 22.125 30.5156 22.125Z" />
+                            </svg>
+                        </div>
+                        <div class="inline-block">
+                            <h3 class="font-semibold text-3xl md:text-[26px]">
+                                Send us a Message
+                            </h3>
+                        </div>
+                    </div>
+
                     <form>
                         <div class="mb-6">
                             <label for="fullName" class="block text-xs text-dark">Full Name*</label>
@@ -95,9 +108,7 @@
                                 type="text"
                                 name="fullName"
                                 placeholder="Nama Kamu"
-                                class="w-full
-                border-0 border-b border-slate-300 text-base
-                focus:border-primary focus:outline-none py-2 dark:bg-slate-700" />
+                                class="form-input focus:border-primary focus:outline-none py-2" />
                         </div>
                         <div class="mb-6">
                             <label for="email" class="block text-xs text-dark">Email*</label>
@@ -105,9 +116,7 @@
                                 type="email"
                                 name="email"
                                 placeholder="email.kamu@mail.com"
-                                class="w-full
-                border-0 border-b border-slate-300 text-base
-                focus:border-primary focus:outline-none py-2 dark:bg-slate-700" />
+                                class="form-input focus:border-primary focus:outline-none py-2" />
                         </div>
                         <div class="mb-6">
                             <label for="phone" class="block text-xs text-dark">Phone*</label>
@@ -115,9 +124,7 @@
                                 type="text"
                                 name="phone"
                                 placeholder="081 212 626 030"
-                                class="w-full
-                border-0 border-b border-slate-300 text-base
-                focus:border-primary focus:outline-none py-2 dark:bg-slate-700" />
+                                class="form-input focus:border-primary focus:outline-none py-2" />
                         </div>
                         <div class="mb-6">
                             <label for="message" class="block text-xs text-dark">Message*</label>
@@ -125,9 +132,7 @@
                                 name="message"
                                 rows="1"
                                 placeholder="Ketik pesan Anda disini"
-                                class="w-full
-                border-0 border-b border-slate-300 text-base
-                focus:border-primary focus:outline-none py-8 bg-white resize-none dark:bg-slate-700" />
+                                class="form-input focus:border-primary focus:outline-none py-8" />
                         </div>
                         <div class="mb-0">
                             <button
@@ -158,4 +163,13 @@
         </div>
     </div>
 </section>
+
 <!-- ====== Contact End ====== -->
+<style lang="postcss">
+    .form-input {
+        @apply w-full border-0 border-b border-slate-300 text-base bg-white resize-none;
+    }
+    :global(.dark) {
+        @apply bg-slate-700;
+    }
+</style>

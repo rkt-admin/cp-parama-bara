@@ -5,29 +5,28 @@
 
 <section class="w-full group section-style">
     <div class="max-w-5xl mx-auto">
-        <div class="inline-grid grid-cols-2 grid-rows-1 lg:grid-cols-3 lg:grid-rows-1 mt-10">
+        <div class="inline-grid grid-cols-2 grid-rows-1 lg:grid-cols-3 lg:grid-rows-1 mt-10 mx-2">
             <div class="col-span-2 z-20">
                 <div
-                    class="animate-character items-left tracking-tight drop-shadow-md
-                text-left font-extrabold
-                text-4xl
-                sm:text-4xl
-                md:text-4xl
-                lg:text-5xl">
+                    class="animate-character items-left tracking-tight drop-shadow-md text-left
+                text-3xl mb-2 font-extrabold
+                sm:text-4xl sm:mb-4
+                md:text-4xl md:mb-4
+                lg:text-5xl lg:mb-4">
                     CRAFTING SOLUTION <br />
                 </div>
                 <div
-                    class="text-yellow-500 items-left tracking-tight
-                text-left font-light
-                text-3xl mb-10
+                    class="text-red-500 items-left tracking-tight
+                text-left 
+                text-2xl mb-10 font-medium
                 sm:text-3xl sm:mb-8
                 md:text-3xl md:mb-8
-                lg:text-4xl lg:mb-10">
+                lg:text-2xl lg:mb-10 lg:font-bold">
                     WEB . MOBILE . API . CUSTOM
                 </div>
                 <div
                     class="max-w-2xl mx-auto tracking-normal
-                text-left  text-xl mb-0
+                text-justify  text-xl mb-0
                 sm:text-xl sm:mb-2
                 md:text-xl md:mb-2
                 lg:text-2xl lg:mb-2">
@@ -38,7 +37,8 @@
                     <ButtonLink
                         href="#HowWeDoIt"
                         type="submit"
-                        class="relative inline-flex items-center h-14 px-8 font-medium tracking-wide text-white transition duration-200 rounded-xl shadow-md bg-slate-900 hover:text-white hover:bg-slate-700 dark:bg-slate-100 dark:text-slate-700 dark:hover:text-slate-700 dark:hover:bg-slate-300 focus:shadow-outline focus:outline-none mr-5">
+                        class="relative inline-flex items-center h-14 font-normal tracking-wide text-white transition duration-200 rounded-xl shadow-md bg-slate-900 hover:text-white hover:bg-slate-700 dark:bg-slate-100 dark:text-slate-700 dark:hover:text-slate-700 dark:hover:bg-slate-300 focus:shadow-outline focus:outline-none 
+                        px-4 mr-5">
                         <div class=" items-center justify-center align-middle">
                             <span>{$t('hero.button-action')}</span>
                         </div>
@@ -46,7 +46,7 @@
                     <ButtonLink
                         href="https://api.whatsapp.com/send?phone=6281212626030&text=Halo%2C%20saya%20ingin%20berdiskusi%20dengan%20Team%20Rakit.id%2C%20terima%20kasih."
                         type="submit"
-                        class="relative inline-flex items-center h-14 px-8 font-medium tracking-wide text-white transition duration-200 rounded-xl shadow-md bg-green-500 hover:text-white hover:bg-green-600 dark:bg-green-500 dark:text-slate-50 dark:hover:text-slate-100 dark:hover:bg-green-600 focus:shadow-outline focus:outline-none">
+                        class="relative inline-flex items-center h-14 px-8 font-normal tracking-wide text-white transition duration-200 rounded-xl shadow-md bg-green-500 hover:text-white hover:bg-green-600 dark:bg-green-500 dark:text-slate-50 dark:hover:text-slate-100 dark:hover:bg-green-600 focus:shadow-outline focus:outline-none">
                         <div class=" items-center justify-center align-middle">
                             <i class="fa-brands fa-whatsapp text-xl mr-2" /><span
                                 >{$t('cta.button-action')}</span>
@@ -88,7 +88,7 @@
             -225deg,
             #000000 25%,
             #656565 50%,
-            #b7b7b7 75%,
+            #ffd000 75%,
             #000000 100%
         );
         background-size: auto auto;

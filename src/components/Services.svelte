@@ -1,6 +1,6 @@
 <section class="z-20 section-style">
     <div class="max-w-5xl mx-auto">
-        <div class="mb-36 mx-4">
+        <div class="mb-52 mx-4">
             <div
                 class="col-span-1 text-justify sm:text-left text-4xl sm:text-6xl text-red-600 sm:text-red-600 font-light leading-none tracking-widest mb-8">
                 OUR SERVICES
@@ -12,7 +12,7 @@
             </div>
         </div>
         <div
-            class="grid grid-cols-1 gap-x-4 gap-y-32 mx-10
+            class="grid grid-cols-1 gap-x-4 gap-y-48 mx-4
                     sm:grid-cols-2 sm:gap-x-8 sm:gap-y-32 sm:mx-4
                     md:grid-cols-2 md:gap-x-10 md:gap-y-32 md:mx-8
                     lg:grid-cols-2 lg:gap-x-32 lg:gap-y-36 lg:mx-10">
