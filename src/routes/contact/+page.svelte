@@ -15,7 +15,7 @@
     bg-pattern-memphis
   " />
     <div class="container mx-auto max-w-4xl">
-        <div class="flex flex-wrap items-center mx-4">
+        <div class="flex flex-wrap items-center mx-6">
             <div class="w-full lg:w-6/12 xl:w-6/12">
                 <div>
                     <div class="mb-12 lg:mb-[150px] px-2">
