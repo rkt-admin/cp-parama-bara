@@ -7,8 +7,8 @@
     w-full
     h-1/2
     lg:h-[45%]
-    bg-slate-200
-    dark:bg-gray-900
+    bg-none dark:bg-none
+    sm:bg-slate-200 
     xl:h-1/2
     top-0
     left-0 
@@ -169,7 +169,7 @@
     .form-input {
         @apply w-full border-0 border-b border-slate-300 text-base bg-white resize-none;
     }
-    :global(.dark) {
-        @apply bg-slate-700;
+    :global(.dark) .form-input {
+        @apply w-full border-0 border-b border-slate-300 text-base bg-slate-800 resize-none;
     }
 </style>
