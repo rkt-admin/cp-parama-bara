@@ -5,7 +5,7 @@
 <script lang="ts">
     import Hero from '../components/Hero.svelte'
     import Divider from '$lib/components/Divider.svelte'
-    import WhatWeDo from '../components/HowWeDoIt.svelte'
+    import WhatWeDo from '../components/HowWeWork.svelte'
     import Services from '../components/Services.svelte'
     import TechStack from '../components/TechStack.svelte'
     // import CTA from '../components/CallToAction.svelte'

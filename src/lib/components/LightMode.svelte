@@ -1,9 +1,11 @@
 <script>
     import { browser } from '$app/environment'
-
+    import { lightmode } from '$lib/stores'
+  
     let prefersLight = true
     if (browser) {
         prefersLight = localStorage.getItem('prefersLight') == 'false' ? false : true
+        lightmode.set(prefersLight);
     }
 </script>
 
@@ -16,6 +18,7 @@
     on:click={() => {
         prefersLight = !prefersLight
         localStorage.setItem('prefersLight', prefersLight.toString())
+        lightmode.set(prefersLight);
 
         if (prefersLight) {
             document.querySelector('html')?.classList.remove('dark')

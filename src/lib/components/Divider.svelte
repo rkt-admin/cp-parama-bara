@@ -12,13 +12,13 @@
 
 <style lang="postcss">
   .small {
-    @apply mb-2;
+    @apply mb-4;
   }
   .medium {
-    @apply mb-8;
+    @apply mb-10;
   }
   .large {
-    @apply mb-14;
+    @apply mb-24;
   }
   .border-half:before {
     content: '';

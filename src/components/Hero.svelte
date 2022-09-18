@@ -37,8 +37,8 @@
                     <ButtonLink
                         href="#HowWeDoIt"
                         type="submit"
-                        class="relative inline-flex items-center h-14 font-normal tracking-wide text-white transition duration-200 rounded-xl shadow-md bg-slate-900 hover:text-white hover:bg-slate-700 dark:bg-slate-100 dark:text-slate-700 dark:hover:text-slate-700 dark:hover:bg-slate-300 focus:shadow-outline focus:outline-none 
-                        px-4 mr-5">
+                        class="relative inline-flex items-center h-14 px-4 font-normal tracking-normal text-white transition duration-200 rounded-xl shadow-md bg-slate-900 hover:text-white hover:bg-slate-700 dark:bg-slate-100 dark:text-slate-700 dark:hover:text-slate-700 dark:hover:bg-slate-300 focus:shadow-outline focus:outline-none 
+                        mr-5">
                         <div class=" items-center justify-center align-middle">
                             <span>{$t('hero.button-action')}</span>
                         </div>
@@ -46,7 +46,7 @@
                     <ButtonLink
                         href="https://api.whatsapp.com/send?phone=6281212626030&text=Halo%2C%20saya%20ingin%20berdiskusi%20dengan%20Team%20Rakit.id%2C%20terima%20kasih."
                         type="submit"
-                        class="relative inline-flex items-center h-14 px-8 font-normal tracking-wide text-white transition duration-200 rounded-xl shadow-md bg-green-500 hover:text-white hover:bg-green-600 dark:bg-green-500 dark:text-slate-50 dark:hover:text-slate-100 dark:hover:bg-green-600 focus:shadow-outline focus:outline-none">
+                        class="relative inline-flex items-center h-14 px-4 font-normal tracking-normal text-white transition duration-200 rounded-xl shadow-md bg-green-500 hover:text-white hover:bg-green-600 dark:bg-green-500 dark:text-slate-50 dark:hover:text-slate-100 dark:hover:bg-green-600 focus:shadow-outline focus:outline-none">
                         <div class=" items-center justify-center align-middle">
                             <i class="fa-brands fa-whatsapp text-xl mr-2" /><span
                                 >{$t('cta.button-action')}</span>

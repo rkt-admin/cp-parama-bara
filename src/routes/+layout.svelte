@@ -11,10 +11,8 @@
     import { onMount } from 'svelte'
     import { t } from '$lib/i18n'
     import { SITE_NAME, MODE } from '$lib/variables'
-    // import { language } from '../stores'
-    // import Alert from '../components/Alert.svelte'
-
-    let yScreen
+    
+    let yScreen: number
 
     // Show mobile icon and display menu
     let showMobileMenu = false
@@ -54,7 +52,7 @@
 {#if browser}
     <div
         class="w-full mx-auto z-50 fixed bg-slate-100 dark:bg-black px-10 {yScreen > 50
-            ? ' py-2 transition-all duration-500 drop-shadow-md'
+            ? ' py-2 transition-trans duration-500 drop-shadow-md'
             : ' py-6'}">
         <div class="max-w-5xl w-full mx-auto">
             <div class="mx-auto flex flex-col">
@@ -92,7 +90,7 @@
             </div>
         </div>        
     </div>
-    <Footer />
+    <Footer  />
 {:else}
     <div class="sk-folding-cube">
         <div class="sk-cube1 sk-cube" />

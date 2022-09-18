@@ -29,7 +29,7 @@
                     aria-hidden="true"
                     class="absolute inset-0 rounded-xl bg-white dark:bg-gray-300 shadow-xl transition duration-300 group-hover:scale-105 lg:group-hover:scale-105" />
                 <div class="relative text-left space-y-4 p-6 md:p-8 md:mt-5">
-                    <h3 class=" sm:pt-0 text-2xl font-medium dark:text-slate-700">
+                    <h3 class="header-service">
                         Custom Web Development
                     </h3>
                     <p class="text-gray-600 text-base text-left">
@@ -52,7 +52,7 @@
                     aria-hidden="true"
                     class="absolute inset-0 rounded-xl bg-white dark:bg-gray-300 shadow-xl transition duration-300 group-hover:scale-105 lg:group-hover:scale-105" />
                 <div class="relative text-left space-y-4 p-6 md:p-8 md:mt-5">
-                    <h3 class=" sm:pt-0 text-2xl font-medium dark:text-slate-700">
+                    <h3 class="header-service">
                         Backend Development
                     </h3>
                     <p class="text-gray-600 text-base text-left">
@@ -75,7 +75,7 @@
                     aria-hidden="true"
                     class="absolute inset-0 rounded-xl bg-white dark:bg-gray-300 shadow-xl transition duration-300 group-hover:scale-105 lg:group-hover:scale-105" />
                 <div class="relative text-left space-y-4 p-6 md:p-8 md:mt-5">
-                    <h3 class=" sm:pt-0 text-2xl font-medium dark:text-slate-700">
+                    <h3 class="header-service">
                         Desktop App Development
                     </h3>
                     <p class="text-gray-600 text-base text-left">
@@ -98,7 +98,7 @@
                     aria-hidden="true"
                     class="absolute inset-0 rounded-xl bg-white dark:bg-gray-300 shadow-xl transition duration-300 group-hover:scale-105 lg:group-hover:scale-105" />
                 <div class="relative text-left space-y-4 p-6 md:p-8 md:mt-5">
-                    <h3 class=" sm:pt-0 text-2xl font-medium dark:text-slate-700">UI/UX Design</h3>
+                    <h3 class="header-service">UI/UX Design</h3>
                     <p class="text-gray-600 text-base text-left">
                         Whether you need a small presentation website to attract new clients, or a
                         complete custom platform supporting millions of monthly visits, we can
@@ -109,3 +109,13 @@
         </div>
     </div>
 </section>
+
+<style lang="postcss">
+    .header-service {
+        @apply sm:pt-0 text-2xl font-medium mt-10 sm:mt-10 md:mt-0
+    }
+
+    :global(.dark) .header-service {
+        @apply text-slate-700
+    }
+</style>
