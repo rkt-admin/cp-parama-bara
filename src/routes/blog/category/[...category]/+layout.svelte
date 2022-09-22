@@ -20,33 +20,33 @@
         }
     }
 
-    // $: {
-    //     if (data.posts.length > 0)
-    //         if (data.tag !== '') {
-    //             if (data.page > 1) {
-    //                 pageUrl = '/blog/tag/' + data.tag
-    //                 setNextPage(1, limit * data.page < data.posts[0].TotalFilteredPost)
-    //             } else {
-    //                 pageUrl = '/blog/tag/' + data.tag + '/page/'
-    //                 if (data.posts[0].TotalFilteredPost <= data.limit) {
-    //                     hasNextPage = false
-    //                 } else {
-    //                     setNextPage(2, data.limit * data.page < data.posts[0].TotalFilteredPost)
-    //                 }
-    //             }
-    //         } else {
-    //             if (data.page > 1) {
-    //                 pageUrl = '/blog/'
-    //                 setNextPage(3, data.limit * data.page < data.posts[0].TotalFilteredPost)
-    //             } else {
-    //                 pageUrl = '/blog/page/'
-    //                 setNextPage(4, data.limit * data.page < data.posts[0].TotalFilteredPost)
-    //             }
-    //         }
+    $: {
+        if (data.posts.length > 0)
+            if (data.tag !== '') {
+                if (data.page > 1) {
+                    pageUrl = '/blog/tag/' + data.tag
+                    setNextPage(1, limit * data.page < data.posts[0].TotalFilteredPost)
+                } else {
+                    pageUrl = '/blog/tag/' + data.tag + '/page/'
+                    if (data.posts[0].TotalFilteredPost <= data.limit) {
+                        hasNextPage = false
+                    } else {
+                        setNextPage(2, data.limit * data.page < data.posts[0].TotalFilteredPost)
+                    }
+                }
+            } else {
+                if (data.page > 1) {
+                    pageUrl = '/blog/'
+                    setNextPage(3, data.limit * data.page < data.posts[0].TotalFilteredPost)
+                } else {
+                    pageUrl = '/blog/page/'
+                    setNextPage(4, data.limit * data.page < data.posts[0].TotalFilteredPost)
+                }
+            }
 
-    //     title = data.tag == '' ? title : data.tag
-    //     // console.log( 'tag:' + tag + ', page:' + page + ', limit: ' + limit + ', posts:' + posts.length + ', TotalFilteredPost: ' + posts[0].TotalFilteredPost)
-    // }
+        title = data.tag == '' ? title : data.tag
+        // console.log( 'tag:' + tag + ', page:' + page + ', limit: ' + limit + ', posts:' + posts.length + ', TotalFilteredPost: ' + posts[0].TotalFilteredPost)
+    }
 
     $: isFirstPage = data.page === 1
 

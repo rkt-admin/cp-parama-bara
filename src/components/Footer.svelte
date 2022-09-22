@@ -15,7 +15,7 @@
         language = localStorage.getItem('language') == 'id' ? 'id' : 'en'
     }
 
-    
+    let ligthswitch
 
     $: $locale = language
 </script>
@@ -88,35 +88,49 @@
                     </ul>
                 </div>
                 <div>
-                    <div class="inline-flex rounded-md shadow-sm" role="group">
-                        <button
-                            type="button"
-                            class="px-4 text-sm font-normal text-gray-900 bg-white rounded-l-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10  focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600  dark:focus:text-white">
-                            <LightMode />
-                        </button>
+                    <!-- <div class="inline-flex rounded-lg" role="group"> -->
+                        
                         <ToggleCore toggled={language == 'id' ? false : true} let:button>
-                            <!-- svelte-ignore a11y-label-has-associated-control -->
-                            <!-- <label {...label}>Label</label> -->
                             <button
                                 type="button"
-                                class="px-4 text-sm font-normal text-gray-900 bg-white rounded-r-md border border-gray-200 hover:bg-gray-100 focus:z-10 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600  dark:focus:text-white"
+                                class="px-3 pt-1 text-sm font-normal text-gray-900 bg-white rounded-md border border-gray-200 hover:bg-gray-100  dark:bg-black dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-slate-700  dark:focus:text-white"
                                 {...button}
                                 on:click={() => {
                                     language = language == 'en' ? 'id' : 'en'
                                     localStorage.setItem('language', language)
                                     $locale = language
                                 }}>
-                                {language == 'id' ? 'English' : 'Bahasa'}
+                                <span class="inline-flex">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke-width="1.5"
+                                        stroke="currentColor"
+                                        class="w-5 h-5">
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" />
+                                    </svg>
+                                    <span>&nbsp;{language == 'id' ? 'English' : 'Bahasa'}</span>
+                                </span>
                             </button>
-                        </ToggleCore>
-                    </div>
+                        </ToggleCore><br/><br/>
+                        <button
+                            on:click={ligthswitch.lightSwitchHandler()}
+                            type="button"
+                            >
+                            <LightMode bind:this={ligthswitch} />
+                        </button>
+                    <!-- </div> -->
                 </div>
             </div>
 
-            <Divider border={false} size="small" />
+            <Divider border={false} size="medium" />
 
             <div class="sm:flex sm:items-center sm:justify-between mb-4 ">
-                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+                <span class="text-gray-500 sm:text-center dark:text-gray-400">
                     <i class="fa-regular fa-copyright" /> 2022 <a href={URL_BASE}>{SITE_NAME}</a> by
                     PT Rakit Digital Creator, All Rights Reserved.
                 </span>

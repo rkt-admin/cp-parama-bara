@@ -7,14 +7,14 @@
     w-full
     h-1/2
     lg:h-[45%]
-    bg-none dark:bg-none
-    sm:bg-slate-200 
+    bg-slate-200
+    dark:sm:bg-gray-900
     xl:h-1/2
     top-0
     left-0 
     bg-pattern-memphis
   " />
-    <div class="container mx-auto max-w-4xl">
+    <div class="container mx-auto max-w-5xl">
         <div class="flex flex-wrap items-center mx-6">
             <div class="w-full lg:w-6/12 xl:w-6/12">
                 <div>
@@ -45,9 +45,7 @@
                             <div>
                                 <h5 class="text-lg font-semibold mb-6">Our Location</h5>
                                 <p class="text-base text-body-color">
-                                    Curungrejo, Kepanjen, Malang<br />
-                                    Jawa Timur, Indonesia<br />
-                                    65163<br />
+                                    Indonesia<br />
                                 </p>
                             </div>
                         </div>
@@ -87,7 +85,7 @@
                     class="rounded-3xl bg-white dark:bg-gray-800 py-6 px-8 md:p-[60px] lg:p-10 2xl:p-[60px] sm:py-2 sm:px-10 lg:py-2 lg:px-10
         "
                     data-wow-delay=".2s">
-                    <div class="my-8 ">
+                    <div class="my-8">
                         <div class="inline-block">
                             <svg width="34" height="25" viewBox="0 0 34 25" class="fill-current">
                                 <path
@@ -101,9 +99,9 @@
                         </div>
                     </div>
 
-                    <form>
+                    <form class="pb-8">
                         <div class="mb-6">
-                            <label for="fullName" class="block text-xs text-dark">Full Name*</label>
+                            <label for="fullName" class="block text-xs text-dark">Full Name</label>
                             <input
                                 type="text"
                                 name="fullName"
@@ -111,7 +109,7 @@
                                 class="form-input focus:border-primary focus:outline-none py-2" />
                         </div>
                         <div class="mb-6">
-                            <label for="email" class="block text-xs text-dark">Email*</label>
+                            <label for="email" class="block text-xs text-dark">Email</label>
                             <input
                                 type="email"
                                 name="email"
@@ -119,7 +117,7 @@
                                 class="form-input focus:border-primary focus:outline-none py-2" />
                         </div>
                         <div class="mb-6">
-                            <label for="phone" class="block text-xs text-dark">Phone*</label>
+                            <label for="phone" class="block text-xs text-dark">Phone</label>
                             <input
                                 type="text"
                                 name="phone"
@@ -127,7 +125,7 @@
                                 class="form-input focus:border-primary focus:outline-none py-2" />
                         </div>
                         <div class="mb-6">
-                            <label for="message" class="block text-xs text-dark">Message*</label>
+                            <label for="message" class="block text-xs text-dark">Message</label>
                             <textarea
                                 name="message"
                                 rows="1"
@@ -148,7 +146,9 @@
                 bg-primary
                 text-base
                 font-medium
-                bg-slate-400
+                bg-slate-900
+                dark:bg-slate-200
+                dark:text-slate-900
                 hover:bg-dark
                 transition
                 duration-300

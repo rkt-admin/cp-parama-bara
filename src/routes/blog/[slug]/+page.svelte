@@ -1,214 +1,177 @@
 <script context="module">
-  export const prerender = false
+    /**
+     * @type {import('@sveltejs/kit').Load}
+     */
+    export async function load({ params, fetch }) {
+        const { slug } = params
 
-  /**
-   * @type {import("@sveltejs/kit").Load}
-   */
-  export const load = async ({ fetch, params }) => {
-    let page = 1
-    let limit = 2
-    let tag = ''
+        // fetch posts from endpoint so that it includes all metadata (see posts.json.js for explanation)
+        const posts = await fetch('/api/posts').then((res) => res.json())
+        const post = posts.find((post) => slug === post.slug)
 
-    let pr = params.page.toLowerCase().trim().split('/')
-    const fetchPostsParams = new URLSearchParams()
+        if (!post) {
+            return {
+                status: 404,
+                error: 'Post not found'
+            }
+        }
 
-    try {
-      switch (pr.length) {
-        case 2:
-          switch (pr[0]) {
-            case 'page':
-              page = parseInt(params.page.split('/').pop())
-              fetchPostsParams.set('page', page.toString())
-              break
-            case 'tag':
-              tag = params.page.split('/').pop()
-              fetchPostsParams.set('tag', tag)
-              break
-            default:
-              return {
-                redirect: `/blog`,
-                status: 302
-              }
-          }
-          break
-        case 4:
-          switch (pr[0].toString() + '-' + pr[2].toString()) {
-            case 'tag-page':
-              tag = pr[1].toString()
-              page = parseInt(pr[3].toString())
-              break
-            case 'page-tag':
-              tag = pr[3].toString()
-              page = parseInt(pr[1].toString())
-              break
-            default:
-              return {
-                redirect: `/blog`,
-                status: 302
-              }
-          }
-          fetchPostsParams.set('tag', tag)
-          fetchPostsParams.set('page', page.toString())
-          break
-      }
+        const component = post.isIndexFile
+            ? // vite requires relative paths and explicit file extensions for dynamic imports
+              await import(`../../../blog/posts/${post.slug}/index.md`)
+            : await import(`../../../blog/posts/${post.slug}.md`)
 
-      fetchPostsParams.set('limit', limit.toString())
-
-      // console.log(`/posts.json?${fetchPostsParams.toString()}`)
-    } catch (e) {
-      console.error(e)
+        return {
+            props: {
+                ...post,
+                component: component.default
+            }
+        }
     }
-
-    const posts = await fetch(`/api/posts?${fetchPostsParams.toString()}`).then((res) => res.json())
-
-    // console.log(posts)
-
-    // if page doesn't exist, direct to page 1
-    if (posts.length == 0 && page > 1) {
-      return {
-        redirect: `/blog`,
-        status: 302
-      }
-    }
-
-    return {
-      props: {
-        posts,
-        page,
-        limit,
-        tag
-      }
-    }
-  }
 </script>
 
 <script>
-  import ButtonLink from '$lib/components/ButtonLink.svelte'
-  import { format, parseISO } from 'date-fns'
-  import PostPreview from '$lib/components/PostPreview.svelte'
-  import Divider from '$lib/components/Divider.svelte'
-  const SITE_NAME = import.meta.env.VITE_PUBLIC_SITE_NAME
+    import { format, parseISO } from 'date-fns'
+    import { page } from '$app/stores'
+    import ButtonLink from '$lib/components/ButtonLink.svelte'
+    import ToC from '$lib/components/ToC.svelte'
+    import PostPreview from '$lib/components/PostPreview.svelte'
+    import Divider from '$lib/components/Divider.svelte'
+    import { URL_BASE, SITE_NAME } from '$lib/variables'
+    export let component
 
-  export let posts
-  export let page = 1
-  export let tag
-  export let limit = 0
-  let title = 'Blog'
+    // metadata
+    export let title
+    export let date
+    export let tags
+    export let preview
+    export let readingTime
+    export let slug
+    export let next
+    export let previous
 
-  let pageUrl = '/blog/'
-  let hasNextPage = false
+    // generated open-graph image for sharing on social media. Visit https://og-image.vercel.app/ to see more options.
+    const ogImage = `https://og-image.vercel.app/**${encodeURIComponent(
+        title
+    )}**?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fhyper-color-logo.svg`
 
-  function setNextPage(flag, condition) {
-    if (condition) {
-      hasNextPage = true
-    } else {
-      hasNextPage = false
+    const url = `${URL_BASE}/${slug}`
+
+    function formatTags(tags) {
+        return tags
+            .map(
+                (tag) =>
+                    '<a style="text-decoration: none" class="hover:text-sky-500" href="/blog/tag/' +
+                    tag +
+                    '">#' +
+                    tag +
+                    '</a>'
+            )
+            .join(' ')
     }
-  }
-
-  $: {
-    if (posts.length > 0)
-      if (tag !== '') {
-        if (page > 1) {
-          pageUrl = '/blog/tag/' + tag
-          setNextPage(1, limit * page < posts[0].TotalFilteredPost)
-        } else {
-          pageUrl = '/blog/tag/' + tag + '/page/'
-          if (posts[0].TotalFilteredPost <= limit) {
-            hasNextPage = false
-          } else {
-            setNextPage(2, limit * page < posts[0].TotalFilteredPost)
-          }
-        }
-      } else {
-        if (page > 1) {
-          pageUrl = '/blog/'
-          setNextPage(3, limit * page < posts[0].TotalFilteredPost)
-        } else {
-          pageUrl = '/blog/page/'
-          setNextPage(4, limit * page < posts[0].TotalFilteredPost)
-        }
-      }
-
-    title = tag == '' ? 'Blog' : tag
-
-    // console.log(
-    //   'tag:' +
-    //     tag +
-    //     ', page:' +
-    //     page +
-    //     ', limit: ' +
-    //     limit +
-    //     ', posts:' +
-    //     posts.length +
-    //     ', TotalFilteredPost: ' +
-    //     posts[0].TotalFilteredPost
-    // )
-  }
-
-  $: isFirstPage = page === 1
-
-  function formatTags(tags) {
-    return tags
-      .map(
-        (tag) => '<a style="text-decoration: none"  href="/blog/tag/' + tag + '">#' + tag + '</a>'
-      )
-      .join(' ')
-  }
 </script>
 
 <svelte:head>
-  <title>{SITE_NAME} - Blog category {title}</title>
-</svelte:head>
-<div class="mx-auto w-full max-w-full bg-slate-100 dark:bg-slate-700 shadow-lg bg-pattern-memphis">
-  <div class="px-4 mx-auto max-w-4xl ">
-    <h1 class="!mt-14 !mb-6 item-left text-left capitalize">{title}</h1>
-  </div>
-  <Divider />
-</div>
-<div class="px-4 mx-auto flex flex-col flex-grow w-full max-w-4xl">
-  <div class="container py-10 mx-auto">
-    <div class="-my-8">
-      {#each posts as post}
-        <div class="py-8 flex flex-wrap md:flex-nowrap">
-          <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-            <span class="text-base">{format(new Date(parseISO(post.date)), 'MMMM d, yyyy')}</span>
-            <span class="text-base">{post.readingTime}</span>
-            <span class="text-1xl" style="max-width: 12em">{@html formatTags(post.tags)}</span>
-          </div>
-          <div class="md:flex-grow">
-            <PostPreview {post} small />
-          </div>
-        </div>
-      {/each}
-    </div>
-  </div>
-  <!-- begin pagination -->
-  <div class="flex visible items-center justify-between pt-8 opacity-70">
-    {#if !isFirstPage}
-      <ButtonLink
-        raised={false}
-        href={`${pageUrl}${page - 1 == 1 ? '' : page - 1}`}
-        arrowsLeft={true}
-        class="hover:text-sky-600"
-      >
-        Previous</ButtonLink
-      >
-    {:else}
-      <div />
-    {/if}
+    <title>{title}</title>
+    <meta name="description" content={preview.text} />
+    <meta name="author" content={SITE_NAME} />
 
-    {#if hasNextPage}
-      <ButtonLink
-        raised={false}
-        href={`${pageUrl}${page + 1}`}
-        size="large"
-        arrowsRight={true}
-        class="hover:text-sky-600"
-      >
-        Next
-      </ButtonLink>
-    {/if}
-    <!-- end pagination -->
-  </div>
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content={url} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={preview.text} />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content={URL_BASE} />
+    <meta property="twitter:url" content={url} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={preview.text} />
+    <meta name="twitter:image" content={ogImage} />
+</svelte:head>
+<div class="mx-auto w-full max-w-full bg-slate-100 bg-pattern-memphis dark:bg-slate-900 shadow-md py-14">
+    <h1 class="my-8 item-center text-center">
+        <a class="!font-medium" href={$page.url.pathname}>
+            {title}
+        </a>
+    </h1>
+    <div class="text-center">
+        <time datetime={new Date(parseISO(date)).toISOString()}
+            >{format(new Date(parseISO(date)), 'MMMM d, yyyy')}</time>
+        •
+        <span>{readingTime}</span>
+    </div>
+    <div class="text-center">
+        <span>{@html formatTags(tags)}</span>
+    </div>
 </div>
+<div class="grid gap-4 grid-cols-12 mx-auto max-w-full">
+    <div class="col-start-3 col-end-10">
+        <article>
+            <!-- render the post -->
+            <svelte:component this={component} />
+
+            <div class="pt-12 flex justify-between">
+                <ButtonLink
+                    raised={false}
+                    href={`/blog`}
+                    size="large"
+                    arrowsLeft={true}
+                    class="hover:text-sky-600">
+                    Back to Posts
+                </ButtonLink>
+            </div>
+        </article>
+    </div>
+    <div class="col-start-10 col-end-12">
+        <!-- table of contents -->
+        <aside class="sticky top-10 mt-4">
+            <div aria-label="Table of Contents">
+                <ToC allowedHeadings={['h2', 'h3', 'h4', 'h5', 'h6']} />
+            </div>
+        </aside>
+    </div>
+</div>
+<Divider />
+{#if previous || next}
+    <div class="flex mx-auto w-full max-w-4xl relative">
+        {#if previous}
+            <div class="flex-auto text-left">
+                <h6 class="not-prose post-preview-label">Previous Post</h6>
+                <div class="flex-1 post-preview">
+                    <PostPreview post={previous} small previewText={false} readMore={false} />
+                </div>
+            </div>
+        {:else}
+            <div />
+        {/if}
+        {#if next}
+            <div class="flex-auto text-right">
+                <h6 class="not-prose post-preview-label flex justify-end">Next Post</h6>
+                <div class="flex-1 post-preview text-right">
+                    <PostPreview post={next} small previewText={false} readMore={false} />
+                </div>
+            </div>
+        {/if}
+    </div>
+{/if}
+
+<style lang="postcss">
+    /* .post-preview {
+    @apply flex p-4 border border-slate-300 rounded-lg;
+  } */
+
+    .post-preview-label {
+        @apply mb-2 text-slate-500 uppercase text-base font-medium;
+    }
+
+    /* :global(.dark) .post-preview {
+    @apply border-slate-700;
+  } */
+
+    :global(.dark) .post-preview-label {
+        @apply text-slate-400;
+    }
+</style>

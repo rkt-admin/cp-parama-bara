@@ -62,7 +62,7 @@ const translation: Translation = {
     "hero.sub-title": "Kami adalah digital creator dari nusantara, yang mempunyai passion pada teknologi dan inovasi digital. Kami siap membantu Anda berevolusi melalui teknologi digital terkini",
     // "hero.sub-title": "Pelajari Lebih Lanjut untuk mengetahui lebih detail mengapa kami berbeda dari yang lainnya.",
     "hero.button-action": "Lebih Lanjut",
-    "cta.button-action": "Hubungi kami di WA"
+    "cta.button-action": "Whatsapp"
   },
   "en": {
     "homepage.title": "Hello, World!",
@@ -82,7 +82,7 @@ const translation: Translation = {
     "hero.sub-title": "We are digital creators from the nusantara (Indonesia), who have a passion for technology and digital innovation. We are ready to assist your evolution journey through the latest and proven digital technology",
     // "hero.sub-title": "Please \"Get Started\" to find out in more detail why our solutions are different from the others.",
     "hero.button-action": "How We Work",
-    "cta.button-action": "WhatsApp"
+    "cta.button-action": "Whatsapp"
   }
 };
 
