@@ -3,12 +3,12 @@
     import ButtonLink from '$lib/components/ButtonLink.svelte'
 </script>
 
-<section class="w-full group section-style">
+<section class="w-full group section-style pb-10 bg-hero bg-no-repeat md:bg-cover dark:bg-none">
     <div class="max-w-5xl mx-auto">
         <div class="inline-grid grid-cols-2 grid-rows-1 lg:grid-cols-3 lg:grid-rows-1 mt-10 mx-2">
             <div class="col-span-2 z-20">
                 <div
-                    class="animate-character items-left tracking-tight drop-shadow-md text-left
+                    class="items-left tracking-tight drop-shadow-md text-left
                 text-3xl mb-2 font-extrabold
                 sm:text-4xl sm:mb-4
                 md:text-4xl md:mb-4
@@ -16,7 +16,7 @@
                     CRAFTING SOLUTION <br />
                 </div>
                 <div
-                    class="text-red-500 items-left tracking-tight
+                    class="text-yellow-400 items-left tracking-tight
                 text-left 
                 text-2xl mb-10 font-medium
                 sm:text-3xl sm:mb-8
@@ -35,16 +35,16 @@
 
                 <div class="inline-flex mt-12 text-left">
                     <ButtonLink
-                        href="#HowWeDoIt"
+                        href="#howwedoit"
                         type="submit"
-                        class="relative inline-flex items-center h-14 px-4 font-normal tracking-normal text-white transition duration-200 rounded-xl shadow-md bg-slate-900 hover:text-white hover:bg-slate-700 dark:bg-slate-100 dark:text-slate-700 dark:hover:text-slate-700 dark:hover:bg-slate-300 focus:shadow-outline focus:outline-none 
+                        class="relative inline-flex items-center h-14 px-4 font-normal tracking-normal text-white transition duration-200 rounded-xl shadow-md bg-red-600 hover:text-white hover:bg-red-700 dark:bg-red-600 dark:text-slate-100 dark:hover:bg-red-500 focus:shadow-outline focus:outline-none 
                         mr-5">
                         <span class="text-lg">{$t('hero.button-action')}</span>
                     </ButtonLink>
                     <ButtonLink
                         href="https://api.whatsapp.com/send?phone=6281212626030&text=Halo%2C%20saya%20ingin%20berdiskusi%20dengan%20Team%20Rakit.id%2C%20terima%20kasih."
                         type="submit"
-                        class="relative inline-flex items-center h-14 px-4 font-normal tracking-normal text-white transition duration-200 rounded-xl shadow-md bg-green-500 hover:text-white hover:bg-green-600 dark:bg-green-500 dark:text-slate-50 dark:hover:text-slate-100 dark:hover:bg-green-600 focus:shadow-outline focus:outline-none">
+                        class="relative inline-flex items-center h-14 px-4 font-normal tracking-normal text-white transition duration-200 rounded-xl shadow-md bg-green-500 hover:text-white hover:bg-green-600 dark:bg-green-600 dark:text-slate-50 dark:hover:text-slate-100 dark:hover:bg-green-500 focus:shadow-outline focus:outline-none">
                         <i class="fa-brands fa-whatsapp text-xl mr-2" /><i class="absolute left-4 fa-brands fa-whatsapp text-xl animate-ping" /><span class="text-lg"
                             >{$t('cta.button-action')}</span>
                         <!-- <div
@@ -66,7 +66,7 @@
             <div class="hidden lg:block">
                 <div class="-z-10 transition duration-300 group-hover:animate-vote">
                     <img
-                        src="images/services-web-development.svg"
+                        src="images/services-web-development-noback.svg"
                         class="w-full"
                         alt="Rakit.id - Custom Web Development" />
                 </div>
@@ -82,10 +82,10 @@
         /* font-weight: 300; */
         background-image: linear-gradient(
             -225deg,
-            #000000 25%,
+            #ffd000 25%,
             #656565 50%,
-            #ffd000 75%,
-            #000000 100%
+            #746100 75%,
+            #ffd000 100%
         );
         background-size: auto auto;
         background-clip: border-box;

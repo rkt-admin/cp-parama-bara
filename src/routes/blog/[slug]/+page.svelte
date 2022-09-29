@@ -1,35 +1,3 @@
-<script context="module">
-    /**
-     * @type {import('@sveltejs/kit').Load}
-     */
-    export async function load({ params, fetch }) {
-        const { slug } = params
-
-        // fetch posts from endpoint so that it includes all metadata (see posts.json.js for explanation)
-        const posts = await fetch('/api/posts').then((res) => res.json())
-        const post = posts.find((post) => slug === post.slug)
-
-        if (!post) {
-            return {
-                status: 404,
-                error: 'Post not found'
-            }
-        }
-
-        const component = post.isIndexFile
-            ? // vite requires relative paths and explicit file extensions for dynamic imports
-              await import(`../../../blog/posts/${post.slug}/index.md`)
-            : await import(`../../../blog/posts/${post.slug}.md`)
-
-        return {
-            props: {
-                ...post,
-                component: component.default
-            }
-        }
-    }
-</script>
-
 <script>
     import { format, parseISO } from 'date-fns'
     import { page } from '$app/stores'
@@ -39,6 +7,9 @@
     import Divider from '$lib/components/Divider.svelte'
     import { URL_BASE, SITE_NAME } from '$lib/variables'
     export let component
+
+    /** @type {import('./$types').PageData} */
+    // export let data
 
     // metadata
     export let title
@@ -91,7 +62,8 @@
     <meta name="twitter:description" content={preview.text} />
     <meta name="twitter:image" content={ogImage} />
 </svelte:head>
-<div class="mx-auto w-full max-w-full bg-slate-100 bg-pattern-memphis dark:bg-slate-900 shadow-md py-14">
+<div
+    class="mx-auto w-full max-w-full bg-slate-100 bg-pattern-memphis dark:bg-slate-900 shadow-md py-14">
     <h1 class="my-8 item-center text-center">
         <a class="!font-medium" href={$page.url.pathname}>
             {title}

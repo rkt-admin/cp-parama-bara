@@ -134,7 +134,7 @@
                     <i class="fa-regular fa-copyright" /> 2022 <a href={URL_BASE}>{SITE_NAME}</a> by
                     PT Rakit Digital Creator, All Rights Reserved.
                 </span>
-                <div class="flex my-4 space-x-5 sm:justify-center sm:mt-0 items-center">
+                <div class="flex my-4 space-x-8 sm:justify-center sm:mt-0 items-center">
                     <!-- svelte-ignore a11y-invalid-attribute -->
                     <a href="https://www.facebook.com/rakit.id" class="text-gray-500">
                         <i class="fa-brands fa-facebook-f  text-base" />
@@ -165,16 +165,16 @@
     h2 {
         @apply text-slate-400 mb-6 text-sm font-normal uppercase;
     }
-    footer a {
+    /* footer a {
         @apply text-slate-500 text-base font-normal;
-    }
+    } */
     footer ul li {
         @apply mt-4;
     }
-    :global(.dark) footer a {
+    /* :global(.dark) footer a {
         @apply text-slate-300  text-base font-normal;
     }
     footer a:hover {
         @apply text-sky-400;
-    }
+    } */
 </style>

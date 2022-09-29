@@ -4,15 +4,15 @@
 
 <section class="z-20 mt-10 bg-slate-100 dark:bg-black section-style">
     <Divider border={false} size="large" />
-    <div id="HowWeDoIt" class="group grid grid-cols-1 max-w-5xl mx-auto">
+    <div id="howwedoit" class="group grid grid-cols-1 max-w-5xl mx-auto">
         <div class="mx-4">
-            <div class="col-span-1 max-w-4xl relative">
+            <div class="col-span-1 max-w-5xl relative">
                 <div class="text-center">
                     <div
                         class="col-span-1 text-4xl sm:text-6xl text-red-600 font-thin leading-none tracking-widest mb-10">
                         HOW WE DO IT
                     </div>
-                    <div class="col-span-1 text-xl sm:text-3xl text-justify">
+                    <div class="col-span-1 text-center text-xl sm:text-3xl prose">
                         We help you <span class="text-yellow-500">streamline</span> your business
                         <span class="text-yellow-500">workflow</span>, make it simple and efficient,
                         then optimize it with technology

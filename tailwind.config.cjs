@@ -16,9 +16,10 @@ module.exports = {
         'max': '5',
       },
       backgroundImage: {
-        'pattern-jigshaw': "url('/bg-pattern-jigshaw.svg')",        
-        'pattern-brick': "url('/bg-pattern-brick.svg')",
-        'pattern-call': "url('/bg-pattern-call.svg')",
+        'pattern-jigshaw': "url('/images/bg-pattern-jigshaw.svg')",        
+        'pattern-brick': "url('/images/bg-pattern-brick.svg')",
+        'pattern-call': "url('/images/bg-pattern-call.svg')",
+        'hero': "url('/images/layered-waves-haikei.svg')",
       },
       animation: {
         vote: 'vote 1s ease-in-out',

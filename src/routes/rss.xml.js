@@ -2,7 +2,7 @@
 // It is OK to delete this file if you don't want an RSS feed.
 // credit: https://scottspence.com/posts/make-an-rss-feed-with-sveltekit#add-posts-for-the-rss-feed
 
-import { getPosts } from '$lib/get-posts'
+import { getPosts } from '$lib/blog-posts'
 import { URL_BASE, SITE_NAME } from '$lib/variables'
 
 // update this to something more appropriate for your website

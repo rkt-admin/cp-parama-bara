@@ -1,5 +1,5 @@
 // export const prerender = false
-import { getPosts } from '$lib/get-posts'
+import { getPosts } from '$lib/blog-posts'
 
 
 /** @type {import('./$types').PageServerLoad} */

@@ -7,8 +7,9 @@
     import { onMount } from 'svelte'
     import { t } from '$lib/i18n'
     import { SITE_NAME, MODE } from '$lib/variables'
-    
+
     let yScreen: number
+    let scrollActive: boolean = false
 
     // Show mobile icon and display menu
     let showMobileMenu = false
@@ -18,8 +19,8 @@
         { label: 'menu.home', href: '/' },
         { label: 'menu.services', href: '/services' },
         { label: 'menu.contact-us', href: '/contact' },
-        { label: 'menu.blog', href: '/blog' },
-        { label: 'menu.login', href: '/login' }
+        { label: 'menu.blog', href: '/blog' }
+        // { label: 'menu.login', href: '/login' }
     ]
 
     // Mobile menu click event handler
@@ -35,7 +36,13 @@
             }
         })
     })
-    $: yScreen = yScreen
+    $: {
+        if (yScreen >= 5) {
+            scrollActive = true;            
+        }    
+        scrollActive = scrollActive;    
+        console.log(scrollActive);
+    }
 </script>
 
 <svelte:head>
@@ -47,9 +54,11 @@
 <!-- <Alert /> -->
 {#if browser}
     <div
-        class="w-full mx-auto z-50 fixed bg-slate-100 dark:bg-black px-10 {yScreen > 50
-            ? ' py-2 transition-trans duration-500 drop-shadow-md'
-            : ' py-6'}">
+        class="w-full mx-auto z-50 fixed bg-slate-100 dark:bg-black px-10 {(yScreen > 50 && scrollActive)
+            ? ' transition-all duration-500 drop-shadow-md py-2'
+            : 'py-5'} {(yScreen <= 50 && scrollActive)
+            ? ' transition-all duration-500 drop-shadow-none'
+            : ''}">
         <div class="max-w-5xl w-full mx-auto">
             <div class="mx-auto flex flex-col">
                 <div class="flex justify-between items-center">
@@ -59,9 +68,7 @@
                             <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
                                 {#each navItems as item}
                                     <li>
-                                        <a
-                                            href={item.href}
-                                            >{$t(item.label)}</a>
+                                        <a href={item.href}>{$t(item.label)}</a>
                                     </li>
                                 {/each}
                             </ul>
@@ -79,14 +86,13 @@
     <div class="max-w-full w-full">
         <div class="flex flex-col">
             <div class="flex flex-col mt-28">
-                <main
-                    class="dark:text-slate-100 flex flex-col flex-grow">
+                <main class="dark:text-slate-100 flex flex-col flex-grow">
                     <slot />
                 </main>
             </div>
-        </div>        
+        </div>
     </div>
-    <Footer  />
+    <Footer />
 {:else}
     <div class="sk-folding-cube">
         <div class="sk-cube1 sk-cube" />
@@ -228,19 +234,18 @@
         @apply bg-slate-200 text-base rounded-2xl;
     }
 
-    .navbar-list a {
+    /* .navbar-list a {
         @apply text-gray-600;
     }
 
     :global(.dark) .navbar-list a {
         @apply text-slate-50;
     }
-    
 
     .navbar-list a:hover,
     .navbar-list li a:active {
         @apply text-gray-500;
-    }
+    } */
 
     @media only screen and (min-width: 767px) {
         .mobile-icon {

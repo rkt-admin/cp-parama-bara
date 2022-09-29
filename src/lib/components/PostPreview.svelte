@@ -1,36 +1,37 @@
 <script>
     import { format, parseISO } from 'date-fns'
     import ButtonLink from './ButtonLink.svelte'
+    import { FormatCategories } from '$lib/blog-utils'
 
     export let post
     export let small = false
     export let previewText = true
-    export let readMore = true
+    // export let readMore = true
 </script>
 
 <div class="flex flex-col">
     <div>
+        <div class=" prose">            
+            <span>{post.readingTime} </span>
+        </div>
         {#if !small}
-            <h1 class="!mt-0 !mb-1 ">
+            <h1 class="text-3xl font-medium">
                 <a href={`/blog/${post.slug}`}>{post.title}</a>
             </h1>
         {:else}
-            <h3 class="!mt-0 !mb-1 ">
+            <h2 class="text-3xl font-medium">
                 <a href={`/blog/${post.slug}`}>{post.title}</a>
-            </h3>
-        {/if}
-        <div class="opacity-70 mb-2">
-            <time>{format(new Date(parseISO(post.date)), 'MMMM d, yyyy')}</time>
-            •
-            <span>{post.readingTime}</span>
-        </div>
+            </h2>
+        {/if}        
     </div>
     {#if previewText}
-        <div class="flex-1">{@html post.preview.html}</div>
+        <div class="flex-1 !mt-5 prose">{@html post.preview.html}</div>
     {:else}
         &nbsp;
     {/if}
-    {#if readMore}
+    <div class="text-gray-500 mt-5 uppercase"> {@html FormatCategories(post.tags)}</div>
+    <div class="font-normal text-gray-500">Kharis Hidayatulloh &nbsp;&nbsp; {format(new Date(parseISO(post.date)), 'MMMM d, yyyy')}</div>
+    <!-- {#if readMore}
         <slot name="actions">
             <div class="flex justify-start w-full">
                 <ButtonLink
@@ -43,5 +44,5 @@
         </slot>
     {:else}
         &nbsp;
-    {/if}
+    {/if} -->
 </div>

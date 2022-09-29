@@ -1,19 +1,19 @@
 // export const prerender = false
-import { getPosts } from '$lib/get-posts'
+import { getPosts } from '$lib/blog-posts'
 
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ url, params }) {
   let page = 1
-  let limit = 10
+  let limit = 2
   let category = ''
   // let page = url.searchParams.get('page') ? parseInt(url.searchParams.get('page')) : 1
   // let limit = url.searchParams.get('limit') ? parseInt(url.searchParams.get('limit')) : 3
   // let tag = url.searchParams.get('tag') ? url.searchParams.get('tag') : ''
-  console.log('awal#', limit, page, category);
+  // console.log('awal#', limit, page, category);
 
   let pr = url.toString()
-  console.log(pr);
+  // console.log(pr);
   // const fetchPostsParams = new URLSearchParams()
 
   try {
@@ -66,18 +66,19 @@ export async function load({ url, params }) {
   // const posts = await fetch(`/blogs?${fetchPostsParams.toString()}`).then((res) => res.json())
   console.log('filtered#', limit, page, category);
   let posts = await getPosts({ limit, page, category })
-  // console.log(posts)
+  console.log(posts)
 
   // if page doesn't exist, direct to page 1
   if (posts.length == 0 && page > 1) {
-    return {
+    console.log('redirect::', posts.length, page);
+    return {      
       redirect: `/blog`,
       status: 302
     }
   }
 
   return {
-    posts: JSON.stringify(),
+    posts: JSON.stringify(posts),
     page,
     limit,
     category
