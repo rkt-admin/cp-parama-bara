@@ -5,7 +5,7 @@
                 class="col-span-1 text-justify sm:text-left text-4xl sm:text-6xl text-red-600 sm:text-red-600 font-light leading-none tracking-widest mb-8">
                 OUR SERVICES
             </div>
-            <div class="col-span-1 text-justify sm:text-left text-xl sm:text-2xl">
+            <div class="col-span-1 text-justify sm:text-left text-xl sm:text-2xl drop-shadow-md">
                 Custom software development services to create mobile apps, websites and web
                 applications from idea to post-launch support for all-sized businesses of various
                 industries.

@@ -11,7 +11,7 @@
                     class="col-span-1 text-right sm:text-right text-4xl sm:text-6xl text-red-600 sm:text-red-600 font-light leading-none tracking-widest mb-10">
                     TECHNOLOGY STACK
                 </div>
-                <div class="col-span-1 text-right sm:text-right text-xl sm:text-2xl ">
+                <div class="col-span-1 text-right sm:text-right text-xl sm:text-2xl drop-shadow-md">
                     Using globally proven technology gets you ahead before you start
                 </div>
             </div>

@@ -20,6 +20,7 @@ module.exports = {
         'pattern-brick': "url('/images/bg-pattern-brick.svg')",
         'pattern-call': "url('/images/bg-pattern-call.svg')",
         'hero': "url('/images/layered-waves-haikei.svg')",
+        'waves': "url('/images/bg-waves-rakit-id.svg')",
       },
       animation: {
         vote: 'vote 1s ease-in-out',
