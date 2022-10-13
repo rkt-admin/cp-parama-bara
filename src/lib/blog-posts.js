@@ -2,7 +2,7 @@ import { browser } from '$app/environment'
 import { format } from 'date-fns'
 import { parse } from 'node-html-parser'
 import readingTime from 'reading-time'
-import { Shuffle } from '$lib/blog-utils'
+import { RandBGColors } from '$lib/blog-utils'
 // const readingTime = require('reading-time/lib/reading-time.js');
 
 // we require some server-side APIs to parse all metadata
@@ -19,10 +19,7 @@ if (browser) {
  * For getting posts from the client, fetch from the /posts.json endpoint instead
  */
 
-let bgColors = Shuffle(['bg-red-100', 'bg-green-100', 'bg-blue-100', 'bg-orange-100']);
-
-export function getPosts({ page = 1, limit = 10, tag = '', slug = '' } = {}) {
-  console.log(slug);
+export function getPosts({ page = 1, limit = 10, tag = '' } = {}) {
   let posts = Object.entries(import.meta.globEager('/blog/posts/**/*.md')).map(([filepath, post]) => {
     return {
       ...post.metadata,
@@ -50,8 +47,10 @@ export function getPosts({ page = 1, limit = 10, tag = '', slug = '' } = {}) {
       component: post.default,
       customPreview: post.metadata.preview
     }
-  })
-    .map((post, i) => {
+  });
+  //filter tag/category
+  posts = (tag == '') ? posts : posts.filter(post => post.tags.indexOf(tag) > -1);
+  posts = posts.map((post, i) => {
       const parsedHtml = parse(post.component.render().html)
 
       // Use the custom preview in the metadata, if availabe, or the first paragraph of the post for the preview
@@ -64,7 +63,7 @@ export function getPosts({ page = 1, limit = 10, tag = '', slug = '' } = {}) {
           // text-only preview (i.e no html elements), used for SEO
           text: preview.structuredText
         },
-        bgColor: bgColors[i],
+        bgColor: RandBGColors[i],
         // get estimated reading time for the post
         readingTime: readingTime(parsedHtml.structuredText).text
       }

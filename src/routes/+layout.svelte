@@ -41,7 +41,7 @@
             scrollActive = true;            
         }    
         scrollActive = scrollActive;    
-        console.log(scrollActive);
+        // console.log(scrollActive);
     }
 </script>
 

@@ -22,7 +22,7 @@
 
 <footer class="max-w-full bg-slate-50 dark:bg-current pb-2">
     <Divider border={true} size="large" />
-    <div class="mx-auto w-full max-w-4xl">
+    <div class="mx-auto w-full max-w-5xl">
         <div class="px-10">
             <div
                 class="inline-grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-x-16 gap-y-16 md:flex md:justify-between ">
@@ -163,7 +163,7 @@
 
 <style lang="postcss">
     h2 {
-        @apply text-slate-400 mb-6 text-sm font-normal uppercase;
+        @apply text-slate-500 mb-6 text-sm font-normal uppercase;
     }
     /* footer a {
         @apply text-slate-500 text-base font-normal;

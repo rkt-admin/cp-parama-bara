@@ -1,33 +1,30 @@
 @tailwind base;
 
-/* @layer utilities {
-  .focus {
-    @apply outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-blue-300;
-  }
-} */
-/* 
+@layer utilities {
+    .focus {
+        @apply outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-blue-300;
+    }
+}
 .prose img {
-  @apply rounded-3xl shadow-md dark:shadow-slate-900;
-} 
+    @apply rounded-3xl shadow-md dark:shadow-slate-900;
+}
 
 .prose video {
-  @apply rounded-md shadow-md dark:shadow-slate-900;
+    @apply rounded-md shadow-md dark:shadow-slate-900;
 }
 
 .prose pre {
-  @apply shadow-md dark:shadow-slate-900;
+    @apply shadow-md dark:shadow-slate-900;
 }
 
 hr {
-  @apply !border-slate-300 dark:!border-slate-700;
+    @apply !border-slate-300 dark:!border-slate-700;
 }
 
 button {
-  @apply rounded-md;
-  @apply focus;
+    @apply rounded-md;
+    @apply focus;
 }
-
-*/
 
 svg {
     @apply outline-none focus:outline-none;
@@ -40,45 +37,23 @@ body {
 @tailwind utilities;
 
 @layer base {
-    a {
-        @apply text-slate-900 hover:text-orange-500;
+    a,
+    li a {
+        @apply text-slate-800 dark:text-slate-400 hover:text-orange-500 dark:hover:text-slate-100;
     }
 
     h2 > a {
-        @apply text-slate-900 hover:text-orange-500;
-    }
-
-    :global(.dark) a {
-        @apply text-slate-900 hover:text-orange-500;
-    }
-
-    :global(.dark) h2 > a {
-        @apply text-slate-900 hover:text-orange-500;
+        @apply text-slate-800 dark:text-slate-800 hover:text-orange-500 dark:hover:text-slate-100;
     }
 
     .section-style {
-        @apply  w-screen px-4;
+        @apply w-screen px-4;
     }
-    
+
     .fa-solid {
         padding-top: 4px;
     }
     html {
         /*font-family: Proxima Nova, system-ui, sans-serif;*/
-    }
-}
-
-
-@layer components {
-    a {
-        @apply hover:text-orange-500;
-    }
-
-    h2 > a {
-        @apply hover:text-orange-500;
-    }
-
-    .section-style {
-        @apply  w-screen px-4;
     }
 }

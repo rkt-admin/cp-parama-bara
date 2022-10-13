@@ -22,7 +22,7 @@
 
     $: {
         if (data.posts.length > 0){
-            console.log(data.tag, );
+            // console.log(data.tag, );
             if (data.tag !== undefined) {   
                 if (data.page > 1) {
                     pageUrl = '/blog/category/' + data.tag

@@ -29,7 +29,7 @@
     {:else}
         &nbsp;
     {/if}
-    <div class="text-gray-500 mt-5 uppercase"> {@html FormatCategories(post.tags)}</div>
+    <div class="mt-5 uppercase font-bold text-xs"> {@html FormatCategories(post.tags)}</div>
     <div class="font-normal text-gray-500">Kharis Hidayatulloh &nbsp;&nbsp; {format(new Date(parseISO(post.date)), 'MMMM d, yyyy')}</div>
     <!-- {#if readMore}
         <slot name="actions">

@@ -1,6 +1,6 @@
 <section class="z-20 section-style">
     <div class="max-w-5xl mx-auto">
-        <div class="mb-52 mx-4">
+        <div class="mb-52 ml-4 mr-8">
             <div
                 class="col-span-1 text-justify sm:text-left text-4xl sm:text-6xl text-red-600 sm:text-red-600 font-light leading-none tracking-widest mb-8">
                 OUR SERVICES
@@ -25,14 +25,10 @@
                         height="176px"
                         alt="Rakit.id - Custom Web Development" />
                 </div>
-                <div
-                    aria-hidden="true"
-                    class="absolute inset-0 rounded-xl bg-white dark:bg-gray-300 shadow-xl transition duration-300 group-hover:scale-105 lg:group-hover:scale-105" />
+                <div aria-hidden="true" class="absolute inset-0 rounded-xl bg-gray-100 dark:bg-gray-600  shadow-xl transition duration-300 group-hover:scale-105 lg:group-hover:scale-105" />
                 <div class="relative text-left space-y-4 p-6 md:p-8 md:mt-5">
-                    <h3 class="header-service">
-                        Custom Web Development
-                    </h3>
-                    <p class="text-gray-600 text-base text-left">
+                    <h3 class="header-service">Custom Web Development</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-base text-left">
                         Whether you need a small presentation website to attract new clients, or a
                         complete custom platform supporting millions of monthly visits, we can
                         tailor a solution that is right for your own particular needs.
@@ -48,14 +44,10 @@
                         height="176px"
                         alt="Rakit.id - Custom Web Development" />
                 </div>
-                <div
-                    aria-hidden="true"
-                    class="absolute inset-0 rounded-xl bg-white dark:bg-gray-300 shadow-xl transition duration-300 group-hover:scale-105 lg:group-hover:scale-105" />
+                <div aria-hidden="true" class="absolute inset-0 rounded-xl bg-gray-100 dark:bg-gray-600  shadow-xl transition duration-300 group-hover:scale-105 lg:group-hover:scale-105" />
                 <div class="relative text-left space-y-4 p-6 md:p-8 md:mt-5">
-                    <h3 class="header-service">
-                        Backend Development
-                    </h3>
-                    <p class="text-gray-600 text-base text-left">
+                    <h3 class="header-service">Backend Development</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-base text-left">
                         Whether you need a small presentation website to attract new clients, or a
                         complete custom platform supporting millions of monthly visits, we can
                         tailor a solution that is right for your own particular needs.
@@ -71,14 +63,10 @@
                         height="176px"
                         alt="Rakit.id - Custom Web Development" />
                 </div>
-                <div
-                    aria-hidden="true"
-                    class="absolute inset-0 rounded-xl bg-white dark:bg-gray-300 shadow-xl transition duration-300 group-hover:scale-105 lg:group-hover:scale-105" />
+                <div aria-hidden="true" class="absolute inset-0 rounded-xl bg-gray-100 dark:bg-gray-600  shadow-xl transition duration-300 group-hover:scale-105 lg:group-hover:scale-105" />
                 <div class="relative text-left space-y-4 p-6 md:p-8 md:mt-5">
-                    <h3 class="header-service">
-                        Desktop App Development
-                    </h3>
-                    <p class="text-gray-600 text-base text-left">
+                    <h3 class="header-service">Desktop App Development</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-base text-left">
                         Whether you need a small presentation website to attract new clients, or a
                         complete custom platform supporting millions of monthly visits, we can
                         tailor a solution that is right for your own particular needs.
@@ -94,12 +82,10 @@
                         height="176px"
                         alt="Rakit.id - Custom Web Development" />
                 </div>
-                <div
-                    aria-hidden="true"
-                    class="absolute inset-0 rounded-xl bg-white dark:bg-gray-300 shadow-xl transition duration-300 group-hover:scale-105 lg:group-hover:scale-105" />
+                <div aria-hidden="true" class="absolute inset-0 rounded-xl bg-gray-100 dark:bg-gray-600  shadow-xl transition duration-300 group-hover:scale-105 lg:group-hover:scale-105" />
                 <div class="relative text-left space-y-4 p-6 md:p-8 md:mt-5">
                     <h3 class="header-service">UI/UX Design</h3>
-                    <p class="text-gray-600 text-base text-left">
+                    <p class="text-gray-600 dark:text-gray-300 text-base text-left">
                         Whether you need a small presentation website to attract new clients, or a
                         complete custom platform supporting millions of monthly visits, we can
                         tailor a solution that is right for your own particular needs.
@@ -112,10 +98,11 @@
 
 <style lang="postcss">
     .header-service {
-        @apply sm:pt-0 text-2xl font-medium mt-10 sm:mt-10 md:mt-0
+        @apply sm:pt-0 text-2xl font-medium mt-10 sm:mt-10 md:mt-0;
     }
 
-    :global(.dark) .header-service {
-        @apply text-slate-700
+    .service-item {
+        @apply absolute inset-0 rounded-xl bg-white shadow-xl transition duration-300 group-hover:scale-105 lg:group-hover:scale-105;
     }
+
 </style>

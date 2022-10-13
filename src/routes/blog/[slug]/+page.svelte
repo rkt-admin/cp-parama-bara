@@ -6,27 +6,21 @@
     import PostPreview from '$lib/components/PostPreview.svelte'
     import Divider from '$lib/components/Divider.svelte'
     import { URL_BASE, SITE_NAME } from '$lib/variables'
-    export let component
+    import { FormatCategories, RandBGColors } from '$lib/blog-utils'
 
     /** @type {import('./$types').PageData} */
-    // export let data
+    export let data
 
     // metadata
-    export let title
-    export let date
-    export let tags
-    export let preview
-    export let readingTime
-    export let slug
     export let next
     export let previous
 
     // generated open-graph image for sharing on social media. Visit https://og-image.vercel.app/ to see more options.
     const ogImage = `https://og-image.vercel.app/**${encodeURIComponent(
-        title
+        data.post.title
     )}**?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fhyper-color-logo.svg`
 
-    const url = `${URL_BASE}/${slug}`
+    const url = `${URL_BASE}/${data.post.slug}`
 
     function formatTags(tags) {
         return tags
@@ -43,47 +37,54 @@
 </script>
 
 <svelte:head>
-    <title>{title}</title>
-    <meta name="description" content={preview.text} />
+    <title>{data.post.title}</title>
+    <meta name="description" content={data.post.preview.text} />
     <meta name="author" content={SITE_NAME} />
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content={url} />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={preview.text} />
+    <meta property="og:title" content={data.post.title} />
+    <meta property="og:description" content={data.post.preview.text} />
     <meta property="og:image" content={ogImage} />
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:domain" content={URL_BASE} />
     <meta property="twitter:url" content={url} />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={preview.text} />
+    <meta name="twitter:title" content={data.post.title} />
+    <meta name="twitter:description" content={data.post.preview.text} />
     <meta name="twitter:image" content={ogImage} />
 </svelte:head>
 <div
-    class="mx-auto w-full max-w-full bg-slate-100 bg-pattern-memphis dark:bg-slate-900 shadow-md py-14">
-    <h1 class="my-8 item-center text-center">
-        <a class="!font-medium" href={$page.url.pathname}>
-            {title}
+    class="mx-auto w-full max-w-full {RandBGColors[0]} bg-pattern-memphis dark:bg-slate-900 py-5 mb-8">
+    <div class="max-w-4xl mx-auto">
+        <div class="my-5">
+            <span>{@html FormatCategories(data.post.tags)}</span>
+        </div>
+        <a class="!font-medium text-6xl" href={$page.url.pathname}>
+            <h1>{data.post.title}</h1>
         </a>
-    </h1>
-    <div class="text-center">
-        <time datetime={new Date(parseISO(date)).toISOString()}
-            >{format(new Date(parseISO(date)), 'MMMM d, yyyy')}</time>
-        •
-        <span>{readingTime}</span>
-    </div>
-    <div class="text-center">
-        <span>{@html formatTags(tags)}</span>
+        <div class="my-10 font-normal">
+            <time datetime={new Date(parseISO(data.post.date)).toISOString()}
+                >{format(new Date(parseISO(data.post.date)), 'MMMM d, yyyy')}</time>
+            <span class="ml-5 inline-flex items-center px-2.5">{data.post.readingTime}</span>
+        </div>
     </div>
 </div>
-<div class="grid gap-4 grid-cols-12 mx-auto max-w-full">
-    <div class="col-start-3 col-end-10">
-        <article>
+<div class="grid gap-2 grid-cols-12 mx-auto max-w-5xl">
+    <div class="col-start-1 col-end-4">
+        <!-- table of contents -->
+        <aside class="sticky top-24 mt-4">
+            <div aria-label="Table of Contents">
+                <ToC allowedHeadings={['h2', 'h3', 'h4', 'h5', 'h6']} />
+            </div>
+        </aside>
+    </div>
+    <div class="col-start-4 col-end-12">
+        <article class="prose dark:prose-invert prose-base text-xl">
             <!-- render the post -->
-            <svelte:component this={component} />
+            <svelte:component this={data.component} />
 
             <div class="pt-12 flex justify-between">
                 <ButtonLink
@@ -96,14 +97,6 @@
                 </ButtonLink>
             </div>
         </article>
-    </div>
-    <div class="col-start-10 col-end-12">
-        <!-- table of contents -->
-        <aside class="sticky top-10 mt-4">
-            <div aria-label="Table of Contents">
-                <ToC allowedHeadings={['h2', 'h3', 'h4', 'h5', 'h6']} />
-            </div>
-        </aside>
     </div>
 </div>
 <Divider />

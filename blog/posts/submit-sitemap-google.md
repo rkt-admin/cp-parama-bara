@@ -4,6 +4,7 @@ date: 2022-03-04
 tags: [seo, sitemap, fresh]
 preview: Sebenarnya sudah banyak yang menulis artikel tentang Sitemap ini, tapi tidak ada salahnya kalau Aku tuliskan lagi caranya, Sitemap seperti namanya berfungsi sebagai Peta atau strukturisasi dari sebuah Site, dengan mendaftarkan Sitemap ini, Search Engine akan lebih mudah untuk mengcrawl, mengindex, atau mengkategorikan Blog Kamu.
 ---
+## Google Sitemap
 Sebenarnya sudah banyak yang menulis artikel tentang Sitemap ini, tapi tidak ada salahnya kalau Aku tuliskan lagi caranya, Sitemap seperti namanya berfungsi sebagai Peta atau strukturisasi dari sebuah Site, dengan mendaftarkan Sitemap ini, Search Engine akan lebih mudah untuk mengcrawl, mengindex, atau mengkategorikan Blog Kamu.
 
 Berikut ini adalah cara mendaftarkan Sitemap Kamu pada Google :
@@ -13,6 +14,8 @@ Berikut ini adalah cara mendaftarkan Sitemap Kamu pada Google :
 2. Copy deskripsi dari Blog Kamu, karena biasanya Google akan meminta deskripsi dari sebuah Blog pada saat mendaftarkannya di Google.
 
 3. Pilih Add Sitemap di Google Webmaster Page, jika Kamu belum mendaftarkan site Kamu di Google silahkan daftarkan di http://www.google.com/addurl/?continue=/addurl, dan masukkan informasi-informasi Site Kamu sesuai permintaan Google.
+
+## Yahoo Sitemap
 
 Itu tadi cara untuk memasukkan / mendaftarkan Sitemap Blog ke Google, dan bagi yang juga ingin memasukkan Blog di Yahoo di sini juga Saya tuliskan, caranya juga tidak jauh berbeda dengan Add Site di Google, cuma yang harus dimasukkan adalah Feed Url Site Anda :
 
