@@ -30,9 +30,9 @@ const config = {
 
     // if you are not using the static adapter and
     // you don't want prerendering, remove this section
-    // prerender: {
-    //   entries: ['*', '/sitemap.xml', '/rss.xml']
-    // },
+    prerender: {
+      entries: ['*', '/sitemap.xml', '/rss.xml']
+    },
   }
 }
 

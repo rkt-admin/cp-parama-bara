@@ -20,7 +20,8 @@ if (browser) {
  */
 
 export function getPosts({ page = 1, limit = 10, tag = '' } = {}) {
-  let posts = Object.entries(import.meta.globEager('/blog/posts/**/*.md')).map(([filepath, post]) => {
+  let posts = Object.entries(import.meta.glob('/blog/posts/**/*.md', { eager: true }))
+  .map(([filepath, post]) => {
     return {
       ...post.metadata,
 
@@ -48,26 +49,28 @@ export function getPosts({ page = 1, limit = 10, tag = '' } = {}) {
       customPreview: post.metadata.preview
     }
   });
+
   //filter tag/category
   posts = (tag == '') ? posts : posts.filter(post => post.tags.indexOf(tag) > -1);
+
   posts = posts.map((post, i) => {
-      const parsedHtml = parse(post.component.render().html)
+    const parsedHtml = parse(post.component.render().html)
 
-      // Use the custom preview in the metadata, if availabe, or the first paragraph of the post for the preview
-      const preview = post.customPreview ? post.customPreview : parsedHtml.querySelector('p')
+    // Use the custom preview in the metadata, if availabe, or the first paragraph of the post for the preview
+    const preview = post.customPreview ? post.customPreview : parsedHtml.querySelector('p')
 
-      return {
-        ...post,
-        preview: {
-          html: preview.toString(),
-          // text-only preview (i.e no html elements), used for SEO
-          text: preview.structuredText
-        },
-        bgColor: RandBGColors[i],
-        // get estimated reading time for the post
-        readingTime: readingTime(parsedHtml.structuredText).text
-      }
-    })
+    return {
+      ...post,
+      preview: {
+        html: preview.toString(),
+        // text-only preview (i.e no html elements), used for SEO
+        text: preview.structuredText
+      },
+      bgColor: RandBGColors[i],
+      // get estimated reading time for the post
+      readingTime: readingTime(parsedHtml.structuredText).text
+    }
+  })
     // sort by date
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     // add references to the next/previous post
@@ -98,6 +101,8 @@ export function getPosts({ page = 1, limit = 10, tag = '' } = {}) {
 
   return data
 }
+
+export const posts = getPosts()
 
 // Get all posts and add metadata
 function addTimezoneOffset(date) {
