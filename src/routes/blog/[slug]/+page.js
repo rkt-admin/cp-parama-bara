@@ -1,29 +1,23 @@
-/** @type {import('./$types').PageLoad} */
-export async function load({ data, params }) {
-    // console.log(params.slug);
-    // console.log(params.param);
-    // console.log(routeId);
-    // console.log(JSON.parse(data.posts);
+/**
+ * Dynamically loads the svelte component for the post (only possible in +page.js)
+ * and pass on the data from +page.server.js
+ *
+ * @type {import('@sveltejs/kit').PageLoad}
+ */
+export async function load({ data }) {
+  // load the markdown file based on slug
+  const post = JSON.parse(data.post);
+  // console.log('post#', post);
+  const title = post.isIndexFile
+    ? // vite requires relative paths and explicit file extensions for dynamic imports
+    // see https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars#limitations
+    `../../../../posts/${post.slug}/index.md`
+    : `../../../../posts/${post.slug}.md`
+  console.log('title#', title);
+  const component = await import(title)
 
-    const posts = JSON.parse(data.posts);
-    let post = posts.find((post) => post.slug === params.slug)
-    // console.log(post);
-    if (!post) {
-        return {
-            status: 404,
-            error: 'Post not found'
-        }
-    }
-    // const modules = import.meta.glob(`../../../blog/posts/${post.slug}/index.md`)
-    // const page = (await match()).default
-    let componentTitle = post.isIndexFile
-        ? `../../../../blog/posts/${params.slug}/index.md`
-        : `../../../../blog/posts/${params.slug}.md`
-
-    const component = await import(componentTitle)
-
-    return {
-        post: post,
-        component: component.default
-    }
+  return {
+    post: post,
+    component: component.default
+  }
 }

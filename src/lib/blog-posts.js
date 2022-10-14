@@ -20,7 +20,7 @@ if (browser) {
  */
 
 export function getPosts({ page = 1, limit = 10, tag = '' } = {}) {
-  let posts = Object.entries(import.meta.glob('/blog/posts/**/*.md', { eager: true }))
+  let posts = Object.entries(import.meta.glob('/posts/**/*.md', { eager: true }))
   .map(([filepath, post]) => {
     return {
       ...post.metadata,
