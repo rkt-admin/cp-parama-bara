@@ -8,13 +8,13 @@ export async function load({ data }) {
   // load the markdown file based on slug
   const post = JSON.parse(data.post);
   // console.log('post#', post);
-  const title = post.isIndexFile
+  const component = post.isIndexFile
     ? // vite requires relative paths and explicit file extensions for dynamic imports
     // see https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars#limitations
-    `../../../../posts/${post.slug}/index.md`
-    : `../../../../posts/${post.slug}.md`
-  console.log('title#', title);
-  const component = await import(title)
+    await import (`../../../../posts/${post.slug}/index.md`)
+    : await import(`../../../../posts/${post.slug}.md`)
+  // console.log('title#', title);
+  // const component = await import(title)
 
   return {
     post: post,
