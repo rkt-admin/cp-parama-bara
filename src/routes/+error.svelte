@@ -8,9 +8,9 @@
     }
 </script>
 
-<div class="h-screen justify-center">
+<div class="justify-center">
     <Divider size="small" />
-    <center class="mt-24 m-auto">
+    <center class="m-auto">
         <svg
             class="emoji-404 "
             enable-background="new 0 0 226 249.135"
