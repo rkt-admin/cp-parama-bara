@@ -1,4 +1,4 @@
-export const RandBGColors = Shuffle(['bg-red-300', 'bg-green-300', 'bg-blue-300', 'bg-orange-300']);
+export const RandBGColors = Shuffle(['bg-red-100', 'bg-green-100', 'bg-blue-100', 'bg-yellow-100']);
 
 export function FormatCategories(categories) {
     return categories

@@ -61,7 +61,7 @@ const translation: Translation = {
     "section.what-we-do": "WHAT WE DO",
     "hero.sub-title": "Kami adalah kreator digital dari nusantara (Indonesia), yang memiliki passion terhadap teknologi dan inovasi digital. Kami siap membantu perjalanan evolusi Anda melalui teknologi digital terkini dan teruji",
     // "hero.sub-title": "Pelajari Lebih Lanjut untuk mengetahui lebih detail mengapa kami berbeda dari yang lainnya.",
-    "hero.button-action": "Ingin tau lebih dalam?",
+    "hero.button-action": "Ingin tau lebih dalam ↓",
     "cta.button-action": "Konsultasi Gratis"
   },
   "en": {
@@ -81,7 +81,7 @@ const translation: Translation = {
     "section.what-we-do": "APA YANG KAMI LAKUKAN",
     "hero.sub-title": "We are digital creators from the nusantara (Indonesia), who have a passion for technology and digital innovation. We are ready to assist your evolution journey through the latest and proven digital technology",
     // "hero.sub-title": "Please \"Get Started\" to find out in more detail why our solutions are different from the others.",
-    "hero.button-action": "How we do it?",
+    "hero.button-action": "How we do it ↓",
     "cta.button-action": "Free consultation"
   }
 };

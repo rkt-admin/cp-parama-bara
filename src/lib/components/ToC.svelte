@@ -61,14 +61,14 @@
 
 <svelte:window on:scroll={setActiveHeading} />
 
-<h6 id="__sections" class="uppercase text-slate-600 dark:text-slate-600 font-light text-sm">
+<h6 id="__sections" class="uppercase text-slate-800 dark:text-slate-600 font-light text-base">
   TABLE OF CONTENTS
 </h6>
 
 <ul class="mt-2 !pl-0">
   {#each headings as heading}
     <li
-      class="not-prose heading list-none my-4 !pl-0 text-base text-slate-400 transition-colors"
+      class="not-prose heading list-none my-4 !pl-0 text-sm transition-colors"
       class:active={activeHeading?.node === heading.node}
       style={`--depth: ${heading.depth}`}
     >

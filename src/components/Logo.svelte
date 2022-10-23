@@ -8,7 +8,7 @@
     <a title="Rakit.id Logo" href={URL_BASE} class="flex items-center">
         <img
             src={ $lightmode == true ? '/rakit-id-logo-black.svg' : '/rakit-id-logo-white.svg'}
-            class="h-10"
+            class="h-8"
             alt="{SITE_NAME} Logo" />
         <!-- <span class="self-center text-lg sm:text-3xl font-bold whitespace-nowrap dark:text-white">{name}</span> -->
     </a>

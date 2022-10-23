@@ -33,7 +33,7 @@
                     {@html $t('hero.sub-title')}
                 </div>
 
-                <div class="inline-flex mt-12 text-left">                    
+                <div class="inline-flex mt-10 text-left">                    
                     <ButtonLink
                         href="https://api.whatsapp.com/send?phone=6281212626030&text=Halo%2C%20saya%20ingin%20berdiskusi%20dengan%20Team%20Rakit.id%2C%20terima%20kasih."
                         type="submit"

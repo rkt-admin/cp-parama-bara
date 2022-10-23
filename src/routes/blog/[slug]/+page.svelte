@@ -67,13 +67,13 @@
         </a>
         <div class="my-10 font-normal">
             <time datetime={new Date(parseISO(data.post.date)).toISOString()}
-                >{format(new Date(parseISO(data.post.date)), 'MMMM d, yyyy')}</time>
-            <span class="ml-5 inline-flex items-center px-2.5">{data.post.readingTime}</span>
+                >{format(new Date(parseISO(data.post.date)), 'MMMM d, yyyy')}</time>&nbsp;&nbsp;—&nbsp;
+            <span class="inline-flex items-center"> {data.post.readingTime}</span>
         </div>
     </div>
 </div>
 <div class="grid gap-2 grid-cols-12 mx-auto max-w-5xl">
-    <div class="col-start-1 col-end-4">
+    <div class="col-start-1 col-end-3">
         <!-- table of contents -->
         <aside class="sticky top-24 mt-4">
             <div aria-label="Table of Contents">
@@ -93,7 +93,7 @@
                     size="large"
                     arrowsLeft={true}
                     class="hover:text-sky-600">
-                    Back to Posts
+                    &nbsp;Back
                 </ButtonLink>
             </div>
         </article>

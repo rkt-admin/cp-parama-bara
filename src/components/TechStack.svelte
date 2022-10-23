@@ -121,7 +121,7 @@
 
 <style lang="postcss">
     h3 {
-        font-size: larger;
+        @apply font-light text-xl;
     }
     .tech-item {
         @apply flex items-center m-0 py-4 rounded-xl justify-items-start;
