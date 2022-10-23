@@ -57,7 +57,7 @@
     <meta name="twitter:image" content={ogImage} />
 </svelte:head>
 <div
-    class="mx-auto w-full max-w-full {RandBGColors[0]} bg-pattern-memphis dark:bg-slate-900 py-5 mb-8">
+    class="mx-auto w-full max-w-full back-circle bg-pattern-memphis dark:bg-slate-900 py-5 mb-8">
     <div class="max-w-4xl mx-auto">
         <div class="my-5">
             <span>{@html FormatCategories(data.post.tags)}</span>
@@ -138,5 +138,9 @@
 
     :global(.dark) .post-preview-label {
         @apply text-slate-400;
+    }
+
+    .back-circle {
+        background: linear-gradient(180deg,hsla(0,0%,100%,0) 0,#fff 300px),fixed 0 0 /20px 20px radial-gradient(#d1d1d1 1px,transparent 0),fixed 10px 10px /20px 20px radial-gradient(#d1d1d1 1px,transparent 0);
     }
 </style>

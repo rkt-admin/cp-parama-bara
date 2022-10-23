@@ -54,7 +54,7 @@
 <!-- <Alert /> -->
 {#if browser}
     <div
-        class="w-full mx-auto z-50 fixed bg-slate-100 dark:bg-black px-10 {(yScreen > 50 && scrollActive)
+        class="w-full mx-auto z-50 fixed bg-slate-50 dark:bg-black px-10 {(yScreen > 50 && scrollActive)
             ? ' transition-all duration-500 drop-shadow-md py-2'
             : 'py-5'} {(yScreen <= 50 && scrollActive)
             ? ' transition-all duration-500 drop-shadow-none'

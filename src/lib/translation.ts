@@ -57,12 +57,12 @@ const translation: Translation = {
     "login.form.button.login": "Masuk",
     "login.link.forgot-password": "Lupa Password?",
     "hero.title": "WEB . MOBILE . SOLUTION",
-    "hero.title2": "CRAFTING",
+    "hero.title2": "RAKIT SOLUSI",
     "section.what-we-do": "WHAT WE DO",
-    "hero.sub-title": "Kami adalah digital creator dari nusantara, yang mempunyai passion pada teknologi dan inovasi digital. Kami siap membantu Anda berevolusi melalui teknologi digital terkini",
+    "hero.sub-title": "Kami adalah kreator digital dari nusantara (Indonesia), yang memiliki passion terhadap teknologi dan inovasi digital. Kami siap membantu perjalanan evolusi Anda melalui teknologi digital terkini dan teruji",
     // "hero.sub-title": "Pelajari Lebih Lanjut untuk mengetahui lebih detail mengapa kami berbeda dari yang lainnya.",
-    "hero.button-action": "Lebih Lanjut",
-    "cta.button-action": "Whatsapp"
+    "hero.button-action": "Ingin tau lebih dalam?",
+    "cta.button-action": "Konsultasi Gratis"
   },
   "en": {
     "homepage.title": "Hello, World!",
@@ -77,12 +77,12 @@ const translation: Translation = {
     "login.form.button.login": "Sign in",
     "login.link.forgot-password": "Forgot Password?",
     "hero.title": "WEB . MOBILE . SOLUTION",
-    "hero.title2": "CRAFTING",
+    "hero.title2": "CRAFTING SOLUTION",
     "section.what-we-do": "APA YANG KAMI LAKUKAN",
     "hero.sub-title": "We are digital creators from the nusantara (Indonesia), who have a passion for technology and digital innovation. We are ready to assist your evolution journey through the latest and proven digital technology",
     // "hero.sub-title": "Please \"Get Started\" to find out in more detail why our solutions are different from the others.",
-    "hero.button-action": "HOW WE DO IT",
-    "cta.button-action": "Whatsapp"
+    "hero.button-action": "How we do it?",
+    "cta.button-action": "Free consultation"
   }
 };
 

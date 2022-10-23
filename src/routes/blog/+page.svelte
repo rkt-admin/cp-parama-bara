@@ -58,7 +58,7 @@
 <svelte:head>
     <title>{SITE_NAME} - Blog category {title}</title>
 </svelte:head>
-<div class="px-4 mx-auto flex flex-col flex-grow w-full max-w-5xl bg-yellow-200 rounded-xl">
+<div class="px-4 mx-auto flex flex-col flex-grow w-full max-w-5xl rounded-xl {PostFirst[0].bgColor}">
     {#if !PostFirst[0]}
         <h1 class="!mt-14 !mb-6 item-left text-left capitalize text-xl">{title}</h1>
     {:else}

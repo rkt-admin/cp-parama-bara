@@ -25,8 +25,7 @@
                             CONTACT US
                         </div>
                         <div class="text-left sm:text-left text-2xl sm:text-2xl">
-                            Mau ngobrol, konsultasi ringan, atau ada keperluan bisnis, hubungi kami
-                            disini!
+                            Hubungi kami untuk diskusi, konsultasi, atau keperluan bisnis Anda!
                         </div>
                     </div>
                     <div class="flex flex-wrap justify-between mb-12 lg:mb-0">
