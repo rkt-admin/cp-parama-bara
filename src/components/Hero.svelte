@@ -33,7 +33,7 @@
                     {@html $t('hero.sub-title')}
                 </div>
 
-                <div class="inline-flex mt-10 text-left">                    
+                <div class="inline-flex mt-16 text-left">                    
                     <ButtonLink
                         href="https://api.whatsapp.com/send?phone=6281212626030&text=Halo%2C%20saya%20ingin%20berdiskusi%20dengan%20Team%20Rakit.id%2C%20terima%20kasih."
                         type="submit"
@@ -51,7 +51,7 @@
                     <ButtonLink
                         href="#howwedoit"
                         type="submit"
-                        class="relative inline-flex items-center h-16 px-4 ml-4 font-normal text-2xl tracking-normal text-yellow-600 transition duration-200  hover:text-yellow-500 dark:text-slate-100 focus:shadow-outline focus:outline-none 
+                        class="relative inline-flex items-center h-16 px-4 ml-8 font-normal text-2xl tracking-normal text-yellow-600 transition duration-200  hover:text-yellow-500 dark:text-slate-100 focus:shadow-outline focus:outline-none 
                         mr-5">
                         <span class="text-xl">{$t('hero.button-action')}</span>
                     </ButtonLink>
