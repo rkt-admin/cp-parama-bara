@@ -3,7 +3,7 @@
     import ButtonLink from '$lib/components/ButtonLink.svelte'
 </script>
 
-<section class="w-full group section-style pb-10 bg-hero bg-no-repeat md:bg-cover dark:bg-none">
+<section class="w-full group section-style pb-10 bg-hero bg-no-repeat bg-biggest md:bg-cover dark:bg-none">
     <div class="max-w-5xl mx-auto">
         <div class="inline-grid grid-cols-2 grid-rows-1 lg:grid-cols-3 lg:grid-rows-1 mt-10 mx-2">
             <div class="col-span-2 z-20">

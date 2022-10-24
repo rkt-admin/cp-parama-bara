@@ -9,6 +9,10 @@ module.exports = {
   },
   theme: {
     extend: {
+      colors: {
+        'primary': '#eeefe9',
+        'secondary': '#e4e6dd'
+      },
       flexGrow: {
         '2': 2
       },
@@ -16,11 +20,18 @@ module.exports = {
         'max': '5',
       },
       backgroundImage: {
-        'pattern-jigshaw': "url('/images/bg-pattern-jigshaw.svg')",        
+        'pattern-jigshaw': "url('/images/bg-pattern-jigshaw.svg')",
         'pattern-brick': "url('/images/bg-pattern-brick.svg')",
         'pattern-call': "url('/images/bg-pattern-call.svg')",
         'hero': "url('/images/layered-waves-haikei.svg')",
         'waves': "url('/images/bg-waves-rakit-id.svg')",
+      },
+      backgroundSize: {
+        'auto': 'auto',
+        'cover': 'cover',
+        'contain': 'contain',
+        '120%': '120%',
+        'biggest': '150%',
       },
       animation: {
         vote: 'vote 1s ease-in-out',
@@ -89,7 +100,7 @@ module.exports = {
               'h1,h2,h3,h4,h5,h6': {
                 a: {
                   color: 'inherit',
-                  textDecoration: 'none',                                                   
+                  textDecoration: 'none',
                 },
               }
             }
@@ -120,7 +131,6 @@ module.exports = {
                 color: theme('colors.slate.300'),
                 backgroundColor: theme('colors.slate.700')
               },
-
               'a code': {
                 color: theme('colors.white')
               },

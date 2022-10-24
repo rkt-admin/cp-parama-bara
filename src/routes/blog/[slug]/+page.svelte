@@ -56,24 +56,22 @@
     <meta name="twitter:description" content={data.post.preview.text} />
     <meta name="twitter:image" content={ogImage} />
 </svelte:head>
-<div
-    class="mx-auto w-full max-w-full back-circle bg-pattern-memphis dark:bg-slate-900 py-5 mb-8">
-    <div class="max-w-4xl mx-auto">
+<div class="mx-auto w-full max-w-full back-circle bg-pattern-memphis dark:bg-slate-900 py-5 mb-8">
+    <div class="max-w-5xl mx-auto text-center">
         <div class="my-5">
             <span>{@html FormatCategories(data.post.tags)}</span>
         </div>
-        <a class="!font-medium text-6xl" href={$page.url.pathname}>
-            <h1>{data.post.title}</h1>
-        </a>
+        <h1 class="!font-medium text-6xl">{data.post.title}</h1>
         <div class="my-10 font-normal">
             <time datetime={new Date(parseISO(data.post.date)).toISOString()}
-                >{format(new Date(parseISO(data.post.date)), 'MMMM d, yyyy')}</time>&nbsp;&nbsp;—&nbsp;
+                >{format(new Date(parseISO(data.post.date)), 'MMMM d, yyyy')}</time
+            >&nbsp;&nbsp;—&nbsp;
             <span class="inline-flex items-center"> {data.post.readingTime}</span>
         </div>
     </div>
 </div>
-<div class="grid gap-2 grid-cols-12 mx-auto max-w-5xl">
-    <div class="col-start-1 col-end-3">
+<div class="grid gap-2 grid-cols-12 mx-auto max-w-full">
+    <div class="col-start-2 col-end-4">
         <!-- table of contents -->
         <aside class="sticky top-24 mt-4">
             <div aria-label="Table of Contents">
@@ -81,8 +79,8 @@
             </div>
         </aside>
     </div>
-    <div class="col-start-4 col-end-12">
-        <article class="prose dark:prose-invert prose-base text-xl">
+    <div class="col-start-5 col-end-12">
+        <article class="prose dark:prose-invert prose-base text-lg">
             <!-- render the post -->
             <svelte:component this={data.component} />
 
@@ -141,6 +139,8 @@
     }
 
     .back-circle {
-        background: linear-gradient(180deg,hsla(0,0%,100%,0) 0,#fff 300px),fixed 0 0 /20px 20px radial-gradient(#d1d1d1 1px,transparent 0),fixed 10px 10px /20px 20px radial-gradient(#d1d1d1 1px,transparent 0);
+        background: linear-gradient(180deg, hsla(0, 0%, 100%, 0) 0, #fff 300px),
+            fixed 0 0 /20px 20px radial-gradient(#d1d1d1 1px, transparent 0),
+            fixed 10px 10px /20px 20px radial-gradient(#d1d1d1 1px, transparent 0);
     }
 </style>

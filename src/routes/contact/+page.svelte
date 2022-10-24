@@ -7,7 +7,7 @@
     w-full
     h-1/2
     lg:h-[45%]
-    bg-slate-200
+    bg-primary
     dark:bg-gray-900
     py-10
     xl:h-1/2
@@ -19,7 +19,7 @@
         <div class="flex flex-wrap items-center mx-6">
             <div class="w-full lg:w-6/12 xl:w-6/12">
                 <div>
-                    <div class="mb-12 lg:mb-[150px] px-2 py-4 md:py-0">
+                    <div class="mb-0 lg:mb-20 px-2 py-4 md:py-0">
                         <div
                             class="mb-8 text-left sm:text-left text-4xl sm:text-6xl text-red-600 sm:text-red-600 font-light leading-none tracking-widest">
                             CONTACT US

@@ -25,7 +25,7 @@ const config = {
     // target: '#svelte',
     adapter: adapter({
       pages: 'public',
-      assets: 'static'
+      assets: 'static',
     }),
 
     // if you are not using the static adapter and

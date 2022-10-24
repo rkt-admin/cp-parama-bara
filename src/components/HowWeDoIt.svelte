@@ -2,7 +2,7 @@
     import Divider from '$lib/components/Divider.svelte'
 </script>
 
-<section class="z-20 mt-10 bg-slate-100 dark:bg-black section-style dark:bg-none">
+<section class="z-20 mt-10 bg-secondary dark:bg-slate-900 section-style dark:bg-none">
     <Divider border={false} size="large" />
     <div id="howwedoit" class="group grid grid-cols-1 max-w-5xl mx-auto">
         <div class="mx-4">

@@ -20,7 +20,7 @@
     $: $locale = language
 </script>
 
-<footer class="max-w-full bg-slate-50 dark:bg-current pb-2">
+<footer class="max-w-full bg-secondary dark:bg-slate-900  pb-2">
     <Divider border={true} size="large" />
     <div class="mx-auto w-full max-w-5xl">
         <div class="px-10">
@@ -93,7 +93,7 @@
                         <ToggleCore toggled={language == 'id' ? false : true} let:button>
                             <button
                                 type="button"
-                                class="px-3 pt-1 text-sm font-normal text-gray-900 bg-white rounded-md border border-gray-200 hover:bg-gray-100  dark:bg-black dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-slate-700  dark:focus:text-white"
+                                class="px-3 pt-1 text-sm font-normal text-gray-900 bg-white rounded-md border border-gray-200 hover:bg-gray-100  dark:bg-slate-900 dark:border-slate-700 dark:text-white dark:hover:text-white dark:hover:bg-slate-800  dark:focus:text-white"
                                 {...button}
                                 on:click={() => {
                                     language = language == 'en' ? 'id' : 'en'
@@ -119,7 +119,7 @@
                         </ToggleCore><br/><br/>
                         <button
                             on:click={ligthswitch.lightSwitchHandler()}
-                            type="button"
+                            type="button" class="inline-flex px-3 pt-1 pb-1 text-sm font-normal text-gray-900 bg-white rounded-md border border-gray-200 hover:bg-gray-100  dark:bg-slate-900 dark:border-slate-700 dark:text-white dark:hover:text-white dark:hover:bg-slate-800  dark:focus:text-white"
                             >
                             <LightMode bind:this={ligthswitch} />
                         </button>

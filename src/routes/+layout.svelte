@@ -2,6 +2,7 @@
     import '../app.css'
     import '../prism.css'
     import Logo from '../components/Logo.svelte'
+    import Topbar from '../components/Topbar.svelte'
     import { browser } from '$app/environment'
     import Footer from '../components/Footer.svelte'
     import { onMount } from 'svelte'
@@ -19,6 +20,7 @@
         { label: 'menu.home', href: '/' },
         { label: 'menu.services', href: '/services' },
         { label: 'menu.contact-us', href: '/contact' },
+        { label: 'menu.docs', href: '/docs' },
         { label: 'menu.blog', href: '/blog' }
         // { label: 'menu.login', href: '/login' }
     ]
@@ -38,9 +40,9 @@
     })
     $: {
         if (yScreen >= 5) {
-            scrollActive = true;            
-        }    
-        scrollActive = scrollActive;    
+            scrollActive = true
+        }
+        scrollActive = scrollActive
         // console.log(scrollActive);
     }
 </script>
@@ -52,13 +54,12 @@
 
 <svelte:window bind:scrollY={yScreen} />
 <!-- <Alert /> -->
+<Topbar />
 {#if browser}
     <div
-        class="w-full mx-auto z-50 fixed bg-slate-50 dark:bg-black px-10 {(yScreen > 50 && scrollActive)
-            ? ' transition-all duration-500 drop-shadow-md py-2'
-            : 'py-5'} {(yScreen <= 50 && scrollActive)
-            ? ' transition-all duration-500 drop-shadow-none'
-            : ''}">
+        class="w-full mx-auto z-50 bg-primary dark:bg-slate-900 px-10 py-2
+        {yScreen > 0 && scrollActive ? ' transition-all duration-150 drop-shadow-lg pt-1 sticky top-0' : ''} 
+        {yScreen <= 150 && scrollActive ? ' drop-shadow-none' : ''}">
         <div class="max-w-5xl w-full mx-auto">
             <div class="mx-auto flex flex-col">
                 <div class="flex justify-between items-center">
@@ -74,6 +75,7 @@
                             </ul>
                         </div>
                     </nav>
+                    <!-- svelte-ignore a11y-click-events-have-key-events -->
                     <div
                         on:click={handleMobileIconClick}
                         class={`mobile-icon${showMobileMenu ? ' active' : ''}`}>
@@ -83,9 +85,9 @@
             </div>
         </div>
     </div>
-    <div class="max-w-full w-full">
+    <div class="max-w-full w-full mt-10">
         <div class="flex flex-col">
-            <div class="flex flex-col mt-28">
+            <div class="flex flex-col ">
                 <main class="dark:text-slate-100 flex flex-col flex-grow">
                     <slot />
                 </main>
@@ -221,13 +223,11 @@
     .navbar-list li {
         list-style-type: none;
         position: relative;
-        @apply border-b border-slate-700;
         text-decoration: none;
         display: flex;
         height: 45px;
         align-items: center;
-        padding: 0;
-        @apply font-medium;
+        @apply font-medium border-b border-slate-700;
     }
 
     .active {
@@ -264,9 +264,10 @@
         .navbar-list a {
             display: inline-flex;
             margin-bottom: 0;
-            padding: 0 30px;
+            padding: 0 25px;
             font-size: medium;
             float: right;
+            @apply text-base;
         }
     }
 

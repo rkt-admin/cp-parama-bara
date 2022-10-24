@@ -72,7 +72,7 @@
       class:active={activeHeading?.node === heading.node}
       style={`--depth: ${heading.depth}`}
     >
-      <a class="!no-underline" href={`#${heading.node.id}`}>{heading.title}</a>
+      <a class="!no-underline text-slate-400" href={`#${heading.node.id}`}>{heading.title}</a>
     </li>
   {/each}
 </ul>

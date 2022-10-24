@@ -16,6 +16,18 @@
      id="defs17">
     <linearGradient
        inkscape:collect="always"
+       id="linearGradient2256">
+      <stop
+         style="stop-color:#fffcc1;stop-opacity:1"
+         offset="0"
+         id="stop2252" />
+      <stop
+         style="stop-color:#ff7272;stop-opacity:0"
+         offset="1"
+         id="stop2254" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
        id="linearGradient15756">
       <stop
          style="stop-color:#ffffff;stop-opacity:1"
@@ -25,18 +37,6 @@
          style="stop-color:#ffffff;stop-opacity:1"
          offset="1"
          id="stop15754" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       id="linearGradient12393">
-      <stop
-         style="stop-color:#f9f9f9;stop-opacity:1"
-         offset="0"
-         id="stop12389" />
-      <stop
-         style="stop-color:#e6e6e6;stop-opacity:0;"
-         offset="1"
-         id="stop12391" />
     </linearGradient>
     <linearGradient
        inkscape:collect="always"
@@ -105,12 +105,12 @@
        gradientUnits="userSpaceOnUse" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient12393"
-       id="linearGradient12395"
-       x1="-1.7492635"
-       y1="66.472305"
-       x2="860.64142"
-       y2="66.472305"
+       xlink:href="#linearGradient2256"
+       id="linearGradient2258"
+       x1="283.38193"
+       y1="30.612246"
+       x2="843.14874"
+       y2="71.720116"
        gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
@@ -123,20 +123,20 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="1.1433333"
-     inkscape:cx="624.0525"
-     inkscape:cy="279.88339"
+     inkscape:cx="425.51022"
+     inkscape:cy="98.833822"
      inkscape:window-width="1920"
-     inkscape:window-height="1046"
+     inkscape:window-height="974"
      inkscape:window-x="-11"
      inkscape:window-y="-11"
      inkscape:window-maximized="1"
      inkscape:current-layer="visual" />
   <path
-     d="M -5.8753772,268.7496 -2.5024135,-0.37174565 c 0,0 151.7802435,7.42802115 227.7371535,7.96760365 C 299.75361,8.1252249 375.17256,-8.873004 448.74879,2.9540684 550.61715,19.328983 638.04797,94.768925 740.60653,106.04031 795.45748,112.06854 904.94769,86.123479 904.94769,86.123479 L 900,258.85423 H 878.5 771.2 642.8 514.2 l -137.21307,2.09058 z"
+     d="M -5.8753772,268.7496 -2.5024135,-0.37174565 c 0,0 151.9056635,3.57118015 227.7371535,7.96760365 76.37562,4.42797 153.44487,5.11247 228.76186,18.536054 97.64163,17.402456 187.71327,72.412721 286.60993,79.908398 55.0234,4.17039 164.34116,-19.916831 164.34116,-19.916831 l -7.5716,103.634541 C 395.37007,211.76635 178.78063,264.98532 -5.8753772,268.7496 Z"
      fill="#e34c67"
      id="path8"
-     sodipodi:nodetypes="ccaaacccccccc"
-     style="fill:url(#linearGradient12395);fill-opacity:1" />
+     sodipodi:nodetypes="ccaaaccc"
+     style="fill:url(#linearGradient2258);fill-opacity:1" />
   <path
      d="m -13.737995,13.906653 c 0,0 315.774535,25.686873 467.482025,67.861313 78.58398,21.846224 144.071,98.535074 225.55269,94.869824 50.07386,-2.25245 88.67918,-46.75582 132.81714,-70.51094 48.24855,-25.967451 126.2725,-11.016299 144.30014,-78.724519 0,0 15.28996,219.442939 -15.30614,209.148689 -79.73699,-26.82802 -89.82269,-124.6233 -275.56734,-12.68221 -32.72323,19.72102 -76.66336,-2.73379 -114.60582,1.74927 -58.38763,6.89874 -113.73326,31.6781 -172.13178,38.48396 -127.37339,14.8443 -249.98285,-82.21589 -384.6782972,4.64756 z"
      fill="#d53867"
