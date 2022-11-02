@@ -1,0 +1,75 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\kharis.hidayatullah\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
+
+PATH: 
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Python310\Scripts\;C:\Python310\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Git\cmd;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files (x86)\GnuWin32;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\GnuWin32\bin;;C:\TDM-GCC-64\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\Go\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Amazon\AWSCLIV2\;C:\Users\kharis.hidayatullah\scoop\shims;C:\Users\kharis.hidayatullah\AppData\Local\pnpm;C:\Users\kharis.hidayatullah\AppData\Local\Microsoft\WindowsApps;C:\Users\kharis.hidayatullah\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Azure Data Studio\bin;C:\Users\kharis.hidayatullah\.dotnet\tools;C:\Users\kharis.hidayatullah\AppData\Roaming\npm;C:\Users\kharis.hidayatullah\go\bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.15.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile 'C:\Users\kharis.hidayatullah\AppData\Local\Yarn\Cache\v6\npm-glob-parent-6.0.2-6d237d99083950c79290f24c7642a3de9a28f9e3-integrity\node_modules\glob-parent\LICENSE' -> 'D:\Project\rakit.id\website\node_modules\tailwindcss\node_modules\glob-parent\LICENSE'
+
+npm manifest: 
+  {
+  	"name": "rakit-id",
+  	"version": "0.0.1",
+  	"scripts": {
+  		"dev": "vite dev --port 80",
+  		"build": "vite build",
+  		"preview": "vite preview",
+  		"lint": "prettier --check . && eslint --ignore-path .gitignore .",
+  		"format": "prettier --write ."
+  	},
+  	"devDependencies": {
+  		"@beyonk/svelte-social-auth": "^2.1.1",
+  		"@sveltejs/adapter-netlify": "next",
+  		"@sveltejs/kit": "next",
+  		"@tailwindcss/typography": "^0.5.7",
+  		"autoprefixer": "^10.4.11",
+  		"cssnano": "^5.1.13",
+  		"eslint": "^7.32.0",
+  		"eslint-config-prettier": "^8.5.0",
+  		"eslint-plugin-svelte3": "^3.4.1",
+  		"mdsvex": "^0.9.8",
+  		"mdsvex-relative-images": "^0.0.3",
+  		"postcss": "^8.4.16",
+  		"postcss-focus-visible": "^5.0.0",
+  		"postcss-load-config": "^3.1.4",
+  		"prettier": "~2.2.1",
+  		"prettier-plugin-svelte": "^2.7.0",
+  		"rehype-autolink-headings": "^5.1.0",
+  		"rehype-slug": "^4.0.1",
+  		"remark-reading-time": "^1.0.1",
+  		"svelte": "^3.50.1",
+  		"svelte-preprocess": "^4.10.7",
+  		"svelte-toggle": "^3.1.0",
+  		"tailwindcss": "^3.1.8",
+  		"typescript": "^4.8.3",
+  		"unist-util-visit": "^3.1.0"
+  	},
+  	"type": "module",
+  	"dependencies": {
+  		"@macfja/svelte-persistent-store": "^1.3.0",
+  		"clsx": "^1.2.1",
+  		"date-fns": "^2.29.3",
+  		"heroicons-svelte": "^0.0.1",
+  		"node-html-parser": "^5.4.2",
+  		"pnpm": "^6.34.0",
+  		"reading-time": "^1.5.0",
+  		"reading-time-estimator": "^1.7.2",
+  		"vite": "^3.1.2"
+  	}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

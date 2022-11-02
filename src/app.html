@@ -18,7 +18,7 @@
     // gtag('config', 'G-V5K5EECM62');
 
     let prefersLight = true
-    let language = 'id'
+    // let language = 'id'
 
     prefersLight = localStorage.getItem('prefersLight') == 'false' ? false : true
     localStorage.setItem('prefersLight', prefersLight.toString().toLowerCase())
@@ -26,8 +26,8 @@
         document.querySelector('html')?.classList.add('dark')
     }
 
-    language = localStorage.getItem('language') == 'en' ? 'en' : 'id'
-    localStorage.setItem('language', language)
+    // language = localStorage.getItem('language') == 'en' ? 'en' : 'id'
+    // localStorage.setItem('language', language)
   </script>
 </head>
 

@@ -11,7 +11,8 @@ module.exports = {
     extend: {
       colors: {
         'primary': '#eeefe9',
-        'secondary': '#e4e6dd'
+        'secondary': '#e4e6dd',
+        'secondary-hover': '#d6d9cd'
       },
       flexGrow: {
         '2': 2

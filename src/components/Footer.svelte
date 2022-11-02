@@ -134,28 +134,23 @@
                     <i class="fa-regular fa-copyright" /> 2022 <a href={URL_BASE}>{SITE_NAME}</a> by
                     PT Rakit Digital Creator, All Rights Reserved.
                 </span>
-                <div class="flex my-4 space-x-8 sm:justify-center sm:mt-0 items-center">
-                    <!-- svelte-ignore a11y-invalid-attribute -->
+                <!-- <div class="flex my-4 space-x-8 sm:justify-center sm:mt-0 items-center">
                     <a href="https://www.facebook.com/rakit.id" class="text-gray-500">
                         <i class="fa-brands fa-facebook-f  text-base" />
                     </a>
-                    <!-- svelte-ignore a11y-invalid-attribute -->
                     <a href="https://www.instagram.com/rakit.official" class="text-gray-500">
                         <i class="fa-brands fa-instagram  text-base" />
                     </a>
-                    <!-- svelte-ignore a11y-invalid-attribute -->
                     <a href="/" class="text-gray-500">
                         <i class="fa-brands fa-twitter text-base" />
                     </a>
-                    <!-- svelte-ignore a11y-invalid-attribute -->
                     <a href="/" class="text-gray-500">
                         <i class="fa-brands fa-github text-base" />
                     </a>
-                    <!-- svelte-ignore a11y-invalid-attribute -->
                     <a href="/" class="text-gray-500">
                         <i class="fa-brands fa-discord text-base" />
                     </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

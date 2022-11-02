@@ -48,9 +48,7 @@
                 <div class="relative text-left space-y-4 p-6 md:p-8 md:mt-5">
                     <h3 class="header-service">Backend Development</h3>
                     <p class="text-gray-600 dark:text-gray-300 text-base text-left">
-                        Whether you need a small presentation website to attract new clients, or a
-                        complete custom platform supporting millions of monthly visits, we can
-                        tailor a solution that is right for your own particular needs.
+                        Need to make performan API, API Gateway management, and DevOps cycle, we cover it.
                     </p>
                 </div>
             </div>
@@ -65,7 +63,7 @@
                 </div>
                 <div aria-hidden="true" class="absolute inset-0 rounded-xl bg-gray-100 dark:bg-gray-600  shadow-xl transition duration-300 group-hover:scale-105 lg:group-hover:scale-105" />
                 <div class="relative text-left space-y-4 p-6 md:p-8 md:mt-5">
-                    <h3 class="header-service">Desktop App Development</h3>
+                    <h3 class="header-service">Services Development</h3>
                     <p class="text-gray-600 dark:text-gray-300 text-base text-left">
                         Whether you need a small presentation website to attract new clients, or a
                         complete custom platform supporting millions of monthly visits, we can

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100mm"
+   height="100mm"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="chat-logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.728523"
+     inkscape:cx="126.69776"
+     inkscape:cy="220.4194"
+     inkscape:window-width="1920"
+     inkscape:window-height="974"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     width="100mm" />
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3730"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3724"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3718"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3552"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3546"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect1588"
+       is_visible="true"
+       lpeversion="1" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#b3b3b3;fill-opacity:1;stroke-width:0.153468"
+       d="M 44.53798,82.849647 C 40.551953,81.248203 23.363027,64.889909 21.867179,62.802368 l -2.3072,24.997297 z"
+       id="path940"
+       sodipodi:nodetypes="cccc" />
+    <rect
+       style="fill:#ff7272;fill-opacity:0;stroke-width:0.0529167;stroke-linecap:square;paint-order:stroke fill markers;stop-color:#000000"
+       id="rect858"
+       width="25.543732"
+       height="31.172012"
+       x="-43.727406"
+       y="24.677841" />
+    <path
+       id="path9414"
+       style="fill:#b3b3b3;stroke-width:5.33717;stroke-linecap:square;paint-order:stroke fill markers;stop-color:#000000"
+       d="M 90.938728,46.941852 A 37.99004,37.99004 0 0 1 52.948688,84.931892 37.99004,37.99004 0 0 1 14.958649,46.941852 37.99004,37.99004 0 0 1 52.948688,8.9518115 37.99004,37.99004 0 0 1 90.938728,46.941852 Z" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2">
+    <path
+       style="fill:#808080;stroke:#585858;stroke-width:4.32181;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 109.25001,47.55187 h 36.66605"
+       id="path3542" />
+    <path
+       style="fill:#808080;stroke:#585858;stroke-width:3.95697;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 108.92368,36.837038 h 30.73674"
+       id="path3714" />
+    <path
+       style="fill:#808080;stroke:#585858;stroke-width:3.47494;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 108.53663,57.654426 h 23.70431"
+       id="path3720" />
+    <path
+       style="color:#000000;fill:#666666;fill-opacity:1;stroke-width:0.0691535;-inkscape-stroke:none"
+       d="m 68.237982,65.37211 2.437024,-6.967041 C 70.939262,57.64799 70.621466,56.805992 69.92774,56.409563 L 62.592494,52.26227 c -0.641838,-0.362895 -1.45352,-0.257488 -1.976899,0.262374 L 56.74744,56.314655 C 51.7478,53.259404 47.838504,48.45282 45.908592,42.792824 l 4.540999,-2.950634 c 0.621942,-0.40458 0.90074,-1.166991 0.686288,-1.872417 l -2.451521,-8.062005 c -0.242103,-0.771112 -0.994816,-1.264446 -1.791179,-1.171263 l -7.330414,0.862382 c -0.761341,0.09044 -1.370134,0.690966 -1.455675,1.46765 -1.93877,17.603728 10.75042,33.465156 28.381658,35.40696 0.769866,0.08524 1.494906,-0.371107 1.749265,-1.101377 z"
+       id="path4995" />
+  </g>
+</svg>

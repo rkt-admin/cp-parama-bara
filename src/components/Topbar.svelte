@@ -6,7 +6,8 @@
     import { ToggleCore } from 'svelte-toggle'
     import { locale } from '$lib/i18n'
     import { browser } from '$app/environment'
-
+    import ButtonLink from '$lib/components/ButtonLink.svelte'
+    
     let language = 'id'
 
     if (browser) {
@@ -30,13 +31,25 @@
 </script>
 
 <svelte:window bind:scrollY={yScreen} />
-<div class="w-full mx-auto bg-secondary dark:bg-black py-1">
-    <div class="max-w-5xl w-full mx-auto text-right">
-        <div class="inline-flex">
+<div class="w-full mx-auto bg-secondary dark:bg-black py-1 text-xs">
+    <div class="flex max-w-5xl w-full mx-auto">
+        <!-- <div class="relative">
+            <span class="relative group z-50">
+                <a href="/" class="flex items-center px-3 group-hover:bg-slate-100 rounded-t-lg pt-1">
+                    Support
+                </a>        
+                <ul class="z-50 absolute bg-slate-100 invisible group-hover:visible w-48 rounded-b-lg rounded-r-lg">
+                   <li><a href="/services" class="px-4 py-2 block text-black hover:bg-grey-lighter">Call Us</a></li>
+                   <li><a href="#" class="px-4 py-2 block text-black hover:bg-grey-lighter">Chat Us</a></li>                   
+                   <li><a href="#" class="px-4 py-2 block text-black hover:bg-grey-lighter">Email Us</a></li>
+                </ul>
+            </span>
+        </div> -->
+        <div class="relative ml-auto pt-1">
             <ToggleCore toggled={language == 'id' ? false : true} let:button>
                 <button
                     type="button"
-                    class="px-3 pt-1 text-sm font-normal text-gray-900 hover:text-yellow-700 dark:bg-black dark:border-gray-600 dark:text-white dark:hover:text-white dark:focus:text-white"
+                    class="px-3 font-normal text-gray-900 hover:text-yellow-700 dark:bg-black dark:border-gray-600 dark:text-white dark:hover:text-white dark:focus:text-white"
                     {...button}
                     on:click={() => {
                         language = language == 'en' ? 'id' : 'en'
@@ -50,7 +63,7 @@
                             viewBox="0 0 24 24"
                             stroke-width="1.5"
                             stroke="currentColor"
-                            class="w-5 h-5">
+                            class="w-4 h-4">
                             <path
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
@@ -63,9 +76,13 @@
             <button
                 on:click={ligthswitch.lightSwitchHandler()}
                 type="button"
-                class="inline-flex px-3 pt-1 text-sm font-normal text-gray-900 hover:text-yellow-700 dark:bg-black dark:border-gray-600 dark:text-white dark:hover:text-white  dark:focus:text-white">
-                <LightMode bind:this={ligthswitch} /> 
+                class="inline-flex px-3 font-normal text-gray-900 hover:text-yellow-700 dark:bg-black dark:border-gray-600 dark:text-white dark:hover:text-white  dark:focus:text-white">
+                <LightMode bind:this={ligthswitch} />
             </button>
         </div>
     </div>
 </div>
+
+<style lang="postcss">
+    
+</style>

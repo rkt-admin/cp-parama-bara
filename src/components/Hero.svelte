@@ -6,9 +6,9 @@
 <section class="w-full group section-style pb-10 bg-hero bg-no-repeat bg-biggest md:bg-cover dark:bg-none">
     <div class="max-w-5xl mx-auto">
         <div class="inline-grid grid-cols-2 grid-rows-1 lg:grid-cols-3 lg:grid-rows-1 mt-10 mx-2">
-            <div class="col-span-2 z-20">
+            <div class="col-span-2">
                 <div
-                    class="items-left tracking-tight drop-shadow-lg text-left
+                    class="items-left tracking-tight text-left
                 text-3xl mb-2 font-extrabold
                 sm:text-4xl sm:mb-4
                 md:text-4xl md:mb-4
@@ -16,7 +16,7 @@
                 {$t('hero.title2')} <br />
                 </div>
                 <div
-                    class="text-red-500 items-left  drop-shadow-md tracking-tight
+                    class="text-red-500 items-left tracking-wide
                 text-left 
                 text-2xl mb-10 font-medium
                 sm:text-3xl sm:mb-8
@@ -25,7 +25,7 @@
                     WEB . MOBILE . API . CUSTOM
                 </div>
                 <div
-                    class="max-w-2xl mx-auto tracking-normal  drop-shadow-md
+                    class="max-w-2xl mx-auto tracking-normal
                 text-justify  text-xl mb-0
                 sm:text-xl sm:mb-2
                 md:text-xl md:mb-2
