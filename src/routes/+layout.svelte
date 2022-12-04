@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import '../app.css'
     import '../prism.css'
     import Logo from '../components/Logo.svelte'
@@ -13,8 +13,9 @@
     /** @type {import('./$types').LayoutData} */
     export let data
 
-    let yScreen
-    let scrollActive = false
+    let yScreen: number
+    let scrollActive: boolean = false
+
     let language
 
     if (browser) {
@@ -26,7 +27,9 @@
 
     // List of navigation items
     let navItems = [
+        { label: 'menu.home', href: '/' },
         { label: 'menu.services', href: '/services' },
+        // { label: 'menu.contact-us', href: '/contact' },
         // { label: 'menu.docs', href: '/docs' },
         { label: 'menu.blog', href: '/blog' }
         // { label: 'menu.login', href: '/login' }
@@ -55,8 +58,7 @@
 </script>
 
 <svelte:head>
-    <html lang={language} />
-    <title>{SITE_NAME + (MODE == 'development' ? ' ~ Dev' : '')}</title>
+    <title>{SITE_NAME + ' - ' + MODE}</title>
     <meta name="description" content="Page description of rakit.id" />
 </svelte:head>
 
@@ -67,7 +69,7 @@
     <div
         class="w-full mx-auto z-50 bg-primary dark:bg-slate-900 px-10 py-2
         {yScreen > 0 && scrollActive
-            ? ' transition-all duration-150 drop-shadow-sm pt-1 sticky top-0'
+            ? ' transition-all duration-150 drop-shadow-lg pt-1 sticky top-0'
             : ''} 
         {yScreen <= 150 && scrollActive ? ' drop-shadow-none' : ''}">
         <div class="max-w-5xl w-full mx-auto">
@@ -224,7 +226,6 @@
             </div>
         </div>
     </div>
-
     <div class="max-w-full w-full mt-10">
         <div class="flex flex-col">
             <div class="flex flex-col ">
@@ -338,7 +339,9 @@
     .navbar-list {
         display: none;
         width: 100%;
+        /* justify-content: space-between; */
         margin: 0;
+        padding: 0 40px;
         @apply z-50;
     }
 
@@ -366,6 +369,7 @@
         position: relative;
         text-decoration: none;
         display: flex;
+        /* height: 45px; */
         align-items: center;
         @apply font-medium border-b border-slate-700;
     }

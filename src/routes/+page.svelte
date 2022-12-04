@@ -18,11 +18,9 @@
 <SectionTransition>
     <WhatWeDo />
 </SectionTransition>
-<Divider />
 <SectionTransition>
     <Services />
 </SectionTransition>
-<Divider />
 <SectionTransition>
     <TechStack />
 </SectionTransition>

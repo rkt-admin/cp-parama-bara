@@ -1,3 +1,7 @@
+<script lang="ts">
+    import Divider from '$lib/components/Divider.svelte'
+</script>
+
 <section class="z-20 section-style">
     <div class="max-w-5xl mx-auto">
         <div class="mb-52 ml-4 mr-8">
@@ -92,6 +96,7 @@
             </div>
         </div>
     </div>
+    <Divider border={false} size="medium" />
 </section>
 
 <style lang="postcss">
