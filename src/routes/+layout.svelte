@@ -8,7 +8,7 @@
     import { onMount } from 'svelte'
     import { t } from '$lib/i18n'
     import PageTransition from '$lib/components/PageTransition.svelte'
-    import { SITE_NAME, MODE } from '$lib/variables'
+    import { URL_BASE, SITE_NAME, MODE } from '$lib/variables'
 
     /** @type {import('./$types').LayoutData} */
     export let data
@@ -27,7 +27,7 @@
 
     // List of navigation items
     let navItems = [
-        { label: 'menu.home', href: '/' },
+        // { label: 'menu.home', href: '/' },
         { label: 'menu.services', href: '/services' },
         // { label: 'menu.contact-us', href: '/contact' },
         // { label: 'menu.docs', href: '/docs' },
@@ -49,6 +49,7 @@
         })
     })
     $: {
+        console.log(data.url + URL_BASE)
         if (yScreen >= 5) {
             scrollActive = true
         }
@@ -79,6 +80,9 @@
                     <nav>
                         <div>
                             <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
+                                <li>
+                                    <a href='/'>Home</a>
+                                </li>
                                 <li class="relative group z-50">
                                     <a
                                         href="#!"
@@ -230,9 +234,13 @@
         <div class="flex flex-col">
             <div class="flex flex-col ">
                 <main class="dark:text-slate-100 flex flex-col flex-grow">
-                    <PageTransition url={data.url}>
+                    {#if data.url == URL_BASE}
                         <slot />
-                    </PageTransition>
+                    {:else}
+                        <PageTransition url={data.url}>
+                            <slot />
+                        </PageTransition>
+                    {/if}
                 </main>
             </div>
         </div>

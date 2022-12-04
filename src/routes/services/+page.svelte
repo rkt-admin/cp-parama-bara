@@ -2,7 +2,7 @@
     import Services from '../../components/Services.svelte'
 </script>
 
-<div class="my-20">
+<div class="my-10">
     <Services />
 </div>
 <!-- <div class="py-16 bg-gray-50 overflow-hidden">

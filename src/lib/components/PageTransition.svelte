@@ -1,12 +1,11 @@
 <script>
     import { fly } from "svelte/transition";
     export let url = "";
-    const pageTransitionDuration = 100;
+    const pageTransitionDuration = 1000;
   </script>
   
   {#key url}
-    <div in:fly={{  x:-2, duration: pageTransitionDuration }}
-         out:fly={{ x: 2, duration: pageTransitionDuration }}>
+    <div in:fly={{  y:-20, duration: pageTransitionDuration }}>
       <slot />
     </div>
   {/key}
