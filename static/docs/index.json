@@ -1,0 +1,38 @@
+{
+    "years": {
+        "2022": [
+            {
+                "id": "1",
+                "title": "Document 1 tahun 2022",
+                "path": "doc 1 - 2022.pdf"
+            },
+            {
+                "id": "2",
+                "title": "Document 2 tahun 2022",
+                "path": "doc 2 - 2022.pdf"
+            },
+            {
+                "id": "3",
+                "title": "Document 3 tahun 2022",
+                "path": "doc 3 - 2022.pdf"
+            }
+        ],
+        "2023": [
+            {
+                "id": "1",
+                "title": "Document 1 tahun 2023",
+                "path": "doc 1 - 2023.pdf"
+            },
+            {
+                "id": "2",
+                "title": "Document 2 tahun 2023",
+                "path": "doc 2 - 2023.pdf"
+            },
+            {
+                "id": "3",
+                "title": "Document 3 tahun 2023",
+                "path": "doc 3 - 2023.pdf"
+            }
+        ]
+    }
+}
