@@ -1,6 +1,6 @@
-<script lang="ts">
-    import '../app.css'
-    import '../prism.css'
+<script>
+    // import '../app.css'
+    // import '../prism.css'
     import Logo from '../components/Logo.svelte'
     import Topbar from '../components/Topbar.svelte'
     import { browser } from '$app/environment'
@@ -9,12 +9,32 @@
     import { t } from '$lib/i18n'
     import PageTransition from '$lib/components/PageTransition.svelte'
     import { URL_BASE, SITE_NAME, MODE } from '$lib/variables'
+    import 'carbon-components-svelte/css/g100.css'
+    import {
+        Header,
+        HeaderNav,
+        HeaderNavItem,
+        HeaderNavMenu,
+        SideNav,
+        SideNavItems,
+        SideNavMenu,
+        SideNavMenuItem,
+        SideNavLink,
+        SkipToContent,
+        Content,
+        Grid,
+        Row,
+        Column
+    } from 'carbon-components-svelte'
+
+    let isSideNavOpen = false
 
     /** @type {import('./$types').LayoutData} */
     export let data
 
-    let yScreen: number
-    let scrollActive: boolean = false
+    let yScreen
+    let scrollActive = false
+    let expanded = false
 
     let language
 
@@ -38,6 +58,15 @@
     // Mobile menu click event handler
     const handleMobileIconClick = () => (showMobileMenu = !showMobileMenu)
 
+    let show = true
+    let status = false
+
+    function toggleShow() {
+        if (show) {
+            show = !show
+        }
+    }
+
     // Attach media query listener on mount hook
     onMount(() => {
         const mql = window.matchMedia('(max-width: 767px)')
@@ -49,7 +78,9 @@
         })
     })
     $: {
-        console.log(data.url + URL_BASE)
+        show = show
+        console.log('show = ', show)
+        // console.log(data.url + URL_BASE)
         if (yScreen >= 5) {
             scrollActive = true
         }
@@ -73,6 +104,35 @@
             ? ' transition-all duration-150 drop-shadow-lg pt-1 sticky top-0'
             : ''} 
         {yScreen <= 150 && scrollActive ? ' drop-shadow-none' : ''}">
+        <Header company="XXX">
+            <HeaderNav>
+                <HeaderNavMenu
+                    text="About"
+                    bind:expanded
+                    on:mouseenter={() => {
+                        expanded = true
+                    }}>
+                    <HeaderNavItem href="/company-overview" text="Company Overview" />
+                    <HeaderNavItem href="/core-value" text="Core Value" />
+                    <HeaderNavItem href="/corporate-structure" text="Corporate Structure" />
+                    <HeaderNavItem href="/organization-structure" text="Organization Structure" />
+                </HeaderNavMenu>
+                <HeaderNavItem href="/company-overview" text="Company Overview" />
+                <HeaderNavItem href="/core-value" text="Core Value" />
+                <HeaderNavItem href="/corporate-structure" text="Corporate Structure" />
+                <HeaderNavItem href="/organization-structure" text="Organization Structure" />
+            </HeaderNav>
+        </Header>
+
+        <Content>
+            <Grid>
+                <Row>
+                    <Column>
+                        <h1>Welcome</h1>
+                    </Column>
+                </Row>
+            </Grid>
+        </Content>
         <div class="max-w-5xl w-full mx-auto">
             <div class="mx-auto flex flex-col">
                 <div class="flex justify-between items-center">
@@ -81,7 +141,7 @@
                         <div>
                             <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
                                 <li>
-                                    <a href='/'>Home</a>
+                                    <a href="/">Home</a>
                                 </li>
                                 <li class="relative group z-50">
                                     <a

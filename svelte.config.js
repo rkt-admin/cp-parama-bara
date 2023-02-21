@@ -3,6 +3,7 @@ import mdsvexConfig from './mdsvex.config.js'
 import preprocess from 'svelte-preprocess'
 import adapter from '@sveltejs/adapter-netlify'
 import path from 'path'
+import { optimizeImports } from "carbon-preprocess-svelte";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -11,6 +12,7 @@ const config = {
   // for more information about preprocessors
   preprocess: [
     mdsvex(mdsvexConfig),
+    preprocess([optimizeImports()]),
     preprocess({
       postcss: true
     })
