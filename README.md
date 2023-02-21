@@ -1,8 +1,5 @@
-# Rakit.id Website
+# Parama Bara Intercontinental Website
 
-Blog built using svelte, mdsvex and tailwind.
-Based on boilerplate from [mattjennings/sveltekit-blog-template](https://github.com/mattjennings/sveltekit-blog-template)
+Website can be accessed on [Parama Bara](https://paramabara.netlify.app/)
 
-Website can be accessed on [Rakit.id](https://rakit.id/)
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ec932438-d06b-4dce-a90d-5531a653ec36/deploy-status)](https://app.netlify.com/sites/rakit/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e98a7e84-ba89-4c96-90a2-75417e991267/deploy-status)](https://app.netlify.com/sites/paramabara/deploys)

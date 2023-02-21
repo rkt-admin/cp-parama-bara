@@ -1,38 +1,44 @@
-{
-    "years": {
-        "2022": [
-            {
-                "id": "1",
-                "title": "Document 1 tahun 2022",
-                "path": "doc 1 - 2022.pdf"
-            },
-            {
-                "id": "2",
-                "title": "Document 2 tahun 2022",
-                "path": "doc 2 - 2022.pdf"
-            },
-            {
-                "id": "3",
-                "title": "Document 3 tahun 2022",
-                "path": "doc 3 - 2022.pdf"
-            }
-        ],
-        "2023": [
-            {
-                "id": "1",
-                "title": "Document 1 tahun 2023",
-                "path": "doc 1 - 2023.pdf"
-            },
-            {
-                "id": "2",
-                "title": "Document 2 tahun 2023",
-                "path": "doc 2 - 2023.pdf"
-            },
-            {
-                "id": "3",
-                "title": "Document 3 tahun 2023",
-                "path": "doc 3 - 2023.pdf"
-            }
-        ]
+[
+    {
+        "id": "1",
+        "year": "2022",
+        "date": "12 Februari 2022",
+        "title": "Document 1 tahun 2022",
+        "path": "docs/2022/doc 1 - 2022.pdf"
+    },
+    {
+        "id": "2",
+        "year": "2022",
+        "date": "12 Februari 2022",
+        "title": "Document 2 tahun 2022",
+        "path": "docs/2022/doc 2 - 2022.pdf"
+    },
+    {
+        "id": "3",
+        "year": "2022",
+        "date": "12 Februari 2022",
+        "title": "Document 3 tahun 2022",
+        "path": "docs/2022/doc 3 - 2022.pdf"
+    },
+    {
+        "id": "4",
+        "year": "2023",
+        "date": "22 Februari 2023",
+        "title": "Document 1 tahun 2023",
+        "path": "docs/2023/doc 1 - 2023.pdf"
+    },
+    {
+        "id": "5",
+        "year": "2023",
+        "date": "22 Februari 2023",
+        "title": "Document 2 tahun 2023",
+        "path": "docs/2023/doc 2 - 2023.pdf"
+    },
+    {
+        "id": "6",
+        "year": "2023",
+        "date": "22 Februari 2023",
+        "title": "Document 3 tahun 2023",
+        "path": "docs/2023/doc 3 - 2023.pdf"
     }
-}
+]
