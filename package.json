@@ -44,7 +44,6 @@
 		"date-fns": "^2.29.3",
 		"heroicons-svelte": "^0.0.1",
 		"node-html-parser": "^5.4.2",
-		"pdfjs-dist": "^3.3.122",
 		"pnpm": "^6.35.0",
 		"reading-time": "^1.5.0",
 		"reading-time-estimator": "^1.7.2",

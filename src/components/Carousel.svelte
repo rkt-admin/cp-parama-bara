@@ -93,7 +93,7 @@
 <div id="default-carousel" class="relative" data-carousel="slide">
     <div class="relative h-96 overflow-hidden md:h-[832px]">
         {#each slides as slide, i }
-        <div class={`duration-700 ease-in-out ${i === activeIndex ? '' : 'hidden'}`} data-carousel-item>
+        <div class={`duration-700 ease-in-out ${i === activeIndex ? '' : 'opacity-0'}`} data-carousel-item>
             <img src={slide.image} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 h-full object-cover" alt={slide.alt}>
         </div>
         {/each}
