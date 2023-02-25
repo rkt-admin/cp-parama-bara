@@ -13,7 +13,6 @@
         return fragment.body.firstChild;
             },
             theme: 'light',
-            size: 'small',
             arrow: true,
         })
     })
@@ -40,7 +39,7 @@ left-0
 <div class="flex items-center justify-center mt-20">
     <div class="relative inline-block px-14 py-3 z-0">
         <img
-            src="static/images/world-map.svg"
+            src="/images/world-map.svg"
             alt="map"
             class="w-full mx-auto" />
         {#each data as map}
