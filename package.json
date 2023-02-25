@@ -47,6 +47,7 @@
 		"pnpm": "^6.35.0",
 		"reading-time": "^1.5.0",
 		"reading-time-estimator": "^1.7.2",
+		"tippy.js": "^6.3.7",
 		"vite": "^3.2.2"
 	}
 }
