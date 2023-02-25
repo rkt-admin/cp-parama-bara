@@ -24,6 +24,7 @@ module.exports = {
         'pattern-jigshaw': "url('/images/bg-pattern-jigshaw.svg')",
         'pattern-brick': "url('/images/bg-pattern-brick.svg')",
         'pattern-call': "url('/images/bg-pattern-call.svg')",
+        'pattern-question': "url('/images/bg-pattern-question.svg')",        
         'hero': "url('/images/layered-waves-haikei.svg')",
         'waves': "url('/images/bg-waves-rakit-id.svg')",
       },

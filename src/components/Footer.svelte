@@ -213,6 +213,6 @@
         @apply transition delay-75 duration-300 ease-in-out hover:border-white text-gray-700;
     }
     footer .main-link a {
-        @apply mb-4 flex border-l-4 border-white pl-2 transition-all duration-700 ease-in-out text-gray-700 hover:border-l-4 hover:border-yellow-400 hover:pl-4 hover:text-gray-600;
+        @apply mb-4 drop-shadow-none flex border-l-4 border-white pl-2 transition-all duration-700 ease-in-out text-gray-700 hover:border-l-4 hover:border-yellow-400 hover:pl-4 hover:text-gray-600;
     }
 </style>

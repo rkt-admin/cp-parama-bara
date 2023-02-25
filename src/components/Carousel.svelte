@@ -23,13 +23,16 @@
             </div>
         {/each}
     </div>
-    <div class="absolute top-0 ml-24 mt-28 flex items-center justify-center md:max-w-2xl">
+    <div class="
+    absolute top-0 mt-28 max-w-2xl 
+    px-[20px] sm:px-[20px] md:px-[75px] 
+    flex items-center justify-center">
         <div class=" items-center justify-center text-white">
             <h1
-                class="text-xl leading-8 md:text-5xl md:leading-[60px] font-extrabold tracking-[0.16px]">
+                class="text-xl leading-8 md:text-5xl md:max-w-3xl md:leading-[60px] font-extrabold tracking-[0.16px]">
                 Exportation of Branded Thermal Coal of Multi Origins.
             </h1>
-            <p class="text-xs leading-4 md:text-sm mt-4 font-normal md:leading-6 tracking-[0.16px]">
+            <p class="text-xs leading-4 md:text-sm md:max-w-3xl mt-4 font-normal md:leading-6 tracking-[0.16px]">
                 PARAMA BARA INTERCONTINENTAL handle the exportation of branded thermal coal of multi
                 origins, as well as exporting coal and cokes from multi origin to reputable end
                 users in various Asian Countries.

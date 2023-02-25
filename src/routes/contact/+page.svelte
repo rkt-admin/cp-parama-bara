@@ -104,7 +104,7 @@
                             <input
                                 type="text"
                                 name="fullName"
-                                placeholder="Nama Kamu"
+                                placeholder="Your Name"
                                 class="form-input focus:border-primary focus:outline-none py-2" />
                         </div>
                         <div class="mb-6">
@@ -112,7 +112,7 @@
                             <input
                                 type="email"
                                 name="email"
-                                placeholder="email.kamu@mail.com"
+                                placeholder="your.email@mail.com"
                                 class="form-input focus:border-primary focus:outline-none py-2" />
                         </div>
                         <div class="mb-6">
@@ -120,7 +120,7 @@
                             <input
                                 type="text"
                                 name="phone"
-                                placeholder="081 212 626 030"
+                                placeholder="your phone number"
                                 class="form-input focus:border-primary focus:outline-none py-2" />
                         </div>
                         <div class="mb-6">
@@ -128,7 +128,7 @@
                             <textarea
                                 name="message"
                                 rows="1"
-                                placeholder="Ketik pesan Anda disini"
+                                placeholder="your message here"
                                 class="form-input focus:border-primary focus:outline-none py-8" />
                         </div>
                         <div class="mb-0">

@@ -42,7 +42,7 @@
 
     // Attach media query listener on mount hook
     onMount(() => {
-        const mql = window.matchMedia('(max-width: 767px)')
+        const mql = window.matchMedia('(max-width: 950px)')
 
         mql.addEventListener('change', (e) => {
             if (!e.matches) {
@@ -56,7 +56,7 @@
             scrollActive = true
         }
         scrollActive = scrollActive
-        console.log(scrollActive);
+        console.log(scrollActive)
     }
 </script>
 
@@ -69,16 +69,15 @@
 <!-- <Topbar /> -->
 {#if browser}
     <div
-        class="w-full sticky top-0 mx-auto z-10 dark:bg-slate-900 px-10 pt-3
+        class="sticky top-0 z-10 dark:bg-slate-900 pt-3 
+        px-[20px] sm:px-[20px] md:px-[75px]
     {yScreen > 10 && scrollActive
             ? ' transition-all duration-150 bg-black bg-opacity-60 drop-shadow-lg sticky top-0 pb-5'
             : ' bg-transparent'} 
-    {yScreen <= 12 && scrollActive
-            ? ' transition-all duration-300 drop-shadow-none'
-            : ''}
+    {yScreen <= 12 && scrollActive ? ' transition-all duration-300 drop-shadow-none' : ''}
     ">
-        <div class="max-w-5xl w-full mx-auto h-6">
-            <div class="mx-auto flex flex-col">
+        <div class="h-6">
+            <div class="flex flex-col">
                 <div class="flex justify-between items-center">
                     <Logo size="small" text={true} dark={false} />
                     <nav>
@@ -191,13 +190,13 @@
         height: 2px;
         transition: all 0.4s;
         transform-origin: center;
-        @apply bg-slate-500 text-base font-medium;
+        @apply bg-slate-100 text-base font-medium;
     }
 
     :global(.dark) .mobile-icon:after,
     .mobile-icon:before,
     .middle-line {
-        @apply bg-slate-400;
+        @apply bg-slate-50;
     }
 
     .mobile-icon:before,
