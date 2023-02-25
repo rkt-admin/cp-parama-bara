@@ -1,7 +1,7 @@
 <script>
     import Logo from '../components/Logo.svelte'
     import { browser } from '$app/environment'
-
+    import Divider from '$lib/components/Divider.svelte'
     let theme = ''
     if (browser) {
         if (localStorage.theme !== undefined) {
@@ -33,9 +33,10 @@
 </script>
 
 <!-- footer -->
-<footer class="static z-0 mx-auto pt-20 text-sm border-t-8 border-yellow-400">
+<footer class="static z-50 mx-auto text-sm">
+    <div class="max-w-full align-top block border-half">&nbsp;</div>
     <div
-        class="flex flex-wrap font-normal max-w-5xl m-auto text-slate-800 dark:bg-black  dark:text-slate-100 sm:justify-between md:justify-between lg:justify-between xl:justify-around">
+        class="flex flex-wrap font-normal max-w-5xl mt-12 m-auto text-slate-800 dark:bg-black  dark:text-slate-100 sm:justify-between md:justify-between lg:justify-between xl:justify-around">
         <div class="min-w-fit pr-0 pb-10">
             <div><Logo size="small" text={true} dark /></div>
             <div class="my-2 mb-4 leading-7">
@@ -213,6 +214,17 @@
         @apply transition delay-75 duration-300 ease-in-out hover:border-white text-gray-700;
     }
     footer .main-link a {
-        @apply mb-4 flex border-l-4 border-white pl-2 transition-all duration-700 ease-in-out text-gray-700 hover:border-l-4 hover:border-yellow-400 hover:pl-4 hover:text-gray-600;
+        @apply mb-4 drop-shadow-none flex border-l-4 border-white pl-2 transition-all duration-700 ease-in-out text-gray-700 hover:border-l-4 hover:border-yellow-400 hover:pl-4 hover:text-gray-600;
+    }
+    .border-half:before {
+        content: '';
+        position: absolute;
+        right: 0;
+        left: 0;
+        height: 0;
+        margin-top: 0px;
+        width: 100%;
+        border-top-width: 10px;
+        @apply border-solid border-yellow-400;
     }
 </style>
