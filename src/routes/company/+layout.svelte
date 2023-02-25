@@ -1,4 +1,5 @@
 <script>
+    import { page } from '$app/stores'
     export let delay = 5000
     let activeIndex = 0
     const nextSlide = () => {
@@ -32,9 +33,9 @@ const slides = [
         <div class="w-1/5 mr-[60px]">
                 <h2 class="text-5xl font-extrabold">Get to know us</h2>
                 <div class="mt-20 grid grid-rows-3 gap-6 ">
-                        <a href="/company-overview/history" class="text-2xl font-semibold text-gray-300 hover:text-black">History</a>
-                        <a href="/company-overview/vision" class="text-2xl font-semibold text-gray-300 hover:text-black">Vision</a>
-                        <a href="/company-overview/service" class="text-2xl font-semibold text-gray-300 hover:text-black">Service</a>
+                        <a href="/company" class="hover:text-black {$page.url.pathname === '/company' ? 'font-bold text-black text-2xl' : 'font-semibold text-gray-300 text-[20px]'}">History</a>
+                        <a href="/company/vision" class="hover:text-black {$page.url.pathname === '/company/vision'? 'font-bold text-black text-2xl' : 'font-semibold text-gray-300 text-[20px]'}">Vision</a>
+                        <a href="/company/service" class="hover:text-black {$page.url.pathname === '/company/service' ? 'font-bold text-black text-2xl' : 'font-semibold text-gray-300 text-[20px]'}">Service</a>
                 </div>
         </div>
         <div class="w-4/5">

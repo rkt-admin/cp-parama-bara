@@ -88,8 +88,8 @@
                             <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
                                 <li>
                                     <a
-                                        href="/company-overview"
-                                        class="menu-link {$page.url.pathname === '/company-overview'
+                                        href="/company"
+                                        class="menu-link {$page.url.pathname === ('/company' || '/company/vision' || '/company/service')
                                             ? 'active'
                                             : ''}">Company</a>
                                 </li>
