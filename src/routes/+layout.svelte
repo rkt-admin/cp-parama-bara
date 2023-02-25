@@ -69,7 +69,7 @@
 <!-- <Topbar /> -->
 {#if browser}
     <div
-        class="w-full sticky top-0 mx-auto z-10 dark:bg-slate-900 px-10 pt-3
+        class="w-full sticky top-0 mx-auto z-10 dark:bg-slate-900 px-10 md:px-[100px] pt-3
     {yScreen > 10 && scrollActive
             ? ' transition-all duration-150 bg-black bg-opacity-60 drop-shadow-lg sticky top-0 pb-5'
             : ' bg-transparent'} 
@@ -77,7 +77,7 @@
             ? ' transition-all duration-300 drop-shadow-none'
             : ''}
     ">
-        <div class="max-w-5xl w-full mx-auto h-6">
+        <div class=" w-full mx-auto h-6">
             <div class="mx-auto flex flex-col">
                 <div class="flex justify-between items-center">
                     <Logo size="small" text={true} dark={false} />

@@ -29,16 +29,14 @@ const slides = [
             {/each}
         </div>
     </div>
-    <div class="px-[100px] py-20">
-        <div>
+    <div class="px-[100px] py-20 grid grid-cols-2 gap-[60px]">
+        <div class="max-w-[220px]">
             <ul>
                 <li class="text-5xl font-extrabold">Get to know us</li>
-                <div class="mt-20">
-                    <li>
-                        <a href="/company-overview">History</a>
-                    </li>
-                    <li>Vision</li>
-                    <li>Service</li>
+                <div class="mt-20 grid grid-rows-3 gap-6">
+                        <a href="/company-overview" class="text-2xl font-bold hover:underline hover:text-black">History</a>
+                        <a href="/company-overview" class="text-2xl font-semibold text-gray-300 hover:underline hover:text-black">Vision</a>
+                        <a href="/company-overview" class="text-2xl font-semibold text-gray-300 hover:underline hover:text-black">Service</a>
                 </div>
             </ul>
         </div>

@@ -4,5 +4,5 @@
 
         We also have vast knowledge of the commodity products such as Coal, Nickel, Antrachite and with our wide range of stock, we are able to offer many options of commodity specifications to suit variying applications and budget.
         
-        Our company provides an exclusive platform for trading partners to venture into Indonesian energy and minerals business especially coal, nickel, anthracite.</p>
+        Our company provides an exclusive platform for trading partners to venture into Indonesian energy and minerals business especially coal, nickel, anthracite.    </p>
 </div>
