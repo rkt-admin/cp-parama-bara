@@ -10,23 +10,16 @@
     // import CTA from '../components/CallToAction.svelte'
     import ContactUs from './contact/+page.svelte'
     import SectionTransition from '$lib/components/SectionTransition.svelte'
+    import Carousel from '../components/Carousel.svelte'
+
+    const slides = [
+        { image: '/banner1.png', alt: 'Slide1' },
+        { image: '/banner2.png', alt: 'Slide2' },
+        { image: '/banner3.png', alt: 'Slide3' }
+    ]
 </script>
 
-<SectionTransition>
-    <Hero />
-</SectionTransition>
-<SectionTransition>
-    <WhatWeDo />
-</SectionTransition>
-<SectionTransition>
-    <Services />
-</SectionTransition>
-<SectionTransition>
-    <TechStack />
-</SectionTransition>
-<SectionTransition>
-    <ContactUs />
-</SectionTransition>
+<Carousel {slides} delay={10000} />
 
 <!-- <div class="absolute top-0 left-5 -rotate-1 h-full w-[1px] bg-gray-100 z-50 m-0 p-0">&nbsp;</div>
 <div class="absolute top-0 right-5 rotate-1 h-full w-[1px] bg-gray-100 z-50 m-0 p-0">&nbsp;</div> -->

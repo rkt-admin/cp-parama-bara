@@ -9,8 +9,7 @@
 <Saos
     animation={'fade-in 1.0s cubic-bezier(0.390, 0.575, 0.565, 1.000) both'}
     animation_out={'slide-out-top 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both'}
-    top={300}
-    bottom={300}>
+   >
     <slot />
 </Saos>
 

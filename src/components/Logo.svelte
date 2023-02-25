@@ -7,10 +7,10 @@
 <h2 class="!text-transparent bg-clip-text focus:outline-none focus:shadow-outline">
     <a title="Rakit.id Logo" href={URL_BASE} class="flex items-center">
         <img
-            src={ $lightmode == true ? '/rakit-id-logo-black.svg' : '/rakit-id-logo-white.svg'}
+            src={ $lightmode == true ? '/logo.svg' : '/logo.svg'}
             class="h-8"
             alt="{SITE_NAME} Logo" />
-        <!-- <span class="self-center text-lg sm:text-3xl font-bold whitespace-nowrap dark:text-white">{name}</span> -->
+        <span class="self-center text-sm font-semibold whitespace-nowrap text-slate-200">PT PARAMA BARA INTERCONTINENTAL</span>
     </a>
 </h2>
 

@@ -9,31 +9,12 @@
     import { t } from '$lib/i18n'
     import PageTransition from '$lib/components/PageTransition.svelte'
     import { URL_BASE, SITE_NAME, MODE } from '$lib/variables'
-    import 'carbon-components-svelte/css/g100.css'
-    import {
-        Header,
-        HeaderNav,
-        HeaderNavItem,
-        HeaderNavMenu,
-        SideNav,
-        SideNavItems,
-        SideNavMenu,
-        SideNavMenuItem,
-        SideNavLink,
-        SkipToContent,
-        Content,
-        Grid,
-        Row,
-        Column
-    } from 'carbon-components-svelte'
 
     let isSideNavOpen = false
 
     /** @type {import('./$types').LayoutData} */
     export let data
 
-    let yScreen
-    let scrollActive = false
     let expanded = false
 
     let language
@@ -58,15 +39,6 @@
     // Mobile menu click event handler
     const handleMobileIconClick = () => (showMobileMenu = !showMobileMenu)
 
-    let show = true
-    let status = false
-
-    function toggleShow() {
-        if (show) {
-            show = !show
-        }
-    }
-
     // Attach media query listener on mount hook
     onMount(() => {
         const mql = window.matchMedia('(max-width: 767px)')
@@ -77,62 +49,20 @@
             }
         })
     })
-    $: {
-        show = show
-        console.log('show = ', show)
-        // console.log(data.url + URL_BASE)
-        if (yScreen >= 5) {
-            scrollActive = true
-        }
-        scrollActive = scrollActive
-        // console.log(scrollActive);
-    }
 </script>
 
 <svelte:head>
     <title>{SITE_NAME + ' - ' + MODE}</title>
     <meta name="description" content="Page description of rakit.id" />
+    <script>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+    </script>
 </svelte:head>
 
-<svelte:window bind:scrollY={yScreen} />
 <!-- <Alert /> -->
-<Topbar />
+<!-- <Topbar /> -->
 {#if browser}
-    <div
-        class="w-full mx-auto z-50 bg-primary dark:bg-slate-900 px-10 py-2
-        {yScreen > 0 && scrollActive
-            ? ' transition-all duration-150 drop-shadow-lg pt-1 sticky top-0'
-            : ''} 
-        {yScreen <= 150 && scrollActive ? ' drop-shadow-none' : ''}">
-        <Header company="XXX">
-            <HeaderNav>
-                <HeaderNavMenu
-                    text="About"
-                    bind:expanded
-                    on:mouseenter={() => {
-                        expanded = true
-                    }}>
-                    <HeaderNavItem href="/company-overview" text="Company Overview" />
-                    <HeaderNavItem href="/core-value" text="Core Value" />
-                    <HeaderNavItem href="/corporate-structure" text="Corporate Structure" />
-                    <HeaderNavItem href="/organization-structure" text="Organization Structure" />
-                </HeaderNavMenu>
-                <HeaderNavItem href="/company-overview" text="Company Overview" />
-                <HeaderNavItem href="/core-value" text="Core Value" />
-                <HeaderNavItem href="/corporate-structure" text="Corporate Structure" />
-                <HeaderNavItem href="/organization-structure" text="Organization Structure" />
-            </HeaderNav>
-        </Header>
-
-        <Content>
-            <Grid>
-                <Row>
-                    <Column>
-                        <h1>Welcome</h1>
-                    </Column>
-                </Row>
-            </Grid>
-        </Content>
+    <div class="w-full sticky top-0 mx-auto z-10 bg-transparent dark:bg-slate-900 px-10">
         <div class="max-w-5xl w-full mx-auto">
             <div class="mx-auto flex flex-col">
                 <div class="flex justify-between items-center">
@@ -140,17 +70,14 @@
                     <nav>
                         <div>
                             <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
-                                <li>
-                                    <a href="/">Home</a>
-                                </li>
-                                <li class="relative group z-50">
+                                <li class="relative group z-10">
                                     <a
                                         href="#!"
-                                        class="flex items-center rounded-t-lg group-hover:bg-slate-50">
-                                        Company
+                                        class="flex items-center rounded-t-md group-hover:bg-slate-50">
+                                        About
                                     </a>
                                     <ul
-                                        class="z-50 absolute py-4 px-2 w-72 top-10 rounded-b-lg rounded-r-lg bg-slate-50 invisible group-hover:visible">
+                                        class="z-50 absolute py-4 px-2 w-72 top-10 rounded-b-md rounded-r-md bg-slate-50 invisible group-hover:visible">
                                         <li>
                                             <a href="/questions">
                                                 <div class="flex items-start">
@@ -163,7 +90,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="grow">
-                                                        <h3>Questions</h3>
+                                                        <h3>Company Overview</h3>
                                                         <p>Get your answer here</p>
                                                     </div>
                                                 </div>
@@ -181,7 +108,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="grow">
-                                                        <h3>Media</h3>
+                                                        <h3>Core Value</h3>
                                                         <p>Company bio, logos, perks</p>
                                                     </div>
                                                 </div>
@@ -199,7 +126,25 @@
                                                         </div>
                                                     </div>
                                                     <div class="grow">
-                                                        <h3>Careers</h3>
+                                                        <h3>Corporate Structure</h3>
+                                                        <p>Come work with us!</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="careers">
+                                                <div class="flex items-start">
+                                                    <div class="shrink-0">
+                                                        <div class="pr-2">
+                                                            <img
+                                                                src="/images/careers-logo.svg"
+                                                                class="h-5"
+                                                                alt="careers logo" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="grow">
+                                                        <h3>Organization Structure</h3>
                                                         <p>Come work with us!</p>
                                                     </div>
                                                 </div>
@@ -207,76 +152,18 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="relative group z-50">
-                                    <a
-                                        href="#!"
-                                        class="flex items-center rounded-t-lg group-hover:bg-slate-50">
-                                        Contact Us
-                                    </a>
-                                    <ul
-                                        class="z-50 absolute py-4 px-2 w-72 top-10 rounded-b-lg rounded-r-lg bg-slate-50 invisible group-hover:visible">
-                                        <li>
-                                            <a
-                                                href="https://api.whatsapp.com/send?phone=6281212626030&text=Halo%2C%20saya%20ingin%20berdiskusi...">
-                                                <div class="flex items-start">
-                                                    <div class="shrink-0">
-                                                        <div class="pr-2">
-                                                            <img
-                                                                src="/images/chat-logo.svg"
-                                                                class="h-5"
-                                                                alt="careers logo" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="grow">
-                                                        <h3>WA Chat</h3>
-                                                        <p>Chat with Us by Whatsapp</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="tel:+6281212626030">
-                                                <div class="flex items-start">
-                                                    <div class="shrink-0">
-                                                        <div class="pr-2">
-                                                            <img
-                                                                src="/images/call-logo.svg"
-                                                                class="h-5"
-                                                                alt="careers logo" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="grow">
-                                                        <h3>Call</h3>
-                                                        <p>Let's talk with our sales directly</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="contact">
-                                                <div class="flex items-start">
-                                                    <div class="shrink-0">
-                                                        <div class="pr-2">
-                                                            <img
-                                                                src="/images/media-logo.svg"
-                                                                class="h-5"
-                                                                alt="media logo" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="grow">
-                                                        <h3>EMail</h3>
-                                                        <p>Need formal message? we cover it up</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
+                                <li>
+                                    <a href="/company-insight" class="menu-link">Company Insight</a>
                                 </li>
-                                {#each navItems as item}
-                                    <li>
-                                        <a href={item.href}>{$t(item.label)}</a>
-                                    </li>
-                                {/each}
+                                <li>
+                                    <a href="/sustainability" class="menu-link">Sustainability</a>
+                                </li>
+                                <li>
+                                    <a href="/press-release" class="menu-link">Press Release</a>
+                                </li>
+                                <li>
+                                    <a href="/news-event" class="menu-link">News</a>
+                                </li>
                             </ul>
                         </div>
                     </nav>
@@ -290,7 +177,7 @@
             </div>
         </div>
     </div>
-    <div class="max-w-full w-full mt-10">
+    <div class="max-w-full w-full -mt-10">
         <div class="flex flex-col">
             <div class="flex flex-col ">
                 <main class="dark:text-slate-100 flex flex-col flex-grow">
@@ -446,8 +333,8 @@
         @apply bg-slate-200 text-base rounded-2xl;
     }
 
-    /* .navbar-list a {
-        @apply text-gray-600;
+    .navbar-list a {
+        @apply text-white;
     }
 
     :global(.dark) .navbar-list a {
@@ -457,7 +344,7 @@
     .navbar-list a:hover,
     .navbar-list li a:active {
         @apply text-gray-500;
-    } */
+    }
 
     @media only screen and (min-width: 767px) {
         .mobile-icon {
