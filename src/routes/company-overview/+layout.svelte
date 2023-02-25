@@ -12,7 +12,6 @@ const slides = [
     {image : '/slide2.png', alt: 'Slide2'},
     {image : '/slide3.png', alt: 'Slide3'},
 ]
-
 </script>
 <div>
     <div id="default-carousel" class="relative" data-carousel="slide">
@@ -29,16 +28,17 @@ const slides = [
             {/each}
         </div>
     </div>
-    <div class="px-[100px] py-20 grid grid-cols-2 gap-[60px]">
-        <div class="max-w-[220px]">
-            <ul>
-                <li class="text-5xl font-extrabold">Get to know us</li>
-                <div class="mt-20 grid grid-rows-3 gap-6">
-                        <a href="/company-overview" class="text-2xl font-bold hover:underline hover:text-black">History</a>
-                        <a href="/company-overview" class="text-2xl font-semibold text-gray-300 hover:underline hover:text-black">Vision</a>
-                        <a href="/company-overview" class="text-2xl font-semibold text-gray-300 hover:underline hover:text-black">Service</a>
+    <div class="px-[100px] py-20 flex flex-row">
+        <div class="w-1/5 mr-[60px]">
+                <h2 class="text-5xl font-extrabold">Get to know us</h2>
+                <div class="mt-20 grid grid-rows-3 gap-6 ">
+                        <a href="/company-overview/history" class="text-2xl font-semibold text-gray-300 hover:text-black">History</a>
+                        <a href="/company-overview/vision" class="text-2xl font-semibold text-gray-300 hover:text-black">Vision</a>
+                        <a href="/company-overview/service" class="text-2xl font-semibold text-gray-300 hover:text-black">Service</a>
                 </div>
-            </ul>
+        </div>
+        <div class="w-4/5">
+            <slot/>
         </div>
     </div>
 </div>

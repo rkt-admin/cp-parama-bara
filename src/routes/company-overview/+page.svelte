@@ -1,10 +1,8 @@
-<script>
-    import Carousel from "../../components/Carousel.svelte";
+<div>
+    <h2>History</h2>
+    <p>PT. Parama Bara Intercontinental is an International Commodity Trading Company, domicile in Indonesia incorporated on december 2016. Our Founder & Ceo is a member of PARAMA BARA Group, she has over 10 years of experience in commodity trading business and we are proud of our reputation for fast and efficient service along with our professional ethic policy.
 
-const slides = [
-    {image : '/slide1.png', alt: 'Slide1'},
-    {image : '/slide2.png', alt: 'Slide2'},
-    {image : '/slide3.png', alt: 'Slide3'},
-]
-</script>
-<Carousel slides={slides} delay={10000}/>
+        We also have vast knowledge of the commodity products such as Coal, Nickel, Antrachite and with our wide range of stock, we are able to offer many options of commodity specifications to suit variying applications and budget.
+        
+        Our company provides an exclusive platform for trading partners to venture into Indonesian energy and minerals business especially coal, nickel, anthracite.    </p>
+</div>
