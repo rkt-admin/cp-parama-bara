@@ -23,7 +23,7 @@
             </div>
         {/each}
     </div>
-    <div class="absolute top-10 ml-10 mt-20 flex items-center justify-center md:max-w-2xl">
+    <div class="absolute top-10 ml-24 mt-20 flex items-center justify-center md:max-w-2xl">
         <div class=" items-center justify-center text-white">
             <h1
                 class="text-xl leading-8 md:text-5xl md:leading-[60px] font-extrabold tracking-[0.16px]">
