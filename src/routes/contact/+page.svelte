@@ -67,14 +67,14 @@
                                 <div class="text-base text-body-color">
                                     <div><b>Mail:</b></div>
                                     <span>
-                                        <a href="mailto:contact@rakit.id?subject=Ngobrol%20Yuk!"
-                                            >contact@rakit.id</a>
+                                        <a href="mailto:email.info@paramabaraintercontinental.com"
+                                            >email.info@paramabaraintercontinental.com</a>
                                     </span>
                                 </div>
                                 <br />
                                 <div class="text-base text-body-color">
                                     <div><b>Call / WA:</b></div>
-                                    <span class="text-left">(+62) 81 212 626 030</span>
+                                    <span class="text-left">+62 21 50200889</span>
                                 </div>
                             </div>
                         </div>

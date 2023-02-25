@@ -36,7 +36,7 @@
 <footer class="static z-0 mx-auto pt-20 text-sm border-t-8 border-yellow-400">
     <div
         class="flex flex-wrap font-normal max-w-5xl m-auto text-slate-800 dark:bg-black  dark:text-slate-100 sm:justify-between md:justify-between lg:justify-between xl:justify-around">
-        <div class="min-w-fit pr-10 pb-10">
+        <div class="min-w-fit pr-0 pb-10">
             <div><Logo size="small" text={true} dark /></div>
             <div class="my-2 mb-4 leading-7">
                 Tamansari Parama Building<br />
@@ -77,7 +77,7 @@
                 +62 21 50200889
             </p>
         </div>
-        <div class="main-link min-w-fit pr-16 pb-10">
+        <div class="main-link w-80 pr-0 pb-10">
             <div class="header-section">About</div>
             <a href="/company">Company</a>
             <a href="/customer">Customer</a>
@@ -213,6 +213,6 @@
         @apply transition delay-75 duration-300 ease-in-out hover:border-white text-gray-700;
     }
     footer .main-link a {
-        @apply mb-4 flex border-l-2 border-gray-50 pl-2 transition duration-700 ease-in-out text-gray-700 hover:border-l-2 hover:border-gray-700 hover:pl-2 hover:text-gray-600;
+        @apply mb-4 flex border-l-4 border-white pl-2 transition-all duration-700 ease-in-out text-gray-700 hover:border-l-4 hover:border-yellow-400 hover:pl-4 hover:text-gray-600;
     }
 </style>
