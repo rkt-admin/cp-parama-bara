@@ -9,7 +9,7 @@
             content: (reference) => {
             const title = reference.getAttribute('title')
             const parser = new DOMParser();
-        const fragment = parser.parseFromString(`<div class="flex flex-col items-center p-2"><img src="/logo.svg"/ width="32px" height="32px"><p>${title}</p></div>`, 'text/html');
+        const fragment = parser.parseFromString(`<div class="flex flex-col items-center p-1 bg-white"><img src="/logo.svg"/ width="32px" height="32px"><p>${title}</p></div>`, 'text/html');
         return fragment.body.firstChild;
             },
             theme: 'light',
@@ -18,34 +18,42 @@
         })
     })
     const data = [
-        { name: 'vietnam', title: 'Vietnam', top:'46%', left:'73.5%'},
-        { name: 'china', title: 'China', top:'29%', left:'68%'},
-        { name: 'bangladesh', title: 'Bangladesh', top:'38.4%', left:'67%'},
-        { name: 'india', title: 'India', top:'38.4%', left:'63.8%'},
-        { name: 'filipina', title: 'Filipina', top:'48%', left:'78%'},
-        { name: 'swedia', title: 'Swedia', top:'13%', left:'43%'},
+        { name: 'vietnam', title: 'Vietnam', top:'49%', left:'76.5%'},
+        { name: 'china', title: 'China', top:'29%', left:'70%'},
+        { name: 'bangladesh', title: 'Bangladesh', top:'42%', left:'71%'},
+        { name: 'india', title: 'India', top:'43%', left:'67.8%'},
+        { name: 'filipina', title: 'Filipina', top:'49%', left:'80.5%'},
+        { name: 'swedia', title: 'Swedia', top:'15%', left:'49%'},
     ]
 </script>
-
-<div class="flex items-center justify-center h-full bg-[#f0f0f0] mt-14">
-    <div class="relative inline-block px-14 py-3">
+<div
+class="
+absolute
+z-[-1]
+w-full
+h-[650px]
+bg-gray-900
+dark:bg-gray-900
+top-0
+left-0
+" />
+<div class="flex items-center justify-center mt-20">
+    <div class="relative inline-block px-14 py-3 z-0">
         <img
-            src="http://res.cloudinary.com/slzr/image/upload/v1500321012/world-map-1500_vvekl5.png"
+            src="static/images/world-map.svg"
             alt="map"
-            class="w-full" />
+            class="w-full mx-auto" />
         {#each data as map}
             <div class={`point tippy ${map.name}`} style={`top:${map.top}; left:${map.left};`} title={map.title}/>
         {/each}
     </div>
 </div>
 
-<style>
+<style lang="postcss">
     .point {
         cursor: pointer;
         position: absolute;
-        width: 1rem;
-        height: 1rem;
-        background-color: #00acc1;
+        @apply bg-yellow-400 w-3 h-3;
         border-radius: 50%;
         transition: all 0.3s ease;
         will-change: transform, box-shadow;
@@ -55,13 +63,13 @@
     }
     @keyframes pulse {
         0% {
-            box-shadow: 0 0 0 0 rgba(0, 172, 193, 0.5);
+            box-shadow: 0 0 0 0 rgba(255, 238, 0, 0.322);
         }
         70% {
-            box-shadow: 0 0 0 25px rgba(0, 172, 193, 0);
+            box-shadow: 0 0 0 8px rgba(255, 251, 149, 0.203);
         }
         100% {
-            box-shadow: 0 0 0 0 rgba(0, 172, 193, 0);
+            box-shadow: 0 0 0 0 rgba(251, 255, 2, 0.221);
         }
     }
     .point:hover {
