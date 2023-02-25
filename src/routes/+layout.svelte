@@ -9,6 +9,10 @@
     import { t } from '$lib/i18n'
     import PageTransition from '$lib/components/PageTransition.svelte'
     import { URL_BASE, SITE_NAME, MODE } from '$lib/variables'
+    import { page } from '$app/stores'
+    $: isActive = $page.url.pathname === $$props.href
+    $: console.log('$page.url.pathname', $page.url.pathname)
+    $: console.log('$$props.href', $$props.href)
 
     let isSideNavOpen = false
 
@@ -56,7 +60,6 @@
             scrollActive = true
         }
         scrollActive = scrollActive
-        // console.log(scrollActive)
     }
 </script>
 
@@ -84,17 +87,30 @@
                         <div>
                             <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
                                 <li>
-                                    <a href="/company-overview" class="menu-link">Company</a>
+                                    <a
+                                        href="/company-overview"
+                                        class="menu-link {$page.url.pathname === '/company-overview'
+                                            ? 'active'
+                                            : ''}">Company</a>
                                 </li>
                                 <li>
-                                    <a href="/customer" class="menu-link">Customer</a>
+                                    <a
+                                        href="/customer"
+                                        class="menu-link {$page.url.pathname === '/customer'
+                                            ? 'active'
+                                            : ''}">Customer</a>
                                 </li>
                                 <li class="relative group z-10">
                                     <a href="#!">Treatment</a>
                                     <ul
                                         class="z-50 absolute w-52 top-9 rounded-b-sm rounded-r-sm bg-white bg-opacity-95 invisible group-hover:visible">
                                         <li>
-                                            <a href="/quality-control">
+                                            <a
+                                                href="/quality-control"
+                                                class="menu-link {$page.url.pathname ===
+                                                '/quality-control'
+                                                    ? 'active'
+                                                    : ''}">
                                                 <div class="flex items-start">
                                                     <div class="grow">
                                                         <h3>Quality Control</h3>
@@ -103,7 +119,12 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="/excelent-services">
+                                            <a
+                                                href="/excelent-services"
+                                                class="menu-link {$page.url.pathname ===
+                                                '/excelent-services'
+                                                    ? 'active'
+                                                    : ''}">
                                                 <div class="flex items-start">
                                                     <div class="grow">
                                                         <h3>Excelent Services</h3>
@@ -114,7 +135,11 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="/contact" class="menu-link">Contact</a>
+                                    <a
+                                        href="/contact"
+                                        class="menu-link {$page.url.pathname === '/contact'
+                                            ? 'active'
+                                            : ''}">Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -275,7 +300,7 @@
         @apply font-medium border-b border-slate-700;
     }
 
-    .navbar-list a {
+    .navbar-list li a {
         @apply text-white;
     }
 
@@ -286,6 +311,7 @@
     .navbar-list li a:hover {
         @apply text-white;
     }
+    .navbar-list li a.active,
     .navbar-list li:hover {
         @apply bg-slate-200 bg-opacity-30 rounded-sm;
     }

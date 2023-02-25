@@ -94,7 +94,7 @@
                             </svg>
                         </div>
                         <div class="inline-block">
-                            <h3 class="font-semibold text-3xl md:text-[26px]">Send us a Message</h3>
+                            <h3 class="font-semibold text-3xl pl-4 md:text-[26px]">Send us a Message</h3>
                         </div>
                     </div>
 
