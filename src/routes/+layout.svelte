@@ -10,6 +10,7 @@
     import PageTransition from '$lib/components/PageTransition.svelte'
     import { URL_BASE, SITE_NAME, MODE } from '$lib/variables'
     import { page } from '$app/stores'
+    import Divider from '$lib/components/Divider.svelte'
     $: isActive = $page.url.pathname === $$props.href
     $: console.log('$page.url.pathname', $page.url.pathname)
     $: console.log('$$props.href', $$props.href)
@@ -165,6 +166,7 @@
             </div>
         </div>
     </div>
+    <Divider border={true} size={'large'}></Divider>
     <Footer border={$page.url.pathname === '/customer' ? false : true} />
 {:else}
     <div class="sk-folding-cube">

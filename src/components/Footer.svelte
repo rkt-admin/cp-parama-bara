@@ -35,9 +35,9 @@
 
 <!-- footer -->
 <footer class="static z-50 mx-auto text-sm px-[100px]">
-    {#if border}
+    <!-- {#if border}
         <div class="max-w-full align-top block border-half">&nbsp;</div>
-    {/if}
+    {/if} -->
     <div
         class="flex flex-wrap font-normal mt-12 m-auto text-slate-800 dark:bg-black  dark:text-slate-100 sm:justify-between md:justify-between lg:justify-between ">
         <div class="min-w-fit pr-0 pb-10">

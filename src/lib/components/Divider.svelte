@@ -28,8 +28,8 @@
     height: 0;
     margin-top: 0px;
     width: 100%;
-    border-top-width: 1px;
-    @apply border-solid border-slate-200;
+    border-top-width: 10px;
+    @apply border-solid border-yellow-400;
   }
 
   :global(.dark) .border-half:before {

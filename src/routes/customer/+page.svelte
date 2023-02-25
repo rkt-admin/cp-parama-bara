@@ -30,13 +30,12 @@ class="
 absolute
 z-[-1]
 w-full
-h-[650px]
+h-1/4
 bg-gray-900
-dark:bg-gray-900
 top-0
 left-0
 " />
-<div class="flex items-center justify-center mt-20">
+<div class="flex items-center justify-center mt-20 bg-gray-900">
     <div class="relative inline-block px-14 py-3 z-0">
         <img
             src="/images/world-map.svg"
