@@ -158,14 +158,14 @@
         <div class="flex flex-col">
             <div class="flex flex-col ">
                 <main class="dark:text-slate-100 flex flex-col flex-grow">
-                    <PageTransition url={data.url}>
+                    <!-- <PageTransition url={data.url}> -->
                         <slot />
-                    </PageTransition>
+                    <!-- </PageTransition> -->
                 </main>
             </div>
         </div>
     </div>
-    <Footer />
+    <Footer border={$page.url.pathname === '/customer' ? false : true} />
 {:else}
     <div class="sk-folding-cube">
         <div class="sk-cube1 sk-cube" />

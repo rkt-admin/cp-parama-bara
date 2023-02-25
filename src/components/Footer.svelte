@@ -1,4 +1,5 @@
 <script>
+    export let border = true
     import Logo from '../components/Logo.svelte'
     import { browser } from '$app/environment'
     import Divider from '$lib/components/Divider.svelte'
@@ -34,7 +35,9 @@
 
 <!-- footer -->
 <footer class="static z-50 mx-auto text-sm">
+    {#if border}
     <div class="max-w-full align-top block border-half">&nbsp;</div>
+    {/if}
     <div
         class="flex flex-wrap font-normal max-w-5xl mt-12 m-auto text-slate-800 dark:bg-black  dark:text-slate-100 sm:justify-between md:justify-between lg:justify-between xl:justify-around">
         <div class="min-w-fit pr-0 pb-10">
