@@ -16,7 +16,8 @@
     export let data
 
     let expanded = false
-
+    let yScreen
+    let scrollActive = false
     let language
 
     if (browser) {
@@ -49,103 +50,59 @@
             }
         })
     })
+    $: {
+        if (yScreen >= 5) {
+            scrollActive = true
+        }
+        scrollActive = scrollActive
+    }
 </script>
 
 <svelte:head>
     <title>{SITE_NAME + ' - ' + MODE}</title>
     <meta name="description" content="Page description of rakit.id" />
-    <script>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-    </script>
 </svelte:head>
-
+<svelte:window bind:scrollY={yScreen} />
 <!-- <Alert /> -->
 <!-- <Topbar /> -->
 {#if browser}
-    <div class="w-full sticky top-0 mx-auto z-10 bg-transparent dark:bg-slate-900 px-10">
+    <div
+        class="w-full sticky top-0 mx-auto z-10 bg-transparent dark:bg-slate-900 px-10
+    {yScreen > 0 && scrollActive
+            ? ' transition-all duration-150 bg-gray-900 drop-shadow-lg sticky top-0'
+            : ''} 
+    {yScreen <= 50 && scrollActive ? ' drop-shadow-none' : ''}">
         <div class="max-w-5xl w-full mx-auto">
             <div class="mx-auto flex flex-col">
-                <div class="flex justify-between items-center">
-                    <Logo />
+                <div class="flex justify-between items-center pt-3">
+                    <Logo size="small" text={true} dark={false} />
                     <nav>
                         <div>
                             <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
+                                <li>
+                                    <a href="/company-overview" class="menu-link">Company</a>
+                                </li>
+                                <li>
+                                    <a href="/customer" class="menu-link">Customer</a>
+                                </li>
                                 <li class="relative group z-10">
-                                    <a
-                                        href="#!"
-                                        class="flex items-center rounded-t-md group-hover:bg-slate-50">
-                                        About
-                                    </a>
+                                    <a href="#!">Treatment</a>
                                     <ul
-                                        class="z-50 absolute py-4 px-2 w-72 top-10 rounded-b-md rounded-r-md bg-slate-50 invisible group-hover:visible">
+                                        class="z-50 absolute w-52 top-9 rounded-b-sm rounded-r-sm bg-white bg-opacity-95 invisible group-hover:visible">
                                         <li>
-                                            <a href="/questions">
+                                            <a href="/quality-control">
                                                 <div class="flex items-start">
-                                                    <div class="shrink-0">
-                                                        <div class="pr-2">
-                                                            <img
-                                                                src="/images/question-logo.svg"
-                                                                class="h-5"
-                                                                alt="careers logo" />
-                                                        </div>
-                                                    </div>
                                                     <div class="grow">
-                                                        <h3>Company Overview</h3>
-                                                        <p>Get your answer here</p>
+                                                        <h3>Quality Control</h3>
                                                     </div>
                                                 </div>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="media">
+                                            <a href="/excelent-services">
                                                 <div class="flex items-start">
-                                                    <div class="shrink-0">
-                                                        <div class="pr-2">
-                                                            <img
-                                                                src="/images/media-logo.svg"
-                                                                class="h-5"
-                                                                alt="media logo" />
-                                                        </div>
-                                                    </div>
                                                     <div class="grow">
-                                                        <h3>Core Value</h3>
-                                                        <p>Company bio, logos, perks</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="careers">
-                                                <div class="flex items-start">
-                                                    <div class="shrink-0">
-                                                        <div class="pr-2">
-                                                            <img
-                                                                src="/images/careers-logo.svg"
-                                                                class="h-5"
-                                                                alt="careers logo" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="grow">
-                                                        <h3>Corporate Structure</h3>
-                                                        <p>Come work with us!</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="careers">
-                                                <div class="flex items-start">
-                                                    <div class="shrink-0">
-                                                        <div class="pr-2">
-                                                            <img
-                                                                src="/images/careers-logo.svg"
-                                                                class="h-5"
-                                                                alt="careers logo" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="grow">
-                                                        <h3>Organization Structure</h3>
-                                                        <p>Come work with us!</p>
+                                                        <h3>Excelent Services</h3>
                                                     </div>
                                                 </div>
                                             </a>
@@ -153,16 +110,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="/company-insight" class="menu-link">Company Insight</a>
-                                </li>
-                                <li>
-                                    <a href="/sustainability" class="menu-link">Sustainability</a>
-                                </li>
-                                <li>
-                                    <a href="/press-release" class="menu-link">Press Release</a>
-                                </li>
-                                <li>
-                                    <a href="/news-event" class="menu-link">News</a>
+                                    <a href="/contact" class="menu-link">Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -177,7 +125,7 @@
             </div>
         </div>
     </div>
-    <div class="max-w-full w-full -mt-10">
+    <div class="max-w-full w-full -mt-12">
         <div class="flex flex-col">
             <div class="flex flex-col ">
                 <main class="dark:text-slate-100 flex flex-col flex-grow">
@@ -296,7 +244,6 @@
         width: 100%;
         /* justify-content: space-between; */
         margin: 0;
-        padding: 0 40px;
         @apply z-50;
     }
 
@@ -324,13 +271,8 @@
         position: relative;
         text-decoration: none;
         display: flex;
-        /* height: 45px; */
         align-items: center;
         @apply font-medium border-b border-slate-700;
-    }
-
-    .active {
-        @apply bg-slate-200 text-base rounded-2xl;
     }
 
     .navbar-list a {
@@ -341,9 +283,11 @@
         @apply text-slate-50;
     }
 
-    .navbar-list a:hover,
-    .navbar-list li a:active {
-        @apply text-gray-500;
+    .navbar-list li a:hover {
+        @apply text-white;
+    }
+    .navbar-list li:hover {
+        @apply bg-slate-200 bg-opacity-20 rounded-sm;
     }
 
     @media only screen and (min-width: 767px) {
@@ -363,18 +307,21 @@
         .navbar-list a {
             display: inline-flex;
             margin-bottom: 0;
-            padding: 0 25px;
-            font-size: medium;
             float: right;
-            @apply text-base py-2;
+            @apply text-sm py-2 px-7;
         }
 
+        /*ini submenu*/
         .navbar-list li ul li {
             list-style-type: decimal;
             position: relative;
             text-decoration: none;
             align-items: center;
-            @apply font-bold px-0 transition duration-300 ease-in-out rounded-xl hover:bg-secondary;
+            @apply font-semibold px-0 pt-1 transition duration-300 ease-in-out rounded-sm hover:bg-slate-200;
+        }
+
+        .navbar-list li ul li:hover {
+            @apply bg-yellow-300;
         }
 
         .navbar-list li ul li .grow {

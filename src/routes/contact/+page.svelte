@@ -1,16 +1,14 @@
 <!-- ====== Contact Start ====== -->
-<section id="contact" class="ud-contact md:py-[80px] relative max-w-full">
+<section id="contact" class="ud-contact pt-32 mb-24 relative max-w-full">
     <div
         class="
     absolute
     z-[-1]
     w-full
     h-1/2
-    lg:h-[45%]
-    bg-primary
+    bg-gray-900
     dark:bg-gray-900
     py-10
-    xl:h-1/2
     top-0
     left-0 
     bg-pattern-call
@@ -19,16 +17,16 @@
         <div class="flex flex-wrap items-center mx-6">
             <div class="w-full lg:w-6/12 xl:w-6/12">
                 <div>
-                    <div class="mb-0 lg:mb-20 px-2 py-4 md:py-0">
+                    <div class="mb-0 lg:mb-40 px-2 py-4 md:py-0">
                         <div
-                            class="mb-8 text-left sm:text-left text-4xl sm:text-6xl text-red-600 sm:text-red-600 font-light leading-none tracking-widest">
+                            class="mb-8 text-left sm:text-left text-2xl sm:text-4xl text-white font-light leading-none tracking-widest">
                             CONTACT US
                         </div>
-                        <div class="text-left sm:text-left text-2xl sm:text-2xl">
+                        <div class="text-left text-white sm:text-left text-2xl sm:text-2xl">
                             Hubungi kami untuk diskusi, konsultasi, atau keperluan bisnis Anda!
                         </div>
                     </div>
-                    <div class="flex flex-wrap justify-between mb-12 lg:mb-0">
+                    <div class="flex flex-wrap justify-between mb-10 lg:mb-0">
                         <div class="flex max-w-full mb-8">
                             <div class="mr-6">
                                 <svg
@@ -45,7 +43,10 @@
                             <div>
                                 <h5 class="text-lg font-semibold mb-6">Our Location</h5>
                                 <p class="text-base text-body-color">
-                                    Indonesia<br />
+                                    Tamansari Parama Building<br />
+                                    7th floor suite 7b<br />
+                                    Jl.Kh.Wahid Hasyim 84-86 , Menteng<br />
+                                    Jakarta Pusat 10340
                                 </p>
                             </div>
                         </div>
@@ -93,9 +94,7 @@
                             </svg>
                         </div>
                         <div class="inline-block">
-                            <h3 class="font-semibold text-3xl md:text-[26px]">
-                                Send us a Message
-                            </h3>
+                            <h3 class="font-semibold text-3xl md:text-[26px]">Send us a Message</h3>
                         </div>
                     </div>
 
