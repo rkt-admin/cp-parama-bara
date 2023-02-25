@@ -50,11 +50,13 @@
             }
         })
     })
+
     $: {
-        if (yScreen >= 5) {
+        if (yScreen >= 10) {
             scrollActive = true
         }
         scrollActive = scrollActive
+        console.log(scrollActive);
     }
 </script>
 
@@ -67,14 +69,17 @@
 <!-- <Topbar /> -->
 {#if browser}
     <div
-        class="w-full sticky top-0 mx-auto z-10 bg-transparent dark:bg-slate-900 px-10
-    {yScreen > 0 && scrollActive
-            ? ' transition-all duration-150 bg-gray-900 drop-shadow-lg sticky top-0'
-            : ''} 
-    {yScreen <= 50 && scrollActive ? ' drop-shadow-none' : ''}">
-        <div class="max-w-5xl w-full mx-auto">
+        class="w-full sticky top-0 mx-auto z-10 dark:bg-slate-900 px-10 pt-3
+    {yScreen > 10 && scrollActive
+            ? ' transition-all duration-150 bg-black bg-opacity-60 drop-shadow-lg sticky top-0 pb-5'
+            : ' bg-transparent'} 
+    {yScreen <= 12 && scrollActive
+            ? ' transition-all duration-300 drop-shadow-none'
+            : ''}
+    ">
+        <div class="max-w-5xl w-full mx-auto h-6">
             <div class="mx-auto flex flex-col">
-                <div class="flex justify-between items-center pt-3">
+                <div class="flex justify-between items-center">
                     <Logo size="small" text={true} dark={false} />
                     <nav>
                         <div>
@@ -129,13 +134,9 @@
         <div class="flex flex-col">
             <div class="flex flex-col ">
                 <main class="dark:text-slate-100 flex flex-col flex-grow">
-                    {#if data.url == URL_BASE}
+                    <PageTransition url={data.url}>
                         <slot />
-                    {:else}
-                        <PageTransition url={data.url}>
-                            <slot />
-                        </PageTransition>
-                    {/if}
+                    </PageTransition>
                 </main>
             </div>
         </div>
@@ -287,7 +288,7 @@
         @apply text-white;
     }
     .navbar-list li:hover {
-        @apply bg-slate-200 bg-opacity-20 rounded-sm;
+        @apply bg-slate-200 bg-opacity-30 rounded-sm;
     }
 
     @media only screen and (min-width: 767px) {

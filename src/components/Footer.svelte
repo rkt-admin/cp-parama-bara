@@ -33,7 +33,7 @@
 </script>
 
 <!-- footer -->
-<footer class="static z-0 mx-auto mt-8 text-sm">
+<footer class="static z-0 mx-auto pt-20 text-sm border-t-8 border-yellow-400">
     <div
         class="flex flex-wrap font-normal max-w-5xl m-auto text-slate-800 dark:bg-black  dark:text-slate-100 sm:justify-between md:justify-between lg:justify-between xl:justify-around">
         <div class="min-w-fit pr-10 pb-10">
@@ -78,7 +78,7 @@
             </p>
         </div>
         <div class="main-link min-w-fit pr-16 pb-10">
-            <!-- <div class="header-section">About</div> -->
+            <div class="header-section">About</div>
             <a href="/company">Company</a>
             <a href="/customer">Customer</a>
             <a href="/quality-control">Quality Control</a>
@@ -130,7 +130,7 @@
 	</div> -->
     <div
         class="flex items-center justify-center border-t-0 border-white font-normal text-slate-800 dark:text-slate-100 md:justify-evenly">
-        <div class="mx-auto w-full max-w-5xl p-3">
+        <div class="mx-auto w-full max-w-5xl py-3">
             <div class="flex justify-center pb-4 md:float-left ">
                 © 2022 &nbsp;<a href="https://www.paramabaraintercontinental.com"
                     >PT Parama Bara Intercontinental</a
@@ -204,7 +204,7 @@
 
 <style lang="postcss">
     .header-section {
-        @apply mb-6 pl-2 text-sm font-bold uppercase text-gray-400;
+        @apply mb-6 pl-2 text-sm font-extrabold uppercase text-gray-800;
     }
     .notice {
         @apply -mt-0 pl-1 text-xs text-yellow-100;

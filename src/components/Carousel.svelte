@@ -11,19 +11,19 @@
 </script>
 
 <div id="default-carousel" class="relative" data-carousel="slide">
-    <div class="relative h-60 overflow-hidden md:h-[832px]">
+    <div class="relative h-screen overflow-hidden">
         {#each slides as slide, i}
             <div
                 class={`duration-700 ease-in-out ${i === activeIndex ? '' : 'opacity-0'}`}
                 data-carousel-item>
                 <img
                     src={slide.image}
-                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 h-full object-cover"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 h-screen object-cover"
                     alt={slide.alt} />
             </div>
         {/each}
     </div>
-    <div class="absolute top-10 ml-24 mt-20 flex items-center justify-center md:max-w-2xl">
+    <div class="absolute top-0 ml-24 mt-28 flex items-center justify-center md:max-w-2xl">
         <div class=" items-center justify-center text-white">
             <h1
                 class="text-xl leading-8 md:text-5xl md:leading-[60px] font-extrabold tracking-[0.16px]">
