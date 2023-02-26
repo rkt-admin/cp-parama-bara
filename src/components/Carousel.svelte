@@ -39,7 +39,7 @@
             </p>
             <div class="inline-flex mt-10 text-left">
                 <ButtonLink
-                    href="/company-overview"
+                    href="/company"
                     type="submit"
                     class="relative inline-flex items-center h-10 px-4 font-bold tracking-normal transition duration-200 rounded-md shadow-md text-gray-800 bg-yellow-400 hover:text-gray-800 hover:bg-yellow-300">
                     <span class="text-sm">Company Overview</span>

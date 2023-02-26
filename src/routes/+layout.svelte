@@ -314,7 +314,7 @@
         @apply text-white;
     }
     .navbar-list li a.active,
-    .navbar-list li:hover {
+    .navbar-list li a:hover {
         @apply bg-slate-200 bg-opacity-30 rounded-sm;
     }
 
@@ -336,7 +336,7 @@
             display: inline-flex;
             margin-bottom: 0;
             float: right;
-            @apply text-sm py-2 px-7;
+            @apply text-sm py-2 px-4 mx-2;
         }
 
         /*ini submenu*/

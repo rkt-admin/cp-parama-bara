@@ -15,6 +15,7 @@ const slides = [
 ]
 </script>
 <div>
+    <h2 class="absolute text-yellow-400 px-[100px] z-50 pt-5 mt-[180px] border-b-8 border-yellow-400 text-5xl font-extrabold text-right">Get to know us</h2>
     <div id="default-carousel" class="relative" data-carousel="slide">
         <div class="relative h-60 overflow-hidden md:h-64">
             {#each slides as slide, i}
@@ -28,11 +29,10 @@ const slides = [
                 </div>
             {/each}
         </div>
-    </div>
-    <div class="px-[100px] py-20 flex flex-row">
-        <div class="w-1/5 mr-[60px]">
-                <h2 class="text-5xl font-extrabold">Get to know us</h2>
-                <div class="mt-20 grid grid-rows-3 gap-6 ">
+    </div>    
+    <div class="px-[100px] my-16 flex flex-row">
+        <div class="w-1/5 mr-[60px]">                
+                <div class="grid grid-rows-3 gap-6 ">
                         <a href="/company" class="hover:text-black {$page.url.pathname === '/company' ? 'font-bold text-black text-2xl' : 'font-semibold text-gray-300 text-[20px]'}">History</a>
                         <a href="/company/vision" class="hover:text-black {$page.url.pathname === '/company/vision'? 'font-bold text-black text-2xl' : 'font-semibold text-gray-300 text-[20px]'}">Vision</a>
                         <a href="/company/service" class="hover:text-black {$page.url.pathname === '/company/service' ? 'font-bold text-black text-2xl' : 'font-semibold text-gray-300 text-[20px]'}">Service</a>

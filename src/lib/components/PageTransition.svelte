@@ -5,7 +5,7 @@
   </script>
   
   {#key url}
-    <div in:fly={{  x:0, y:-20, delay:0, opacity:10, duration: 1000 }} out:fly={{  x:0, y:-10, delay:0, opacity:10, duration: 500 }}>
+    <div in:fly={{  x:0, y:-20, delay:0, opacity:1, duration: 1000 }} out:fly={{  x:0, y:-5, delay:0, opacity:1, duration: 200 }}>
       <slot />
     </div>
   {/key}
