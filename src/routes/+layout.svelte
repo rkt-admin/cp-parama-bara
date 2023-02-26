@@ -105,7 +105,7 @@
                                 <li class="relative group z-10">
                                     <a
                                         href="#!"
-                                        class="group-hover:bg-white group-hover:bg-opacity-30"
+                                        class="group-hover:bg-white group-hover:rounded-sm group-hover:bg-opacity-30"
                                         >Treatment</a>
                                     <ul class="z-50 absolute invisible group-hover:visible">
                                         <li>
@@ -311,10 +311,10 @@
         @apply text-slate-50 font-semibold;
     }
     .navbar-list li a.active {
-        @apply bg-white bg-opacity-30;
+        @apply bg-white bg-opacity-30 rounded-sm;
     }
     .navbar-list > li > a:hover {
-        @apply text-white bg-white bg-opacity-30;
+        @apply text-white bg-white bg-opacity-30 rounded-sm;
     }
 
     @media only screen and (min-width: 767px) {

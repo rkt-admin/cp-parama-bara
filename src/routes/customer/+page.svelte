@@ -61,13 +61,13 @@ left-0
     }
     @keyframes pulse {
         0% {
-            box-shadow: 0 0 0 0 rgba(255, 238, 0, 0.322);
+            box-shadow: 0 0 0 0 rgba(255, 238, 0, 0.635);
         }
         70% {
-            box-shadow: 0 0 0 8px rgba(255, 251, 149, 0.203);
+            box-shadow: 0 0 0 8px rgba(243, 238, 80, 0.459);
         }
         100% {
-            box-shadow: 0 0 0 0 rgba(251, 255, 2, 0.221);
+            box-shadow: 0 0 0 0 rgba(251, 255, 2, 0);
         }
     }
     .point:hover {
