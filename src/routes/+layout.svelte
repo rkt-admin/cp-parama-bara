@@ -155,13 +155,13 @@
             </div>
         </div>
     </div>
-    <div class="max-w-full w-full -mt-12">
+   <div class="max-w-full w-full -mt-12">
         <div class="flex flex-col">
             <div class="flex flex-col ">
                 <main class="dark:text-slate-100 flex flex-col flex-grow">
-                    <!-- <PageTransition url={data.url}> -->
+                    <PageTransition url={data.url}>
                         <slot />
-                    <!-- </PageTransition> -->
+                    </PageTransition>
                 </main>
             </div>
         </div>
