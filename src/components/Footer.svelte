@@ -39,7 +39,7 @@
         <div class="max-w-full align-top block border-half">&nbsp;</div>
     {/if} -->
     <div
-        class="flex flex-wrap font-normal mt-12 m-auto text-slate-800 dark:bg-black  dark:text-slate-100 sm:justify-between md:justify-between lg:justify-between ">
+        class="flex flex-wrap font-normal m-auto text-slate-800 dark:bg-black  dark:text-slate-100 sm:justify-between md:justify-between lg:justify-between ">
         <div class="min-w-fit pr-0 pb-10">
             <div><Logo size="small" text={true} dark /></div>
             <div class="my-2 mb-4 leading-7">

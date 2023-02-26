@@ -90,7 +90,8 @@
                                 <li>
                                     <a
                                         href="/company"
-                                        class="menu-link {$page.url.pathname === ('/company' || '/company/vision' || '/company/service')
+                                        class="menu-link {$page.url.pathname ===
+                                        ('/company' || '/company/vision' || '/company/service')
                                             ? 'active'
                                             : ''}">Company</a>
                                 </li>
@@ -102,16 +103,17 @@
                                             : ''}">Customer</a>
                                 </li>
                                 <li class="relative group z-10">
-                                    <a href="#!">Treatment</a>
-                                    <ul
-                                        class="z-50 absolute w-52 top-9 rounded-b-sm rounded-r-sm bg-white bg-opacity-95 invisible group-hover:visible">
+                                    <a
+                                        href="#!"
+                                        class="group-hover:bg-white group-hover:bg-opacity-30"
+                                        >Treatment</a>
+                                    <ul class="z-50 absolute invisible group-hover:visible">
                                         <li>
                                             <a
                                                 href="/quality-control"
-                                                class="menu-link {$page.url.pathname ===
-                                                '/quality-control'
+                                                class={$page.url.pathname === '/quality-control'
                                                     ? 'active'
-                                                    : ''}">
+                                                    : ''}>
                                                 <div class="flex items-start">
                                                     <div class="grow">
                                                         <h3>Quality Control</h3>
@@ -122,10 +124,9 @@
                                         <li>
                                             <a
                                                 href="/excelent-services"
-                                                class="menu-link {$page.url.pathname ===
-                                                '/excelent-services'
+                                                class={$page.url.pathname === '/excelent-services'
                                                     ? 'active'
-                                                    : ''}">
+                                                    : ''}>
                                                 <div class="flex items-start">
                                                     <div class="grow">
                                                         <h3>Excelent Services</h3>
@@ -155,7 +156,7 @@
             </div>
         </div>
     </div>
-   <div class="max-w-full w-full -mt-12">
+    <div class="max-w-full w-full -mt-12">
         <div class="flex flex-col">
             <div class="flex flex-col ">
                 <main class="dark:text-slate-100 flex flex-col flex-grow">
@@ -166,8 +167,8 @@
             </div>
         </div>
     </div>
-    <Divider border={true} size={'large'}></Divider>
-    <Footer border={$page.url.pathname === '/customer' ? false : true} />
+    <Divider border={$page.url.pathname === '/customer' ? false : true} size={'medium'} />
+    <Footer />
 {:else}
     <div class="sk-folding-cube">
         <div class="sk-cube1 sk-cube" />
@@ -303,19 +304,17 @@
     }
 
     .navbar-list li a {
-        @apply text-white;
+        @apply text-white font-semibold bg-opacity-30;
     }
 
     :global(.dark) .navbar-list a {
-        @apply text-slate-50;
+        @apply text-slate-50 font-semibold;
     }
-
-    .navbar-list li a:hover {
-        @apply text-white;
+    .navbar-list li a.active {
+        @apply bg-white bg-opacity-30;
     }
-    .navbar-list li a.active,
-    .navbar-list li a:hover {
-        @apply bg-slate-200 bg-opacity-30 rounded-sm;
+    .navbar-list > li > a:hover {
+        @apply text-white bg-white bg-opacity-30;
     }
 
     @media only screen and (min-width: 767px) {
@@ -340,27 +339,17 @@
         }
 
         /*ini submenu*/
-        .navbar-list li ul li {
-            list-style-type: decimal;
-            position: relative;
-            text-decoration: none;
-            align-items: center;
-            @apply font-semibold px-0 pt-1 transition duration-300 ease-in-out rounded-sm hover:bg-slate-200;
+        .navbar-list > li > ul {
+            @apply w-44 left-2 top-9 bg-white bg-opacity-90;
         }
-
-        .navbar-list li ul li:hover {
+        .navbar-list > li > ul > li:hover {
             @apply bg-yellow-300;
         }
-
-        .navbar-list li ul li .grow {
-            @apply ml-1 -mt-1;
+        .navbar-list > li > ul > li a {
+            @apply text-sm font-semibold text-black bg-transparent;
         }
-
-        .navbar-list li ul li h3 {
-            @apply text-gray-800 font-bold;
-        }
-        .navbar-list li ul li p {
-            @apply text-sm font-normal text-gray-500;
+        .navbar-list > li > ul > li a:hover {
+            @apply text-black bg-transparent;
         }
     }
 
