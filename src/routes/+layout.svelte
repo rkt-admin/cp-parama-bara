@@ -74,7 +74,7 @@
 {#if browser}
     <div
         class="sticky top-0 z-10 dark:bg-slate-900 pt-3 
-        px-[20px] sm:px-[20px] md:px-[75px]
+        px-[20px] md:px-[100px]
     {yScreen > 10 && scrollActive
             ? ' transition-all duration-150 bg-black bg-opacity-60 drop-shadow-lg sticky top-0 pb-5'
             : ' bg-transparent'} 
@@ -91,7 +91,7 @@
                                     <a
                                         href="/company"
                                         class="menu-link {$page.url.pathname ===
-                                        ('/company' || '/company/vision' || '/company/service')
+                                        ('/company' && '/company/vision' || '/company/service')
                                             ? 'active'
                                             : ''}">Company</a>
                                 </li>
@@ -160,9 +160,9 @@
         <div class="flex flex-col">
             <div class="flex flex-col ">
                 <main class="dark:text-slate-100 flex flex-col flex-grow">
-                    <PageTransition url={data.url}>
+                    <!-- <PageTransition url={data.url}> -->
                         <slot />
-                    </PageTransition>
+                    <!-- </PageTransition> -->
                 </main>
             </div>
         </div>

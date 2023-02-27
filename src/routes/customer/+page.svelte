@@ -23,6 +23,8 @@
         { name: 'india', title: 'India', top:'43%', left:'67.8%'},
         { name: 'filipina', title: 'Filipina', top:'49%', left:'80.5%'},
         { name: 'swedia', title: 'Swedia', top:'15%', left:'49%'},
+        { name: 'sulawesi', title: 'Sulawesi', top:'59.5%', left:'80.3%'},
+        { name: 'jawa', title: 'Jawa', top:'63.3%', left:'77.5%'},
     ]
 </script>
 <div
