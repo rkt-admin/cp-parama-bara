@@ -12,8 +12,10 @@
     import { page } from '$app/stores'
     import Divider from '$lib/components/Divider.svelte'
     $: isActive = $page.url.pathname === $$props.href
-    $: console.log('$page.url.pathname', $page.url.pathname)
-    $: console.log('$$props.href', $$props.href)
+    // $: console.log('$page.url.pathname', $page.url.pathname)
+    // $: console.log('$$props.href', $$props.href)
+    import AOS from 'aos';
+    import 'aos/dist/aos.css';
 
     let isSideNavOpen = false
 
@@ -47,6 +49,7 @@
 
     // Attach media query listener on mount hook
     onMount(() => {
+        AOS.init();
         const mql = window.matchMedia('(max-width: 950px)')
 
         mql.addEventListener('change', (e) => {
@@ -90,8 +93,7 @@
                                 <li>
                                     <a
                                         href="/company"
-                                        class="menu-link {$page.url.pathname ===
-                                        ('/company' && '/company/vision' || '/company/service')
+                                        class="menu-link {$page.url.pathname === '/company' || $page.url.pathname === '/company/vision' || $page.url.pathname === '/company/service'
                                             ? 'active'
                                             : ''}">Company</a>
                                 </li>

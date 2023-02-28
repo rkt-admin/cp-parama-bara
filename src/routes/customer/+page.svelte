@@ -17,14 +17,14 @@
         })
     })
     const data = [
-        { name: 'vietnam', title: 'Vietnam', top:'49%', left:'76.5%'},
-        { name: 'china', title: 'China', top:'29%', left:'70%'},
-        { name: 'bangladesh', title: 'Bangladesh', top:'42%', left:'71%'},
-        { name: 'india', title: 'India', top:'43%', left:'67.8%'},
-        { name: 'filipina', title: 'Filipina', top:'49%', left:'80.5%'},
-        { name: 'swedia', title: 'Swedia', top:'15%', left:'49%'},
-        { name: 'sulawesi', title: 'Sulawesi', top:'59.5%', left:'80.3%'},
-        { name: 'jawa', title: 'Jawa', top:'63.3%', left:'77.5%'},
+        { name: 'vietnam', title: 'Vietnam', top:'48%', left:'75.9%'},
+        { name: 'china', title: 'China', top:'28%', left:'69.6%'},
+        { name: 'bangladesh', title: 'Bangladesh', top:'41%', left:'70.6%'},
+        { name: 'india', title: 'India', top:'42%', left:'67.3%'},
+        { name: 'filipina', title: 'Filipina', top:'48%', left:'80%'},
+        { name: 'swedia', title: 'Swedia', top:'14%', left:'48.5%'},
+        { name: 'sulawesi', title: 'Sulawesi', top:'58.6%', left:'79.7%'},
+        { name: 'jawa', title: 'Jawa', top:'62%', left:'77%'},
     ]
 </script>
 <div
@@ -38,13 +38,18 @@ top-0
 left-0
 " />
 <div class="flex items-center justify-center mt-20 bg-gray-700">
+        <!-- <div class="absolute top-14 z-50 w-screen">
+            <marquee class="text-white font-bold">From Parama Resources to the world</marquee>
+        </div> -->
     <div class="relative inline-block px-14 py-3 z-0">
         <img
             src="/images/world-map-white.svg"
             alt="map"
-            class="w-full mx-auto" />
+            class="w-full mx-auto"
+            data-aos="zoom-in" data-aos-duration="1000" 
+            />
         {#each data as map}
-            <div class={`point tippy ${map.name}`} style={`top:${map.top}; left:${map.left};`} title={map.title}/>
+            <div class={`point tippy ${map.name}`} data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="1000" style={`top:${map.top}; left:${map.left};`} title={map.title}/>
         {/each}
     </div>
 </div>
@@ -58,18 +63,18 @@ left-0
         transition: all 0.3s ease;
         will-change: transform, box-shadow;
         transform: translate(-50%, -50%);
-        box-shadow: 0 0 0 rgba(#00acc1, 0.4);
-        animation: pulse 2s ease-in-out infinite;
+        box-shadow: 0 0 0 rgba(#FACC14, 0.4);
+        animation: pulse 3s ease-in-out infinite;
     }
     @keyframes pulse {
         0% {
-            box-shadow: 0 0 0 0 rgba(255, 238, 0, 0.635);
+            box-shadow: 0 0 0 0 rgba(250, 204, 20, 0.5);
         }
         70% {
-            box-shadow: 0 0 0 8px rgba(243, 238, 80, 0.459);
+            box-shadow: 0 0 0 15px rgba(250, 204, 20, 0);
         }
         100% {
-            box-shadow: 0 0 0 0 rgba(251, 255, 2, 0);
+            box-shadow: 0 0 0 0 rgba(250, 204, 20, 0);
         }
     }
     .point:hover {

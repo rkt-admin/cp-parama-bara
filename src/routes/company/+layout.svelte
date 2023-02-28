@@ -15,7 +15,7 @@ const slides = [
 ]
 </script>
 <div>
-    <h2 class="absolute text-yellow-400 px-[100px] z-50 pt-5 mt-[180px] border-b-8 border-yellow-400 text-5xl font-extrabold text-right">Get to know us</h2>
+    <h2 class="absolute text-yellow-400 px-[100px] z-50 pt-5 mt-[180px] border-b-8 border-yellow-400 text-5xl font-extrabold text-right" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">Get to know us</h2>
     <div id="default-carousel" class="relative" data-carousel="slide">
         <div class="relative h-60 overflow-hidden md:h-64">
             {#each slides as slide, i}

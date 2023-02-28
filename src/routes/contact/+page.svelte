@@ -1,5 +1,5 @@
 <!-- ====== Contact Start ====== -->
-<section id="contact" class="ud-contact pt-32 mb-24 relative max-w-full">
+<section id="contact" class="ud-contact pt-24 md:pt-32 mb-24 relative max-w-full">
     <div
         class="
     absolute
@@ -13,22 +13,22 @@
     left-0 
     bg-pattern-call
   " />
-    <div class="container mx-auto max-w-5xl">
-        <div class="flex flex-wrap items-center mx-6">
-            <div class="w-full lg:w-6/12 xl:w-6/12">
+    <div class="container mx-auto max-w-5xl px-6">
+        <div class="flex items-center flex-col md:flex-row">
+            <div class="w-full lg:w-6/12 xl:w-6/12" >
                 <div>
-                    <div class="mb-0 lg:mb-40 px-2 py-4 md:py-0">
+                    <div class="mb-0 lg:mb-40 px-2 py-4 md:py-0" data-aos="fade-right" data-aos-duration="1000">
                         <div
-                            class="mb-8 text-left sm:text-left text-2xl sm:text-4xl text-white font-light leading-none tracking-widest">
+                            class="mb-6 text-left sm:text-left text-2xl sm:text-4xl text-white font-light leading-none tracking-widest">
                             CONTACT US
                         </div>
-                        <div class="text-left text-white sm:text-left text-2xl sm:text-2xl">
+                        <div class="text-left text-white text-lg md:text-2xl ">
                             Hubungi kami untuk diskusi, konsultasi, atau keperluan bisnis Anda!
                         </div>
                     </div>
-                    <div class="flex flex-wrap justify-between mb-10 lg:mb-0">
-                        <div class="flex max-w-full mb-8">
-                            <div class="mr-6">
+                    <div class="flex flex-col mb-10 lg:mb-0 text-white md:text-black px-2 md:px-0">
+                        <div class="flex max-w-full mb-8"  data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">
+                            <div class="mr-6 ">
                                 <svg
                                     width="29"
                                     height="35"
@@ -41,8 +41,8 @@
                                 </svg>
                             </div>
                             <div>
-                                <h5 class="text-lg font-semibold mb-6">Our Location</h5>
-                                <p class="text-base text-body-color">
+                                <h5 class="text-lg font-semibold mb-2 md:mb-6">Our Location</h5>
+                                <p class="text-sm md:text-base text-body-color">
                                     Tamansari Parama Building<br />
                                     7th floor suite 7b<br />
                                     Jl.Kh.Wahid Hasyim 84-86 , Menteng<br />
@@ -50,7 +50,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="flex max-w-full w-[330px]">
+                        <div class="flex max-w-full"  data-aos="fade-right" data-aos-duration="1000" data-aos-delay="1000">
                             <div class="text-[32px] mr-6">
                                 <svg
                                     width="34"
@@ -61,18 +61,16 @@
                                         d="M30.5156 0.960938H3.17188C1.42188 0.960938 0 2.38281 0 4.13281V20.9219C0 22.6719 1.42188 24.0938 3.17188 24.0938H30.5156C32.2656 24.0938 33.6875 22.6719 33.6875 20.9219V4.13281C33.6875 2.38281 32.2656 0.960938 30.5156 0.960938ZM30.5156 2.875C30.7891 2.875 31.0078 2.92969 31.2266 3.09375L17.6094 11.3516C17.1172 11.625 16.5703 11.625 16.0781 11.3516L2.46094 3.09375C2.67969 2.98438 2.89844 2.875 3.17188 2.875H30.5156ZM30.5156 22.125H3.17188C2.51562 22.125 1.91406 21.5781 1.91406 20.8672V5.00781L15.0391 12.9922C15.5859 13.3203 16.1875 13.4844 16.7891 13.4844C17.3906 13.4844 17.9922 13.3203 18.5391 12.9922L31.6641 5.00781V20.8672C31.7734 21.5781 31.1719 22.125 30.5156 22.125Z" />
                                 </svg>
                             </div>
-                            <div>
-                                <h5 class="text-lg font-semibold mb-6">How Can We Help?</h5>
-
-                                <div class="text-base text-body-color">
+                            <div class="flex flex-col">
+                                <h5 class="text-lg font-semibold mb-2 md:mb-6">How Can We Help?</h5>
+                                <div class="text-sm md:text-base text-body-color mb-4">
                                     <div><b>Mail:</b></div>
                                     <span>
-                                        <a href="mailto:email.info@paramabaraintercontinental.com"
-                                            >email.info@paramabaraintercontinental.com</a>
+                                        <a href="mailto:email.info@paramabaraintercontinental.com" 
+                                        class="md:text-black text-white">email.info@paramabaraintercontinental.com</a>
                                     </span>
                                 </div>
-                                <br />
-                                <div class="text-base text-body-color">
+                                <div class="text-sm md:text-base text-body-color">
                                     <div><b>Call / WA:</b></div>
                                     <span class="text-left">+62 21 50200889</span>
                                 </div>
@@ -83,10 +81,10 @@
             </div>
             <div class="w-full lg:w-6/12 xl:w-6/12 rounded-3xl shadow-xl">
                 <div
-                    class="rounded-3xl bg-white dark:bg-gray-800 py-6 px-8 md:p-[60px] lg:p-10 2xl:p-[60px] sm:py-2 sm:px-10 lg:py-2 lg:px-10
-        "
-                    data-wow-delay=".2s">
-                    <div class="my-8">
+                    class="rounded-3xl bg-white dark:bg-gray-800 py-6 px-8 md:p-[60px] lg:p-10 2xl:p-[60px] sm:py-2 sm:px-10 lg:py-2 lg:px-10"
+                    data-wow-delay=".2s"
+                    data-aos="fade-left" data-aos-duration="1000" >
+                    <div class="my-8 items-center flex">
                         <div class="inline-block">
                             <svg width="34" height="25" viewBox="0 0 34 25" class="fill-current">
                                 <path
@@ -94,7 +92,9 @@
                             </svg>
                         </div>
                         <div class="inline-block">
-                            <h3 class="font-semibold text-3xl pl-4 md:text-[26px]">Send us a Message</h3>
+                            <h3 class="font-semibold text-3xl pl-4 md:text-[26px]">
+                                Send us a Message
+                            </h3>
                         </div>
                     </div>
 

@@ -1,7 +1,7 @@
 <div>
-    <h2 class="font-extrabold text-4xl">Vision</h2>
+    <h2 class="font-extrabold text-4xl" data-aos="fade-right" data-aos-duration="1000">Vision</h2>
     <div class="grid grid-cols-3 md:gap-10 mt-10">
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
             <p class="font-bold text-lg text-center">Sustainable Energy Solution</p>
             <div class="bg-yellow-400 rounded-full w-[108px] h-[108px] flex justify-center items-center mt-6">
                 <img
@@ -11,7 +11,7 @@
             </div>
             <p class="mt-6 font-normal text-xs text-center">Provide a sustainable energy solutions to positively drive our social and economic development, globally.</p>
         </div>
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
             <p class="font-bold text-lg text-center">Assurance of Quality</p>
             <div class="bg-yellow-400 rounded-full w-[108px] h-[108px] flex justify-center items-center mt-6">
                 <img
@@ -21,7 +21,7 @@
             </div>
             <p class="mt-6 font-normal text-xs text-center">In the world of uncertainties,Babe energy is able to provide assurance of quality performance and punctual shipment timing to many satisfied worldwide end users in asia.</p>
         </div>
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
             <p class="font-bold text-lg text-center">Integrated Energy</p>
             <div class="bg-yellow-400 rounded-full w-[108px] h-[108px] flex justify-center items-center mt-6">
                 <img

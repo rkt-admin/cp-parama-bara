@@ -34,7 +34,7 @@
 </script>
 
 <!-- footer -->
-<footer class="static z-50 mx-auto text-sm px-[100px]">
+<footer class="static z-50 mx-auto text-sm px-[20px] md:px-[100px]">
     <!-- {#if border}
         <div class="max-w-full align-top block border-half">&nbsp;</div>
     {/if} -->
