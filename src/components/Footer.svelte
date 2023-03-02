@@ -40,9 +40,9 @@
     {/if} -->
     <div
         class="flex flex-wrap font-normal m-auto text-slate-800 dark:bg-black  dark:text-slate-100 sm:justify-between md:justify-between lg:justify-between ">
-        <div class="min-w-fit pr-0 pb-10">
+        <div class="min-w-fit pr-0 pb-6">
             <div><Logo size="small" text={true} dark /></div>
-            <div class="my-2 mb-4 leading-7">
+            <div class="my-2 mb-4 leading-7 ">
                 Tamansari Parama Building<br />
                 7th floor suite 7b<br />
                 Jl.Kh.Wahid Hasyim 84-86 , Menteng, Jakarta Pusat 10340 <br />
@@ -81,7 +81,7 @@
                 +62 21 50200889
             </p>
         </div>
-        <div class="main-link pr-0 pb-10">
+        <div class="main-link pr-0 pb-10 md:block hidden">
             <div class="header-section">About</div>
             <a href="/company">Company</a>
             <a href="/customer">Customer</a>
@@ -133,14 +133,13 @@
 		</button>
 	</div> -->
     <div
-        class="flex items-center justify-center border-t-0 border-white font-normal text-slate-800 dark:text-slate-100 md:justify-evenly">
-        <div class="mx-auto w-full py-3">
-            <div class="flex justify-center pb-4 md:float-left ">
+        class="flex items-center border-t-0 border-white font-normal text-slate-800 justify-center md:justify-between py-3">
+            <span class="text-xs md:text-sm">
                 © 2022 &nbsp;<a href="https://www.paramabaraintercontinental.com"
                     >PT Parama Bara Intercontinental</a
                 >.&nbsp;All Rights Reserved.
-            </div>
-            <div class="footer-social flex justify-center pb-4 md:float-right ">
+            </span>
+            <div class="footer-social justify-center hidden md:flex">
                 <a href="/#" class="mr-6">
                     <svg
                         aria-hidden="true"
@@ -202,7 +201,6 @@
                     </svg>
                 </a>
             </div>
-        </div>
     </div>
 </footer>
 
