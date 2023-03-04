@@ -62,7 +62,7 @@
         border-radius: 100%;
         transition: all 0.3s ease;
         will-change: transform, box-shadow;
-        transform: translate(-50%, -50%);
+        /* transform: translate(-50%, -50%); */
         box-shadow: 0 0 0 rgba(#facc14, 0.4);
         animation: pulse 3s ease-in-out infinite;
     }
