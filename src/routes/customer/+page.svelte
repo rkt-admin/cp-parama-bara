@@ -20,14 +20,14 @@
         })
     })
     const data = [
-        { name: 'vietnam', title: 'Vietnam', top: '48%', left: '75.9%' },
-        { name: 'china', title: 'China', top: '28%', left: '69.6%' },
-        { name: 'bangladesh', title: 'Bangladesh', top: '41%', left: '70.6%' },
-        { name: 'india', title: 'India', top: '42%', left: '67.3%' },
-        { name: 'filipina', title: 'Filipina', top: '48%', left: '80%' },
-        { name: 'swedia', title: 'Swedia', top: '14%', left: '48.5%' },
-        { name: 'sulawesi', title: 'Sulawesi', top: '58.6%', left: '79.7%' },
-        { name: 'jawa', title: 'Jawa', top: '62%', left: '77%' }
+        { name: 'vietnam', title: 'Vietnam', top: '48%', left: '75.9%', delay: '1000' },
+        { name: 'china', title: 'China', top: '28%', left: '69.6%', delay: '3000' },
+        { name: 'bangladesh', title: 'Bangladesh', top: '41%', left: '70.6%', delay: '2000' },
+        { name: 'india', title: 'India', top: '42%', left: '67.3%', delay: '2000' },
+        { name: 'filipina', title: 'Filipina', top: '48%', left: '80%', delay: '1000' },
+        { name: 'swedia', title: 'Swedia', top: '14%', left: '48.5%', delay: '2000' },
+        { name: 'sulawesi', title: 'Sulawesi', top: '58.6%', left: '79.7%', delay: '500' },
+        { name: 'jawa', title: 'Jawa', top: '62%', left: '77%', delay: '1000' }
     ]
 </script>
 
@@ -46,9 +46,9 @@
         {#each data as map}
             <div
                 class={`point tippy ml-1 md:ml-0 bg-yellow-400 w-2 h-2 md:h-3 md:w-3 ${map.name}`}
-                data-aos="zoom-out"
+                data-aos="zoom-in"
                 data-aos-duration="1000"
-                data-aos-delay="1000"
+                data-aos-delay="{map.delay}"
                 style={`top:${map.top}; left:${map.left};`}
                 title={map.title} />
         {/each}
