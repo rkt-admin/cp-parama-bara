@@ -92,6 +92,13 @@
                             <ul class={`navbar-list ${showMobileMenu ? ' mobile' : ''}`}>
                                 <li>
                                     <a
+                                        href="/"
+                                        class="menu-link {$page.url.pathname === '/'
+                                            ? 'active'
+                                            : ''}">Home</a>
+                                </li>
+                                <li>
+                                    <a
                                         href="/company"
                                         class="menu-link {$page.url.pathname === '/company' ||
                                         $page.url.pathname === '/company/vision' ||

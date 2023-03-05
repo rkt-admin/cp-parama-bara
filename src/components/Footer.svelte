@@ -83,6 +83,7 @@
         </div>
         <div class="main-link pr-0 pb-10 md:block hidden">
             <div class="header-section">About</div>
+            <a href="/">Home</a>
             <a href="/company">Company</a>
             <a href="/customer">Customer</a>
             <a href="/quality-control">Quality Control</a>
@@ -136,7 +137,7 @@
         class="flex items-center border-t-0 border-white font-normal text-slate-800 justify-center md:justify-between py-3">
             <span class="text-xs md:text-sm">
                 © 2022 &nbsp;<a href="https://www.paramabaraintercontinental.com"
-                    >PT Parama Bara Intercontinental</a
+                    >Parama Resources</a
                 >.&nbsp;All Rights Reserved.
             </span>
             <div class="footer-social justify-center hidden md:flex">

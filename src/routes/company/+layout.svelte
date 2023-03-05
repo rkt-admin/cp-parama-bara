@@ -42,17 +42,20 @@
             <div class="grid grid-cols-3 grid-rows-none md:grid-cols-none md:grid-rows-3 md:gap-6 ">
                 <a
                     href="/company"
-                    class="border-b-2 pb-2 md:border-0 md:pb-0 text-center md:text-left hover:text-black {$page.url.pathname === '/company'
+                    class="border-b-2 pb-2 md:border-0 md:pb-0 text-center md:text-left hover:text-black {$page
+                        .url.pathname === '/company'
                         ? 'font-bold text-black text-xl md:text-2xl border-black'
                         : 'font-semibold text-gray-300 text-xl border-transparent'}">History</a>
                 <a
                     href="/company/vision"
-                    class="border-b-2 pb-2 md:border-0 md:pb-0 text-center md:text-left hover:text-black {$page.url.pathname === '/company/vision'
+                    class="border-b-2 pb-2 md:border-0 md:pb-0 text-center md:text-left hover:text-black {$page
+                        .url.pathname === '/company/vision'
                         ? 'font-bold text-black text-xl md:text-2xl border-black'
                         : 'font-semibold text-gray-300 text-xl border-transparent'}">Vision</a>
                 <a
                     href="/company/service"
-                    class="border-b-2 pb-2 md:border-0 md:pb-0 text-center md:text-left hover:text-black {$page.url.pathname === '/company/service'
+                    class="border-b-2 pb-2 md:border-0 md:pb-0 text-center md:text-left hover:text-black {$page
+                        .url.pathname === '/company/service'
                         ? 'font-bold text-black text-xl md:text-2xl border-black'
                         : 'font-semibold text-gray-300 text-xl border-transparent'}">Service</a>
             </div>

@@ -32,10 +32,7 @@
 </script>
 
 <div class="absolute z-[-1] w-full h-1/4 bg-gray-700 top-0 left-0"/>
-<div class="flex items-center justify-center mt-20 bg-gray-700">
-    <!-- <div class="absolute top-14 z-50 w-screen">
-            <marquee class="text-white font-bold">From Parama Resources to the world</marquee>
-        </div> -->
+<div class="flex items-center justify-center mt-20 bg-gray-700 flex-col pb-4">
     <div class="relative inline-block px-2 my-28 md:my-0 md:px-14 md:py-3 z-0">
         <img
             src="/images/world-map-white.svg"
@@ -53,6 +50,7 @@
                 title={map.title} />
         {/each}
     </div>
+    <marquee class="text-white font-bold" direction="right">From Parama Resources to the world</marquee>
 </div>
 
 <style lang="postcss">
