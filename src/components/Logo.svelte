@@ -22,7 +22,7 @@
 				class:text-medium={size === 'medium'}
 				class:text-large={size === 'large'}
 			>
-				{SITE_NAME}
+				PARAMA RESOURCES
 			</div>
 		{/if}
 	</a>
