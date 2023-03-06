@@ -2,7 +2,10 @@
     import tippy from 'tippy.js'
     import 'tippy.js/dist/tippy.css'
     import 'tippy.js/themes/light.css'
-    import { onMount } from 'svelte'
+    import { onMount, onDestroy } from 'svelte'
+
+    let allPoint = false
+    let kalimantanPoint = false
 
     onMount(() => {
         tippy('.tippy', {
@@ -18,20 +21,29 @@
             theme: 'light',
             arrow: true
         })
+        setTimeout(() => {
+           kalimantanPoint = true 
+        }, 500);
+        setInterval(() => {
+            allPoint = !allPoint
+            kalimantanPoint = !kalimantanPoint
+        }, 3000)
     })
+
     const data = [
-        { name: 'vietnam', title: 'Vietnam', top: '48%', left: '75.9%', delay: '1000' },
-        { name: 'china', title: 'China', top: '28%', left: '69.6%', delay: '3000' },
+        { name: 'kalimantan', title: 'Kalimantan', top: '56%', left: '77.9%', delay: '1500' },
+        { name: 'vietnam', title: 'Vietnam', top: '48%', left: '75.9%', delay: '2000' },
+        { name: 'china', title: 'China', top: '28%', left: '69.6%', delay: '2000' },
         { name: 'bangladesh', title: 'Bangladesh', top: '41%', left: '70.6%', delay: '2000' },
         { name: 'india', title: 'India', top: '42%', left: '67.3%', delay: '2000' },
-        { name: 'filipina', title: 'Filipina', top: '48%', left: '80%', delay: '1000' },
+        { name: 'filipina', title: 'Filipina', top: '48%', left: '80%', delay: '2000' },
         { name: 'swedia', title: 'Swedia', top: '14%', left: '48.5%', delay: '2000' },
-        { name: 'sulawesi', title: 'Sulawesi', top: '58.6%', left: '79.7%', delay: '500' },
-        { name: 'jawa', title: 'Jawa', top: '62%', left: '77%', delay: '1000' }
+        { name: 'sulawesi', title: 'Sulawesi', top: '58.6%', left: '79.7%', delay: '2000' },
+        { name: 'jawa', title: 'Jawa', top: '62%', left: '77%', delay: '2000' }
     ]
 </script>
 
-<div class="absolute z-[-1] w-full h-1/4 bg-gray-700 top-0 left-0"/>
+<div class="absolute z-[-1] w-full h-1/4 bg-gray-700 top-0 left-0" />
 <div class="flex items-center justify-center mt-20 bg-gray-700 flex-col pb-4">
     <div class="relative inline-block px-2 my-28 md:my-0 md:px-14 md:py-3 z-0">
         <img
@@ -42,15 +54,24 @@
             data-aos-duration="1000" />
         {#each data as map}
             <div
-                class={`point tippy ml-1 md:ml-0 bg-yellow-400 w-2 h-2 md:h-3 md:w-3 ${map.name}`}
+                id={map.name}
+                class={`point tippy ml-1 md:ml-0 bg-yellow-400 w-2 h-2 md:h-3 md:w-3`}
                 data-aos="zoom-in"
                 data-aos-duration="1000"
-                data-aos-delay="{map.delay}"
-                style={`top:${map.top}; left:${map.left};`}
+                data-aos-delay={map.delay}
+                style={`top:${map.top}; left:${map.left}; 
+                ${
+                    map.name === 'kalimantan' ? (kalimantanPoint ? 'opacity: 1' : 'opacity: 0') : ''
+                }
+                ${
+                    map.name !== 'kalimantan' ? (allPoint ? 'opacity: 1' : 'opacity: 0') : ''
+                }
+                `}
                 title={map.title} />
         {/each}
     </div>
-    <marquee class="text-white font-bold" direction="right">From Parama Resources to the world</marquee>
+    <marquee class="text-white font-bold" direction="right"
+        >From Parama Resources to the world</marquee>
 </div>
 
 <style lang="postcss">

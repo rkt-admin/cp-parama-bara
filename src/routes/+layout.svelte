@@ -20,7 +20,7 @@
     let isSideNavOpen = false
 
     /** @type {import('./$types').LayoutData} */
-    export let data
+    // export let data
 
     let expanded = false
     let yScreen
