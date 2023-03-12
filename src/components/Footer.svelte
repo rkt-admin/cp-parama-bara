@@ -42,13 +42,15 @@
         class="flex flex-wrap font-normal m-auto text-slate-800 dark:bg-black  dark:text-slate-100 sm:justify-between md:justify-between lg:justify-between ">
         <div class="min-w-fit pr-0 pb-6">
             <div><Logo size="small" text={true} dark /></div>
-            <div class="my-2 mb-4 leading-7 ">
+            <div class="my-8 leading-7 border-l-2 border-gray-400 border-opacity-20 py-0 px-4" 
+            data-aos="fade-down" data-aos-duration="1000" data-aos-delay="0">
                 Tamansari Parama Building<br />
                 7th floor suite 7b<br />
                 Jl.Kh.Wahid Hasyim 84-86 , Menteng, Jakarta Pusat 10340 <br />
             </div>
             <!-- <p class="flex items-center justify-center md:justify-start mb-4"></p> -->
-            <p class="group mb-4 flex">
+            <p class="group mb-4 flex" 
+            data-aos="fade-left" data-aos-duration="1000" data-aos-delay="0">
                 <svg
                     aria-hidden="true"
                     focusable="false"
@@ -64,7 +66,8 @@
                 </svg>
                 email.info@paramabaraintercontinental.com
             </p>
-            <p class="group mb-4 flex">
+            <p class="group mb-4 flex" 
+            data-aos="fade-left" data-aos-duration="1000" data-aos-delay="0">
                 <svg
                     aria-hidden="true"
                     focusable="false"
@@ -81,7 +84,8 @@
                 +62 21 50200889
             </p>
         </div>
-        <div class="main-link pr-0 pb-10 md:block hidden">
+        <div class="main-link pr-0 pb-10 md:block hidden"
+        data-aos="fade-left" data-aos-duration="1000" data-aos-delay="0">
             <div class="header-section">About</div>
             <a href="/">Home</a>
             <a href="/company">Company</a>
@@ -134,7 +138,8 @@
 		</button>
 	</div> -->
     <div
-        class="flex items-center border-t-0 border-white font-normal text-slate-800 justify-center md:justify-between py-3">
+        class="flex items-center border-t-0 border-white font-normal text-slate-800 justify-center md:justify-between py-3"
+        >
             <span class="text-xs md:text-sm">
                 © 2022 &nbsp;<a href="https://www.paramabaraintercontinental.com"
                     >Parama Resources</a

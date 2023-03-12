@@ -87,7 +87,7 @@
             <div class="flex flex-col">
                 <div class="flex justify-between items-center">
                     <Logo size="small" text={true} dark={false}/>
-                    <nav data-aos="fade-down" data-aos-duration="1000" data-aos-delay="1500">
+                    <nav data-aos="fade-down" data-aos-duration="1500" data-aos-delay="0">
                         <div>
                             <ul class={`navbar-list ${showMobileMenu ? ' mobile' : ''}`}>
                                 <li>
