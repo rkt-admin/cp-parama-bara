@@ -6,7 +6,7 @@
 </script>
 
 <div class="focus:shadow-outline inline-block bg-clip-text !text-transparent focus:outline-none">
-	<a href={URL_BASE} class="flex items-center" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500" >
+	<a href={URL_BASE} class="flex items-center"  data-aos="fade-down" data-aos-duration="1000" data-aos-delay="1500" >
 		<img
 			src="/logo.svg"
 			class:small={size === 'small'}
