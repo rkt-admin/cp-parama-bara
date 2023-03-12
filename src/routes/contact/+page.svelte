@@ -5,7 +5,7 @@
     absolute
     z-[-1]
     w-full
-    h-1/2
+    h-1/3
     bg-gray-900
     dark:bg-gray-900
     py-10
@@ -15,9 +15,12 @@
   " />
     <div class="container mx-auto max-w-5xl px-6">
         <div class="flex items-center flex-col md:flex-row">
-            <div class="w-full lg:w-6/12 xl:w-6/12" >
+            <div class="w-full lg:w-6/12 xl:w-6/12">
                 <div>
-                    <div class="mb-0 lg:mb-40 px-2 py-4 md:py-0" data-aos="fade-right" data-aos-duration="1000">
+                    <div
+                        class="mb-0 lg:mb-40 px-2 py-4 md:py-0"
+                        data-aos="fade-right"
+                        data-aos-duration="1000">
                         <div
                             class="mb-6 text-left sm:text-left text-2xl sm:text-4xl text-white font-light leading-none tracking-widest">
                             CONTACT US
@@ -27,7 +30,11 @@
                         </div>
                     </div>
                     <div class="flex flex-col mb-10 lg:mb-0 text-white md:text-black px-2 md:px-0">
-                        <div class="flex max-w-full mb-8"  data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">
+                        <div
+                            class="flex max-w-full mb-8"
+                            data-aos="fade-right"
+                            data-aos-duration="1000"
+                            data-aos-delay="500">
                             <div class="mr-6 ">
                                 <svg
                                     width="29"
@@ -48,9 +55,23 @@
                                     Jl.Kh.Wahid Hasyim 84-86 , Menteng<br />
                                     Jakarta Pusat 10340
                                 </p>
+                                <p class="text-sm md:text-base text-body-color">
+                                    <iframe title="parama bara intercontinental map location"
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.580073192168!2d106.82548211744384!3d-6.186909600000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f4256443b9f1%3A0xc69e7fbd7d69357!2sTamansari%20Parama%20Office!5e0!3m2!1sen!2sid!4v1678631218074!5m2!1sen!2sid"
+                                        width="400"
+                                        height="300"
+                                        style="border:0;"
+                                        allowfullscreen=""
+                                        loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade" class="mb-8 mt-4"/>
+                                </p>
                             </div>
                         </div>
-                        <div class="flex max-w-full"  data-aos="fade-right" data-aos-duration="1000" data-aos-delay="1000">
+                        <div
+                            class="flex max-w-full"
+                            data-aos="fade-right"
+                            data-aos-duration="1000"
+                            data-aos-delay="0">
                             <div class="text-[32px] mr-6">
                                 <svg
                                     width="34"
@@ -66,8 +87,10 @@
                                 <div class="text-sm md:text-base text-body-color mb-4">
                                     <div><b>Mail:</b></div>
                                     <span>
-                                        <a href="mailto:email.info@paramabaraintercontinental.com" 
-                                        class="md:text-black text-white">email.info@paramabaraintercontinental.com</a>
+                                        <a
+                                            href="mailto:email.info@paramabaraintercontinental.com"
+                                            class="md:text-black text-white"
+                                            >email.info@paramabaraintercontinental.com</a>
                                     </span>
                                 </div>
                                 <div class="text-sm md:text-base text-body-color">
@@ -83,7 +106,8 @@
                 <div
                     class="rounded-3xl bg-white dark:bg-gray-800 py-6 px-8 md:p-[60px] lg:p-10 2xl:p-[60px] sm:py-2 sm:px-10 lg:py-2 lg:px-10"
                     data-wow-delay=".2s"
-                    data-aos="fade-left" data-aos-duration="1000" >
+                    data-aos="fade-left"
+                    data-aos-duration="1000">
                     <div class="my-8 items-center flex">
                         <div class="inline-block">
                             <svg width="34" height="25" viewBox="0 0 34 25" class="fill-current">

@@ -25,21 +25,23 @@
     </div>
     <div
         class="
-    absolute top-0 mt-28 max-w-2xl 
+    absolute top-0 mt-28 max-w-4xl 
     px-[20px] sm:px-[20px] md:pl-[100px] 
     flex items-center justify-center" data-aos="fade-right" data-aos-duration="1000">
         <div class=" items-center justify-center text-white">
             <h1
-                class="text-xl leading-8 md:text-5xl md:max-w-3xl md:leading-[60px] font-extrabold tracking-[0.16px]">
-                Exportation of Branded Thermal Coal of Multi Origins.
+                class="text-xl leading-10 mb-8 md:text-5xl md:max-w-4xl md:leading-[60px] font-extrabold tracking-[0.16px]"
+                data-aos="fade-right" data-aos-duration="1000" data-aos-delay="1000" >
+                Your Trusted Energy Partner
             </h1>
             <p
-                class="text-xs leading-4 md:text-sm md:max-w-3xl mt-4 font-normal md:leading-6 tracking-[0.16px]">
+                class="text-sm border-l-4 border-yellow-300 py-4 px-8 leading-4 md:text-lg md:max-w-3xl mt-4 font-normal md:leading-6 tracking-[0.16px]"
+                data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1500" >
                 PARAMA BARA INTERCONTINENTAL handle the exportation of branded thermal coal of multi
                 origins, as well as exporting coal and cokes from multi origin to reputable end
                 users in various Asian Countries.
             </p>
-            <div class="inline-flex mt-6 text-left">
+            <div class="inline-flex mt-10 text-left" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="2000" >
                 <ButtonLink
                     href="/company"
                     type="submit"

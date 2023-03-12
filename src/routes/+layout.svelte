@@ -86,7 +86,7 @@
         <div class="h-6">
             <div class="flex flex-col">
                 <div class="flex justify-between items-center">
-                    <Logo size="small" text={true} dark={false} />
+                    <Logo size="small" text={true} dark={false}/>
                     <nav>
                         <div>
                             <ul class={`navbar-list ${showMobileMenu ? ' mobile' : ''}`}>

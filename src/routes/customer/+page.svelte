@@ -55,7 +55,7 @@
         {#each data as map}
             <div
                 id={map.name}
-                class={`point tippy ml-1 md:ml-0 bg-yellow-400 w-2 h-2 md:h-3 md:w-3`}
+                class="{map.name === 'kalimantan' ? 'bg-red-500 pointX ' : 'bg-yellow-400 point ' } point tippy ml-1 md:ml-0 w-2 h-2 md:h-3 md:w-3"
                 data-aos="zoom-in"
                 data-aos-duration="1000"
                 data-aos-delay={map.delay}
@@ -70,8 +70,10 @@
                 title={map.title} />
         {/each}
     </div>
-    <marquee class="text-white font-bold" direction="right"
-        >From Parama Resources to the world</marquee>
+    <div class="absolute top-40 left-0 w-full">
+        <marquee class="text-white text-9xl opacity-20 font-bold" direction="right" scrollamount="10"
+            >From Parama Resources to the world</marquee>
+    </div>
 </div>
 
 <style lang="postcss">
@@ -85,9 +87,31 @@
         box-shadow: 0 0 0 rgba(#facc14, 0.4);
         animation: pulse 3s ease-in-out infinite;
     }
+    .pointX {
+        cursor: pointer;
+        position: absolute;
+        border-radius: 100%;
+        transition: all 0.3s ease;
+        will-change: transform, box-shadow;
+        /* transform: translate(-50%, -50%); */
+        box-shadow: 0 0 0 rgba(#fa3614, 0.4);
+        animation: pulseX 3s ease-in-out infinite;
+    }
     @keyframes pulse {
         0% {
             box-shadow: 0 0 0 0 rgba(250, 204, 20, 0.5);
+        }
+        70% {
+            box-shadow: 0 0 0 15px rgba(250, 204, 20, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(250, 204, 20, 0);
+        }
+    }
+
+    @keyframes pulseX {
+        0% {
+            box-shadow: 0 0 0 0 rgba(250, 54, 20, 0.5);
         }
         70% {
             box-shadow: 0 0 0 15px rgba(250, 204, 20, 0);
