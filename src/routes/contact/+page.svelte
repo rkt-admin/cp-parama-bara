@@ -122,7 +122,7 @@
                         </div>
                     </div>
 
-                    <form class="pb-8">
+                    <form name="contact" method="POST" class="pb-8" netlify>
                         <div class="mb-6">
                             <label for="fullName" class="block text-xs text-dark">Full Name</label>
                             <input
