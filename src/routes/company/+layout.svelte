@@ -17,7 +17,7 @@
 
 <div>
     <h2
-        class="absolute text-yellow-400 px-4 md:px-[100px] z-50 pt-5 mt-[180px] border-b-4 md:border-b-8 border-yellow-400 text-3xl md:text-5xl font-extrabold w-full md:w-fit"
+        class="absolute text-yellow-400 px-4 md:px-[100px] z-40 pt-5 mt-[180px] border-b-4 md:border-b-8 border-yellow-400 text-3xl md:text-5xl font-extrabold w-full md:w-fit"
         data-aos="fade-right"
         data-aos-duration="1000"
         data-aos-delay="200">

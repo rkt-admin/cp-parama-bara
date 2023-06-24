@@ -55,9 +55,33 @@
         mql.addEventListener('change', (e) => {
             if (!e.matches) {
                 showMobileMenu = false
+                scrollActive = true
+            } else {
+                scrollActive = false
             }
         })
     })
+
+    function handleClickOutside(event) {
+		// alert('Click outside!');
+        // showMobileMenu = !showMobileMenu;
+	}
+
+    export function clickOutside(node) {
+        const handleClick = (event) => {
+            if (node && !node.contains(event.target) && !event.defaultPrevented) {
+                node.dispatchEvent(new CustomEvent('click_outside', node))
+            }
+        }
+
+        document.addEventListener('click', handleClick, true)
+
+        return {
+            destroy() {
+                document.removeEventListener('click', handleClick, true)
+            }
+        }
+    }
 
     $: {
         if (yScreen >= 10) {
@@ -75,8 +99,32 @@
 <!-- <Alert /> -->
 <!-- <Topbar /> -->
 {#if browser}
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div
-        class="sticky top-0 z-10 dark:bg-slate-900 pt-3 
+        on:click={handleMobileIconClick}
+        class={`button_container${showMobileMenu ? ' active' : ''}`}
+        id="toggle">
+        <span class="top" /><span class="middle" /><span class="bottom" />
+    </div>
+    <div class={`overlay ${showMobileMenu ? 'open' : ''}`}  use:clickOutside on:click_outside={handleClickOutside} id="overlay">
+        <nav class="overlay-menu">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/company">Company</a></li>
+                <li><a href="/customer">Customer</a></li>
+                <li>
+                    <a href="# ">Treatment</a>
+                    <ul>
+                        <li><a href="/quality-controll">Quality Controll</a></li>
+                        <li><a href="/excellent-services">Excellent Services</a></li>
+                    </ul>
+                </li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div
+        class="sticky top-0 z-10 dark:bg-slate-900 pt-3
         px-[20px] md:px-[100px]
     {yScreen > 10 && scrollActive
             ? ' transition-all duration-150 bg-black bg-opacity-60 drop-shadow-lg sticky top-0 pb-5'
@@ -86,9 +134,10 @@
         <div class="h-6">
             <div class="flex flex-col">
                 <div class="flex justify-between items-center">
-                    <Logo size="small" text={true} dark={false}/>
+                    <Logo size="small" text={true} dark={false} />
+
                     <nav data-aos="fade-down" data-aos-duration="1500" data-aos-delay="0">
-                        <div>
+                        <div class="navbar">
                             <ul class={`navbar-list ${showMobileMenu ? ' mobile' : ''}`}>
                                 <li>
                                     <a
@@ -157,19 +206,20 @@
                             </ul>
                         </div>
                     </nav>
+
                     <!-- svelte-ignore a11y-click-events-have-key-events -->
-                    <div
+                    <!-- <div
                         on:click={handleMobileIconClick}
                         class={`mobile-icon${showMobileMenu ? ' active' : ''}`}>
                         <div class="middle-line" />
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
     </div>
     <div class="max-w-full w-full -mt-12">
         <div class="flex flex-col">
-            <div class="flex flex-col ">
+            <div class="flex flex-col">
                 <main class="dark:text-slate-100 flex flex-col flex-grow">
                     <!-- <PageTransition url={data.url}> -->
                     <slot />
@@ -285,9 +335,9 @@
         margin: 0;
         @apply z-50;
     }
-
-    .navbar-list.mobile {
-        @apply bg-slate-100 uppercase text-base font-medium;
+    /* 
+    ul.navbar-list.mobile {
+        @apply bg-red-600 bg-current uppercase text-base font-medium;
         position: fixed;
         display: block;
         height: calc(100% - 55px);
@@ -295,19 +345,33 @@
         left: 0;
         z-index: 100;
         border-bottom: 1px solid bg-slate-500;
+        background-color: #ffcc00;
     }
 
-    .navbar-list.mobile::after li {
-        border-bottom: 1px solid bg-slate-500;
+    ul.navbar-list.mobile li a {
+        @apply text-white font-semibold;
     }
+    ul.navbar-list.mobile li a.active {
+        @apply bg-white bg-opacity-30 rounded-sm;
+    }
+    ul.navbar-list.mobile > li > a:hover {
+        @apply text-white bg-white bg-opacity-30 rounded-sm;
+    }
+    :global(.dark) ul.navbar-list.mobile a {
+        @apply text-slate-50 font-semibold;
+    } */
 
-    :global(.dark) .navbar-list.mobile {
+    /* .navbar-list.mobile::after li {
+        @apply border-yellow-400 bg-yellow-500;
+    } */
+
+    /* :global(.dark) .navbar-list.mobile {
         @apply bg-slate-700 bg-gradient-to-br from-slate-800 to-slate-800;
-    }
+    } */
 
     .navbar-list li {
         list-style-type: none;
-        position: relative;
+        /* position: relative; */
         text-decoration: none;
         display: flex;
         align-items: center;
@@ -330,6 +394,9 @@
 
     @media only screen and (min-width: 767px) {
         .mobile-icon {
+            display: none;
+        }
+        .button_container {
             display: none;
         }
 
@@ -464,5 +531,153 @@
             transform: perspective(140px) rotateY(180deg);
             opacity: 0;
         }
+    }
+
+    /*menu mobile*/
+    .overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 0%;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+        overflow: hidden;
+        @apply z-50 bg-black bg-opacity-95 bg-scroll uppercase;
+    }
+    .overlay.open {
+        opacity: 0.9;
+        visibility: visible;
+        height: 100%;
+    }
+    /* .overlay.open li {
+        animation: fadeInRight 0.5s ease forwards;
+        animation-delay: 0.5s;
+    }
+    .overlay.open li:nth-of-type(2) {
+        animation-delay: 0.4s;
+    }
+    .overlay.open li:nth-of-type(3) {
+        animation-delay: 0.45s;
+    }
+    .overlay.open li:nth-of-type(4) {
+        animation-delay: 0.5s;
+    } */
+    .overlay nav {
+        position: relative;
+        height: 30%;
+        top: 20%;
+        transform: translateY(-50%);
+        @apply text-lg text-left pl-5 font-bold;
+    }
+    .overlay ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        display: inline-block;
+        height: 100%;
+    }
+    /* .overlay ul>li {
+        display: block;
+        height: 10px;
+        height: calc(100% / 4);
+        min-height: 50px;
+        opacity: 0;
+    } */
+    .overlay ul > li > a {
+        display: block;
+        position: relative;
+        color: #ffffff;
+        text-decoration: none;
+        overflow: hidden;
+        @apply pt-2;
+    }
+    .overlay ul > li > ul {
+        @apply border-l-2 border-yellow-500 ml-2 mt-2;
+    }
+    .overlay ul > li > ul > li > a {
+        display: block;
+        position: relative;
+        color: #ffffff;
+        text-decoration: none;
+        overflow: hidden;
+        @apply pt-2 pl-3;
+    }
+    
+    .overlay ul li a:hover {
+        @apply text-yellow-600;
+    }
+    /* .overlay ul li a:hover:after,
+    .overlay ul li a:focus:after,
+    .overlay ul li a:active:after {
+        width: 100%;
+        @apply text-yellow-50;
+    }
+    
+    .overlay ul li a:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0%;
+        transform: translateX(-50%);
+        height: 3px;
+        background: #fff;
+        transition: 0.5s;
+    } */
+
+    /* @keyframes fadeInRight {
+        0% {
+            opacity: 0;
+            left: 20%;
+        }
+        100% {
+            opacity: 1;
+            left: 0;
+        }
+    } */
+
+    .button_container {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        height: 20px;
+        width: 30px;
+        cursor: pointer;
+        z-index: 100;
+        transition: opacity 0.25s ease;
+    }
+    .button_container:hover {
+        opacity: 0.7;
+    }
+    .button_container.active .top {
+        transform: translateY(10px) translateX(0) rotate(45deg);
+        background: #fff;
+    }
+    .button_container.active .middle {
+        opacity: 0;
+        background: #fff;
+    }
+    .button_container.active .bottom {
+        transform: translateY(-10px) translateX(0) rotate(-45deg);
+        background: #fff;
+    }
+    .button_container span {
+        @apply bg-slate-100 rounded-sm;
+        border: none;
+        height: 3px;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.35s ease;
+        cursor: pointer;
+    }
+    .button_container span:nth-of-type(2) {
+        top: 10px;
+    }
+    .button_container span:nth-of-type(3) {
+        top: 20px;
     }
 </style>
