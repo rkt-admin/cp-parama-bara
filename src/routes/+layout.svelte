@@ -63,9 +63,9 @@
     })
 
     function handleClickOutside(event) {
-		// alert('Click outside!');
+        // alert('Click outside!');
         // showMobileMenu = !showMobileMenu;
-	}
+    }
 
     export function clickOutside(node) {
         const handleClick = (event) => {
@@ -106,14 +106,18 @@
         id="toggle">
         <span class="top" /><span class="middle" /><span class="bottom" />
     </div>
-    <div class={`overlay ${showMobileMenu ? 'open' : ''}`}  use:clickOutside on:click_outside={handleClickOutside} id="overlay">
+    <div
+        class={`overlay ${showMobileMenu ? 'open' : ''}`}
+        use:clickOutside
+        on:click_outside={handleClickOutside}
+        id="overlay">
         <nav class="overlay-menu">
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/company">Company</a></li>
                 <li><a href="/customer">Customer</a></li>
                 <li>
-                    <a href="# ">Treatment</a>
+                    <a href="# ">Product & Services</a>
                     <ul>
                         <li><a href="/quality-controll">Quality Controll</a></li>
                         <li><a href="/excellent-services">Excellent Services</a></li>
@@ -164,32 +168,52 @@
                                 </li>
                                 <li class="relative group z-10">
                                     <a
+                                        href="/products/anthracite"
+                                        class="menu-link {$page.url.pathname === '/products/anthracite'
+                                            ? 'active'
+                                            : ''}">Products</a>
+                                </li>
+                                <li class="relative group z-10">
+                                    <a
                                         href="#!"
                                         class="group-hover:bg-white group-hover:rounded-sm group-hover:bg-opacity-30"
-                                        >Treatment</a>
+                                        >Services</a>
                                     <ul class="z-50 absolute invisible group-hover:visible">
                                         <li>
                                             <a
-                                                href="/quality-control"
-                                                class={$page.url.pathname === '/quality-control'
+                                                href="/chruser-coal"
+                                                class={$page.url.pathname === '/chruser-coal'
                                                     ? 'active'
                                                     : ''}>
                                                 <div class="flex items-start">
                                                     <div class="grow">
-                                                        <h3>Quality Control</h3>
+                                                        <h3>Crusher Coal</h3>
                                                     </div>
                                                 </div>
                                             </a>
                                         </li>
                                         <li>
                                             <a
-                                                href="/excelent-services"
-                                                class={$page.url.pathname === '/excelent-services'
+                                                href="/conveyor"
+                                                class={$page.url.pathname === '/conveyor'
                                                     ? 'active'
                                                     : ''}>
                                                 <div class="flex items-start">
                                                     <div class="grow">
-                                                        <h3>Excelent Services</h3>
+                                                        <h3>Conveyor</h3>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="/washing-plant"
+                                                class={$page.url.pathname === '/washing-plant'
+                                                    ? 'active'
+                                                    : ''}>
+                                                <div class="flex items-start">
+                                                    <div class="grow">
+                                                        <h3>Washing Plant</h3>
                                                     </div>
                                                 </div>
                                             </a>
@@ -582,7 +606,7 @@
         display: block;
         height: 10px;
         height: calc(100% / 4);
-        min-height: 50px;
+        min-height: 50px;c 
         opacity: 0;
     } */
     .overlay ul > li > a {
@@ -604,7 +628,7 @@
         overflow: hidden;
         @apply pt-2 pl-3;
     }
-    
+
     .overlay ul li a:hover {
         @apply text-yellow-600;
     }

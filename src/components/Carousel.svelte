@@ -48,6 +48,12 @@
                     class="relative inline-flex items-center h-10 px-4 font-bold tracking-normal transition duration-200 rounded-md shadow-md text-gray-800 bg-yellow-400 hover:text-gray-800 hover:bg-yellow-300">
                     <span class="text-sm">Company Overview</span>
                 </ButtonLink>
+                <ButtonLink
+                    href="/docs/2023/Parama Bara Company Profile (2023).pdf"
+                    type="submit"
+                    class="relative inline-flex items-center h-10 ml-5 px-4 font-bold tracking-normal transition duration-200 rounded-md text-slate-200 hover:text-yellow-300 ">
+                    <span class="text-sm">Download Company Overview</span>
+                </ButtonLink>
             </div>
         </div>
     </div>

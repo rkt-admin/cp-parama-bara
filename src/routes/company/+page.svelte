@@ -1,6 +1,26 @@
 <div>
-    <h2 class="font-extrabold text-2xl md:text-4xl" data-aos="fade-right" data-aos-duration="1000">History</h2>
-    <p class="mt-4 md:mt-10 font-normal text-sm" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">PT. Parama Bara Intercontinental is an International Commodity Trading Company, domicile in Indonesia incorporated on december 2016. Our Founder & Ceo is a member of PARAMA BARA Group, she has over 10 years of experience in commodity trading business and we are proud of our reputation for fast and efficient service along with our professional ethic policy.
-        <br><br>We also have vast knowledge of the commodity products such as Coal, Nickel, Antrachite and with our wide range of stock, we are able to offer many options of commodity specifications to suit variying applications and budget.
-        <br><br>Our company provides an exclusive platform for trading partners to venture into Indonesian energy and minerals business especially coal, nickel, anthracite.</p>
+    <h2 class="font-extrabold text-2xl md:text-4xl" data-aos="fade-right" data-aos-duration="1000">
+        History
+    </h2>
+    <p
+        class="mt-4 md:mt-10 font-normal text-sm"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="200">
+        <b>PARAMA BARA INTERCONTINENTAL (PBI)</b>, an International Commodity Trading Company, was
+        established in 2016. With years of experience in commodity trading business, PBI is capable
+        in handling the exportation of coal and cokes from multi sources to various destination
+        beyond Asia, such as Australia, China, South Africa, Russia, and many more.
+        <br /><br />With vast knowledge of the commodity products such as Coal, Nickel and
+        Anthracite, with wide range of stock, PBI are able to offer many options of commodity
+        specifications to suit various applications and budget.
+        <br /><br /><b>PARAMA BARA INTERCONTINENTAL</b> ensure to always provides quality products
+        as well as customer services with international standards with special emphasis on
+        environmental protection. PBI are known for the reputation of fast and efficient service
+        along with professional ethic policy.
+        <br /><br />PBI have formed coal alliances with credible collieries around the world to
+        select and to import high grades of quality coal as per customer’s requirements. In
+        addition, PBI also provides an exclusive platform for trading partners to venture into
+        Indonesian energy and minerals business.
+    </p>
 </div>

@@ -52,12 +52,24 @@
                         .url.pathname === '/company/vision'
                         ? 'font-bold text-black text-xl md:text-2xl border-black'
                         : 'font-semibold text-gray-300 text-xl border-transparent'}">Vision</a>
+                        <a
+                        href="/company/mission"
+                        class="border-b-2 pb-2 md:border-0 md:pb-0 text-center md:text-left hover:text-black {$page
+                            .url.pathname === '/company/mission'
+                            ? 'font-bold text-black text-xl md:text-2xl border-black'
+                            : 'font-semibold text-gray-300 text-xl border-transparent'}">Mission</a>
                 <a
-                    href="/company/service"
+                    href="/company/business"
                     class="border-b-2 pb-2 md:border-0 md:pb-0 text-center md:text-left hover:text-black {$page
-                        .url.pathname === '/company/service'
+                        .url.pathname === '/company/business'
                         ? 'font-bold text-black text-xl md:text-2xl border-black'
-                        : 'font-semibold text-gray-300 text-xl border-transparent'}">Service</a>
+                        : 'font-semibold text-gray-300 text-xl border-transparent'}">Business</a>
+                        <a
+                        href="/company/teams"
+                        class="border-b-2 pb-2 md:border-0 md:pb-0 text-center md:text-left hover:text-black {$page
+                            .url.pathname === '/company/teams'
+                            ? 'font-bold text-black text-xl md:text-2xl border-black'
+                            : 'font-semibold text-gray-300 text-xl border-transparent'}">Teams</a>
             </div>
         </div>
         <div class="md:w-4/5 py-4 md:border-0 mt-2 md:mt-0 md:py-0">
