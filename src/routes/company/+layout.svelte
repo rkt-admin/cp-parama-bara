@@ -17,21 +17,21 @@
 
 <div>
     <h2
-        class="absolute text-yellow-400 px-4 md:px-[100px] z-40 pt-5 mt-[180px] border-b-4 md:border-b-8 border-yellow-400 text-3xl md:text-5xl font-extrabold w-full md:w-fit"
+        class="absolute text-yellow-400 px-4 md:px-[100px] z-20 pt-5 mt-[180px] border-b-4 md:border-b-8 border-yellow-400 text-3xl md:text-5xl font-extrabold w-full md:w-fit"
         data-aos="fade-right"
         data-aos-duration="1000"
         data-aos-delay="200">
         Get to know us
     </h2>
     <div id="default-carousel" class="relative" data-carousel="slide">
-        <div class="relative h-60 overflow-hidden md:h-64">
+        <div class="relative z-0 h-60 overflow-hidden md:h-64">
             {#each slides as slide, i}
                 <div
                     class={`duration-700 ease-in-out ${i === activeIndex ? '' : 'opacity-0'}`}
                     data-carousel-item>
                     <img
                         src={slide.image}
-                        class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 h-full object-cover"
+                        class="absolute block z-10 w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 h-full object-cover"
                         alt={slide.alt} />
                 </div>
             {/each}

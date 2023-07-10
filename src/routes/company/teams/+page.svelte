@@ -21,8 +21,8 @@
                 data-aos-duration="1000"
                 data-aos-delay="0">
                 <p class="font-bold text-lg md:text-center">PRESIDENT DIRECTOR</p>
-                <div class="w-[250px] h-[150px] hidden md:flex justify-center items-center md:mt-6">
-                    <img src="/teams/Kiki Nurulita.jpg" class="p-5" alt="logo" />
+                <div class="w-[200px] h-[150px] hidden md:flex justify-center items-center mt-8 md:mt-6">
+                    <img src="/teams/Kiki-Nurulita.jpg" class="p-5" alt="logo" />
                 </div>
                 <p class="mt-2 md:mt-6 font-normal text-xs md:text-center">Kiki Nurulita</p>
             </div>
