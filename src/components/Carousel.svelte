@@ -52,7 +52,7 @@
                     href="/docs/2023/Parama Bara Company Profile (2023).pdf"
                     type="submit"
                     class="relative inline-flex items-center h-10 ml-5 px-4 font-bold tracking-normal transition duration-200 rounded-md text-slate-200 hover:text-yellow-300 ">
-                    <span class="text-sm">Download Company Overview</span>
+                    <span class="text-sm">Download Company Profile</span>
                 </ButtonLink>
             </div>
         </div>
