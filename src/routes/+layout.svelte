@@ -131,7 +131,7 @@
         class="sticky top-0 z-50 dark:bg-slate-900 pt-3
         px-[20px] md:px-[100px]
     {yScreen > 10 && scrollActive
-            ? ' transition-all duration-150 bg-black bg-opacity-90 drop-shadow-lg sticky top-0 pb-5'
+            ? ' transition-all duration-150 bg-black bg-opacity-80 drop-shadow-lg sticky top-0 pb-5'
             : ' bg-transparent'} 
     {yScreen <= 12 && scrollActive ? ' transition-all duration-300 drop-shadow-none' : ''}
     ">
